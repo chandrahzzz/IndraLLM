@@ -1,0 +1,68 @@
+# IndraLLM project configuration
+
+languages:            # ISO 639-1 code -> display name (all paired with English)
+  ta: Tamil
+  hi: Hindi
+  te: Telugu
+  bn: Bengali
+  kn: Kannada
+
+domains: [health, education, government, agriculture]
+
+hallucination_categories: [factual, temporal, entity, cultural]
+
+target_per_language: 1000
+
+paths:
+  raw: data/raw
+  filtered: data/filtered
+  questions: data/questions
+  answers: data/answers
+  annotations: data/annotations
+  final: data/final
+  models: models
+  fasttext_model: lid.176.bin
+
+filtering:
+  min_tokens: 4
+  # a text counts as code-switched if either:
+  #  - it mixes native script + Latin script tokens, or
+  #  - fastText assigns >= min_lang_prob to two different languages
+  min_lang_prob: 0.15
+  min_minority_token_ratio: 0.15   # at least 15% tokens from the minority language
+
+generation:
+  max_tokens: 256
+  temperature: 0.3
+  models:
+    gpt-4o:      {provider: openai,    model: gpt-4o}
+    gpt-4o-mini: {provider: openai,    model: gpt-4o-mini}
+    claude:      {provider: anthropic, model: claude-sonnet-5}
+    gemini:      {provider: google,    model: gemini-1.5-pro}
+    sarvam:      {provider: hf_local,  model: sarvamai/sarvam-2b-v0.5}
+    llama3:      {provider: hf_local,  model: meta-llama/Meta-Llama-3-8B-Instruct}
+    airavata:    {provider: hf_local,  model: ai4bharat/Airavata}
+    gemma:       {provider: hf_local,  model: google/gemma-2-9b-it}
+
+annotation:
+  annotators_per_example: 2
+  min_kappa: 0.75
+
+detection:
+  base_model: ai4bharat/IndicBERTv2-MLM-only
+  max_length: 256
+  epochs: 5
+  lr: 2.0e-5
+  batch_size: 16
+  seed: 42
+  split: [0.8, 0.1, 0.1]   # train/val/test
+
+mitigation:
+  model: sarvamai/sarvam-2b-v0.5
+  alpha: 1.0
+  beta: 0.5
+  max_new_tokens: 256
+
+hub:
+  dataset_repo: VIT-NLP/IndraLLM-Benchmark
+  detector_repo: VIT-NLP/IndraLLM-detector

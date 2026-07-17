@@ -1,0 +1,20 @@
+<View>
+  <Header value="Read the question and the AI answer. Judge the answer."/>
+  <Text name="question" value="$question" granularity="word"/>
+  <Text name="answer" value="$answer" granularity="word"/>
+  <Header value="Is the AI answer correct?"/>
+  <Choices name="verdict" toName="answer" choice="single" required="true">
+    <Choice value="correct"/>
+    <Choice value="hallucinated"/>
+    <Choice value="unanswerable"/>
+  </Choices>
+  <Header value="If hallucinated, which category?"/>
+  <Choices name="category" toName="answer" choice="single">
+    <Choice value="factual"/>
+    <Choice value="temporal"/>
+    <Choice value="entity"/>
+    <Choice value="cultural"/>
+  </Choices>
+  <Header value="Optional: correct answer (ground truth)"/>
+  <TextArea name="ground_truth" toName="question" rows="3" maxSubmissions="1"/>
+</View>
