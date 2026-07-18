@@ -7,16 +7,12 @@ tqdm>=4.66
 requests>=2.31
 
 # language id / filtering
-langdetect>=1.0.9
 fasttext-wheel>=0.9.2
 
 # collection
-praw>=7.7            # Reddit
-beautifulsoup4>=4.12
+praw>=7.7            # Reddit (free)
 
-# LLM APIs
-openai>=1.30
-anthropic>=0.34
+# LLM API (free tier — no OpenAI/Anthropic needed)
 google-generativeai>=0.7
 
 # modeling (GPU steps — also fine to install only on Colab)
@@ -24,8 +20,17 @@ torch>=2.2
 transformers>=4.44
 datasets>=2.20
 accelerate>=0.30
+bitsandbytes>=0.43   # 4-bit quantization (QLoRA / free T4)
+peft>=0.11           # LoRA adapters
 evaluate>=0.4
 scikit-learn>=1.4
+
+# auto-labeling
+bert-score>=0.3.13
+
+# API backend
+fastapi>=0.110
+uvicorn>=0.29
 
 # logging / publish
 wandb>=0.17

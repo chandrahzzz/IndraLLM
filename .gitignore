@@ -44,6 +44,9 @@ data/questions/*
 data/final/*
 !data/**/.gitkeep
 
+# ---- Private notes ----
+PREVKNOWLEDGE.MD
+
 # ---- OS / editor ----
 .DS_Store
 Thumbs.db

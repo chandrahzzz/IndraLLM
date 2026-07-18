@@ -1,24 +1,58 @@
-"""Aggregate per-annotator labels into the final benchmark dataset.
+"""Aggregate labels into the final benchmark dataset + stratified splits.
 
-Rule: agreement -> keep label. Disagreement -> use adjudicator's label if an
-adjudicator CSV exists (annotator_adjudicator.csv), else drop the example.
+Two modes:
+  --auto (default pipeline): data/final/benchmark.csv already produced by
+      annotation/auto_label.py (BERTScore silver labels + human verification);
+      only the stratified train/val/test splits are written.
+  Label Studio mode (no flag): aggregate per-annotator CSVs. Agreement -> keep
+      label. Disagreement -> adjudicator's label if annotator_adjudicator.csv
+      exists, else drop. 'unanswerable' dropped.
 
-Output: data/final/benchmark.csv with columns
-    qid, language, domain, question, model, answer, label, category, ground_truth
-where label = 0 (correct) or 1 (hallucinated). 'unanswerable' verdicts are dropped.
-
-Also writes stratified train/val/test splits (per detection.split in config.yaml).
+Output: data/final/benchmark.csv + train/val/test.csv
+(label = 0 correct, 1 hallucinated; split per detection.split in config.yaml).
 
 Usage:
+    python -m indrallm.annotation.aggregate_labels --auto
     python -m indrallm.annotation.aggregate_labels
 """
 
 from __future__ import annotations
 
+import argparse
+
 import numpy as np
 import pandas as pd
 
 from indrallm.config import CFG, path
+
+
+def write_splits(final: pd.DataFrame) -> None:
+    """Stratified (language x label) train/val/test splits, seeded."""
+    out_dir = path("final")
+    rng = np.random.default_rng(CFG["detection"]["seed"])
+    tr, va, _ = CFG["detection"]["split"]
+    final = final.sample(frac=1, random_state=CFG["detection"]["seed"]).reset_index(drop=True)
+    splits = {"train": [], "val": [], "test": []}
+    for _, grp in final.groupby(["language", "label"]):
+        n = len(grp)
+        idx = rng.permutation(n)
+        n_tr, n_va = int(n * tr), int(n * va)
+        splits["train"].append(grp.iloc[idx[:n_tr]])
+        splits["val"].append(grp.iloc[idx[n_tr:n_tr + n_va]])
+        splits["test"].append(grp.iloc[idx[n_tr + n_va:]])
+    for name, parts in splits.items():
+        df = pd.concat(parts, ignore_index=True)
+        df.to_csv(out_dir / f"{name}.csv", index=False)
+        print(f"  {name}: {len(df)}")
+
+
+def main_auto() -> None:
+    bench_file = path("final") / "benchmark.csv"
+    if not bench_file.exists():
+        raise SystemExit("benchmark.csv missing — run annotation.auto_label first")
+    final = pd.read_csv(bench_file)
+    print(f"benchmark: {len(final)} examples ({final['label'].mean():.1%} hallucinated)")
+    write_splits(final)
 
 
 def main() -> None:
@@ -70,24 +104,12 @@ def main() -> None:
     final.to_csv(out_dir / "benchmark.csv", index=False)
     print(f"benchmark: {len(final)} examples "
           f"({final['label'].mean():.1%} hallucinated, {n_dropped} unresolved dropped)")
-
-    # stratified split by (language, label)
-    rng = np.random.default_rng(CFG["detection"]["seed"])
-    tr, va, _ = CFG["detection"]["split"]
-    final = final.sample(frac=1, random_state=CFG["detection"]["seed"]).reset_index(drop=True)
-    splits = {"train": [], "val": [], "test": []}
-    for _, grp in final.groupby(["language", "label"]):
-        n = len(grp)
-        idx = rng.permutation(n)
-        n_tr, n_va = int(n * tr), int(n * va)
-        splits["train"].append(grp.iloc[idx[:n_tr]])
-        splits["val"].append(grp.iloc[idx[n_tr:n_tr + n_va]])
-        splits["test"].append(grp.iloc[idx[n_tr + n_va:]])
-    for name, parts in splits.items():
-        df = pd.concat(parts, ignore_index=True)
-        df.to_csv(out_dir / f"{name}.csv", index=False)
-        print(f"  {name}: {len(df)}")
+    write_splits(final)
 
 
 if __name__ == "__main__":
-    main()
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--auto", action="store_true",
+                    help="split the auto-labeled benchmark.csv (BERTScore pipeline)")
+    args = ap.parse_args()
+    main_auto() if args.auto else main()

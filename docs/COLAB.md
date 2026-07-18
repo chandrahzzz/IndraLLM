@@ -1,8 +1,21 @@
 # Running GPU steps on Google Colab / Kaggle
 
 GPU needed for: `detection.train_indicbert`, `mitigation.contrastive_decoding`,
-and `generation.generate_answers` with `hf_local` models (sarvam/llama3/airavata/gemma).
-Everything else runs on your laptop.
+`mitigation.lora_finetune`, and `generation.generate_answers` with `hf_local`
+models (sarvam/llama3/airavata/gemma). Everything else runs on your laptop.
+
+**Golden rule: ONE hf_local model per Colab session.** Generate answers, save
+the CSV, Runtime -> Restart session (clears VRAM), then run the next model:
+
+```bash
+python -m indrallm.generation.generate_answers --models sarvam
+# restart runtime
+python -m indrallm.generation.generate_answers --models llama3
+# restart runtime
+python -m indrallm.generation.generate_answers --models airavata
+# restart runtime
+python -m indrallm.generation.generate_answers --models gemma
+```
 
 ## Colab recipe
 
@@ -49,8 +62,10 @@ drive.mount('/content/drive')
 !python -m indrallm.mitigation.contrastive_decoding --eval --limit 100
 ```
 
-Sarvam-2B in bf16 fits comfortably on a free T4 (16 GB). Llama-3-8B needs A100
-or 4-bit quantization (add `load_in_4bit=True` via bitsandbytes if T4-bound).
+All hf_local + mitigation models load in **4-bit by default**
+(`generation.load_in_4bit` / `mitigation.load_in_4bit` in config.yaml), so
+Sarvam-2B (~7 GB) and even Llama-3-8B fit a free T4 (16 GB). If OOM anyway:
+reduce `detection.max_length` 256 -> 128 for training.
 
 ## Kaggle alternative
 

@@ -12,7 +12,7 @@ function-word lexicons per language.
 
 Usage:
     python -m indrallm.collection.codeswitch_filter            # all raw CSVs
-    python -m indrallm.collection.codeswitch_filter --file data/raw/twitter_ta.csv
+    python -m indrallm.collection.codeswitch_filter --file data/raw/reddit.csv
 """
 
 from __future__ import annotations
@@ -42,11 +42,13 @@ ROMANIZED_HINTS = {
     "hi": {"kya", "kaise", "kyu", "kyun", "hai", "hain", "nahi", "nahin", "mujhe",
            "chahiye", "karna", "hona", "lena", "jaana", "krna", "mera", "apna"},
     "te": {"enti", "emi", "ela", "undi", "unnayi", "untayi", "kavali", "cheyali",
-           "ledu", "nenu", "naaku", "ekkada", "eppudu", "chala", "baga"},
+           "ledu", "nenu", "naaku", "ekkada", "eppudu", "chala", "baga",
+           "kuda", "emiti", "enduku", "unda", "avuna"},
     "bn": {"ki", "kemon", "kothay", "ache", "nei", "amar", "tumi", "korbo",
            "korte", "hobe", "keno", "kobe", "bhalo", "onek"},
     "kn": {"yenu", "hege", "elli", "ide", "illa", "beku", "madbeku", "yaake",
-           "yavaga", "nanu", "nanna", "tumba", "swalpa"},
+           "yavaga", "nanu", "nanna", "tumba", "swalpa",
+           "gottilla", "banni", "madtini", "aagide", "ella"},
 }
 
 _ft_model = None

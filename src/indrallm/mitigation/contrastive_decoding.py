@@ -54,8 +54,14 @@ class ContrastiveDecoder:
         self.max_new = m["max_new_tokens"]
         name = model_name or m["model"]
         self.tokenizer = AutoTokenizer.from_pretrained(name)
-        self.model = AutoModelForCausalLM.from_pretrained(
-            name, torch_dtype=torch.bfloat16, device_map="auto")
+        kwargs: dict = {"device_map": "auto"}
+        if m.get("load_in_4bit"):  # ~7 GB VRAM — fits free Colab T4
+            from transformers import BitsAndBytesConfig
+            kwargs["quantization_config"] = BitsAndBytesConfig(
+                load_in_4bit=True, bnb_4bit_compute_dtype=torch.bfloat16)
+        else:
+            kwargs["torch_dtype"] = torch.bfloat16
+        self.model = AutoModelForCausalLM.from_pretrained(name, **kwargs)
         self.torch = torch
 
     def _prep(self, prompt: str):

@@ -34,19 +34,25 @@ filtering:
 generation:
   max_tokens: 256
   temperature: 0.3
-  models:
-    gpt-4o:      {provider: openai,    model: gpt-4o}
-    gpt-4o-mini: {provider: openai,    model: gpt-4o-mini}
-    claude:      {provider: anthropic, model: claude-sonnet-5}
-    gemini:      {provider: google,    model: gemini-1.5-pro}
-    sarvam:      {provider: hf_local,  model: sarvamai/sarvam-2b-v0.5}
-    llama3:      {provider: hf_local,  model: meta-llama/Meta-Llama-3-8B-Instruct}
-    airavata:    {provider: hf_local,  model: ai4bharat/Airavata}
-    gemma:       {provider: hf_local,  model: google/gemma-2-9b-it}
+  load_in_4bit: true        # hf_local models: 4-bit quantization so 8B fits a free T4
+  models:                   # FREE only: Gemini free tier + local HF on Colab
+    gemini-flash: {provider: google,   model: gemini-1.5-flash}
+    sarvam:       {provider: hf_local, model: sarvamai/sarvam-2b-v0.5}
+    llama3:       {provider: hf_local, model: meta-llama/Meta-Llama-3-8B-Instruct}
+    airavata:     {provider: hf_local, model: ai4bharat/Airavata}
+    gemma:        {provider: hf_local, model: google/gemma-2-9b-it}
+
+gold:                       # gold-truth QA generation (Gemini free tier)
+  model: gemini-1.5-flash
+  sleep_seconds: 4          # ~15 requests/min, free-tier safe
+  synthetic_per_prompt: 5   # sentences per (language, domain) request
 
 annotation:
   annotators_per_example: 2
   min_kappa: 0.75
+  # BERTScore silver labeling (auto_label.py)
+  bertscore_threshold: 0.65   # F1 below this -> hallucinated
+  verify_band: [0.55, 0.75]   # ambiguous band exported for human verification
 
 detection:
   base_model: ai4bharat/IndicBERTv2-MLM-only
@@ -62,6 +68,24 @@ mitigation:
   alpha: 1.0
   beta: 0.5
   max_new_tokens: 256
+  load_in_4bit: true        # ~7 GB VRAM on free T4
+
+lora:                       # QLoRA SFT on correct answers (mitigation/lora_finetune.py)
+  r: 8
+  alpha: 16
+  target_modules: [q_proj, v_proj]
+  epochs: 3
+  lr: 2.0e-4
+  batch_size: 4
+  grad_accum: 4
+
+nli:                        # zero-shot NLI hallucination judge baseline
+  model: microsoft/deberta-large-mnli
+  entail_threshold: 0.5     # entailment prob below this -> hallucinated
+
+api:                        # FastAPI detector server
+  host: 0.0.0.0
+  port: 8000
 
 hub:
   dataset_repo: VIT-NLP/IndraLLM-Benchmark
