@@ -52,9 +52,10 @@ def main() -> None:
     args = ap.parse_args()
 
     import google.generativeai as genai
+    from indrallm.collection.build_gold_qa import RotatingGemini
     genai.configure(api_key=api_key("GOOGLE_API_KEY"))
     g = CFG["gold"]
-    model = genai.GenerativeModel(g.get("seed_model", g["model"]))
+    model = RotatingGemini()  # rotate pool for 4x free-tier throughput
     per_prompt = g["synthetic_per_prompt"]
 
     out_path = path("raw") / "synthetic.csv"
@@ -69,16 +70,15 @@ def main() -> None:
             f"naturally). Output just the questions, one per line, no numbering."
         )
         try:
-            resp = generate_with_retry(model, prompt,
-                                       generation_config={"temperature": 1.0})
-            for line in resp.text.strip().splitlines():
+            resp_text = model.generate(prompt, generation_config={"temperature": 1.0})
+            for line in resp_text.strip().splitlines():
                 line = line.strip().lstrip("-*0123456789. ")
                 if line:
                     rows.append({"source": "synthetic", "language": lang_code,
                                  "domain": domain, "text": line})
         except Exception as e:  # rate limit / safety block — skip combo, keep going
             print(f"  skip {lang_code}/{domain}: {e}")
-        time.sleep(g["sleep_seconds"])
+        time.sleep(1)  # rotation handles rate limits; light spacing only
 
     df = pd.DataFrame(rows).drop_duplicates(subset="text")
     if out_path.exists():  # append across runs, dedup

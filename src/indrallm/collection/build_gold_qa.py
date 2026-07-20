@@ -22,8 +22,53 @@ from tqdm import tqdm
 
 from indrallm.config import CFG, LANGUAGES, path
 
+# Free tier gives EACH model its own daily request quota, so rotating across a
+# pool multiplies daily throughput (~N models x per-model RPD).
+GEMINI_POOL = [
+    "gemini-2.5-flash-lite",
+    "gemini-2.5-flash",
+    "gemini-flash-latest",
+    "gemini-3-flash-preview",
+]
+
+
+class RotatingGemini:
+    """Round-robins a pool of Gemini models; on 429 drops to the next model and
+    only sleeps once every model in the pool is rate-limited."""
+
+    def __init__(self, models: list[str] | None = None):
+        import google.generativeai as genai
+        names = models or GEMINI_POOL
+        self._models = [genai.GenerativeModel(n) for n in names]
+        self._names = names
+        self._i = 0
+
+    def generate(self, prompt: str, **kwargs) -> str:
+        import re as _re
+        n = len(self._models)
+        consecutive_429 = 0
+        while True:
+            idx = self._i % n
+            try:
+                resp = self._models[idx].generate_content(prompt, **kwargs)
+                return resp.text
+            except Exception as e:
+                msg = str(e)
+                is_429 = "429" in msg or "ResourceExhausted" in type(e).__name__
+                if not is_429:
+                    raise
+                self._i += 1
+                consecutive_429 += 1
+                if consecutive_429 >= n:  # whole pool exhausted -> back off
+                    m = _re.search(r"seconds:?\s*(\d+)", msg)
+                    wait = int(m.group(1)) + 2 if m else 30
+                    print(f"  all {n} models rate-limited — waiting {wait}s")
+                    time.sleep(wait)
+                    consecutive_429 = 0
+
+
 def generate_with_retry(model, prompt: str, retries: int = 4, **kwargs):
-    """Call Gemini; on 429 sleep the server-suggested delay (or 30s) and retry."""
+    """Single-model 429 retry (kept for seeder; honors server retry_delay)."""
     import re as _re
     for attempt in range(retries):
         try:
@@ -59,7 +104,7 @@ def main() -> None:
     from indrallm.config import api_key
     genai.configure(api_key=api_key("GOOGLE_API_KEY"))
     g = CFG["gold"]
-    model = genai.GenerativeModel(g["model"])
+    model = RotatingGemini()  # rotates the pool for 4x free-tier throughput
 
     files = sorted(path("filtered").glob("*.csv"))
     if not files:
@@ -81,9 +126,9 @@ def main() -> None:
     rows: list[dict] = []
     for r in tqdm(todo.itertuples(), total=len(todo), desc="gold QA"):
         try:
-            resp = generate_with_retry(model, PROMPT.format(
+            resp_text = model.generate(PROMPT.format(
                 text=r.text, lang_name=LANGUAGES[r.language]))
-            parts = [p.strip() for p in resp.text.strip().split("|")]
+            parts = [p.strip() for p in resp_text.strip().split("|")]
             if len(parts) != 3 or not all(parts):
                 print(f"  bad format, skip: {str(r.text)[:60]}")
                 continue
