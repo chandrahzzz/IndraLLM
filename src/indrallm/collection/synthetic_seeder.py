@@ -58,10 +58,24 @@ def main() -> None:
     model = RotatingGemini()  # rotate pool for 4x free-tier throughput
     per_prompt = g["synthetic_per_prompt"]
 
+    from indrallm.collection.build_gold_qa import QuotaExhausted
+
     out_path = path("raw") / "synthetic.csv"
     rows: list[dict] = []
+
+    def flush():
+        nonlocal rows
+        if not rows:
+            return
+        df = pd.DataFrame(rows).drop_duplicates(subset="text")
+        if out_path.exists():
+            df = pd.concat([pd.read_csv(out_path), df]).drop_duplicates(subset="text")
+        df.to_csv(out_path, index=False)
+        rows = []  # persisted; start fresh
+
     combos = [(lc, ln, d) for lc, ln in LANGUAGES.items() for d in DOMAINS] * args.rounds
-    for lang_code, lang_name, domain in tqdm(combos, desc="synthetic"):
+    quota_done = False
+    for i, (lang_code, lang_name, domain) in enumerate(tqdm(combos, desc="synthetic")):
         spice = ", ".join(random.sample(SUBTOPICS[domain], 2))
         prompt = (
             f"Generate {per_prompt} factual QUESTIONS a real Indian user might ask about "
@@ -76,15 +90,20 @@ def main() -> None:
                 if line:
                     rows.append({"source": "synthetic", "language": lang_code,
                                  "domain": domain, "text": line})
-        except Exception as e:  # rate limit / safety block — skip combo, keep going
+        except QuotaExhausted:
+            print("\ndaily Gemini quota spent — saving progress, resume tomorrow")
+            quota_done = True
+            break
+        except Exception as e:  # safety block etc — skip combo, keep going
             print(f"  skip {lang_code}/{domain}: {e}")
-        time.sleep(1)  # rotation handles rate limits; light spacing only
+        if i % 20 == 0 and i:  # periodic checkpoint
+            flush()
+        time.sleep(1)
 
-    df = pd.DataFrame(rows).drop_duplicates(subset="text")
-    if out_path.exists():  # append across runs, dedup
-        df = pd.concat([pd.read_csv(out_path), df]).drop_duplicates(subset="text")
-    df.to_csv(out_path, index=False)
-    print(f"saved {len(df)} synthetic seeds -> {out_path}")
+    flush()
+    total = len(pd.read_csv(out_path)) if out_path.exists() else 0
+    print(f"synthetic.csv now holds {total} seeds"
+          + (" (quota-limited this run)" if quota_done else ""))
 
 
 if __name__ == "__main__":

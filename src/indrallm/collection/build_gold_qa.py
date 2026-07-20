@@ -32,6 +32,10 @@ GEMINI_POOL = [
 ]
 
 
+class QuotaExhausted(RuntimeError):
+    """All models in the pool are rate-limited; daily free quota is spent."""
+
+
 class RotatingGemini:
     """Round-robins a pool of Gemini models; on 429 drops to the next model and
     only sleeps once every model in the pool is rate-limited."""
@@ -43,10 +47,14 @@ class RotatingGemini:
         self._names = names
         self._i = 0
 
-    def generate(self, prompt: str, **kwargs) -> str:
+    def generate(self, prompt: str, max_pool_waits: int = 2, **kwargs) -> str:
+        """Rotate the pool; sleep+retry once the whole pool is 429. Raises
+        QuotaExhausted after `max_pool_waits` full-pool backoffs so callers can
+        checkpoint and stop instead of spinning forever (daily quota is gone)."""
         import re as _re
         n = len(self._models)
         consecutive_429 = 0
+        pool_waits = 0
         while True:
             idx = self._i % n
             try:
@@ -60,11 +68,16 @@ class RotatingGemini:
                 self._i += 1
                 consecutive_429 += 1
                 if consecutive_429 >= n:  # whole pool exhausted -> back off
+                    if pool_waits >= max_pool_waits:
+                        raise QuotaExhausted(
+                            "all Gemini models rate-limited (daily free quota "
+                            "spent) — resume after reset")
                     m = _re.search(r"seconds:?\s*(\d+)", msg)
                     wait = int(m.group(1)) + 2 if m else 30
                     print(f"  all {n} models rate-limited — waiting {wait}s")
                     time.sleep(wait)
                     consecutive_429 = 0
+                    pool_waits += 1
 
 
 def generate_with_retry(model, prompt: str, retries: int = 4, **kwargs):
@@ -139,12 +152,15 @@ def main() -> None:
                 "source_text": r.text,
                 "context": parts[0], "question": parts[1], "gold_answer": parts[2],
             })
+        except QuotaExhausted:
+            print("\ndaily Gemini quota spent — checkpointing, resume tomorrow")
+            _flush(rows, out_path); rows = []
+            break
         except Exception as e:
             print(f"  skip: {e}")
+        if len(rows) >= 25:  # checkpoint
+            _flush(rows, out_path); rows = []
         time.sleep(g["sleep_seconds"])
-        if len(rows) % 25 == 0 and rows:  # checkpoint
-            _flush(rows, out_path)
-            rows = []
     _flush(rows, out_path)
 
     # rebuild qids + questions.csv for the generation stage
