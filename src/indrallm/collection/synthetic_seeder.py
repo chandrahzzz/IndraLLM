@@ -14,12 +14,35 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import random
 import time
 
 import pandas as pd
 from tqdm import tqdm
 
+from indrallm.collection.build_gold_qa import generate_with_retry
 from indrallm.config import CFG, DOMAINS, LANGUAGES, api_key, path
+
+# Per-domain subtopic spices — 2 random ones per request so repeated rounds
+# don't regenerate the same questions (dedup was eating ~90% without this).
+SUBTOPICS = {
+    "health": ["fever and dengue", "diabetes/sugar", "BP", "pregnancy care",
+               "child vaccination", "eye problems", "dental", "mental health",
+               "ayurveda vs allopathy", "health insurance", "generic medicines",
+               "first aid", "skin problems", "diet and nutrition"],
+    "education": ["NEET/JEE prep", "scholarships", "college admission",
+                  "school fees", "online classes", "exam results", "hostel life",
+                  "engineering vs arts", "study abroad", "government schools",
+                  "coaching centres", "degree certificates"],
+    "government": ["Aadhaar", "ration card", "PAN card", "voter ID", "passport",
+                   "driving license", "pension schemes", "PM-Kisan", "MGNREGA",
+                   "property registration", "income certificate", "RTI",
+                   "electricity bill", "water connection"],
+    "agriculture": ["crop insurance", "fertilizer subsidy", "drip irrigation",
+                    "seed varieties", "mandi prices", "soil testing",
+                    "organic farming", "tractor loans", "pest control",
+                    "monsoon planning", "dairy farming", "cold storage"],
+}
 
 
 def main() -> None:
@@ -31,21 +54,23 @@ def main() -> None:
     import google.generativeai as genai
     genai.configure(api_key=api_key("GOOGLE_API_KEY"))
     g = CFG["gold"]
-    model = genai.GenerativeModel(g["model"])
+    model = genai.GenerativeModel(g.get("seed_model", g["model"]))
     per_prompt = g["synthetic_per_prompt"]
 
     out_path = path("raw") / "synthetic.csv"
     rows: list[dict] = []
     combos = [(lc, ln, d) for lc, ln in LANGUAGES.items() for d in DOMAINS] * args.rounds
     for lang_code, lang_name, domain in tqdm(combos, desc="synthetic"):
+        spice = ", ".join(random.sample(SUBTOPICS[domain], 2))
         prompt = (
             f"Generate {per_prompt} factual QUESTIONS a real Indian user might ask about "
-            f"{domain}, written in Romanized {lang_name}-English code-switching "
-            f"(Latin alphabet only, mixing {lang_name} and English words naturally). "
-            f"Vary the topics. Output just the questions, one per line, no numbering."
+            f"{domain} (specifically: {spice}), written in Romanized {lang_name}-English "
+            f"code-switching (Latin alphabet only, mixing {lang_name} and English words "
+            f"naturally). Output just the questions, one per line, no numbering."
         )
         try:
-            resp = model.generate_content(prompt)
+            resp = generate_with_retry(model, prompt,
+                                       generation_config={"temperature": 1.0})
             for line in resp.text.strip().splitlines():
                 line = line.strip().lstrip("-*0123456789. ")
                 if line:

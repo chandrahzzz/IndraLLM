@@ -38,17 +38,27 @@ SCRIPT_RANGES = {
 # high-precision: one hit + majority-English text is strong code-switch evidence.
 ROMANIZED_HINTS = {
     "ta": {"enna", "epdi", "eppadi", "iruku", "irukku", "illa", "vendum", "venum",
-           "edukkanum", "pannanum", "seri", "romba", "konjam", "inga", "anga", "nalla"},
+           "edukkanum", "pannanum", "seri", "romba", "konjam", "inga", "anga", "nalla",
+           "panna", "pannalama", "mudiyuma", "aguma", "irukka", "epo", "eppo",
+           "yaru", "enga", "vangalam", "kudukanum", "sollunga", "theriyuma"},
     "hi": {"kya", "kaise", "kyu", "kyun", "hai", "hain", "nahi", "nahin", "mujhe",
-           "chahiye", "karna", "hona", "lena", "jaana", "krna", "mera", "apna"},
+           "chahiye", "karna", "hona", "lena", "jaana", "krna", "mera", "apna",
+           "karein", "hoga", "hogi", "milega", "milta", "milti", "sakta", "sakte",
+           "banwana", "karwana", "batao", "bataye", "kitna", "kitne", "kahan"},
     "te": {"enti", "emi", "ela", "undi", "unnayi", "untayi", "kavali", "cheyali",
            "ledu", "nenu", "naaku", "ekkada", "eppudu", "chala", "baga",
-           "kuda", "emiti", "enduku", "unda", "avuna"},
+           "kuda", "emiti", "enduku", "unda", "avuna",
+           "avvali", "ayindi", "cheyyali", "teesukovali", "untundi", "vastundi",
+           "cheppandi", "telusa", "dorukutundi", "chesukovali", "padutundi"},
     "bn": {"ki", "kemon", "kothay", "ache", "nei", "amar", "tumi", "korbo",
-           "korte", "hobe", "keno", "kobe", "bhalo", "onek"},
+           "korte", "hobe", "keno", "kobe", "bhalo", "onek",
+           "korbo", "korar", "jonno", "kivabe", "kibhabe", "pabo", "korte",
+           "lagbe", "dorkar", "bolun", "janate", "chai", "amake"},
     "kn": {"yenu", "hege", "elli", "ide", "illa", "beku", "madbeku", "yaake",
            "yavaga", "nanu", "nanna", "tumba", "swalpa",
-           "gottilla", "banni", "madtini", "aagide", "ella"},
+           "gottilla", "banni", "madtini", "aagide", "ella",
+           "nalli", "madabeku", "sigutte", "sigutta", "ideyena", "idya",
+           "maadi", "maadalu", "helide", "helabeku", "aagutte", "andre"},
 }
 
 _ft_model = None
@@ -103,12 +113,18 @@ def detect_codeswitch(text: str, expected_lang: str | None = None) -> dict:
     except (ImportError, ValueError):
         pass  # fasttext not installed or lid.176.bin missing — lexicon signal still runs
 
-    # Signal 3: romanized lexicon vote (needs English present)
+    # Signal 3: romanized lexicon vote (needs mostly-Latin text, no native script)
+    # digits/punctuation tokens count as neutral, not as script violations
+    native_any = any(s in SCRIPT_RANGES for s in scripts)
+    mostly_latin = not native_any and latin >= 0.7 * len(toks)
     lower = {t.lower() for t in toks}
-    candidates = [expected_lang] if expected_lang else list(ROMANIZED_HINTS)
+    candidates = ([expected_lang] if expected_lang else []) + \
+        [l for l in ROMANIZED_HINTS if l != expected_lang]
     for lang in candidates:
         hits = lower & ROMANIZED_HINTS.get(lang, set())
-        if len(hits) >= 2 and latin == len(toks):
+        # 2 hits from any language, or 1 hit when it matches the declared language
+        enough = len(hits) >= 2 or (len(hits) >= 1 and lang == expected_lang)
+        if enough and mostly_latin:
             return {"is_cs": True, "method": "romanized_lexicon", "lang": lang}
 
     return {"is_cs": False, "method": "none", "lang": None}
@@ -118,8 +134,13 @@ def filter_file(csv_path: Path) -> pd.DataFrame:
     df = pd.read_csv(csv_path)
     if "text" not in df.columns:
         raise ValueError(f"{csv_path} needs a 'text' column")
-    expected = df["language"].iloc[0] if "language" in df.columns else None
-    results = df["text"].astype(str).apply(lambda t: detect_codeswitch(t, expected))
+    # per-row expected language (files may mix languages, e.g. synthetic.csv)
+    if "language" in df.columns:
+        results = df.apply(lambda r: detect_codeswitch(
+            str(r["text"]), r["language"] if r["language"] in ROMANIZED_HINTS else None),
+            axis=1)
+    else:
+        results = df["text"].astype(str).apply(lambda t: detect_codeswitch(t, None))
     df["is_cs"] = results.apply(lambda r: r["is_cs"])
     df["cs_method"] = results.apply(lambda r: r["method"])
     df["cs_lang"] = results.apply(lambda r: r["lang"])

@@ -22,6 +22,24 @@ from tqdm import tqdm
 
 from indrallm.config import CFG, LANGUAGES, path
 
+def generate_with_retry(model, prompt: str, retries: int = 4, **kwargs):
+    """Call Gemini; on 429 sleep the server-suggested delay (or 30s) and retry."""
+    import re as _re
+    for attempt in range(retries):
+        try:
+            return model.generate_content(prompt, **kwargs)
+        except Exception as e:
+            msg = str(e)
+            if "429" in msg or "ResourceExhausted" in type(e).__name__:
+                m = _re.search(r"seconds:?\s*(\d+)", msg)
+                wait = int(m.group(1)) + 2 if m else 30
+                print(f"  429 — waiting {wait}s (attempt {attempt + 1}/{retries})")
+                time.sleep(wait)
+                continue
+            raise
+    raise RuntimeError("still rate-limited after retries")
+
+
 PROMPT = """Given this code-mixed sentence: "{text}"
 
 1. Write a 2-sentence factual English context related to it.
@@ -63,7 +81,7 @@ def main() -> None:
     rows: list[dict] = []
     for r in tqdm(todo.itertuples(), total=len(todo), desc="gold QA"):
         try:
-            resp = model.generate_content(PROMPT.format(
+            resp = generate_with_retry(model, PROMPT.format(
                 text=r.text, lang_name=LANGUAGES[r.language]))
             parts = [p.strip() for p in resp.text.strip().split("|")]
             if len(parts) != 3 or not all(parts):

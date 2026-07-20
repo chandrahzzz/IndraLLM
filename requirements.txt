@@ -1,6 +1,6 @@
 # core
 pandas>=2.0
-numpy>=1.24
+numpy>=1.24,<2     # fasttext-wheel 0.9.2 breaks on numpy 2.x
 pyyaml>=6.0
 python-dotenv>=1.0
 tqdm>=4.66
