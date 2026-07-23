@@ -35,12 +35,16 @@ generation:
   max_tokens: 256
   temperature: 0.3
   load_in_4bit: true        # hf_local models: 4-bit quantization so 8B fits a free T4
-  models:                   # FREE only: Gemini free tier + local HF on Colab
-    gemini-flash: {provider: google,   model: gemini-2.5-flash}
+  models:
+    # laptop, cheap API (Groq) or free (Gemini) — no GPU needed
+    gemini-flash: {provider: google, model: gemini-2.5-flash}
+    llama3:       {provider: groq,   model: llama-3.1-8b-instant}
+    llama70b:     {provider: groq,   model: llama-3.3-70b-versatile}
+    qwen:         {provider: groq,   model: qwen/qwen3.6-27b}
+    gpt-oss:      {provider: groq,   model: openai/gpt-oss-20b}
+    # Colab GPU only — Indic models Groq doesn't host
     sarvam:       {provider: hf_local, model: sarvamai/sarvam-2b-v0.5}
-    llama3:       {provider: hf_local, model: meta-llama/Meta-Llama-3-8B-Instruct}
     airavata:     {provider: hf_local, model: ai4bharat/Airavata}
-    gemma:        {provider: hf_local, model: google/gemma-2-9b-it}
 
 gold:                       # gold-truth QA generation (Gemini free tier)
   model: gemini-2.5-flash        # gold answers — quality matters (ground truth)

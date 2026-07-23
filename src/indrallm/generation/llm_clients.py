@@ -1,10 +1,12 @@
-"""Unified interface over the (free) LLM providers used to generate candidate answers.
+"""Unified interface over the LLM providers used to generate candidate answers.
 
 Each client exposes `generate(prompt: str) -> str`.
   - `google`   — Gemini free tier, runs on a laptop.
-  - `hf_local` — local HF causal LM, 4-bit by default so Llama-3-8B fits a free
-    Colab T4 (see docs/COLAB.md). Load ONE model per Colab session; restart the
-    runtime between models to clear VRAM.
+  - `groq`     — Groq-hosted open models (Llama-3, Gemma) over an OpenAI-compatible
+    API; fast + very cheap, runs on a laptop (no GPU). Needs GROQ_API_KEY.
+  - `hf_local` — local HF causal LM, 4-bit by default so a model fits a free Colab
+    T4 (see docs/COLAB.md). Only for Indic models Groq doesn't host (Sarvam,
+    Airavata). Load ONE per Colab session; restart the runtime between models.
 """
 
 from __future__ import annotations
@@ -33,6 +35,26 @@ class GoogleClient:
             },
         )
         return resp.text
+
+
+class GroqClient:
+    """Groq-hosted open models via the OpenAI-compatible endpoint. CPU-only laptop."""
+
+    def __init__(self, model: str):
+        from openai import OpenAI
+        self.client = OpenAI(api_key=api_key("GROQ_API_KEY"),
+                             base_url="https://api.groq.com/openai/v1")
+        self.model = model
+
+    def generate(self, prompt: str) -> str:
+        resp = self.client.chat.completions.create(
+            model=self.model,
+            max_tokens=CFG["generation"]["max_tokens"],
+            temperature=CFG["generation"]["temperature"],
+            messages=[{"role": "system", "content": SYSTEM_PROMPT},
+                      {"role": "user", "content": prompt}],
+        )
+        return resp.choices[0].message.content or ""
 
 
 class HFLocalClient:
@@ -74,6 +96,7 @@ class HFLocalClient:
 
 PROVIDERS = {
     "google": GoogleClient,
+    "groq": GroqClient,
     "hf_local": HFLocalClient,
 }
 
