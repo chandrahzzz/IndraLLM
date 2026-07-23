@@ -40,16 +40,35 @@ def auto_label() -> None:
 
     from bert_score import score
 
+    # BERTScore on CPU segfaults on repeated per-file model loads and on very
+    # long/empty inputs. Score ONCE over all files with a light model, clamped.
+    MAX_CHARS = 2000
+
+    def clean(s: str) -> str:
+        s = str(s).strip()
+        return s[:MAX_CHARS] if s else "[no answer]"
+
     frames = []
     for f in answer_files:
         df = pd.read_csv(f).merge(gold, on="qid", how="inner")
+        if df.empty:
+            print(f"{f.stem}: no qid overlap with gold, skipping")
+            continue
         df["answer"] = df["answer"].fillna("")
-        print(f"{f.stem}: scoring {len(df)} answers with BERTScore...")
-        _, _, f1 = score(df["answer"].tolist(), df["gold_answer"].tolist(),
-                         lang="en", verbose=True)
-        df["bertscore_f1"] = f1.tolist()
         frames.append(df)
+    if not frames:
+        raise SystemExit("no answers overlap the gold qids")
     allans = pd.concat(frames, ignore_index=True)
+
+    print(f"scoring {len(allans)} answers with BERTScore (single pass)...")
+    _, _, f1 = score(
+        allans["answer"].map(clean).tolist(),
+        allans["gold_answer"].map(clean).tolist(),
+        model_type="distilbert-base-uncased", num_layers=5,  # light, CPU-safe
+        verbose=True, batch_size=32,
+    )
+    allans["bertscore_f1"] = [float(x) for x in f1]
+    allans.loc[allans["answer"].str.strip() == "", "bertscore_f1"] = 0.0
 
     thr = CFG["annotation"]["bertscore_threshold"]
     lo, hi = CFG["annotation"]["verify_band"]
