@@ -163,9 +163,18 @@ def main() -> None:
         time.sleep(g["sleep_seconds"])
     _flush(rows, out_path)
 
-    # rebuild qids + questions.csv for the generation stage
+    # rebuild qids + questions.csv for the generation stage.
+    # qid is a stable hash of (language, source_text) so adding more questions in
+    # a later run does NOT renumber existing ones (keeps prior answers valid).
+    import hashlib
+
+    def make_qid(lang: str, src: str) -> str:
+        h = hashlib.sha1(f"{lang}|{src}".encode("utf-8")).hexdigest()[:8]
+        return f"{lang}-{h}"
+
     gold = pd.read_csv(out_path)
-    gold["qid"] = [f"{r.language}-{i:04d}" for i, r in enumerate(gold.itertuples())]
+    gold["qid"] = [make_qid(r.language, str(r.source_text)) for r in gold.itertuples()]
+    gold = gold.drop_duplicates(subset="qid")
     gold.to_csv(out_path, index=False)
     q = gold.rename(columns={})[["qid", "language", "domain", "question", "source"]]
     qfile = path("questions") / "questions.csv"
