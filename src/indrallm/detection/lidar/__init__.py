@@ -1,15 +1,19 @@
-"""LIDAR — Language-Identity-Aware hallucination features.
+"""Internal-signal hallucination probes for code-switched text.
 
-Stage 1 (lid): rule-based token-level language identification.
-Stage 2 (features): Boundary-Coherence, Cross-Lingual-Semantic, Language-Entropy.
+After the surface-feature approaches (CLSC/LES/BCS, cross-lingual alignment, and
+the linguistic fidelity filter) were empirically rejected — none separated
+hallucinated from correct answers on the LLM-judge labels (AUC 0.50-0.64) — this
+package keeps only the model-internal probes:
 
-This package deliberately starts as a *falsifiable probe*, not the full
-multi-head transformer. If the Stage-2 features do not separate hallucinated
-from correct answers on real (non-empty) labeled data, the premise is dead and
-no downstream classifier rescues it. Run `python -m indrallm.detection.lidar.probe`.
+  internal_probes  HSD (hidden-state divergence), AE (attention entropy),
+                   UC (uncertainty calibration) — from a single forward pass.
+  self_consistency RSC — divergence across re-sampled generations.
+
+Extract with `feature_cache`, gate with `indrallm.evaluation.feature_report`.
+`lid.py` (token-level language ID) is retained; internal probes may still key on
+language-switch positions.
 """
 
 from indrallm.detection.lidar.lid import token_lid
-from indrallm.detection.lidar.features import extract_features, FEATURE_NAMES
 
-__all__ = ["token_lid", "extract_features", "FEATURE_NAMES"]
+__all__ = ["token_lid"]

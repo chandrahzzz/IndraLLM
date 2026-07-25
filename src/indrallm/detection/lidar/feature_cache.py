@@ -1,43 +1,29 @@
-"""Extract every Phase-1 feature once and cache to parquet, keyed by qid|model.
+"""Extract model-internal probe features once and cache to parquet, keyed by qid|model.
 
-Feature families (answer-level aggregates; the detector reads these):
-  surface     from features.py  — bcs, switch_rate, frac_en, frac_indic, frac_other,
-                                   n_tokens, plus repetition_score (behavioral)
-  crosslingual from cross_lingual — cla_mean, cla_min, cla_max_drop, n_boundaries
-  internal    from internal_probes — hsd_*, ae_*, uc_*, perplexity, conf_mean  (GPU)
-  rsc         from self_consistency — rsc_token_div, rsc_embed_div             (GPU, slow)
+Only the two viable feature families remain (surface + cross-lingual features were
+removed after they failed the gate):
 
-Surface + crosslingual run on CPU (laptop). internal + rsc need a GPU (Colab T4)
-and are opt-in via flags. Output is resumable: rows already in the cache are
-skipped, so a run interrupted by a Colab timeout resumes cleanly.
+  internal  from internal_probes — hsd_*, ae_*, uc_*, perplexity, conf_mean,
+            logit_var_mean, n_tokens                                   (GPU)
+  rsc       from self_consistency — rsc_token_div, rsc_embed_div       (GPU, slow)
+
+Both need Sarvam-2B forward passes, so this runs on a Colab T4. Output is
+resumable: rows already cached are skipped, so a run cut off by a Colab timeout
+resumes cleanly.
 
 Usage:
-    python -m indrallm.detection.lidar.feature_cache                      # CPU: surface + CLA
-    python -m indrallm.detection.lidar.feature_cache --internal           # + HSD/AE/UC  (GPU)
-    python -m indrallm.detection.lidar.feature_cache --internal --rsc     # + self-consistency (GPU)
+    python -m indrallm.detection.lidar.feature_cache --internal          # HSD/AE/UC
+    python -m indrallm.detection.lidar.feature_cache --internal --rsc    # + self-consistency
 """
 
 from __future__ import annotations
 
 import argparse
-import re
 
 import pandas as pd
 from tqdm import tqdm
 
 from indrallm.config import path
-from indrallm.detection.lidar.features import (extract_features, fit_transition_matrix,
-                                               _make_embedder)
-from indrallm.detection.lidar.cross_lingual import cla_features
-
-
-def repetition_score(answer: str, n: int = 3) -> float:
-    """Fraction of repeated n-grams — a cheap behavioral degradation signal."""
-    toks = re.findall(r"[^\s\W_]+", (answer or "").lower())
-    if len(toks) < n + 1:
-        return 0.0
-    grams = [tuple(toks[i:i + n]) for i in range(len(toks) - n + 1)]
-    return 1.0 - len(set(grams)) / len(grams)
 
 
 def _load_benchmark() -> pd.DataFrame:
@@ -57,10 +43,13 @@ def _load_benchmark() -> pd.DataFrame:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--internal", action="store_true", help="add HSD/AE/UC (needs GPU)")
+    ap.add_argument("--internal", action="store_true",
+                    help="extract HSD/AE/UC (default action; needs GPU)")
     ap.add_argument("--rsc", action="store_true", help="add self-consistency (needs GPU, slow)")
     ap.add_argument("--limit", type=int)
     args = ap.parse_args()
+    # internal is the only base feature source now; run it unless only --rsc was asked
+    do_internal = args.internal or not args.rsc
 
     df = _load_benchmark()
     if args.limit:
@@ -73,14 +62,10 @@ def main() -> None:
         print(f"resume: {len(done)} rows cached")
     todo = df[~df["qid_model"].isin(done)]
     print(f"extracting {len(todo)} rows "
-          f"(surface+CLA{' +internal' if args.internal else ''}{' +rsc' if args.rsc else ''})")
-
-    tm = fit_transition_matrix(df["question"].tolist(),
-                               df.get("language", pd.Series([None] * len(df))).tolist())
-    embed = _make_embedder(True)
+          f"({'internal' if do_internal else ''}{' +rsc' if args.rsc else ''})")
 
     internal = None
-    if args.internal:
+    if do_internal:
         from indrallm.detection.lidar.internal_probes import InternalProbes
         internal = InternalProbes()
     rsc = None
@@ -104,9 +89,6 @@ def main() -> None:
         lang = getattr(r, "language", None)
         row = {"qid_model": r.qid_model, "qid": r.qid, "model": r.model,
                "language": lang, "label": int(getattr(r, "label", 0))}
-        row.update(extract_features(r.answer, tm, lang, embed))
-        row["repetition_score"] = repetition_score(r.answer)
-        row.update(cla_features(r.answer, lang))
         if internal is not None:
             row.update(internal.extract(r.question, r.answer)["answer"])
         if rsc is not None:

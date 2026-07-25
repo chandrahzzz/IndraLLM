@@ -17,19 +17,22 @@ from indrallm.config import path
 
 _OPS = {"<": operator.lt, ">": operator.gt, "<=": operator.le, ">=": operator.ge}
 
+# Only signatures keyed on surviving (internal) features are active. Two were
+# disabled because they depended on removed surface features:
+#   UNINTENDED_SWITCH -> needed cla_min (cross-lingual alignment, removed)
+#   REPETITION        -> needed repetition_score (surface, removed)
+# Re-enable them once an internal proxy for those signals exists (e.g. an
+# attention-collapse feature for repetition). Their interventions
+# (language_constraint, repetition_penalty) remain available in interventions.py.
 DEFAULT_SIGNATURES: dict[str, dict] = {
-    "UNINTENDED_SWITCH": {"conditions": [{"feature": "cla_min", "op": "<", "value": 0.4},
-                                          {"feature": "ae_mean", "op": ">", "value": 0.8}],
-                           "intervention": "language_constraint"},
     "FACTUAL_ERROR": {"conditions": [{"feature": "uc_mean", "op": ">", "value": 0.7},
                                       {"feature": "rsc_embed_div", "op": ">", "value": 0.5}],
                        "intervention": "fact_rerank"},
     "SEMANTIC_DRIFT": {"conditions": [{"feature": "hsd_slope", "op": ">", "value": 0.2},
                                        {"feature": "hsd_var", "op": ">", "value": 0.5}],
                         "intervention": "rollback"},
-    "REPETITION": {"conditions": [{"feature": "ae_mean", "op": "<", "value": 0.3},
-                                   {"feature": "repetition_score", "op": ">", "value": 0.6}],
-                    "intervention": "repetition_penalty"},
+    # "UNINTENDED_SWITCH": needs a non-surface switch signal — disabled
+    # "REPETITION":        needs a non-surface repetition signal — disabled
 }
 
 

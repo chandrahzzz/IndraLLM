@@ -1,38 +1,44 @@
-"""Phase 4: closed-loop decoder — detect and correct hallucinations mid-generation.
+"""Type-aware selective-intervention decoder (Claim Family 2 scaffold).
 
-Wraps the base model's step-by-step decoding. At each step it forms features on
-the partial output, runs the trained multi-view detector, and if the
-hallucination probability crosses threshold it matches the signature database and
-applies the corresponding intervention (Section 9 of docs/BUILD_INDRALLM.md).
+The intervention architecture is preserved: a per-step decode loop, a signature
+lookup that maps a detected hallucination to a type, type-specific interventions,
+and a position-aware intensity modulator (stronger correction early, lighter
+late). What is NOT wired yet is DETECTION: the surface/cross-lingual detector was
+removed, and the replacement — a detector over model-internal probes (HSD/AE/UC)
+evaluated on the partial output — depends on the internal-probe gate passing
+first. Until then `self._detect` is a stub returning 0.0, so `generate` behaves
+as the base model and `generate_baseline` gives the comparison point.
 
-Runs a windowed re-featurization every `check_every` tokens (not every token) to
-hold the <20% latency budget; the detector itself is a tiny MLP so the dominant
-cost stays the base model's own forward pass.
+To finish this once a working internal detector exists:
+  - compute InternalProbes features on the partial output every `check_every`
+    steps, feed the trained detector, set p = hallucination probability;
+  - keep the signature match + intervention + intensity code below unchanged.
 
-Needs a GPU + a trained detector. Usage:
-    from indrallm.mitigation.lidar_decoder import LidarDecoder
+Needs a GPU. Usage:
+    from indrallm.mitigation.lidar_decoder import LidarDecoder, get_intensity
     dec = LidarDecoder()
-    print(dec.generate("Enna medicine edukkanum? fever iruku"))
-    print(dec.generate_baseline(prompt))   # for the reduction comparison
+    print(dec.generate_baseline("Enna medicine edukkanum? fever iruku"))
 """
 
 from __future__ import annotations
 
-from indrallm.config import CFG, path
-from indrallm.detection.lidar.features import (extract_features, fit_transition_matrix,
-                                               _make_embedder)
-from indrallm.detection.lidar.cross_lingual import cla_features
-from indrallm.detection.lidar.feature_cache import repetition_score
+from indrallm.config import CFG
 from indrallm.detection.signatures import SignatureDB
-from indrallm.detection.multi_view.views import resolve_views
-from indrallm.detection.multi_view.detector import build_detector
 from indrallm.mitigation import interventions as itv
 
 
+def get_intensity(t: int, base_intensity: float = 1.0) -> float:
+    """Position-aware intensity: aggressive early (errors compound), light late."""
+    if t < 10:
+        return base_intensity * 1.5
+    if t < 50:
+        return base_intensity * 1.0
+    return base_intensity * 0.5
+
+
 class LidarDecoder:
-    def __init__(self, threshold: float = 0.65, check_every: int = 8, max_new: int | None = None):
+    def __init__(self, threshold: float = 0.6, check_every: int = 8, max_new: int | None = None):
         import torch
-        import pandas as pd
         from transformers import AutoModelForCausalLM, AutoTokenizer
         m = CFG["mitigation"]
         self.torch = torch
@@ -50,70 +56,40 @@ class LidarDecoder:
             kwargs["torch_dtype"] = torch.bfloat16 if torch.cuda.is_available() else torch.float32
         self.model = AutoModelForCausalLM.from_pretrained(name, **kwargs)
         self.model.eval()
-
-        # feature scaffolding
-        fp = path("features") / "answer_features.parquet"
-        feats_df = pd.read_parquet(fp) if fp.exists() else None
-        q = feats_df["qid_model"] if feats_df is not None else []
-        self.tm = fit_transition_matrix(
-            (pd.read_csv(path("final") / "benchmark_judged.csv")["question"].tolist()
-             if (path("final") / "benchmark_judged.csv").exists() else []))
-        self.embed = _make_embedder(True)
         self.sig = SignatureDB.load()
 
-        # trained detector (view layout inferred from the cache columns)
-        self.views = resolve_views(list(feats_df.columns)) if feats_df is not None else \
-            resolve_views(["bcs", "switch_rate", "frac_en", "frac_indic", "frac_other",
-                           "n_tokens", "repetition_score", "perplexity", "logit_var_mean",
-                           "cla_mean", "cla_min", "cla_max_drop", "n_boundaries"])
-        self.detector = None
-        dpath = path("models") / "multi_view_detector" / "detector.pt"
-        if dpath.exists():
-            self.detector = build_detector({v: len(c) for v, c in self.views.items()})
-            self.detector.load_state_dict(torch.load(dpath, map_location="cpu"))
-            self.detector.eval()
-
-    def _detect(self, question: str, partial: str, lang=None) -> float:
-        if self.detector is None:
-            return 0.0
-        row = extract_features(partial, self.tm, lang, self.embed)
-        row["repetition_score"] = repetition_score(partial)
-        row.update(cla_features(partial, lang))
-        import numpy as np
-        batch = {}
-        for v, cols in self.views.items():
-            arr = np.array([[row.get(c, 0.0) for c in cols]], dtype=np.float32)
-            batch[v] = self.torch.tensor(arr)
-        with self.torch.no_grad():
-            p, _, _ = self.detector(batch)
-        return float(p.item())
+    # --- DETECTION STUB ---
+    # Surface/cross-lingual detection was removed. Wire an internal-probe detector
+    # here (see module docstring) once the internal-probe gate passes.
+    def _detect(self, question: str, partial: str, lang=None) -> tuple[float, dict]:
+        return 0.0, {}
 
     def _prep(self, prompt: str):
-        return self.tokenizer(f"Question: {prompt}\nAnswer:", return_tensors="pt").input_ids.to(self.model.device)
+        return self.tokenizer(f"Question: {prompt}\nAnswer:",
+                              return_tensors="pt").input_ids.to(self.model.device)
 
     def generate(self, prompt: str, lang=None) -> str:
         torch = self.torch
+        from indrallm.detection.lidar.lid import token_lid
         ids = self._prep(prompt)
         out: list[int] = []
         eos = self.tokenizer.eos_token_id
-        from indrallm.detection.lidar.lid import token_lid
         with torch.no_grad():
             for step in range(self.max_new):
                 logits = self.model(ids).logits[0, -1]
                 if out and step % self.check_every == 0:
                     partial = self.tokenizer.decode(out, skip_special_tokens=True)
-                    p = self._detect(prompt, partial, lang)
+                    p, feats = self._detect(prompt, partial, lang)
                     if p >= self.threshold:
-                        feats = {**extract_features(partial, self.tm, lang, self.embed),
-                                 "repetition_score": repetition_score(partial),
-                                 **cla_features(partial, lang)}
                         _type, action = self.sig.match(feats)
+                        intensity = get_intensity(step)
                         if action == "repetition_penalty":
-                            logits = itv.repetition_penalty(logits, out[-16:])
+                            logits = itv.repetition_penalty(logits, out[-16:], penalty=1.0 + 0.5 * intensity)
                         elif action == "language_constraint":
-                            exp = [lang] if lang else list("ta hi te bn kn en".split())
+                            exp = [lang] if lang else "ta hi te bn kn en".split()
                             logits = itv.language_constraint(
-                                logits, self.tokenizer, set(exp), lambda s: token_lid(s, lang))
+                                logits, self.tokenizer, set(exp),
+                                lambda s: token_lid(s, lang), boost=3.0 * intensity)
                         elif action == "rollback":
                             out = list(itv.rollback(out, 2))
                             ids = torch.cat([self._prep(prompt),

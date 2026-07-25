@@ -1,15 +1,17 @@
-"""THE GATE (Phase 1 -> Phase 2). Rank every feature; decide KEEP / DROP.
+"""THE GATE (internal probes -> detector). Rank each feature; decide KEEP / DROP.
 
-Reads the cached answer-level features, evaluates each against the trusted
-(judge) label on the VALIDATION split, and writes docs/feature_analysis.md with:
-  - ROC-AUC, PR-AUC per feature
-  - corr(feature, frac_indic)  -> catches features that are just a language proxy
-  - KEEP / DROP verdict + a recommended threshold & operator for kept features
-  - the overall gate verdict
+Now evaluates only the surviving model-internal features (HSD/AE/UC, plus RSC and
+the internal behavioral signals perplexity/logit_var). Surface and cross-lingual
+features were removed after they failed this gate on the judge labels; if a
+frac_indic column is absent the language-proxy check is simply skipped.
 
-Pass condition (Section 6 of docs/BUILD_INDRALLM.md): >= 3 features with
-|AUC-0.5| implying AUC >= 0.65 (or <= 0.35, i.e. inverse) that are NOT explained
-by frac_indic (|corr| < 0.5). If not met: STOP, do not build the detector.
+Reads the cached features, evaluates each against the trusted (judge) label on
+the VALIDATION split, and writes docs/feature_analysis.md with ROC-AUC, PR-AUC,
+optional corr(frac_indic), and a KEEP / DROP verdict + threshold.
+
+Pass condition: >= 3 internal features with AUC >= 0.65 (or <= 0.35). If not met,
+STOP — the internal signals do not detect these hallucinations either; use the
+IndicBERT text classifier (train_indicbert.py) instead of a feature detector.
 
 Usage:
     python -m indrallm.evaluation.feature_report
