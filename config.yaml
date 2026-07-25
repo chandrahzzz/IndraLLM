@@ -20,6 +20,7 @@ paths:
   answers: data/answers
   annotations: data/annotations
   final: data/final
+  features: data/features
   models: models
   fasttext_model: lid.176.bin
 
