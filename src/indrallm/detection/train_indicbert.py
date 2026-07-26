@@ -35,7 +35,7 @@ def main() -> None:
     import evaluate
     import torch
     from transformers import (AutoModelForSequenceClassification, AutoTokenizer,
-                              Trainer, TrainingArguments)
+                              DataCollatorWithPadding, Trainer, TrainingArguments)
 
     d = CFG["detection"]
     tokenizer = AutoTokenizer.from_pretrained(d["base_model"])
@@ -48,6 +48,21 @@ def main() -> None:
     train_ds = load_split("train").map(preprocess, batched=True)
     val_ds = load_split("val").map(preprocess, batched=True)
     test_ds = load_split("test").map(preprocess, batched=True)
+
+    # class weights — the label is ~9% positive, so an unweighted loss collapses to
+    # "always correct" (F1=0). Up-weight the rare hallucinated class by its inverse freq.
+    import collections
+    counts = collections.Counter(train_ds["label"])
+    class_w = torch.tensor([1.0, counts[0] / max(counts[1], 1)])
+    print(f"class counts {dict(counts)} -> hallucinated weight {class_w[1]:.1f}")
+
+    class WeightedTrainer(Trainer):
+        def compute_loss(self, model, inputs, return_outputs=False, **kw):
+            labels = inputs.pop("labels")
+            out = model(**inputs)
+            loss = torch.nn.CrossEntropyLoss(weight=class_w.to(out.logits.device))(
+                out.logits, labels)
+            return (loss, out) if return_outputs else loss
 
     f1 = evaluate.load("f1")
     acc = evaluate.load("accuracy")
@@ -75,8 +90,9 @@ def main() -> None:
         run_name="indicbert-halludetect",
         logging_steps=25,
     )
-    trainer = Trainer(model=model, args=training_args, train_dataset=train_ds,
-                      eval_dataset=val_ds, compute_metrics=compute_metrics)
+    trainer = WeightedTrainer(model=model, args=training_args, train_dataset=train_ds,
+                              eval_dataset=val_ds, compute_metrics=compute_metrics,
+                              data_collator=DataCollatorWithPadding(tokenizer))
     trainer.train()
 
     print("\n== test set ==")

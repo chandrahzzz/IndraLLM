@@ -21,10 +21,70 @@ Expect to see "Tesla T4". If it errors: Runtime → Change runtime type → T4 G
 !git clone https://github.com/chandrahzzz/IndraLLM.git
 %cd IndraLLM
 !pip install -q -e .
-!pip install -q "numpy<2" transformers datasets evaluate accelerate scikit-learn sentencepiece pandas
+!pip install -q transformers datasets evaluate accelerate scikit-learn sentencepiece
 ```
 If the repo is private, replace the clone line with:
 `!git clone https://<YOUR_GITHUB_TOKEN>@github.com/chandrahzzz/IndraLLM.git`
+
+---
+
+### CELL 2.5 — RESTART (do not skip)
+
+After the installs above, **Runtime → Restart session** (keeps your files, clears
+stale numpy from memory). Mandatory: pip changed numpy on disk, but the kernel
+still holds the old one — importing pandas before restarting throws
+`numpy.dtype size changed`. Restart once here and it never happens again.
+
+Then run:
+```python
+%cd /content/IndraLLM
+```
+
+> Never run `pip install --force-reinstall numpy pandas`. If Colab suggests it,
+> ignore it — it makes the ABI error worse. The fix is always: restart the runtime.
+
+---
+
+### CELL 2.6 — patch the trainer (required — GitHub main is stale)
+
+The cloned `train_indicbert.py` crashes on variable-length batches and, if you
+patch just that, collapses to F1=0 (predicts "correct" for everything — labels
+are ~10% positive). Both fixes exist only on a local branch that hasn't been
+pushed, so patch them in here:
+```python
+f = 'src/indrallm/detection/train_indicbert.py'
+s = open(f).read()
+if 'DataCollatorWithPadding' not in s:
+    s = s.replace(
+        'from transformers import (AutoModelForSequenceClassification, AutoTokenizer,\n'
+        '                          Trainer, TrainingArguments)',
+        'from transformers import (AutoModelForSequenceClassification, AutoTokenizer,\n'
+        '                          DataCollatorWithPadding, Trainer, TrainingArguments)')
+    s = s.replace(
+        '    f1 = evaluate.load("f1")',
+        '    import collections\n'
+        '    counts = collections.Counter(train_ds["label"])\n'
+        '    class_w = torch.tensor([1.0, counts[0] / max(counts[1], 1)])\n'
+        '    print(f"class counts {dict(counts)} -> hallucinated weight {class_w[1]:.1f}")\n\n'
+        '    class WeightedTrainer(Trainer):\n'
+        '        def compute_loss(self, model, inputs, return_outputs=False, **kw):\n'
+        '            labels = inputs.pop("labels")\n'
+        '            out = model(**inputs)\n'
+        '            loss = torch.nn.CrossEntropyLoss(weight=class_w.to(out.logits.device))(\n'
+        '                out.logits, labels)\n'
+        '            return (loss, out) if return_outputs else loss\n\n'
+        '    f1 = evaluate.load("f1")')
+    s = s.replace(
+        '    trainer = Trainer(model=model, args=training_args, train_dataset=train_ds,\n'
+        '                      eval_dataset=val_ds, compute_metrics=compute_metrics)',
+        '    trainer = WeightedTrainer(model=model, args=training_args, train_dataset=train_ds,\n'
+        '                              eval_dataset=val_ds, compute_metrics=compute_metrics,\n'
+        '                              data_collator=DataCollatorWithPadding(tokenizer))')
+    open(f, 'w').write(s)
+    print("patched: padding collator + class-weighted loss ✓")
+else:
+    print("already patched")
+```
 
 ---
 
@@ -51,7 +111,7 @@ for s in ['train', 'val', 'test']:
     print(s, len(d), "rows,  hallucinated rate", round(d.label.mean(), 3),
           ",  cols ok:", all(c in d.columns for c in ['question','answer','label','language']))
 ```
-Expect roughly: train 1454, val 312, test 312, rate ~0.09, cols ok: True.
+Expect roughly: train 1852, val 394, test 403, rate ~0.10, cols ok: True.
 
 ---
 
@@ -75,21 +135,27 @@ Takes ~15-25 min on a T4 (5 epochs). At the end it prints:
 
 ---
 
-### CELL 7 — download the trained detector
+### CELL 7 — save the trained detector to Google Drive
+
+The model is ~1GB — the browser `files.download()` reliably fails/stalls at
+that size. Save to Drive instead (this always works):
 ```python
-!cd models && zip -r -q indicbert-halludetect.zip indicbert-halludetect/best
-from google.colab import files
-files.download('models/indicbert-halludetect.zip')
+from google.colab import drive
+drive.mount('/content/drive')
+!cp -r models/indicbert-halludetect/best "/content/drive/MyDrive/indicbert-detector"
+print("saved to Google Drive -> MyDrive/indicbert-detector")
 ```
-Unzip into your laptop's `models/` folder to keep it.
+Grab it later from drive.google.com whenever you actually need the weights —
+no rush, the important output is the printed metrics in Cell 6.
 
 ---
 
 ## What to expect / how to read it
 
-- **Class imbalance is real** (~9% hallucinated). Watch **F1 and per-language F1**, not accuracy — a model can get 91% accuracy by calling everything "correct" and be useless. F1 is the honest number.
-- If F1 is low (say < 0.3): the 195 positives may be too few for a 5-way-balanced fine-tune. That's a real finding, not a failure — tell me and we adjust (class weights, threshold tuning, or more judged data).
-- If F1 is decent (> 0.5): you have a working detector — the paper's headline detection result.
+- **Class imbalance is real** (~10% hallucinated). Watch **F1, AUC, and per-language F1**, not accuracy — a model can get ~90% accuracy by calling everything "correct" and be useless. Without the Cell 2.6 patch, this collapses to F1=0 with fake 90% accuracy — that is the exact failure mode being prevented here.
+- Previous run (2078 rows, before this data-growth round): **AUC 0.717, F1 0.279** (tuned threshold), per-language AUC ta 0.86 / te 0.77 / bn 0.77 / kn 0.69 / hi 0.63. This run has more data, especially for hi and kn — compare against these numbers.
+- If F1/AUC drop: more data isn't automatically better if the new positives are noisier — a real finding, tell me and we look at it.
+- If hi/kn AUC improved specifically: the targeted data growth worked.
 
 ## After this
 Bring the printed metrics back here. Next step is mitigation (teacher distillation) — but the detector number decides whether we even need the internal-probes path. One thing at a time.
