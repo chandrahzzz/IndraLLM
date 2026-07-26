@@ -15,7 +15,8 @@ You upload 2 files from your laptop:
 !git clone https://github.com/chandrahzzz/IndraLLM.git
 %cd IndraLLM
 !pip install -q -e .
-!pip install -q transformers datasets accelerate peft bitsandbytes sentencepiece openai
+!pip install -q transformers datasets accelerate peft sentencepiece openai
+!pip install -q -U "bitsandbytes>=0.46.1"   # -U: Colab ships an older one that fails 4-bit
 ```
 
 ---
