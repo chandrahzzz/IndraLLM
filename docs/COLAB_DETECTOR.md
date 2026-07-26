@@ -55,11 +55,11 @@ pushed, so patch them in here:
 f = 'src/indrallm/detection/train_indicbert.py'
 s = open(f).read()
 if 'DataCollatorWithPadding' not in s:
+    # insert right after `from __future__ import annotations` (must stay first
+    # statement in the file) — avoids matching the indented in-function import line
     s = s.replace(
-        'from transformers import (AutoModelForSequenceClassification, AutoTokenizer,\n'
-        '                          Trainer, TrainingArguments)',
-        'from transformers import (AutoModelForSequenceClassification, AutoTokenizer,\n'
-        '                          DataCollatorWithPadding, Trainer, TrainingArguments)')
+        'from __future__ import annotations',
+        'from __future__ import annotations\n\nfrom transformers import DataCollatorWithPadding', 1)
     s = s.replace(
         '    f1 = evaluate.load("f1")',
         '    import collections\n'
