@@ -26,6 +26,7 @@ import re
 import time
 
 import pandas as pd
+from tqdm import tqdm
 
 from indrallm.config import CFG, path
 
@@ -133,25 +134,34 @@ def build_distill_set(use_gold_fallback: bool = True) -> pd.DataFrame:
 
 
 def _build_from_teacher() -> pd.DataFrame:
-    """Distill set from regenerated teacher answers (kept only if code-switched)."""
-    from indrallm.detection.lidar.lid import token_lid
+    """Distill set from regenerated teacher answers (kept only if code-switched).
+
+    Uses codeswitch_filter.detect_codeswitch, which is romanized-aware (lexicon
+    vote), instead of a raw Indic-token fraction — the latter undercounts
+    romanized Tamil/Telugu/etc. and would wrongly drop genuinely code-switched
+    answers that happen to be written in Latin script.
+    """
+    from indrallm.collection.codeswitch_filter import detect_codeswitch
     p = path("final") / TEACHER_CSV
     if not p.exists():
         raise SystemExit("run --regen-teacher first")
     df = pd.read_csv(p)
     df["answer"] = df["answer"].fillna("").astype(str)
-    ind = {"ta", "hi", "te", "bn", "kn"}
 
-    def frac_indic(a, l):
-        s = token_lid(str(a), l)
-        return sum(x in ind for x in s) / max(len(s), 1)
+    def is_cs(a, l):
+        if not str(a).strip():
+            return False
+        return detect_codeswitch(str(a), l if l in {"ta", "hi", "te", "bn", "kn"} else None)["is_cs"]
 
-    df["fi"] = [frac_indic(a, l) for a, l in zip(df["answer"], df["language"])]
-    kept = df[(df["answer"].str.strip() != "") & (df["fi"] >= 0.08)].copy()
+    df["cs"] = [is_cs(a, l) for a, l in zip(df["answer"], df["language"])]
+    kept = df[df["cs"]].copy()
     dest = path("final") / DISTILL_CSV
     kept[["qid", "language", "question", "answer", "teacher"]].to_csv(dest, index=False)
     print(f"code-switched teacher targets: {len(kept)}/{len(df)} kept -> {dest}")
     print("per-language:", kept["language"].value_counts().to_dict())
+    dropped = df[~df["cs"]]
+    if len(dropped):
+        print(f"dropped {len(dropped)} non-code-switched (mostly-English) answers")
     return kept
 
 
@@ -208,9 +218,13 @@ def train(epochs: int | None = None) -> None:
     print(f"distilled adapter -> {out_dir / 'adapter'}")
 
 
-def evaluate(limit: int | None = None) -> None:
-    """Generate student answers baseline vs distilled on the test questions, then
-    judge both with the LLM-judge and report the hallucination-rate drop."""
+def evaluate(limit: int | None = None, judge: bool = True) -> None:
+    """Generate student answers baseline vs distilled on the test questions, judge
+    both with the Groq LLM-judge, and report the hallucination-rate drop.
+
+    Generation needs a GPU (Sarvam-2B); judging uses Groq (GROQ_API_KEY). Both run
+    fine on a Colab session. Saves data/answers/distill_comparison.csv.
+    """
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
@@ -218,7 +232,6 @@ def evaluate(limit: int | None = None) -> None:
     if limit:
         test = test.groupby("language").head(max(limit // 5, 1))
     name = CFG["mitigation"]["model"]
-    tok = AutoModelForCausalLM  # noqa (placeholder to keep import local)
     tokenizer = AutoTokenizer.from_pretrained(name)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
@@ -241,13 +254,13 @@ def evaluate(limit: int | None = None) -> None:
         return tokenizer.decode(o[0][ids.shape[1]:], skip_special_tokens=True).strip()
 
     rows = []
-    for tag, adapter in [("baseline", None),
-                         ("distilled", str(path("models") / "sarvam-distill" / "adapter"))]:
+    adapter_path = str(path("models") / "sarvam-distill" / "adapter")
+    for tag, adapter in [("baseline", None), ("distilled", adapter_path)]:
         model = load(adapter)
         for r in test.itertuples():
             rows.append({"qid": r.qid, "language": r.language, "question": r.question,
                          "variant": tag, "answer": gen(model, r.question),
-                         "ground_truth": getattr(r, "ground_truth", "")})
+                         "ground_truth": str(getattr(r, "ground_truth", "") or "")})
         del model
         torch.cuda.empty_cache()
 
@@ -255,8 +268,37 @@ def evaluate(limit: int | None = None) -> None:
     dest = path("answers") / "distill_comparison.csv"
     comp.to_csv(dest, index=False)
     print(f"generated {len(comp)} answers -> {dest}")
-    print("Next: judge both variants and compare hallucination rate:")
-    print("  python -m indrallm.annotation.llm_judge_label --provider groq   # (point at distill_comparison)")
+
+    if not judge:
+        return
+
+    from indrallm.annotation.llm_judge_label import _judge
+    from indrallm.generation.llm_clients import GroqClient
+    client = GroqClient("llama-3.1-8b-instant")
+    labels = []
+    for r in tqdm(comp.itertuples(), total=len(comp), desc="judging"):
+        try:
+            lab, _ = _judge(client, r.question, r.ground_truth, r.answer)
+        except Exception:
+            lab = -1
+        labels.append(lab)
+        time.sleep(0.5)
+    comp["label"] = labels
+    comp.to_csv(dest, index=False)
+
+    graded = comp[comp["label"] >= 0]
+    print("\n== hallucination rate (lower = better) ==")
+    piv = graded.groupby("variant")["label"].mean()
+    base, dist = piv.get("baseline", float("nan")), piv.get("distilled", float("nan"))
+    print(f"  baseline : {base:.1%}")
+    print(f"  distilled: {dist:.1%}")
+    if base and not pd.isna(base) and not pd.isna(dist):
+        print(f"  reduction: {(base - dist) / base:+.1%} relative")
+    print("\nper-language hallucination rate:")
+    for lang, g in graded.groupby("language"):
+        b = g[g.variant == "baseline"]["label"].mean()
+        d = g[g.variant == "distilled"]["label"].mean()
+        print(f"  {lang}: baseline {b:.0%} -> distilled {d:.0%}  (n={len(g)//2})")
 
 
 def main() -> None:
