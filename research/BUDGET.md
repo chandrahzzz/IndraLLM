@@ -1,10 +1,10 @@
 # IndraLLM — Experiment Budget & API Spend Ledger
 
-**Last Updated:** 2026-09-28T19:03:07.595191+00:00
+**Last Updated:** 2026-09-28T19:23:34.419000+00:00
 **Hard Budget Ceiling:** $10.00 USD
 **Target Spend Ceiling:** $5.00 USD
-**Current Cumulative Spend:** **$0.0440 USD**
-**Remaining Usable Budget:** **$9.9560 USD**
+**Current Cumulative Spend:** **$0.1040 USD**
+**Remaining Usable Budget:** **$9.8960 USD**
 
 ---
 
@@ -21,6 +21,10 @@
 | 2026-09-28T19:00:07 | EXP-001 | groq | llama-3.3-70b | 50 | 1072 | 2500 | $0.0040 | Pilot inference over 50 prompts |
 | 2026-09-28T19:00:08 | EXP-001 | groq | qwen-2.5-32b | 50 | 1072 | 13786 | $0.0040 | Pilot inference over 50 prompts |
 | 2026-09-28T19:00:08 | EXP-001 | local | sarvam-2b-v0.5 | 50 | 1072 | 1802 | $0.0000 | Pilot inference over 50 prompts |
+| 2026-09-28T19:22:08 | EXP-001 | groq | llama-3.1-8b | 250 | 5342 | 12500 | $0.0200 | Pilot inference over 250 prompts |
+| 2026-09-28T19:22:13 | EXP-001 | groq | llama-3.3-70b | 250 | 5342 | 12500 | $0.0200 | Pilot inference over 250 prompts |
+| 2026-09-28T19:22:44 | EXP-001 | groq | qwen-2.5-32b | 250 | 5342 | 69626 | $0.0200 | Pilot inference over 250 prompts |
+| 2026-09-28T19:22:44 | EXP-001 | local | sarvam-2b-v0.5 | 250 | 5342 | 8952 | $0.0000 | Pilot inference over 250 prompts |
 
 ---
 

@@ -1,7 +1,7 @@
 {
   "hard_ceiling_usd": 10.0,
   "target_ceiling_usd": 5.0,
-  "cumulative_spend_usd": 0.044,
+  "cumulative_spend_usd": 0.104,
   "transactions": [
     {
       "timestamp": "2026-09-28T18:58:50.275596+00:00",
@@ -101,6 +101,50 @@
       "output_tokens": 1802,
       "cost_usd": 0.0,
       "notes": "Pilot inference over 50 prompts"
+    },
+    {
+      "timestamp": "2026-09-28T19:22:08.797950+00:00",
+      "experiment_id": "EXP-001",
+      "provider": "groq",
+      "model": "llama-3.1-8b",
+      "calls": 250,
+      "input_tokens": 5342,
+      "output_tokens": 12500,
+      "cost_usd": 0.02,
+      "notes": "Pilot inference over 250 prompts"
+    },
+    {
+      "timestamp": "2026-09-28T19:22:13.565430+00:00",
+      "experiment_id": "EXP-001",
+      "provider": "groq",
+      "model": "llama-3.3-70b",
+      "calls": 250,
+      "input_tokens": 5342,
+      "output_tokens": 12500,
+      "cost_usd": 0.02,
+      "notes": "Pilot inference over 250 prompts"
+    },
+    {
+      "timestamp": "2026-09-28T19:22:44.100385+00:00",
+      "experiment_id": "EXP-001",
+      "provider": "groq",
+      "model": "qwen-2.5-32b",
+      "calls": 250,
+      "input_tokens": 5342,
+      "output_tokens": 69626,
+      "cost_usd": 0.02,
+      "notes": "Pilot inference over 250 prompts"
+    },
+    {
+      "timestamp": "2026-09-28T19:22:44.450397+00:00",
+      "experiment_id": "EXP-001",
+      "provider": "local",
+      "model": "sarvam-2b-v0.5",
+      "calls": 250,
+      "input_tokens": 5342,
+      "output_tokens": 8952,
+      "cost_usd": 0.0,
+      "notes": "Pilot inference over 250 prompts"
     }
   ],
   "estimates": [
@@ -246,6 +290,149 @@
       "remaining_budget_usd": 0.0,
       "approved": false,
       "timestamp": "2026-09-28T19:03:07.589644+00:00"
+    },
+    {
+      "experiment_id": "TEST-OVERFLOW",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "estimated_calls": 1000000,
+      "estimated_input_tokens": 1000000000,
+      "estimated_output_tokens": 1000000000,
+      "estimated_cost_usd": 1380.0,
+      "current_cumulative_spend": 0.044,
+      "remaining_budget_usd": 0.0,
+      "approved": false,
+      "timestamp": "2026-09-28T19:14:47.820742+00:00"
+    },
+    {
+      "experiment_id": "TEST-001",
+      "provider": "groq",
+      "model": "llama-3.1-8b-instant",
+      "estimated_calls": 10,
+      "estimated_input_tokens": 1200,
+      "estimated_output_tokens": 1500,
+      "estimated_cost_usd": 0.00018,
+      "current_cumulative_spend": 0.044,
+      "remaining_budget_usd": 9.95582,
+      "approved": true,
+      "timestamp": "2026-09-28T19:19:31.469024+00:00"
+    },
+    {
+      "experiment_id": "TEST-OVERFLOW",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "estimated_calls": 1000000,
+      "estimated_input_tokens": 1000000000,
+      "estimated_output_tokens": 1000000000,
+      "estimated_cost_usd": 1380.0,
+      "current_cumulative_spend": 0.044,
+      "remaining_budget_usd": 0.0,
+      "approved": false,
+      "timestamp": "2026-09-28T19:19:32.143358+00:00"
+    },
+    {
+      "experiment_id": "TEST-001",
+      "provider": "groq",
+      "model": "llama-3.1-8b-instant",
+      "estimated_calls": 10,
+      "estimated_input_tokens": 1200,
+      "estimated_output_tokens": 1500,
+      "estimated_cost_usd": 0.00018,
+      "current_cumulative_spend": 0.044,
+      "remaining_budget_usd": 9.95582,
+      "approved": true,
+      "timestamp": "2026-09-28T19:21:15.646519+00:00"
+    },
+    {
+      "experiment_id": "TEST-OVERFLOW",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "estimated_calls": 1000000,
+      "estimated_input_tokens": 1000000000,
+      "estimated_output_tokens": 1000000000,
+      "estimated_cost_usd": 1380.0,
+      "current_cumulative_spend": 0.044,
+      "remaining_budget_usd": 0.0,
+      "approved": false,
+      "timestamp": "2026-09-28T19:21:19.947684+00:00"
+    },
+    {
+      "experiment_id": "EXP-001",
+      "provider": "groq",
+      "model": "llama-3.1-8b",
+      "estimated_calls": 250,
+      "estimated_input_tokens": 10000,
+      "estimated_output_tokens": 15000,
+      "estimated_cost_usd": 0.02,
+      "current_cumulative_spend": 0.044,
+      "remaining_budget_usd": 9.936,
+      "approved": true,
+      "timestamp": "2026-09-28T19:21:57.725021+00:00"
+    },
+    {
+      "experiment_id": "EXP-001",
+      "provider": "groq",
+      "model": "llama-3.3-70b",
+      "estimated_calls": 250,
+      "estimated_input_tokens": 10000,
+      "estimated_output_tokens": 15000,
+      "estimated_cost_usd": 0.02,
+      "current_cumulative_spend": 0.064,
+      "remaining_budget_usd": 9.916,
+      "approved": true,
+      "timestamp": "2026-09-28T19:22:08.832952+00:00"
+    },
+    {
+      "experiment_id": "EXP-001",
+      "provider": "groq",
+      "model": "qwen-2.5-32b",
+      "estimated_calls": 250,
+      "estimated_input_tokens": 10000,
+      "estimated_output_tokens": 15000,
+      "estimated_cost_usd": 0.02,
+      "current_cumulative_spend": 0.084,
+      "remaining_budget_usd": 9.896,
+      "approved": true,
+      "timestamp": "2026-09-28T19:22:13.598414+00:00"
+    },
+    {
+      "experiment_id": "EXP-001",
+      "provider": "local",
+      "model": "sarvam-2b-v0.5",
+      "estimated_calls": 250,
+      "estimated_input_tokens": 10000,
+      "estimated_output_tokens": 15000,
+      "estimated_cost_usd": 0.0,
+      "current_cumulative_spend": 0.104,
+      "remaining_budget_usd": 9.896,
+      "approved": true,
+      "timestamp": "2026-09-28T19:22:44.141870+00:00"
+    },
+    {
+      "experiment_id": "TEST-001",
+      "provider": "groq",
+      "model": "llama-3.1-8b-instant",
+      "estimated_calls": 10,
+      "estimated_input_tokens": 1200,
+      "estimated_output_tokens": 1500,
+      "estimated_cost_usd": 0.00018,
+      "current_cumulative_spend": 0.104,
+      "remaining_budget_usd": 9.89582,
+      "approved": true,
+      "timestamp": "2026-09-28T19:23:32.747798+00:00"
+    },
+    {
+      "experiment_id": "TEST-OVERFLOW",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "estimated_calls": 1000000,
+      "estimated_input_tokens": 1000000000,
+      "estimated_output_tokens": 1000000000,
+      "estimated_cost_usd": 1380.0,
+      "current_cumulative_spend": 0.104,
+      "remaining_budget_usd": 0.0,
+      "approved": false,
+      "timestamp": "2026-09-28T19:23:34.416741+00:00"
     }
   ]
 }
