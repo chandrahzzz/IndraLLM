@@ -233,6 +233,19 @@
       "remaining_budget_usd": 0.0,
       "approved": false,
       "timestamp": "2026-09-28T19:01:36.386159+00:00"
+    },
+    {
+      "experiment_id": "TEST-OVERFLOW",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "estimated_calls": 1000000,
+      "estimated_input_tokens": 1000000000,
+      "estimated_output_tokens": 1000000000,
+      "estimated_cost_usd": 1380.0,
+      "current_cumulative_spend": 0.044,
+      "remaining_budget_usd": 0.0,
+      "approved": false,
+      "timestamp": "2026-09-28T19:03:07.589644+00:00"
     }
   ]
 }
