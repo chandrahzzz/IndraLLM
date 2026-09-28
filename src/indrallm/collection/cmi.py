@@ -1,4 +1,4 @@
-"""Gambäck & Das (2014) Code-Mixing Index (CMI) and Orthographic Transition Engine.
+"""Gambäck & Das (2014) Code-Mixing Index (CMI) and Multidimensional Code-Switching Suite.
 
 Computes:
 1. Gambäck & Das (2014) Code-Mixing Index:
@@ -7,8 +7,12 @@ Computes:
        n = total tokens
        u = language-independent tokens (digits, punctuation, symbols)
        w_lang = tokens belonging to the dominant language
-2. Script Transition Count: Number of orthographic transitions between Latin and Indic scripts.
-3. Token-Level Language Composition: Fractions of English, Indic, and neutral tokens.
+2. English Token Ratio (w_en / n)
+3. Native-Language Token Ratio (w_indic / n)
+4. Language Switch Count (number of language transitions in token sequence)
+5. Switch Density (language switches / max(n - 1, 1))
+6. Script Transition Count (orthographic shifts between Latin and Indic scripts)
+7. Token Fertility (subwords / words)
 """
 
 from __future__ import annotations
@@ -23,7 +27,7 @@ from indrallm.detection.lidar.lid import token_lid, tokenize
 INDIC_LANGS = set(SCRIPT_RANGES.keys())
 
 
-class CMIAnalysis(TypedDict):
+class MultidimensionalCSMetrics(TypedDict):
     text: str
     language: str | None
     cmi: float
@@ -34,6 +38,8 @@ class CMIAnalysis(TypedDict):
     other_tokens: int
     indic_token_ratio: float
     english_token_ratio: float
+    language_switch_count: int
+    switch_density: float
     script_transitions: int
     char_count: int
     chars_per_token: float
@@ -62,8 +68,22 @@ def count_script_transitions(text: str) -> int:
     return transitions
 
 
-def compute_cmi(text: str, expected_lang: str | None = None) -> CMIAnalysis:
-    """Compute Gambäck & Das (2014) CMI, token counts, and script transitions."""
+def count_language_switches(labels: list[str]) -> int:
+    """Count transitions between 'en' and any Indic language, ignoring 'other'."""
+    active_labels = [l for l in labels if l != "other"]
+    if len(active_labels) <= 1:
+        return 0
+    switches = 0
+    for i in range(1, len(active_labels)):
+        prev_is_indic = active_labels[i - 1] in INDIC_LANGS
+        curr_is_indic = active_labels[i] in INDIC_LANGS
+        if prev_is_indic != curr_is_indic:
+            switches += 1
+    return switches
+
+
+def compute_cmi(text: str, expected_lang: str | None = None) -> MultidimensionalCSMetrics:
+    """Compute Gambäck & Das (2014) CMI and multidimensional code-mixing metrics."""
     tokens = tokenize(text)
     char_count = len(text)
     if not tokens:
@@ -78,6 +98,8 @@ def compute_cmi(text: str, expected_lang: str | None = None) -> CMIAnalysis:
             "other_tokens": 0,
             "indic_token_ratio": 0.0,
             "english_token_ratio": 0.0,
+            "language_switch_count": 0,
+            "switch_density": 0.0,
             "script_transitions": 0,
             "char_count": char_count,
             "chars_per_token": 0.0,
@@ -104,6 +126,8 @@ def compute_cmi(text: str, expected_lang: str | None = None) -> CMIAnalysis:
         cmi_level = "high"
 
     transitions = count_script_transitions(text)
+    lang_switches = count_language_switches(labels)
+    switch_density = round(lang_switches / max(n - 1, 1), 3)
     chars_per_token = round(char_count / max(n, 1), 2)
 
     return {
@@ -117,6 +141,8 @@ def compute_cmi(text: str, expected_lang: str | None = None) -> CMIAnalysis:
         "other_tokens": n_other,
         "indic_token_ratio": round(n_indic / max(n, 1), 3),
         "english_token_ratio": round(n_en / max(n, 1), 3),
+        "language_switch_count": lang_switches,
+        "switch_density": switch_density,
         "script_transitions": transitions,
         "char_count": char_count,
         "chars_per_token": chars_per_token,

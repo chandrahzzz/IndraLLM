@@ -42,6 +42,7 @@ data/answers/*
 data/annotations/*
 data/questions/*
 data/final/*
+data/cache/*
 !data/**/.gitkeep
 
 # ---- Private notes ----

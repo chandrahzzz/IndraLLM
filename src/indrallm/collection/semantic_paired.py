@@ -33,6 +33,11 @@ class ConditionPrompt:
     cmi_level: str
     token_count: int
     script_transitions: int
+    english_token_ratio: float = 0.0
+    indic_token_ratio: float = 0.0
+    language_switch_count: int = 0
+    switch_density: float = 0.0
+    chars_per_token: float = 0.0
     validation_status: str = "unverified"  # 'unverified', 'human_validated', 'rejected'
 
 
@@ -71,6 +76,11 @@ class SemanticQuestion:
             cmi_level=analysis["cmi_level"],
             token_count=analysis["total_tokens"],
             script_transitions=analysis["script_transitions"],
+            english_token_ratio=analysis["english_token_ratio"],
+            indic_token_ratio=analysis["indic_token_ratio"],
+            language_switch_count=analysis["language_switch_count"],
+            switch_density=analysis["switch_density"],
+            chars_per_token=analysis["chars_per_token"],
             validation_status=validation_status,
         )
         self.prompts[condition] = cp
@@ -138,6 +148,11 @@ def flatten_condition_prompts(questions: list[SemanticQuestion]) -> list[dict[st
                 "cmi_level": p.cmi_level,
                 "token_count": p.token_count,
                 "script_transitions": p.script_transitions,
+                "english_token_ratio": p.english_token_ratio,
+                "indic_token_ratio": p.indic_token_ratio,
+                "language_switch_count": p.language_switch_count,
+                "switch_density": p.switch_density,
+                "chars_per_token": p.chars_per_token,
                 "validation_status": p.validation_status,
             })
     return rows

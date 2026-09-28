@@ -1,0 +1,48 @@
+{
+  "status": "COMPLETED",
+  "semantic_groups_evaluated": 10,
+  "total_prompts_per_model": 50,
+  "models_evaluated": [
+    "llama-3.1-8b",
+    "llama-3.3-70b",
+    "qwen-2.5-32b",
+    "sarvam-2b-v0.5"
+  ],
+  "model_metrics": {
+    "llama-3.1-8b": {
+      "total_prompts": 50,
+      "refusal_rate": 0.0,
+      "mean_latency_ms": 83.58,
+      "mean_response_cmi": 0.0,
+      "total_cost_usd": 0.004
+    },
+    "llama-3.3-70b": {
+      "total_prompts": 50,
+      "refusal_rate": 0.0,
+      "mean_latency_ms": 73.39,
+      "mean_response_cmi": 0.0,
+      "total_cost_usd": 0.004
+    },
+    "qwen-2.5-32b": {
+      "total_prompts": 50,
+      "refusal_rate": 0.0,
+      "mean_latency_ms": 613.74,
+      "mean_response_cmi": 11.98,
+      "total_cost_usd": 0.004
+    },
+    "sarvam-2b-v0.5": {
+      "total_prompts": 50,
+      "refusal_rate": 0.0,
+      "mean_latency_ms": 0.0,
+      "mean_response_cmi": 14.4,
+      "total_cost_usd": 0.0
+    }
+  },
+  "final_budget_status": {
+    "hard_ceiling_usd": 10.0,
+    "target_ceiling_usd": 5.0,
+    "cumulative_spend_usd": 0.044,
+    "remaining_budget_usd": 9.956,
+    "target_remaining_usd": 4.956
+  }
+}
