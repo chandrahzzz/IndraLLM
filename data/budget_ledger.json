@@ -459,6 +459,32 @@
       "remaining_budget_usd": 0.0,
       "approved": false,
       "timestamp": "2026-09-29T05:04:21.005160+00:00"
+    },
+    {
+      "experiment_id": "TEST-001",
+      "provider": "groq",
+      "model": "llama-3.1-8b-instant",
+      "estimated_calls": 10,
+      "estimated_input_tokens": 1200,
+      "estimated_output_tokens": 1500,
+      "estimated_cost_usd": 0.00018,
+      "current_cumulative_spend": 0.104,
+      "remaining_budget_usd": 9.89582,
+      "approved": true,
+      "timestamp": "2026-09-29T05:06:51.476261+00:00"
+    },
+    {
+      "experiment_id": "TEST-OVERFLOW",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "estimated_calls": 1000000,
+      "estimated_input_tokens": 1000000000,
+      "estimated_output_tokens": 1000000000,
+      "estimated_cost_usd": 1380.0,
+      "current_cumulative_spend": 0.104,
+      "remaining_budget_usd": 0.0,
+      "approved": false,
+      "timestamp": "2026-09-29T05:06:53.739720+00:00"
     }
   ]
 }
