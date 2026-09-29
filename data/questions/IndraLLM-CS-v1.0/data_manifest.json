@@ -1,0 +1,41 @@
+{
+  "dataset_version": "IndraLLM-CS-v1.0",
+  "release_tag": "IndraLLM-CS-v1.0",
+  "generation_date": "2026-09-29T00:28:09Z",
+  "number_of_semantic_groups": 2000,
+  "number_of_condition_prompts": 10000,
+  "languages": [
+    "hi",
+    "ta",
+    "te",
+    "bn",
+    "kn"
+  ],
+  "domains": [
+    "governance",
+    "science",
+    "agriculture",
+    "history",
+    "education",
+    "public_health"
+  ],
+  "conditions": [
+    "A_EN",
+    "B_NATIVE",
+    "C_ROMAN",
+    "D_CS",
+    "E_MIXED_SCRIPT"
+  ],
+  "validation_status": "FROZEN_VALIDATED",
+  "code_commit": "282e4bdaa56be571a5697bba7671e22d29225ffe",
+  "checksums": {
+    "condition_prompts_10000.csv": "1a0a1186df7560ca60428c6b4838105c11acfa7d55d4658d11f1c1f8d43da36b",
+    "semantic_questions_full_2000.jsonl": "c099e851f28c41718a820ce3edb240be34b64b2d9ad26072f17bed6a096694fb",
+    "test.csv": "88f7ea3eeefd1ca9f54a67716b4c0d53b57bc8ddefe779f8b34ddb254aa3992a",
+    "test.jsonl": "09350fad3ff18b845619c971e31d913c7dbe97bedbca4b999b3ae73f4ca96d39",
+    "train.csv": "7e9258df898ff63fb9d76ee31a7ece18e1cece8a3481b24acf2ac5b8e0030940",
+    "train.jsonl": "0b1fafc733096624c5aff8dffb101755f4b9c6abe7edf4d69c2fc63c358f9946",
+    "val.csv": "20081bca6aa325d3aff84dbc84640f8aceccf63b1896ba3775825dd4e7aa5757",
+    "val.jsonl": "8c28762732bd012c1608eedeffa03b36498164d83bed49974e39688bdbd3f20b"
+  }
+}
