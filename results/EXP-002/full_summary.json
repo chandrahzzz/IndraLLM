@@ -1,0 +1,61 @@
+{
+  "stage": "full",
+  "git_commit": "4e6ba8f7d8ee493e27b650698217d8cfb83b304c",
+  "timestamp": "2026-09-29T08:44:07.410515+00:00",
+  "total_inferences_attempted": 3000,
+  "successful_inferences": 3000,
+  "failed_inferences": 0,
+  "models_evaluated": [
+    "qwen/qwen3.8-27b",
+    "allam-2-7b"
+  ],
+  "total_tokens_spent": 72161,
+  "actual_cost_spent_usd": 0.00577,
+  "cumulative_budget_status": {
+    "hard_ceiling_usd": 10.0,
+    "target_ceiling_usd": 5.0,
+    "cumulative_spend_usd": 0.20606,
+    "remaining_budget_usd": 9.7939,
+    "target_remaining_usd": 4.7939
+  },
+  "by_model_and_condition": {
+    "allam-2-7b_A_EN": 2.67,
+    "allam-2-7b_B_NATIVE": 0.67,
+    "allam-2-7b_C_ROMAN": 0.67,
+    "allam-2-7b_D_CS": 1.67,
+    "allam-2-7b_E_MIXED_SCRIPT": 1.0,
+    "qwen/qwen3.8-27b_A_EN": 22.0,
+    "qwen/qwen3.8-27b_B_NATIVE": 9.33,
+    "qwen/qwen3.8-27b_C_ROMAN": 11.0,
+    "qwen/qwen3.8-27b_D_CS": 14.33,
+    "qwen/qwen3.8-27b_E_MIXED_SCRIPT": 8.0
+  },
+  "by_model_and_language": {
+    "allam-2-7b_bn": 1.33,
+    "allam-2-7b_hi": 0.67,
+    "allam-2-7b_kn": 1.67,
+    "allam-2-7b_ta": 1.0,
+    "allam-2-7b_te": 2.0,
+    "qwen/qwen3.8-27b_bn": 12.0,
+    "qwen/qwen3.8-27b_hi": 14.0,
+    "qwen/qwen3.8-27b_kn": 12.33,
+    "qwen/qwen3.8-27b_ta": 11.33,
+    "qwen/qwen3.8-27b_te": 15.0
+  },
+  "by_model_and_partition": {
+    "allam-2-7b_TEST-ID": 0.0,
+    "allam-2-7b_TEST-OOD": 4.0,
+    "qwen/qwen3.8-27b_TEST-ID": 0.2,
+    "qwen/qwen3.8-27b_TEST-OOD": 38.4
+  },
+  "by_model_and_composition": {
+    "allam-2-7b_authentic_False": 0.0,
+    "allam-2-7b_authentic_True": 4.0,
+    "qwen/qwen3.8-27b_authentic_False": 0.2,
+    "qwen/qwen3.8-27b_authentic_True": 38.4
+  },
+  "overall_model_accuracy": {
+    "qwen/qwen3.8-27b": 12.93,
+    "allam-2-7b": 1.33
+  }
+}

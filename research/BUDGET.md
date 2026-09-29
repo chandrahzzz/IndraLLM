@@ -1,10 +1,10 @@
 # IndraLLM — Experiment Budget & API Spend Ledger
 
-**Last Updated:** 2026-09-29T08:14:52.840236+00:00
+**Last Updated:** 2026-09-29T08:47:28.019224+00:00
 **Hard Budget Ceiling:** $10.00 USD
 **Target Spend Ceiling:** $5.00 USD
-**Current Cumulative Spend:** **$0.1040 USD**
-**Remaining Usable Budget:** **$9.8960 USD**
+**Current Cumulative Spend:** **$0.2061 USD**
+**Remaining Usable Budget:** **$9.7939 USD**
 
 ---
 
@@ -25,6 +25,10 @@
 | 2026-09-28T19:22:13 | EXP-001 | groq | llama-3.3-70b | 250 | 5342 | 12500 | $0.0200 | Pilot inference over 250 prompts |
 | 2026-09-28T19:22:44 | EXP-001 | groq | qwen-2.5-32b | 250 | 5342 | 69626 | $0.0200 | Pilot inference over 250 prompts |
 | 2026-09-28T19:22:44 | EXP-001 | local | sarvam-2b-v0.5 | 250 | 5342 | 8952 | $0.0000 | Pilot inference over 250 prompts |
+| 2026-09-29T08:26:44 | EXP-002 | groq | multi-model | 80 | 8070 | 8070 | $0.0013 | EXP-002 smoke stage inference and evaluation |
+| 2026-09-29T08:29:06 | EXP-002 | groq | multi-model | 400 | 40991 | 40991 | $0.0066 | EXP-002 val_sample stage inference and evaluation |
+| 2026-09-29T08:43:04 | EXP-002 | groq | multi-model | 6000 | 552744 | 552744 | $0.0884 | EXP-002 full stage inference and evaluation |
+| 2026-09-29T08:44:07 | EXP-002 | groq | multi-model | 6000 | 36080 | 36080 | $0.0058 | EXP-002 full stage inference and evaluation |
 
 ---
 

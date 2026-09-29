@@ -1,0 +1,346 @@
+{
+  "allam-2-7b": {
+    "condition_accuracy": {
+      "A_EN": 2.67,
+      "B_NATIVE": 0.67,
+      "C_ROMAN": 0.67,
+      "D_CS": 1.67,
+      "E_MIXED_SCRIPT": 1.0
+    },
+    "adjusted_condition_accuracy": {
+      "A_EN": 0.73,
+      "B_NATIVE": 0.0,
+      "C_ROMAN": 0.0,
+      "D_CS": 0.0,
+      "E_MIXED_SCRIPT": 0.0
+    },
+    "authentic_core_condition_accuracy": {
+      "A_EN": 8.0,
+      "B_NATIVE": 2.0,
+      "C_ROMAN": 2.0,
+      "D_CS": 5.0,
+      "E_MIXED_SCRIPT": 3.0
+    },
+    "synthetic_tier_condition_accuracy": {
+      "A_EN": 0.0,
+      "B_NATIVE": 0.0,
+      "C_ROMAN": 0.0,
+      "D_CS": 0.0,
+      "E_MIXED_SCRIPT": 0.0
+    },
+    "language_accuracy": {
+      "bn": 1.33,
+      "hi": 0.67,
+      "kn": 1.67,
+      "ta": 1.0,
+      "te": 2.0
+    },
+    "paired_contrasts_authentic_core": {
+      "C1_English_vs_Native": {
+        "statistic": 2.5,
+        "p_value": 0.11384629800665763,
+        "b01": 8,
+        "b10": 2,
+        "b00": 0,
+        "b11": 90,
+        "odds_ratio": 4.0,
+        "discordant_count": 10,
+        "b01_ctrl_correct_treat_wrong": 8,
+        "b10_ctrl_wrong_treat_correct": 2,
+        "observed_diff_pct": -6.0,
+        "ci_lower_pct": -12.0,
+        "ci_upper_pct": 0.0,
+        "holm_bonferroni": {
+          "p_value": 0.11384629800665763,
+          "threshold": 0.0125,
+          "significant": false,
+          "rank": 1
+        }
+      },
+      "C2_Native_vs_Roman": {
+        "statistic": 0.25,
+        "p_value": 0.6170750774519739,
+        "b01": 2,
+        "b10": 2,
+        "b00": 0,
+        "b11": 96,
+        "odds_ratio": 1.0,
+        "discordant_count": 4,
+        "b01_ctrl_correct_treat_wrong": 2,
+        "b10_ctrl_wrong_treat_correct": 2,
+        "observed_diff_pct": 0.0,
+        "ci_lower_pct": -4.0,
+        "ci_upper_pct": 4.0,
+        "holm_bonferroni": {
+          "p_value": 0.6170750774519739,
+          "threshold": 0.025,
+          "significant": false,
+          "rank": 3
+        }
+      },
+      "C3_English_vs_CodeSwitched": {
+        "statistic": 0.36363636363636365,
+        "p_value": 0.5464935954065822,
+        "b01": 7,
+        "b10": 4,
+        "b00": 1,
+        "b11": 88,
+        "odds_ratio": 1.75,
+        "discordant_count": 11,
+        "b01_ctrl_correct_treat_wrong": 7,
+        "b10_ctrl_wrong_treat_correct": 4,
+        "observed_diff_pct": -3.0,
+        "ci_lower_pct": -10.0,
+        "ci_upper_pct": 3.0,
+        "holm_bonferroni": {
+          "p_value": 0.5464935954065822,
+          "threshold": 0.016666666666666666,
+          "significant": false,
+          "rank": 2
+        }
+      },
+      "C4_SingleScript_vs_MixedScript": {
+        "statistic": 0.25,
+        "p_value": 0.6170750774519739,
+        "b01": 3,
+        "b10": 1,
+        "b00": 2,
+        "b11": 94,
+        "odds_ratio": 3.0,
+        "discordant_count": 4,
+        "b01_ctrl_correct_treat_wrong": 3,
+        "b10_ctrl_wrong_treat_correct": 1,
+        "observed_diff_pct": -2.0,
+        "ci_lower_pct": -6.0,
+        "ci_upper_pct": 2.0,
+        "holm_bonferroni": {
+          "p_value": 0.6170750774519739,
+          "threshold": 0.05,
+          "significant": false,
+          "rank": 4
+        }
+      }
+    },
+    "glmm_regression": {
+      "odds_ratios": {
+        "Intercept": 0.0873,
+        "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]": 0.2327,
+        "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]": 0.2327,
+        "C(condition, Treatment(reference='A_EN'))[T.D_CS]": 0.6027,
+        "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]": 0.3532,
+        "C(language)[T.hi]": 0.4863,
+        "C(language)[T.kn]": 1.2677,
+        "C(language)[T.ta]": 0.7396,
+        "C(language)[T.te]": 1.543
+      },
+      "p_values": {
+        "Intercept": 0.0002,
+        "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]": 0.0798,
+        "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]": 0.0469,
+        "C(condition, Treatment(reference='A_EN'))[T.D_CS]": 0.3738,
+        "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]": 0.1488,
+        "C(language)[T.hi]": 0.4361,
+        "C(language)[T.kn]": 0.7945,
+        "C(language)[T.ta]": 0.7161,
+        "C(language)[T.te]": 0.6078
+      },
+      "conf_int_95": {
+        "0": {
+          "Intercept": 0.0237,
+          "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]": 0.0456,
+          "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]": 0.0553,
+          "C(condition, Treatment(reference='A_EN'))[T.D_CS]": 0.1975,
+          "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]": 0.086,
+          "C(language)[T.hi]": 0.0792,
+          "C(language)[T.kn]": 0.2127,
+          "C(language)[T.ta]": 0.1455,
+          "C(language)[T.te]": 0.2944
+        },
+        "1": {
+          "Intercept": 0.3213,
+          "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]": 1.1888,
+          "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]": 0.9799,
+          "C(condition, Treatment(reference='A_EN'))[T.D_CS]": 1.8394,
+          "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]": 1.4509,
+          "C(language)[T.hi]": 2.9846,
+          "C(language)[T.kn]": 7.5555,
+          "C(language)[T.ta]": 3.7583,
+          "C(language)[T.te]": 8.0865
+        }
+      },
+      "num_clusters": 100
+    }
+  },
+  "qwen/qwen3.8-27b": {
+    "condition_accuracy": {
+      "A_EN": 22.0,
+      "B_NATIVE": 9.33,
+      "C_ROMAN": 11.0,
+      "D_CS": 14.33,
+      "E_MIXED_SCRIPT": 8.0
+    },
+    "adjusted_condition_accuracy": {
+      "A_EN": 21.98,
+      "B_NATIVE": 0.0,
+      "C_ROMAN": 0.0,
+      "D_CS": 3.15,
+      "E_MIXED_SCRIPT": 0.0
+    },
+    "authentic_core_condition_accuracy": {
+      "A_EN": 64.0,
+      "B_NATIVE": 28.0,
+      "C_ROMAN": 33.0,
+      "D_CS": 43.0,
+      "E_MIXED_SCRIPT": 24.0
+    },
+    "synthetic_tier_condition_accuracy": {
+      "A_EN": 1.0,
+      "B_NATIVE": 0.0,
+      "C_ROMAN": 0.0,
+      "D_CS": 0.0,
+      "E_MIXED_SCRIPT": 0.0
+    },
+    "language_accuracy": {
+      "bn": 12.0,
+      "hi": 14.0,
+      "kn": 12.33,
+      "ta": 11.33,
+      "te": 15.0
+    },
+    "paired_contrasts_authentic_core": {
+      "C1_English_vs_Native": {
+        "statistic": 30.625,
+        "p_value": 3.130341399016774e-08,
+        "b01": 38,
+        "b10": 2,
+        "b00": 26,
+        "b11": 34,
+        "odds_ratio": 19.0,
+        "discordant_count": 40,
+        "b01_ctrl_correct_treat_wrong": 38,
+        "b10_ctrl_wrong_treat_correct": 2,
+        "observed_diff_pct": -36.0,
+        "ci_lower_pct": -46.0,
+        "ci_upper_pct": -26.0,
+        "holm_bonferroni": {
+          "p_value": 3.130341399016774e-08,
+          "threshold": 0.0125,
+          "significant": true,
+          "rank": 1
+        }
+      },
+      "C2_Native_vs_Roman": {
+        "statistic": 0.5161290322580645,
+        "p_value": 0.47249761400068846,
+        "b01": 13,
+        "b10": 18,
+        "b00": 15,
+        "b11": 54,
+        "odds_ratio": 0.7222222222222222,
+        "discordant_count": 31,
+        "b01_ctrl_correct_treat_wrong": 13,
+        "b10_ctrl_wrong_treat_correct": 18,
+        "observed_diff_pct": 5.0,
+        "ci_lower_pct": -6.0,
+        "ci_upper_pct": 16.0,
+        "holm_bonferroni": {
+          "p_value": 0.47249761400068846,
+          "threshold": 0.05,
+          "significant": false,
+          "rank": 4
+        }
+      },
+      "C3_English_vs_CodeSwitched": {
+        "statistic": 9.30232558139535,
+        "p_value": 0.0022886315392519696,
+        "b01": 32,
+        "b10": 11,
+        "b00": 32,
+        "b11": 25,
+        "odds_ratio": 2.909090909090909,
+        "discordant_count": 43,
+        "b01_ctrl_correct_treat_wrong": 32,
+        "b10_ctrl_wrong_treat_correct": 11,
+        "observed_diff_pct": -21.0,
+        "ci_lower_pct": -33.0,
+        "ci_upper_pct": -8.98,
+        "holm_bonferroni": {
+          "p_value": 0.0022886315392519696,
+          "threshold": 0.016666666666666666,
+          "significant": true,
+          "rank": 2
+        }
+      },
+      "C4_SingleScript_vs_MixedScript": {
+        "statistic": 8.307692307692308,
+        "p_value": 0.00394775185690346,
+        "b01": 29,
+        "b10": 10,
+        "b00": 14,
+        "b11": 47,
+        "odds_ratio": 2.9,
+        "discordant_count": 39,
+        "b01_ctrl_correct_treat_wrong": 29,
+        "b10_ctrl_wrong_treat_correct": 10,
+        "observed_diff_pct": -19.0,
+        "ci_lower_pct": -31.0,
+        "ci_upper_pct": -8.0,
+        "holm_bonferroni": {
+          "p_value": 0.00394775185690346,
+          "threshold": 0.025,
+          "significant": true,
+          "rank": 3
+        }
+      }
+    },
+    "glmm_regression": {
+      "odds_ratios": {
+        "Intercept": 1.5266,
+        "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]": 0.2162,
+        "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]": 0.2742,
+        "C(condition, Treatment(reference='A_EN'))[T.D_CS]": 0.4214,
+        "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]": 0.1753,
+        "C(language)[T.hi]": 1.3835,
+        "C(language)[T.kn]": 1.0998,
+        "C(language)[T.ta]": 0.9527,
+        "C(language)[T.te]": 1.5129
+      },
+      "p_values": {
+        "Intercept": 0.22,
+        "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]": 0.0,
+        "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]": 0.0,
+        "C(condition, Treatment(reference='A_EN'))[T.D_CS]": 0.0012,
+        "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]": 0.0,
+        "C(language)[T.hi]": 0.4648,
+        "C(language)[T.kn]": 0.8141,
+        "C(language)[T.ta]": 0.9032,
+        "C(language)[T.te]": 0.3408
+      },
+      "conf_int_95": {
+        "0": {
+          "Intercept": 0.7766,
+          "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]": 0.1336,
+          "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]": 0.1672,
+          "C(condition, Treatment(reference='A_EN'))[T.D_CS]": 0.2496,
+          "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]": 0.0995,
+          "C(language)[T.hi]": 0.5793,
+          "C(language)[T.kn]": 0.4977,
+          "C(language)[T.ta]": 0.4363,
+          "C(language)[T.te]": 0.6455
+        },
+        "1": {
+          "Intercept": 3.001,
+          "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]": 0.3498,
+          "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]": 0.4497,
+          "C(condition, Treatment(reference='A_EN'))[T.D_CS]": 0.7115,
+          "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]": 0.3088,
+          "C(language)[T.hi]": 3.3043,
+          "C(language)[T.kn]": 2.4301,
+          "C(language)[T.ta]": 2.0804,
+          "C(language)[T.te]": 3.5461
+        }
+      },
+      "num_clusters": 100
+    }
+  }
+}

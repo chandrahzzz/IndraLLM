@@ -1,7 +1,7 @@
 {
   "hard_ceiling_usd": 10.0,
   "target_ceiling_usd": 5.0,
-  "cumulative_spend_usd": 0.104,
+  "cumulative_spend_usd": 0.20606,
   "transactions": [
     {
       "timestamp": "2026-09-28T18:58:50.275596+00:00",
@@ -145,6 +145,50 @@
       "output_tokens": 8952,
       "cost_usd": 0.0,
       "notes": "Pilot inference over 250 prompts"
+    },
+    {
+      "timestamp": "2026-09-29T08:26:44.928077+00:00",
+      "experiment_id": "EXP-002",
+      "provider": "groq",
+      "model": "multi-model",
+      "calls": 80,
+      "input_tokens": 8070,
+      "output_tokens": 8070,
+      "cost_usd": 0.00129,
+      "notes": "EXP-002 smoke stage inference and evaluation"
+    },
+    {
+      "timestamp": "2026-09-29T08:29:06.509300+00:00",
+      "experiment_id": "EXP-002",
+      "provider": "groq",
+      "model": "multi-model",
+      "calls": 400,
+      "input_tokens": 40991,
+      "output_tokens": 40991,
+      "cost_usd": 0.00656,
+      "notes": "EXP-002 val_sample stage inference and evaluation"
+    },
+    {
+      "timestamp": "2026-09-29T08:43:04.528636+00:00",
+      "experiment_id": "EXP-002",
+      "provider": "groq",
+      "model": "multi-model",
+      "calls": 6000,
+      "input_tokens": 552744,
+      "output_tokens": 552744,
+      "cost_usd": 0.08844,
+      "notes": "EXP-002 full stage inference and evaluation"
+    },
+    {
+      "timestamp": "2026-09-29T08:44:07.392584+00:00",
+      "experiment_id": "EXP-002",
+      "provider": "groq",
+      "model": "multi-model",
+      "calls": 6000,
+      "input_tokens": 36080,
+      "output_tokens": 36080,
+      "cost_usd": 0.00577,
+      "notes": "EXP-002 full stage inference and evaluation"
     }
   ],
   "estimates": [
@@ -537,6 +581,110 @@
       "remaining_budget_usd": 0.0,
       "approved": false,
       "timestamp": "2026-09-29T08:14:52.834125+00:00"
+    },
+    {
+      "experiment_id": "EXP-002",
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "estimated_calls": 80,
+      "estimated_input_tokens": 4800,
+      "estimated_output_tokens": 5600,
+      "estimated_cost_usd": 0.008,
+      "current_cumulative_spend": 0.104,
+      "remaining_budget_usd": 9.888,
+      "approved": true,
+      "timestamp": "2026-09-29T08:25:38.039179+00:00"
+    },
+    {
+      "experiment_id": "EXP-002",
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "estimated_calls": 80,
+      "estimated_input_tokens": 4800,
+      "estimated_output_tokens": 5600,
+      "estimated_cost_usd": 0.008,
+      "current_cumulative_spend": 0.104,
+      "remaining_budget_usd": 9.888,
+      "approved": true,
+      "timestamp": "2026-09-29T08:26:24.962778+00:00"
+    },
+    {
+      "experiment_id": "EXP-002",
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "estimated_calls": 400,
+      "estimated_input_tokens": 24000,
+      "estimated_output_tokens": 28000,
+      "estimated_cost_usd": 0.04,
+      "current_cumulative_spend": 0.10529,
+      "remaining_budget_usd": 9.85471,
+      "approved": true,
+      "timestamp": "2026-09-29T08:27:27.300071+00:00"
+    },
+    {
+      "experiment_id": "EXP-002",
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "estimated_calls": 6000,
+      "estimated_input_tokens": 360000,
+      "estimated_output_tokens": 420000,
+      "estimated_cost_usd": 0.6,
+      "current_cumulative_spend": 0.11185,
+      "remaining_budget_usd": 9.28815,
+      "approved": true,
+      "timestamp": "2026-09-29T08:29:54.709797+00:00"
+    },
+    {
+      "experiment_id": "EXP-002",
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "estimated_calls": 6000,
+      "estimated_input_tokens": 360000,
+      "estimated_output_tokens": 420000,
+      "estimated_cost_usd": 0.6,
+      "current_cumulative_spend": 0.11185,
+      "remaining_budget_usd": 9.28815,
+      "approved": true,
+      "timestamp": "2026-09-29T08:31:26.777854+00:00"
+    },
+    {
+      "experiment_id": "EXP-002",
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "estimated_calls": 6000,
+      "estimated_input_tokens": 360000,
+      "estimated_output_tokens": 420000,
+      "estimated_cost_usd": 0.6,
+      "current_cumulative_spend": 0.20029,
+      "remaining_budget_usd": 9.19971,
+      "approved": true,
+      "timestamp": "2026-09-29T08:43:25.700329+00:00"
+    },
+    {
+      "experiment_id": "TEST-001",
+      "provider": "groq",
+      "model": "llama-3.1-8b-instant",
+      "estimated_calls": 10,
+      "estimated_input_tokens": 1200,
+      "estimated_output_tokens": 1500,
+      "estimated_cost_usd": 0.00018,
+      "current_cumulative_spend": 0.20606,
+      "remaining_budget_usd": 9.79376,
+      "approved": true,
+      "timestamp": "2026-09-29T08:47:22.655640+00:00"
+    },
+    {
+      "experiment_id": "TEST-OVERFLOW",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "estimated_calls": 1000000,
+      "estimated_input_tokens": 1000000000,
+      "estimated_output_tokens": 1000000000,
+      "estimated_cost_usd": 1380.0,
+      "current_cumulative_spend": 0.20606,
+      "remaining_budget_usd": 0.0,
+      "approved": false,
+      "timestamp": "2026-09-29T08:47:28.011214+00:00"
     }
   ]
 }

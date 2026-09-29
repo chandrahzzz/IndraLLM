@@ -1,0 +1,55 @@
+{
+  "stage": "smoke",
+  "git_commit": "4e6ba8f7d8ee493e27b650698217d8cfb83b304c",
+  "timestamp": "2026-09-29T08:26:44.948378+00:00",
+  "total_inferences_attempted": 40,
+  "successful_inferences": 40,
+  "failed_inferences": 0,
+  "models_evaluated": [
+    "qwen/qwen3.8-27b",
+    "allam-2-7b"
+  ],
+  "total_tokens_spent": 16140,
+  "actual_cost_spent_usd": 0.00129,
+  "cumulative_budget_status": {
+    "hard_ceiling_usd": 10.0,
+    "target_ceiling_usd": 5.0,
+    "cumulative_spend_usd": 0.10529,
+    "remaining_budget_usd": 9.8947,
+    "target_remaining_usd": 4.8947
+  },
+  "by_model_and_condition": {
+    "allam-2-7b_A_EN": 0.0,
+    "allam-2-7b_B_NATIVE": 0.0,
+    "allam-2-7b_C_ROMAN": 0.0,
+    "allam-2-7b_D_CS": 0.0,
+    "allam-2-7b_E_MIXED_SCRIPT": 0.0,
+    "qwen/qwen3.8-27b_A_EN": 0.0,
+    "qwen/qwen3.8-27b_B_NATIVE": 25.0,
+    "qwen/qwen3.8-27b_C_ROMAN": 0.0,
+    "qwen/qwen3.8-27b_D_CS": 0.0,
+    "qwen/qwen3.8-27b_E_MIXED_SCRIPT": 0.0
+  },
+  "by_model_and_language": {
+    "allam-2-7b_hi": 0.0,
+    "allam-2-7b_ta": 0.0,
+    "qwen/qwen3.8-27b_hi": 0.0,
+    "qwen/qwen3.8-27b_ta": 10.0
+  },
+  "by_model_and_partition": {
+    "allam-2-7b_TEST-ID": 0.0,
+    "allam-2-7b_TEST-OOD": 0.0,
+    "qwen/qwen3.8-27b_TEST-ID": 0.0,
+    "qwen/qwen3.8-27b_TEST-OOD": 10.0
+  },
+  "by_model_and_composition": {
+    "allam-2-7b_authentic_False": 0.0,
+    "allam-2-7b_authentic_True": 0.0,
+    "qwen/qwen3.8-27b_authentic_False": 0.0,
+    "qwen/qwen3.8-27b_authentic_True": 10.0
+  },
+  "overall_model_accuracy": {
+    "qwen/qwen3.8-27b": 5.0,
+    "allam-2-7b": 0.0
+  }
+}
