@@ -1,6 +1,6 @@
 # IndraLLM — Experiment Budget & API Spend Ledger
 
-**Last Updated:** 2026-09-29T05:06:53.741920+00:00
+**Last Updated:** 2026-09-29T08:14:52.840236+00:00
 **Hard Budget Ceiling:** $10.00 USD
 **Target Spend Ceiling:** $5.00 USD
 **Current Cumulative Spend:** **$0.1040 USD**

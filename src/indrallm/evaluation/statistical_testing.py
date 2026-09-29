@@ -263,3 +263,39 @@ def krippendorff_alpha_nominal(matrix: np.ndarray) -> float:
     D_o = observed_diff / total_pairs
     D_e = expected_diff / (total_ratings * (total_ratings - 1))
     return float(1.0 - (D_o / D_e))
+
+
+def fit_repeated_measures_logistic_regression(
+    data_df: Any,
+    formula: str = "correct ~ C(condition, Treatment(reference='A_EN')) + C(language)",
+    cluster_col: str = "semantic_id",
+) -> dict[str, Any]:
+    """Fit logistic regression with clustered robust standard errors (GEE/Cluster-Robust)
+    accounting for repeated measures within semantic_id clusters.
+
+    Resolves pseudoreplication across condition prompts belonging to the same semantic unit.
+    """
+    import statsmodels.formula.api as smf
+
+    model = smf.logit(formula, data=data_df)
+    fitted = model.fit(
+        cov_type="cluster",
+        cov_kwds={"groups": data_df[cluster_col]},
+        disp=False,
+    )
+
+    odds_ratios = np.exp(fitted.params).to_dict()
+    p_values = fitted.pvalues.to_dict()
+    conf_int = np.exp(fitted.conf_int()).to_dict()
+
+    return {
+        "params": fitted.params.to_dict(),
+        "odds_ratios": odds_ratios,
+        "p_values": p_values,
+        "conf_int_95": conf_int,
+        "aic": float(fitted.aic),
+        "bic": float(fitted.bic),
+        "nobs": int(fitted.nobs),
+        "num_clusters": int(data_df[cluster_col].nunique()),
+    }
+
