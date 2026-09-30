@@ -1,0 +1,18 @@
+% Table 1: Benchmark Architecture and Semantic-Paired Condition Realization
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{llp{5.5cm}cc}
+\toprule
+\textbf{Condition} & \textbf{Linguistic Modality} & \textbf{Representative Prompt Example (CAA Cut-off)} & \textbf{Mean CMI} & \textbf{Prompts ($N$)} \\
+\midrule
+\texttt{A\_EN} & English Monolingual & \textit{Under the Citizenship Amendment Act 2019, what is the prerequisite cut-off date?} & 0.0 & 1,500 \\
+\texttt{D\_CS} & Romanized Code-Switching & \textit{CAA cut-off date ke hisaab se eligible migrants ke liye prerequisite timeline kya hai?} & 28.4 & 1,500 \\
+\texttt{E\_MIXED} & Dual-Script Alternation & \textit{CAA cut-off date के मुताबिक eligible migrants के लिए prerequisite timeline क्या है?} & 31.2 & 1,500 \\
+\texttt{B\_NATIVE} & Native Script Indic & \textit{नागरिकता संशोधन अधिनियम 2019 के तहत पात्रता की कट-ऑफ तिथि क्या है?} & 0.0 & 1,500 \\
+\texttt{C\_ROMAN} & Romanized Indic & \textit{Nagrikta sanshodhan adhiniyam 2019 ke tehat cut-off tareekh kya hai?} & 0.0 & 1,500 \\
+\bottomrule
+\end{tabular}
+\caption{The five semantic-paired condition representations in IndraLLM. Each semantic proposition is realized in five parallel modalities across five Indian languages (Hindi, Bengali, Tamil, Telugu, Kannada), holding underlying statutory facts invariant.}
+\label{tab:benchmark_composition}
+\end{table*}

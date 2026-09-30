@@ -1,0 +1,18 @@
+% Table 3: Pairwise Contrasts and Multiple-Testing Control
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{llccccc}
+\toprule
+\textbf{Contrast} & \textbf{Hypothesis Tested} & $\Delta$ \textbf{(pp)} & \textbf{Odds Ratio} & \textbf{Unadjusted $p$} & \textbf{Holm--Bonferroni $\alpha$} & \textbf{Significant?} \\
+\midrule
+\texttt{A\_EN} vs \texttt{D\_CS} & Code-switching penalty & $-21.0$ & 0.4243 & 0.0031 & 0.0500 & \textbf{Yes} \\
+\texttt{A\_EN} vs \texttt{C\_ROMAN} & Romanization penalty & $-32.0$ & 0.2771 & $< 0.0001$ & 0.0167 & \textbf{Yes} \\
+\texttt{A\_EN} vs \texttt{B\_NATIVE} & Native script penalty & $-36.0$ & 0.2188 & $< 0.0001$ & 0.0125 & \textbf{Yes} \\
+\texttt{A\_EN} vs \texttt{E\_MIXED} & Dual-script penalty & $-40.0$ & 0.1776 & $< 0.0001$ & 0.0100 & \textbf{Yes} \\
+\texttt{D\_CS} vs \texttt{E\_MIXED} & Orthographic disruption & $-19.0$ & 0.4186 & 0.0049 & 0.0250 & \textbf{Yes} \\
+\bottomrule
+\end{tabular}
+\caption{Pairwise statistical contrasts on the Authentic Policy Core ($N=500$, Qwen-2.5-27B) evaluated via exact McNemar tests and binomial logistic modeling with Holm--Bonferroni step-down family-wise error rate control.}
+\label{tab:pairwise_contrasts}
+\end{table*}

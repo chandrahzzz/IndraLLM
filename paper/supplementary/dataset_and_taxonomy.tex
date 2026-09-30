@@ -1,0 +1,28 @@
+\section{Dataset Architecture and Error Taxonomy}
+\label{sec:supp_dataset_taxonomy}
+
+\subsection{Benchmark Partitions and Contamination Controls}
+IndraLLM enforces strict isolation between evaluation partitions:
+\begin{itemize}
+    \item \textbf{Development Partition (5,000 prompts, 1,000 groups):} Assigned exclusively to Template Families \texttt{TF-01} through \texttt{TF-06}.
+    \item \textbf{Validation Partition (1,000 prompts, 200 groups):} Assigned to Template Families \texttt{TF-07} and \texttt{TF-08}.
+    \item \textbf{Test-ID Partition (1,000 prompts, 200 groups):} In-distribution testing using disjoint entities under \texttt{TF-09} and \texttt{TF-10}.
+    \item \textbf{Test-OOD Partition (500 prompts, 100 groups):} Out-of-distribution evaluation under novel structural syntactic frames (\texttt{TF-11}, \texttt{TF-12}).
+    \item \textbf{Authentic Statutory Core (500 prompts, 100 groups):} Embedded within the test partition; comprises 20 legally enacted Indian statutory acts derived from official Ministry gazettes.
+\end{itemize}
+
+\subsection{Qualitative Failure Taxonomy Definitions}
+Incorrect model completions were classified into four discrete failure modes:
+\begin{enumerate}
+    \item \textbf{Numeric Threshold Drift:} The model retrieves the correct statute, legal context, and qualitative condition, but misreports a numerical threshold, penalty limit, or year (e.g., retrieving December 31, 2019 instead of December 31, 2014 for the CAA cut-off date). Dominant in Romanized code-switching (\texttt{D\_CS}, 33.0\%).
+    \item \textbf{Reasoning Truncation and Incompleteness:} The completion initiates a relevant explanation but terminates prematurely mid-sentence or mid-clause, omitting the defining comparative or relational counterpart. Dominant in dual-script alternation (\texttt{E\_MIXED}, 20.0\% vs. 1.0\% in English).
+    \item \textbf{Factual Hallucination / Distortion:} The model invents non-existent provisions, attributes rules to unrelated governmental bodies (e.g., fabricating National Informatics Centre departments), or confounds distinct statutes.
+    \item \textbf{Refusal / Evasion:} The model issues a standard refusal string (e.g., claiming inability to answer or demanding additional context).
+\end{enumerate}
+
+\subsection{Preserved Negative Results}
+In accordance with open science practices, we document two major null findings:
+\begin{enumerate}
+    \item \textbf{Global Token Fertility Mediation Null:} Baron--Kenny Path $b$ testing whether continuous characters-per-token sequence fertility linearly mediates accuracy was non-significant ($\beta = -0.0212, p = 0.9387$, Sobel $z = 0.0769$). Sequence-wide token counts do not drive the factual deficit.
+    \item \textbf{Cross-Model Rank Invariance Null:} On the Authentic Core, Allam-7B collapses to a capacity floor on Indic conditions (2\%--3\%), resulting in a non-significant Spearman correlation ($\rho = 0.6669, p = 0.2189$). Measuring representation sensitivity requires models with sufficient baseline Indic pretraining capacity.
+\end{enumerate}

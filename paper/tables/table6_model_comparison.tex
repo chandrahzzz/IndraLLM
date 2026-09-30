@@ -1,0 +1,21 @@
+% Table 6: Cross-Model Comparison and Capacity Floor Disclosure
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Condition} & \textbf{Qwen-27B} & \textbf{Rank} & \textbf{Allam-7B} & \textbf{Rank} \\
+\midrule
+\texttt{A\_EN} & \textbf{64.0\%} & 1 & \textbf{8.0\%} & 1 \\
+\texttt{D\_CS} & \textbf{43.0\%} & 2 & \textbf{5.0\%} & 2 \\
+\texttt{C\_ROMAN} & \textbf{32.0\%} & 3 & \textbf{2.0\%} & 4.5 \\
+\texttt{B\_NATIVE} & \textbf{28.0\%} & 4 & \textbf{2.0\%} & 4.5 \\
+\texttt{E\_MIXED} & \textbf{24.0\%} & 5 & \textbf{3.0\%} & 3 \\
+\midrule
+\multicolumn{5}{l}{Spearman's $\rho = 0.6669$ ($p = 0.2189$, non-significant)} \\
+\multicolumn{5}{l}{Kendall's $\tau = 0.5270$ ($p = 0.2326$, non-significant)} \\
+\bottomrule
+\end{tabular}
+\caption{Cross-model performance comparison on the Authentic Policy Core ($N=100$ prompts per condition). While English and code-switching preserve their relative hierarchy across architectures, Allam-7B collapses to a capacity floor on Indic conditions (2\%--3\%), precluding fine-grained ordinal rank significance.}
+\label{tab:model_comparison}
+\end{table}
