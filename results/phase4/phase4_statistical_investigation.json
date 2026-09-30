@@ -1,0 +1,249 @@
+{
+  "workstream_1_topic_hierarchy": {
+    "n_prompts_l1": 500,
+    "n_semantic_groups_l2": 100,
+    "n_base_topics_l3": 20,
+    "icc_topic": 0.2663,
+    "var_topic": 0.0588,
+    "var_residual": 0.1619,
+    "level_1_naive": {
+      "params": {
+        "Intercept": 0.5754,
+        "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]": -1.5198,
+        "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]": -1.2835,
+        "C(condition, Treatment(reference='A_EN'))[T.D_CS]": -0.8572,
+        "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]": -1.728
+      },
+      "bse": {
+        "Intercept": 0.2083,
+        "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]": 0.305,
+        "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]": 0.2977,
+        "C(condition, Treatment(reference='A_EN'))[T.D_CS]": 0.2902,
+        "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]": 0.3134
+      },
+      "pvalues": {
+        "Intercept": 0.0057,
+        "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]": 0.0,
+        "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]": 0.0,
+        "C(condition, Treatment(reference='A_EN'))[T.D_CS]": 0.0031,
+        "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]": 0.0
+      }
+    },
+    "level_2_semantic_id": {
+      "params": {
+        "Intercept": 0.5754,
+        "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]": -1.5198,
+        "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]": -1.2835,
+        "C(condition, Treatment(reference='A_EN'))[T.D_CS]": -0.8572,
+        "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]": -1.728
+      },
+      "bse": {
+        "Intercept": 0.2083,
+        "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]": 0.2413,
+        "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]": 0.2482,
+        "C(condition, Treatment(reference='A_EN'))[T.D_CS]": 0.2614,
+        "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]": 0.2844
+      },
+      "pvalues": {
+        "Intercept": 0.0057,
+        "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]": 0.0,
+        "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]": 0.0,
+        "C(condition, Treatment(reference='A_EN'))[T.D_CS]": 0.001,
+        "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]": 0.0
+      }
+    },
+    "level_3_base_topic": {
+      "params": {
+        "Intercept": 0.5754,
+        "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]": -1.5198,
+        "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]": -1.2835,
+        "C(condition, Treatment(reference='A_EN'))[T.D_CS]": -0.8572,
+        "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]": -1.728
+      },
+      "bse": {
+        "Intercept": 0.4452,
+        "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]": 0.365,
+        "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]": 0.3604,
+        "C(condition, Treatment(reference='A_EN'))[T.D_CS]": 0.4426,
+        "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]": 0.4936
+      },
+      "pvalues": {
+        "Intercept": 0.1962,
+        "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]": 0.0,
+        "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]": 0.0004,
+        "C(condition, Treatment(reference='A_EN'))[T.D_CS]": 0.0528,
+        "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]": 0.0005
+      }
+    }
+  },
+  "workstream_2_clustered_power": {
+    "design_effect": 7.3912,
+    "effective_sample_size": 67.6,
+    "icc": 0.2663,
+    "cluster_power_scenarios": {
+      "topics_10": {
+        "n_topics": 10,
+        "total_prompts": 250,
+        "mde_80_pct": 39.45,
+        "power_for_21pct_diff": 31.97
+      },
+      "topics_20": {
+        "n_topics": 20,
+        "total_prompts": 500,
+        "mde_80_pct": 27.89,
+        "power_for_21pct_diff": 55.93
+      },
+      "topics_30": {
+        "n_topics": 30,
+        "total_prompts": 750,
+        "mde_80_pct": 22.78,
+        "power_for_21pct_diff": 73.34
+      },
+      "topics_50": {
+        "n_topics": 50,
+        "total_prompts": 1250,
+        "mde_80_pct": 17.64,
+        "power_for_21pct_diff": 91.54
+      },
+      "topics_75": {
+        "n_topics": 75,
+        "total_prompts": 1875,
+        "mde_80_pct": 14.4,
+        "power_for_21pct_diff": 98.32
+      },
+      "topics_100": {
+        "n_topics": 100,
+        "total_prompts": 2500,
+        "mde_80_pct": 12.47,
+        "power_for_21pct_diff": 99.71
+      }
+    }
+  },
+  "workstream_5_mediation_analysis": {
+    "contrast_tested": "D_CS vs E_MIXED_SCRIPT (Orthographic Disruption)",
+    "path_c_total_effect": {
+      "beta": -0.8708,
+      "odds_ratio": 0.4186,
+      "p_value": 0.0049
+    },
+    "path_a_mediator_model": {
+      "beta": -0.9372,
+      "se": 0.0792,
+      "p_value": 0.0,
+      "interpretation": "Mixed script significantly reduces characters-per-token (higher fragmentation)."
+    },
+    "path_b_mediator_to_outcome": {
+      "beta": -0.0212,
+      "se": 0.2762,
+      "p_value": 0.9387,
+      "interpretation": "Higher characters-per-token predicts higher factual accuracy."
+    },
+    "path_c_prime_direct_effect": {
+      "beta": -0.8908,
+      "p_value": 0.0274
+    },
+    "sobel_test": {
+      "indirect_effect": 0.0199,
+      "sobel_z": 0.0769,
+      "sobel_p_value": 0.9387,
+      "significant_mediation": false
+    },
+    "proportion_mediated_pct": 1992693.54
+  },
+  "workstream_8_interaction_model": {
+    "interaction_terms_count": 16,
+    "min_interaction_p_value": 0.0504,
+    "any_significant_interaction": false,
+    "interaction_pvalues": {
+      "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]:C(language)[T.hi]": 0.0976,
+      "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]:C(language)[T.hi]": 0.3134,
+      "C(condition, Treatment(reference='A_EN'))[T.D_CS]:C(language)[T.hi]": 0.5037,
+      "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]:C(language)[T.hi]": 0.2823,
+      "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]:C(language)[T.kn]": 0.4006,
+      "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]:C(language)[T.kn]": 0.2471,
+      "C(condition, Treatment(reference='A_EN'))[T.D_CS]:C(language)[T.kn]": 0.3312,
+      "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]:C(language)[T.kn]": 0.2823,
+      "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]:C(language)[T.ta]": 0.61,
+      "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]:C(language)[T.ta]": 0.4654,
+      "C(condition, Treatment(reference='A_EN'))[T.D_CS]:C(language)[T.ta]": 0.4555,
+      "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]:C(language)[T.ta]": 0.0673,
+      "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]:C(language)[T.te]": 0.6374,
+      "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]:C(language)[T.te]": 0.0504,
+      "C(condition, Treatment(reference='A_EN'))[T.D_CS]:C(language)[T.te]": 0.6074,
+      "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]:C(language)[T.te]": 0.7918
+    },
+    "interpretation": "No significant Condition x Language interactions detected. The representation penalty operates uniformly across all 5 Indic languages."
+  },
+  "workstream_9_evaluator_sensitivity_grid": {
+    "min_adjusted_gap_pct": 16.82,
+    "max_adjusted_gap_pct": 34.38,
+    "robust_across_entire_grid": true,
+    "surface_samples_count": 25,
+    "surface_grid": [
+      {
+        "evaluator_tpr_cs": 0.8,
+        "evaluator_fpr_cs": 0.04,
+        "adjusted_en_pct": 68.13,
+        "adjusted_cs_pct": 51.32,
+        "gap_pct": 16.82,
+        "gap_survives": true
+      },
+      {
+        "evaluator_tpr_cs": 0.8,
+        "evaluator_fpr_cs": 0.07,
+        "adjusted_en_pct": 68.13,
+        "adjusted_cs_pct": 49.32,
+        "gap_pct": 18.82,
+        "gap_survives": true
+      },
+      {
+        "evaluator_tpr_cs": 0.8,
+        "evaluator_fpr_cs": 0.1,
+        "adjusted_en_pct": 68.13,
+        "adjusted_cs_pct": 47.14,
+        "gap_pct": 20.99,
+        "gap_survives": true
+      },
+      {
+        "evaluator_tpr_cs": 0.8,
+        "evaluator_fpr_cs": 0.13,
+        "adjusted_en_pct": 68.13,
+        "adjusted_cs_pct": 44.78,
+        "gap_pct": 23.36,
+        "gap_survives": true
+      },
+      {
+        "evaluator_tpr_cs": 0.8,
+        "evaluator_fpr_cs": 0.16,
+        "adjusted_en_pct": 68.13,
+        "adjusted_cs_pct": 42.19,
+        "gap_pct": 25.94,
+        "gap_survives": true
+      },
+      {
+        "evaluator_tpr_cs": 0.84,
+        "evaluator_fpr_cs": 0.04,
+        "adjusted_en_pct": 68.13,
+        "adjusted_cs_pct": 48.75,
+        "gap_pct": 19.38,
+        "gap_survives": true
+      },
+      {
+        "evaluator_tpr_cs": 0.84,
+        "evaluator_fpr_cs": 0.07,
+        "adjusted_en_pct": 68.13,
+        "adjusted_cs_pct": 46.75,
+        "gap_pct": 21.38,
+        "gap_survives": true
+      },
+      {
+        "evaluator_tpr_cs": 0.84,
+        "evaluator_fpr_cs": 0.1,
+        "adjusted_en_pct": 68.13,
+        "adjusted_cs_pct": 44.59,
+        "gap_pct": 23.54,
+        "gap_survives": true
+      }
+    ]
+  }
+}

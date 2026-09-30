@@ -1,0 +1,29 @@
+{
+  "dataset_version": "IndraLLM-CS-v1.2-PILOT",
+  "release_tag": "IndraLLM-CS-v1.2-PILOT",
+  "generation_date": "2026-09-30T14:38:00.000000+00:00",
+  "number_of_propositions": 25,
+  "number_of_condition_prompts": 125,
+  "topic_range": [
+    "AUTH-021",
+    "AUTH-045"
+  ],
+  "propositions_file": "pilot_propositions_25.jsonl",
+  "prompts_file": "pilot_prompts_125.csv",
+  "languages": [
+    "hi",
+    "ta",
+    "te",
+    "bn",
+    "kn"
+  ],
+  "conditions": [
+    "A_EN",
+    "B_NATIVE",
+    "C_ROMAN",
+    "D_CS",
+    "E_MIXED_SCRIPT"
+  ],
+  "lead_author": "Chandrahas Reddy <kurkurrereddy@gmail.com>",
+  "attribution": "Chandrahas Reddy"
+}
