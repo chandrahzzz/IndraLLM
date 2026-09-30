@@ -33,7 +33,7 @@
 \maketitle
 
 \begin{abstract}
-Multilingual Large Language Models (LLMs) are increasingly deployed in linguistically diverse environments where users frequently code-switch and alternate scripts. However, standard multilingual evaluations often confound linguistic representation with semantic content by comparing different questions across languages. In this work, we introduce \textbf{IndraLLM}, a controlled benchmark framework enforcing strict five-way semantic pairing across English, native-script Indic, Romanized Indic, Romanized code-switching, and dual-script alternation across five scheduled Indian languages (Hindi, Bengali, Tamil, Telugu, Kannada). Evaluating parametric factual recall on authentic Indian statutory questions, we find that dense multilingual transformers (Qwen-2.5-27B) exhibit substantial performance degradation under non-canonical representations: factual accuracy drops monotonically from English (\textbf{64.0\%}) to code-switching (\textbf{43.0\%}) and dual-script alternation (\textbf{24.0\%}). Under hierarchical modeling clustered by statutory act, native-script ($p < 0.0001$), Romanized ($p = 0.0004$), and dual-script ($p = 0.0005$) drops remain highly significant, while the code-switching contrast yields $p = 0.0528$ due to topic-level dependence ($N_{\text{eff}} = 67.6$). Investigating the mechanism, we show that global sequence token fertility does \textit{not} linearly mediate accuracy loss (Sobel $p = 0.9387$); rather, localized script transitions (mean 5.1 per prompt) associate with an 18-fold surge in reasoning truncation. An epidemiological 2D Rogan--Gladen sensitivity analysis demonstrates that the representation gap remains substantial ($+16.8\%$ to $+34.4\%$) across all plausible judge error profiles. To address the 20-topic empirical constraint, we construct and release an expanded 45-topic benchmark design elevating prospective statistical power to 89.4\%.
+Multilingual Large Language Models (LLMs) are increasingly deployed in linguistically diverse environments where users frequently code-switch and alternate scripts. However, standard multilingual evaluations often confound linguistic representation with semantic content by comparing different questions across languages. In this work, we introduce \textbf{IndraLLM}, a controlled benchmark framework enforcing strict five-way semantic pairing across English, native-script Indic, Romanized Indic, Romanized code-switching, and dual-script alternation across five scheduled Indian languages (Hindi, Bengali, Tamil, Telugu, Kannada). Evaluating parametric factual recall on authentic Indian statutory questions, we find that dense multilingual transformers (Qwen-2.5-27B) exhibit substantial performance degradation under non-canonical representations: factual accuracy drops monotonically from English (\textbf{64.0\%}) to code-switching (\textbf{43.0\%}), Romanized Indic (\textbf{33.0\%}), native Indic script (\textbf{28.0\%}), and dual-script alternation (\textbf{24.0\%}). Under hierarchical modeling clustered by statutory act, native-script ($p < 0.0001$), Romanized ($p = 0.0004$), and dual-script ($p = 0.0005$) drops remain highly significant, while the code-switching contrast yields $p = 0.0528$ due to topic-level dependence ($N_{\text{eff}} = 67.6$). Investigating the mechanism, we show that global sequence token fertility does \textit{not} linearly mediate accuracy loss (Sobel $p = 0.9387$); rather, localized script transitions (mean 5.1 per prompt) associate with a 20-fold surge in reasoning truncation (20.0\% vs. 1.0\%). An epidemiological 2D Rogan--Gladen sensitivity analysis demonstrates that the representation gap remains substantial ($+16.8\%$ to $+34.4\%$) across all plausible judge error profiles. To address the 20-topic empirical constraint, we construct and release an expanded 45-topic benchmark design elevating prospective statistical power to 88.6\% (exact: 88.57\%).
 \end{abstract}
 
 \section{Introduction}
@@ -59,11 +59,11 @@ To isolate the causal effect of surface linguistic representation from factual k
     \item \texttt{E\_MIXED}: Dual-script alternation (English technical terms in Latin script embedded directly within native Brahmic sentences).
 \end{enumerate}
 
-Empirically evaluating dense multilingual transformers (Qwen-2.5-27B) across 500 prompts drawn from 20 authentic statutory frameworks, we discover that \textbf{factual reliability is fragile to surface linguistic representation}. As illustrated in Figure~\ref{fig:accuracy_by_condition}, model accuracy drops monotonically from \textbf{64.0\%} in English to \textbf{43.0\%} in code-switching, \textbf{32.0\%} in Romanized Indic, \textbf{28.0\%} in native script, and \textbf{24.0\%} in dual-script alternation.
+Empirically evaluating dense multilingual transformers (Qwen-2.5-27B) across 500 prompts drawn from 20 authentic statutory frameworks, we discover that \textbf{factual reliability is fragile to surface linguistic representation}. As illustrated in Figure~\ref{fig:accuracy_by_condition}, model accuracy drops monotonically from \textbf{64.0\%} in English to \textbf{43.0\%} in code-switching, \textbf{33.0\%} in Romanized Indic, \textbf{28.0\%} in native script, and \textbf{24.0\%} in dual-script alternation.
 
 Holding lexical borrowing and semantic content strictly invariant, alternating writing systems mid-sentence (\texttt{E\_MIXED}) incurs an additional \textbf{19.0 percentage point penalty} ($p = 0.0049$) relative to Latin-script code-switching (\texttt{D\_CS}), demonstrating that orthographic disruption imposes severe cognitive friction beyond language mixing alone.
 
-Crucially, our forensic investigation uncovers that this degradation is \textit{not} explained by a naive linear mediation through global sequence token fertility (Sobel test $z = 0.0769, p = 0.9387$, confirming a null mediation). Instead, qualitative error taxonomy and boundary metrics reveal that frequent discrete script transitions (mean 5.1 per prompt) associate with an 18-to-20-fold increase in reasoning truncation and premature clause completion.
+Crucially, our forensic investigation uncovers that this degradation is \textit{not} explained by a naive linear mediation through global sequence token fertility (Sobel test $z = 0.0769, p = 0.9387$, confirming a null mediation). Instead, qualitative error taxonomy and boundary metrics reveal that frequent discrete script transitions (mean 5.1 per prompt) associate with a 20-fold surge in reasoning truncation (20.0\% vs. 1.0\%) and premature clause completion.
 
 We summarize our primary contributions:
 \begin{itemize}
@@ -71,7 +71,7 @@ We summarize our primary contributions:
     \item \textbf{Empirical Demonstration of Representation Fragility:} We provide rigorous evidence that factual retrieval reliability degrades substantially across non-canonical linguistic forms, dropping from 64.0\% to 24.0\%.
     \item \textbf{Disentangling Script Mixing from Language Mixing:} We isolate the penalty of orthographic script alternation from lexical code-mixing, proving that switching writing systems mid-sentence imposes an additional 19 percentage point deficit ($p = 0.0049$).
     \item \textbf{Mechanistic Refinement:} We empirically refute the linear sequence fertility mediation hypothesis ($p = 0.9387$) and present evidence that localized script transition boundaries disrupt reasoning continuity.
-    \item \textbf{Evaluator Robustness & Benchmark Expansion:} We demonstrate via a 2D Rogan--Gladen sensitivity surface that the representation gap ($\ge 16.8\%$) survives any plausible judge measurement bias, and release an expanded 45-topic benchmark design elevating prospective statistical power to 89.4\%.
+    \item \textbf{Evaluator Robustness \& Benchmark Expansion:} We demonstrate via a 2D Rogan--Gladen sensitivity surface that the representation gap ($\ge 16.8\%$) survives any plausible judge measurement bias, and release an expanded 45-topic benchmark design elevating prospective statistical power to 88.6\% (exact: 88.57\%).
 \end{itemize}
 
 \section{Related Work}
@@ -84,7 +84,7 @@ Evaluating generative LLMs across diverse languages has emerged as a central res
 Code-switching has been widely studied in natural language inference and sentiment analysis, utilizing benchmarks such as GLUECoS \citep{khanuja2020gluecos}. Prior work in Indian social media linguistics \citep{bali2014borrowin,sitaram2019survey} has focused on measuring mixing degrees using the Code-Mixing Index (CMI) \citep{gamback2014comparing}. However, previous code-switching evaluations have rarely addressed fact-critical, closed-book statutory recall under invariant semantic controls.
 
 \paragraph{Tokenization and Representation Fragility.}
-Subword tokenization via Byte-Pair Encoding (BPE) \citep{sennrich2016neural} is known to create disparate fragmentation across non-Latin scripts \citep{rust2021good,petrov2023language}. While prior literature hypothesized that subword fragmentation directly causes performance loss, few studies have conducted formal statistical mediation analysis to test whether continuous sequence fertility explains the deficit.
+Subword tokenization via Byte-Pair Encoding (BPE) \citep{sennrich2016neural} is known to create disparate fragmentation across non-Latin scripts \citep{rust2021good,petrov2023language}. While prior literature hypothesized that subword fragmentation directly drives performance loss, few studies have conducted formal statistical mediation analysis to test whether continuous sequence fertility explains the deficit.
 
 \paragraph{Factuality and Automated Evaluator Sensitivity.}
 Evaluating factual precision in free-form generation relies increasingly on LLM judges \citep{lin2022truthfulqa,min2023factscore,zheng2023judging}. However, automated judges can introduce condition-dependent measurement errors. We adopt the classical epidemiological prevalence inversion framework of \citet{rogan1978estimating} to systematically bound judge error rates.
@@ -125,7 +125,7 @@ Partitions strictly enforce entity and template-family disjointness across Devel
 \subsection{Model Scope and Inference Protocol}
 Inference was conducted on open-weight multilingual models:
 \begin{enumerate}
-    \item \textbf{Qwen-2.5-27B} (\texttt{qwen/qwen3.8-27b}): A 27-billion parameter dense multilingual transformer.
+    \item \textbf{Qwen-2.5-27B} (evaluated via Groq API endpoint \texttt{qwen/qwen3.8-27b}): A 27-billion parameter dense multilingual transformer.
     \item \textbf{Allam-2-7B} (\texttt{allam-2-7b}): A 7-billion parameter localized multilingual architecture.
 \end{enumerate}
 Prompts were evaluated under greedy decoding (temperature $= 0.0$, top-$p = 1.0$) with maximum completion length capped at 128 tokens.
@@ -138,11 +138,11 @@ Prompts were evaluated under greedy decoding (temperature $= 0.0$, top-$p = 1.0$
 \subsection{Primary Representation Degradation (RQ1)}
 Table~\ref{tab:accuracy_by_condition} reports factual retrieval accuracy on the Authentic Statutory Core ($N=500$ prompts, 100 per condition for Qwen-2.5-27B). In standard English (\texttt{A\_EN}), the model achieves \textbf{64.0\%} accuracy [54.2\%, 72.6\%]. 
 
-When the exact same statutory questions are presented in Romanized code-switching (\texttt{D\_CS}), accuracy drops to \textbf{43.0\%} (a relative loss of 32.8\%). Presenting prompts in Romanized Indic (\texttt{C\_ROMAN}) yields \textbf{32.0\%}, native Indic script (\texttt{B\_NATIVE}) yields \textbf{28.0\%}, and dual-script alternation (\texttt{E\_MIXED}) collapses to \textbf{24.0\%} (a relative drop of 62.5\%).
+When the exact same statutory questions are presented in Romanized code-switching (\texttt{D\_CS}), accuracy drops to \textbf{43.0\%} (a relative loss of 32.8\%). Presenting prompts in Romanized Indic (\texttt{C\_ROMAN}) yields \textbf{33.0\%} (a relative drop of 48.4\%), native Indic script (\texttt{B\_NATIVE}) yields \textbf{28.0\%}, and dual-script alternation (\texttt{E\_MIXED}) collapses to \textbf{24.0\%} (a relative drop of 62.5\%).
 
 \input{tables/table3_pairwise_contrasts.tex}
 
-As documented in Table~\ref{tab:pairwise_contrasts}, all pairwise condition drops relative to English are statistically significant under exact McNemar's tests and survive Holm--Bonferroni family-wise error rate control ($p \le 0.0031$, adjusted $\alpha \le 0.050$).
+As documented in Table~\ref{tab:pairwise_contrasts}, all pairwise condition drops relative to English are statistically significant under exact McNemar's tests and survive Holm--Bonferroni family-wise error rate control \citep{holm1979simple} ($p \le 0.0031$, adjusted $\alpha \le 0.050$).
 
 \subsection{Orthographic vs. Lexical Disentanglement (RQ2)}
 Comparing Romanized code-switching (\texttt{D\_CS}) directly against dual-script alternation (\texttt{E\_MIXED}) provides a clean experimental isolation: both conditions share identical vocabulary, identical syntactic phrasing, and identical language borrowing ratios. The sole experimental manipulation is orthography (Latin script vs. alternating Brahmic script).
@@ -227,7 +227,7 @@ Rather than a continuous sequence-wide dilution, error taxonomy reveals that deg
 \label{fig:script_transitions}
 \end{figure}
 
-As shown in Figure~\ref{fig:script_transitions} and Table~\ref{tab:mechanistic_analysis}, frequent script transitions associate with an \textbf{18-to-20-fold surge in reasoning truncation} (20.0\% in \texttt{E\_MIXED} vs. 1.0\% in English). Switching writing systems mid-sentence fractures BPE subwords at boundary tokens, disrupting self-attention flow and causing generative completions to terminate prematurely before completing multi-clause statutory propositions.
+As shown in Figure~\ref{fig:script_transitions} and Table~\ref{tab:mechanistic_analysis}, frequent script transitions associate with a \textbf{20-fold surge in reasoning truncation} (20.0\% in \texttt{E\_MIXED} vs. 1.0\% in English). Switching writing systems mid-sentence fractures BPE subwords at boundary tokens, disrupting self-attention flow and causing generative completions to terminate prematurely before completing multi-clause statutory propositions.
 
 \subsection{Qualitative Failure Taxonomy}
 Condition-specific failure modes exhibit distinct qualitative signatures (Figure~\ref{fig:error_taxonomy}):
@@ -266,7 +266,7 @@ To resolve the sample size constraint of the 20-topic baseline, we constructed a
 \begin{itemize}
     \item \textbf{Scale:} 25 brand-new, independent statutory acts (\texttt{AUTH-021} to \texttt{AUTH-045}), yielding 125 multi-condition prompts.
     \item \textbf{Independence Verification:} Automated audits verified zero entity collisions ($0/25$) and negligible evidence n-gram overlap ($J \le 0.0208$) against the original core.
-    \item \textbf{Prospective Power:} Expanding the benchmark design from 20 to 45 topics elevates the prospective effective sample size to $N_{\text{eff}} = 152.2$ and prospective statistical power to \textbf{88.57\% $\approx$ 89.4\%} ($\text{MDE} = 18.60\%$).
+    \item \textbf{Prospective Power:} Expanding the benchmark design from 20 to 45 topics elevates the prospective effective sample size to $N_{\text{eff}} = 152.2$ and prospective statistical power to \textbf{88.6\% (exact: 88.57\%)} ($\text{MDE} = 18.60\%$).
 \end{itemize}
 We emphasize that this 45-topic expansion represents a frozen benchmark release and prospective power calculation; empirical inference in this paper covers the 20-topic authentic core.
 
@@ -281,7 +281,7 @@ We explicitly delineate the boundary conditions of this study:
     \item \textbf{Capacity Floor in Smaller Models:} Allam-7B exhibits a 2\%--3\% capacity floor on Indic conditions, precluding fine-grained ordinal ranking.
     \item \textbf{Parametric vs. RAG Retrieval:} Our study measures closed-book parametric recall. We make no claims regarding whether retrieval-augmented generation (RAG) with in-context gold snippets mitigates the penalty.
     \item \textbf{Language Scope:} Evaluations cover five major scheduled languages. We make no claims regarding unrepresented language families or unwritten vernaculars.
-    \item \textbf{Associational Mechanism:} The link between script transition density and reasoning truncation is an empirical association, not a mathematically proven causal neural proof.
+    \item \textbf{Associational Mechanism:} The link between script transition density and reasoning truncation is an empirical association, not a mathematically demonstrated causal neural proof.
 \end{enumerate}
 
 \section{Ethics and Responsible Use}
