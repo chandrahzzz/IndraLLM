@@ -1,0 +1,49 @@
+\section{Mathematical and Statistical Derivations}
+\label{sec:supp_statistics}
+
+\subsection{Intra-Cluster Correlation and Clustered Design Effect}
+In cluster-correlated evaluation where observations are clustered within legislative acts $j \in \{1, \dots, K\}$, total variance decomposes into between-cluster variance $\sigma^2_{\text{topic}}$ and residual within-cluster variance $\sigma^2_{\text{residual}}$:
+\begin{equation}
+\text{ICC} = \rho = \frac{\sigma^2_{\text{topic}}}{\sigma^2_{\text{topic}} + \sigma^2_{\text{residual}}}
+\end{equation}
+Empirically estimated via a linear mixed-effects model on the Authentic Policy Core ($N=500$ prompts across 20 acts):
+\begin{equation}
+\sigma^2_{\text{topic}} = 0.0588, \quad \sigma^2_{\text{residual}} = 0.1619 \implies \text{ICC} = 0.2663
+\end{equation}
+
+For cluster size $m$, the survey Design Effect ($\text{DEFF}$) measures variance inflation relative to simple random sampling:
+\begin{equation}
+\text{DEFF} = 1 + (m - 1)\rho
+\end{equation}
+For overall dataset evaluation ($m = 25$ prompts per statutory topic):
+\begin{equation}
+\text{DEFF}_{\text{full}} = 1 + (25 - 1)(0.2663) = 7.3912 \implies N_{\text{eff}} = \frac{500}{7.3912} = 67.64
+\end{equation}
+
+For pairwise condition contrasts (e.g., \texttt{A\_EN} vs. \texttt{D\_CS}), each cluster contains $m_{\text{cond}} = 5$ prompts:
+\begin{equation}
+\text{DEFF}_{\text{cond}} = 1 + (5 - 1)(0.2663) = 2.0652
+\end{equation}
+The standard error of the proportion difference $\Delta = p_1 - p_2$ across $K$ clusters is:
+\begin{equation}
+\text{SE}_{\Delta} = \sqrt{\frac{2 \cdot \bar{p}(1 - \bar{p}) \cdot \text{DEFF}_{\text{cond}}}{K \cdot m_{\text{cond}}}}
+\end{equation}
+For $K = 20$ topics: $\text{SE}_{\Delta} = 0.0996$, yielding statistical power for $\Delta = 0.21$:
+\begin{equation}
+z = \frac{0.21 - 1.96(0.0996)}{0.0996} = 0.14925 \implies \Phi(z) = 55.93\%
+\end{equation}
+For $K = 45$ expanded topics: $\text{SE}_{\Delta} = 0.0664$, yielding prospective power:
+\begin{equation}
+z = \frac{0.21 - 1.96(0.0664)}{0.0664} = 1.2038 \implies \Phi(z) = 88.57\% \approx 88.6\%
+\end{equation}
+
+\subsection{Rogan--Gladen Latent Inversion Estimator}
+Let $P_{\text{obs}}$ denote the apparent accuracy assigned by an automated judge with sensitivity $\text{TPR} = P(\hat{Y}=1 \mid Y=1)$ and false-positive rate $\text{FPR} = P(\hat{Y}=1 \mid Y=0)$. By total probability:
+\begin{equation}
+P_{\text{obs}} = \pi \cdot \text{TPR} + (1 - \pi) \cdot \text{FPR}
+\end{equation}
+Solving for the true latent accuracy $\pi$:
+\begin{equation}
+\pi = \frac{P_{\text{obs}} - \text{FPR}}{\text{TPR} - \text{FPR}}
+\end{equation}
+To ensure validity on the probability simplex, estimates are bounded: $\hat{\pi} = \max(0.0, \min(1.0, \pi))$.

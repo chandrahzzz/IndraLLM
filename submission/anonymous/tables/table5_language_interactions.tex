@@ -1,0 +1,20 @@
+% Table 5: Disaggregated Language Accuracies and Interaction Analysis
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{llcccccc}
+\toprule
+\textbf{Language} & \textbf{Family} & \texttt{A\_EN} & \texttt{D\_CS} & \texttt{C\_ROMAN} & \texttt{B\_NATIVE} & \texttt{E\_MIXED} & \textbf{Mean Indic Penalty ($\Delta$)} \\
+\midrule
+Hindi (\texttt{hi}) & Indo-Aryan & 65.0\% & 45.0\% & 35.0\% & 45.0\% & 20.0\% & $-28.75$ pp \\
+Bengali (\texttt{bn}) & Indo-Aryan & 60.0\% & 50.0\% & 15.0\% & 15.0\% & 35.0\% & $-31.25$ pp \\
+Telugu (\texttt{te}) & Dravidian & 65.0\% & 45.0\% & 50.0\% & 25.0\% & 35.0\% & $-26.25$ pp \\
+Kannada (\texttt{kn}) & Dravidian & 65.0\% & 35.0\% & 35.0\% & 30.0\% & 20.0\% & $-35.00$ pp \\
+Tamil (\texttt{ta}) & Dravidian & 65.0\% & 40.0\% & 30.0\% & 25.0\% & 10.0\% & $-38.75$ pp \\
+\midrule
+\textbf{Combined Average} & & \textbf{64.0\%} & \textbf{43.0\%} & \textbf{33.0\%} & \textbf{28.0\%} & \textbf{24.0\%} & \textbf{$-32.00$ pp} \\
+\bottomrule
+\end{tabular}
+\caption{Disaggregated factual accuracy across languages and condition modalities ($N=20$ prompts per cell, Qwen-2.5-27B). In full factorial GEE modeling, all 16 $\text{Condition} \times \text{Language}$ interaction terms are non-significant after Holm--Bonferroni family-wise error rate control (all adjusted $p > 0.05$).}
+\label{tab:language_interactions}
+\end{table*}

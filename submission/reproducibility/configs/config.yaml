@@ -1,0 +1,98 @@
+# IndraLLM project configuration
+
+languages:            # ISO 639-1 code -> display name (all paired with English)
+  ta: Tamil
+  hi: Hindi
+  te: Telugu
+  bn: Bengali
+  kn: Kannada
+
+domains: [health, education, government, agriculture]
+
+hallucination_categories: [factual, temporal, entity, cultural]
+
+target_per_language: 1000
+
+paths:
+  raw: data/raw
+  filtered: data/filtered
+  questions: data/questions
+  answers: data/answers
+  annotations: data/annotations
+  final: data/final
+  features: data/features
+  models: models
+  fasttext_model: lid.176.bin
+
+filtering:
+  min_tokens: 4
+  # a text counts as code-switched if either:
+  #  - it mixes native script + Latin script tokens, or
+  #  - fastText assigns >= min_lang_prob to two different languages
+  min_lang_prob: 0.15
+  min_minority_token_ratio: 0.15   # at least 15% tokens from the minority language
+
+generation:
+  max_tokens: 256
+  temperature: 0.3
+  load_in_4bit: true        # hf_local models: 4-bit quantization so 8B fits a free T4
+  models:
+    # laptop, cheap API (Groq) or free (Gemini) — no GPU needed
+    gemini-flash: {provider: google, model: gemini-2.5-flash}
+    llama3:       {provider: groq,   model: llama-3.1-8b-instant}
+    llama70b:     {provider: groq,   model: llama-3.3-70b-versatile}
+    qwen:         {provider: groq,   model: qwen/qwen3.6-27b}
+    gpt-oss:      {provider: groq,   model: openai/gpt-oss-20b}
+    # Colab GPU only — Indic models Groq doesn't host
+    sarvam:       {provider: hf_local, model: sarvamai/sarvam-2b-v0.5}
+    airavata:     {provider: hf_local, model: ai4bharat/Airavata}
+
+gold:                       # gold-truth QA generation (Gemini free tier)
+  model: gemini-2.5-flash        # gold answers — quality matters (ground truth)
+  seed_model: gemini-2.5-flash-lite  # synthetic seeds — bulk, higher daily cap
+  sleep_seconds: 4          # ~15 requests/min, free-tier safe
+  synthetic_per_prompt: 5   # sentences per (language, domain) request
+
+annotation:
+  annotators_per_example: 2
+  min_kappa: 0.75
+  # BERTScore silver labeling (auto_label.py)
+  bertscore_threshold: 0.65   # F1 below this -> hallucinated
+  verify_band: [0.55, 0.75]   # ambiguous band exported for human verification
+
+detection:
+  base_model: ai4bharat/IndicBERTv2-MLM-only
+  max_length: 256
+  epochs: 5
+  lr: 2.0e-5
+  batch_size: 16
+  seed: 42
+  split: [0.8, 0.1, 0.1]   # train/val/test
+
+mitigation:
+  model: sarvamai/sarvam-2b-v0.5
+  alpha: 1.0
+  beta: 0.5
+  max_new_tokens: 256
+  load_in_4bit: true        # ~7 GB VRAM on free T4
+
+lora:                       # QLoRA SFT on correct answers (mitigation/lora_finetune.py)
+  r: 8
+  alpha: 16
+  target_modules: [q_proj, v_proj]
+  epochs: 3
+  lr: 2.0e-4
+  batch_size: 4
+  grad_accum: 4
+
+nli:                        # zero-shot NLI hallucination judge baseline
+  model: microsoft/deberta-large-mnli
+  entail_threshold: 0.5     # entailment prob below this -> hallucinated
+
+api:                        # FastAPI detector server
+  host: 0.0.0.0
+  port: 8000
+
+hub:
+  dataset_repo: kurrered/IndraLLM-Benchmark
+  detector_repo: kurrered/IndraLLM-detector

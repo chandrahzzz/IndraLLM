@@ -1,0 +1,18 @@
+% Table 2: Accuracy by Linguistic Condition on Authentic Policy Core
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Condition} & \textbf{Correct / $N$} & \textbf{Accuracy (\%)} & \textbf{95\% Wilson CI} & \textbf{Relative Drop vs \texttt{A\_EN}} \\
+\midrule
+\texttt{A\_EN} & 64 / 100 & \textbf{64.0\%} & [54.2\%, 72.6\%] & Baseline \\
+\texttt{D\_CS} & 43 / 100 & \textbf{43.0\%} & [33.8\%, 52.8\%] & $-32.8\%$ ($-21.0$ pp) \\
+\texttt{C\_ROMAN} & 33 / 100 & \textbf{33.0\%} & [24.6\%, 42.7\%] & $-48.4\%$ ($-31.0$ pp) \\
+\texttt{B\_NATIVE} & 28 / 100 & \textbf{28.0\%} & [20.1\%, 37.5\%] & $-56.3\%$ ($-36.0$ pp) \\
+\texttt{E\_MIXED} & 24 / 100 & \textbf{24.0\%} & [16.7\%, 33.2\%] & $-62.5\%$ ($-40.0$ pp) \\
+\bottomrule
+\end{tabular}
+\caption{Factual retrieval accuracy across the five controlled linguistic conditions on the Authentic Statutory Core ($N=500$ prompts, Qwen-2.5-27B). All conditions query identical statutory propositions.}
+\label{tab:accuracy_by_condition}
+\end{table}

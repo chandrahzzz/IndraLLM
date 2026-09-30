@@ -1,0 +1,22 @@
+% Table 8: Mechanistic Analysis of Orthographic Disruption
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Condition} & \textbf{Script Transitions} & \textbf{Chars / Token} & \textbf{Accuracy} & \textbf{Reasoning Truncation} & \textbf{Numeric Drift} & \textbf{Hallucination} \\
+\midrule
+\texttt{A\_EN} & 0.1 & 7.12 & 64.0\% & 1.0\% & 17.0\% & 18.0\% \\
+\texttt{D\_CS} & 0.1 & 6.16 & 43.0\% & 6.0\% & 33.0\% & 18.0\% \\
+\texttt{C\_ROMAN} & 0.1 & 7.09 & 33.0\% & 13.0\% & 35.0\% & 20.0\% \\
+\texttt{B\_NATIVE} & 1.1 & 3.26 & 28.0\% & 19.0\% & 34.0\% & 19.0\% \\
+\texttt{E\_MIXED} & \textbf{5.1} & 5.23 & 24.0\% & \textbf{20.0\%} & 40.0\% & 16.0\% \\
+\midrule
+\multicolumn{7}{l}{\textbf{Formal Mediation Decomposition (\texttt{D\_CS} vs. \texttt{E\_MIXED}):}} \\
+\multicolumn{7}{l}{Path $a$ (Condition $\to$ Chars/Token): $\beta = -0.9372$ ($p < 0.0001$); Path $c$ (Total Effect): $\beta = -0.8708$ ($p = 0.0049$)} \\
+\multicolumn{7}{l}{Path $b$ (Chars/Token $\to$ Accuracy controlling for condition): $\beta = -0.0212$ ($p = 0.9387$, \textbf{Null}); Sobel $z = 0.0769$ ($p = 0.9387$, \textbf{Null})} \\
+\bottomrule
+\end{tabular}
+\caption{Mechanistic comparison and mediation decomposition. While continuous sequence-wide token fertility does not mediate the effect (Sobel $p = 0.9387$), discrete script transitions (mean 5.1 per prompt) associate with a 20-fold surge in reasoning truncation (20.0\% vs. 1.0\%).}
+\label{tab:mechanistic_analysis}
+\end{table*}

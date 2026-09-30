@@ -1,0 +1,18 @@
+% Table 4: Clustered Statistical Analysis Across Levels of Aggregation
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Aggregation Level} & \textbf{Effective Unit} & \textbf{Clusters ($N$)} & \textbf{Effective $N$} & \texttt{D\_CS} $\beta$ \textbf{(SE)} & \texttt{D\_CS} $p$\textbf{-value} & \texttt{E\_MIXED} $p$\textbf{-value} \\
+\midrule
+Level 1: Unclustered & Individual Prompt & 500 & 500.0 & $-0.8572$ (0.2902) & 0.0031 & $< 0.0001$ \\
+Level 2: Semantic Group & Semantic Cluster & 100 & 284.1 & $-0.8572$ (0.2614) & 0.0010 & $< 0.0001$ \\
+Level 3: Statutory Topic & Base Legislative Act & 20 & 67.6 & $-0.8572$ (0.4426) & 0.0528 & 0.0005 \\
+\midrule
+\textit{Prospective Expansion} & \textit{Expanded Statutory Acts} & \textit{45} & \textit{152.2} & \multicolumn{3}{c}{\textit{Prospective Power: 88.57\% (MDE = 18.60\%)}} \\
+\bottomrule
+\end{tabular}
+\caption{Estimated log-odds effect size ($\beta$), robust standard error (SE), and significance across hierarchical clustering levels (GEE with exchangeable correlation structure). Parameter values remain invariant while standard errors widen under cluster-correlated topic variance ($\text{ICC} = 0.2663$). Level 3 $p=0.0528$ reflects sample size limitation ($N=20$ clusters, $55.9\%$ power), resolved prospectively by the 45-topic benchmark expansion.}
+\label{tab:clustered_gee}
+\end{table*}

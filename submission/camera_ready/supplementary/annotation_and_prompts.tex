@@ -1,0 +1,45 @@
+\section{Annotation Guidelines and Quality Control}
+\label{sec:supp_annotation}
+
+To ensure high ecological validity and linguistic naturalness while strictly maintaining factual invariance, all prompts in IndraLLM were constructed following standardized annotation procedures:
+
+\begin{enumerate}
+    \item \textbf{Semantic Invariance Principle:} Every condition realization (\texttt{A\_EN}, \texttt{B\_NATIVE}, \texttt{C\_ROMAN}, \texttt{D\_CS}, \texttt{E\_MIXED}) must query the exact same statutory entity, parameter, date, or threshold. No condition may introduce extraneous legal hints or omit required qualifying constraints.
+    \item \textbf{Code-Switching Conventions (\texttt{D\_CS}):} Romanized code-switching mirrors informal conversational communication across urban Indian digital contexts (e.g., Hinglish, Tanglish, Tenglish). Function words and conversational framing are provided in the Indic language using standardized Latin transliteration, while technical statutory nouns and act titles (e.g., \textit{Consumer Protection Act}, \textit{pecuniary jurisdiction}, \textit{threshold}) remain in English.
+    \item \textbf{Dual-Script Conventions (\texttt{E\_MIXED}):} Intra-sentential script alternation inserts technical English acronyms and nouns in Latin script directly into native Brahmic script sentences (Devanagari, Tamil, Telugu, Bengali, Kannada), reflecting common web and administrative document layouts.
+    \item \textbf{Inter-Annotator Agreement:} Native speaker validation across five Indian languages yielded a Fleiss' $\kappa = 0.719$ and Krippendorff's $\alpha = 0.719$, confirming substantial agreement on semantic equivalence and naturalness (mean naturalness score: $4.74 / 5.0$).
+\end{enumerate}
+
+\section{Prompt Templates and 5-Way Realization Examples}
+\label{sec:supp_prompts}
+
+Table~\ref{tab:supp_prompt_examples} provides verbatim examples across all five evaluated Indian languages for Topic \texttt{AUTH-006} (Citizenship Amendment Act Cut-off Date).
+
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{llp{11.5cm}}
+\toprule
+\textbf{Language} & \textbf{Condition} & \textbf{Verbatim Query Text} \\
+\midrule
+All & \texttt{A\_EN} & Under the Citizenship Amendment Act 2019, what is the prerequisite statutory cut-off date for eligible migrants? \\
+\midrule
+Hindi (\texttt{hi}) & \texttt{B\_NATIVE} & नागरिकता संशोधन अधिनियम 2019 के अनुसार, पात्र प्रवासियों के लिए वैधानिक कट-ऑफ तिथि क्या है? \\
+Hindi (\texttt{hi}) & \texttt{C\_ROMAN} & Nagrikta sanshodhan adhiniyam 2019 ke anusar, patra pravasiyon ke liye vaaidhanik cut-off tareekh kya hai? \\
+Hindi (\texttt{hi}) & \texttt{D\_CS} & CAA cut-off date ke hisaab se eligible migrants ke liye statutory prerequisite timeline kya hai? \\
+Hindi (\texttt{hi}) & \texttt{E\_MIXED} & CAA cut-off date के हिसाब से eligible migrants के लिए statutory prerequisite timeline क्या है? \\
+\midrule
+Tamil (\texttt{ta}) & \texttt{B\_NATIVE} & குடியுரிமை திருத்தச் சட்டம் 2019 இன் படி, தகுதியான குடியேறியவர்களுக்கான சட்டப்பூர்வ காலக்கெடு தேதி என்ன? \\
+Tamil (\texttt{ta}) & \texttt{C\_ROMAN} & Kudiyurimai thiruthach sattam 2019 in padi, thagudhiyaana kudiyeriyavargalukkaana sattappoorva kaalakkedu thedhi enna? \\
+Tamil (\texttt{ta}) & \texttt{D\_CS} & CAA cut-off date prakaram eligible migrants-kku statutory prerequisite timeline enna? \\
+Tamil (\texttt{ta}) & \texttt{E\_MIXED} & CAA cut-off date ప్రకారం eligible migrants-க்கு statutory prerequisite timeline என்ன? \\
+\midrule
+Telugu (\texttt{te}) & \texttt{B\_NATIVE} & పౌరసత్వ సవరణ చట్టం 2019 ప్రకారం, అర్హులైన వలసదారులకు చట్టబద్ధమైన గడువు తేదీ ఏమిటి? \\
+Telugu (\texttt{te}) & \texttt{C\_ROMAN} & Pourasathva savarana chattam 2019 prakaram, arhulaiana valasadhaarulaku chattabaddhamaina gaduvu thedhee emiti? \\
+Telugu (\texttt{te}) & \texttt{D\_CS} & CAA cut-off date prakaram eligible migrants kosam statutory prerequisite timeline enti? \\
+Telugu (\texttt{te}) & \texttt{E\_MIXED} & CAA cut-off date ప్రకారం eligible migrants కోసం statutory prerequisite timeline ఏమిటి? \\
+\bottomrule
+\end{tabular}
+\caption{Representative 5-way semantic-paired prompts querying Topic \texttt{AUTH-006} (CAA Cut-off Date: December 31, 2014) across Hindi, Tamil, and Telugu.}
+\label{tab:supp_prompt_examples}
+\end{table*}

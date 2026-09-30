@@ -1,0 +1,61 @@
+{
+  "dataset_version": "IndraLLM-CS-v1.1-CANDIDATE",
+  "release_tag": "IndraLLM-CS-v1.1-CANDIDATE",
+  "generation_date": "2026-09-29T05:02:43.262018+00:00",
+  "number_of_semantic_groups": 1500,
+  "number_of_condition_prompts": 7500,
+  "partitions": {
+    "DEVELOPMENT": {
+      "semantic_groups": 1000,
+      "prompts": 5000
+    },
+    "VALIDATION": {
+      "semantic_groups": 200,
+      "prompts": 1000
+    },
+    "TEST-ID": {
+      "semantic_groups": 200,
+      "prompts": 1000
+    },
+    "TEST-OOD": {
+      "semantic_groups": 100,
+      "prompts": 500
+    }
+  },
+  "languages": [
+    "hi",
+    "ta",
+    "te",
+    "bn",
+    "kn"
+  ],
+  "template_families": [
+    "TF-01",
+    "TF-02",
+    "TF-03",
+    "TF-04",
+    "TF-05",
+    "TF-06",
+    "TF-07",
+    "TF-08",
+    "TF-09",
+    "TF-10",
+    "TF-11",
+    "TF-12"
+  ],
+  "conditions": [
+    "A_EN",
+    "B_NATIVE",
+    "C_ROMAN",
+    "D_CS",
+    "E_MIXED_SCRIPT"
+  ],
+  "checksums": {
+    "development.csv": "ae244ef8cc20bf761f3837ffa92274c590ff7ede23b91a4a4f77ea0e574b11d8",
+    "validation.csv": "a22505f9629047a09e7590cfbc5581f300b317ccc3f1c5182a929559a8630be1",
+    "test_id.csv": "02ea9525d1a7efb2088f736c225ba8c627c2a051ddc090ed93204df4ae3d610a",
+    "test_ood.csv": "166d8f40340b1be9e40e9089b4b2c470aace62d204f15e1c4f952e4dc663dcee",
+    "condition_prompts_7500.csv": "27fd7d30e3f7c9e64e6b908e55d879141df76d52d19eafdf8e28b750da85529a",
+    "semantic_questions_full_1500.jsonl": "e6106786a3148da0170e07c1439cf3e1501fc96805df55c1aa5647230c1bab32"
+  }
+}
