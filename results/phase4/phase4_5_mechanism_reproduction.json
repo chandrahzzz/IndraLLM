@@ -1,0 +1,25 @@
+{
+  "e_mixed_script_mean_transitions": 5.1,
+  "path_c_total": {
+    "beta": -0.8708,
+    "p": 0.0049
+  },
+  "path_a_mediator": {
+    "beta": -0.9372,
+    "se": 0.0792,
+    "p": 0.0
+  },
+  "path_b_mediator_to_outcome": {
+    "beta": -0.0212,
+    "se": 0.2762,
+    "p": 0.9387
+  },
+  "path_c_prime_direct": {
+    "beta": -0.8908,
+    "p": 0.0274
+  },
+  "sobel_test": {
+    "z": 0.0769,
+    "p": 0.9387
+  }
+}

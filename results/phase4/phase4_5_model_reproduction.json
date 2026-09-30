@@ -1,0 +1,34 @@
+{
+  "comparison_table": {
+    "qwen": {
+      "A_EN": 64.0,
+      "B_NATIVE": 28.000000000000004,
+      "C_ROMAN": 33.0,
+      "D_CS": 43.0,
+      "E_MIXED_SCRIPT": 24.0
+    },
+    "allam": {
+      "A_EN": 8.0,
+      "B_NATIVE": 2.0,
+      "C_ROMAN": 2.0,
+      "D_CS": 5.0,
+      "E_MIXED_SCRIPT": 3.0
+    },
+    "rank_qwen": {
+      "A_EN": 1.0,
+      "B_NATIVE": 4.0,
+      "C_ROMAN": 3.0,
+      "D_CS": 2.0,
+      "E_MIXED_SCRIPT": 5.0
+    },
+    "rank_allam": {
+      "A_EN": 1.0,
+      "B_NATIVE": 4.5,
+      "C_ROMAN": 4.5,
+      "D_CS": 2.0,
+      "E_MIXED_SCRIPT": 3.0
+    }
+  },
+  "spearman_rho": 0.6669,
+  "spearman_pvalue": 0.218894
+}

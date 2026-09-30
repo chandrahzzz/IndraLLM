@@ -1,0 +1,12 @@
+{
+  "n_prompts": 500,
+  "n_topics": 20,
+  "var_topic": 0.0588,
+  "var_resid": 0.1619,
+  "icc": 0.2663,
+  "deff": 7.3916,
+  "n_eff": 67.64,
+  "d_cs_pvalue_l3": 0.0528,
+  "d_cs_beta_l3": -0.8572,
+  "d_cs_se_l3": 0.4426
+}

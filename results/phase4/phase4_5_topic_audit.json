@@ -1,0 +1,43 @@
+{
+  "pilot_propositions_count": 25,
+  "pilot_prompts_count": 125,
+  "prop_ids_range": [
+    "AUTH-021",
+    "AUTH-045"
+  ],
+  "unique_acts_count": 25,
+  "unique_entities_count": 25,
+  "unique_facts_count": 25,
+  "unique_sources_count": 25,
+  "entity_overlaps_count": 0,
+  "prompt_exact_overlaps_count": 0,
+  "max_evidence_3gram_jaccard": 0.0208,
+  "max_prompt_3gram_jaccard": 0.2609,
+  "pilot_acts_list": [
+    "Consumer Protection Act 2019",
+    "Digital Personal Data Protection Act 2023",
+    "Prevention of Money Laundering Act 2002",
+    "Real Estate Regulation and Development Act 2016",
+    "MSME Development Act 2006",
+    "Competition Act 2002",
+    "POSH Act 2013",
+    "Motor Vehicles Amendment Act 2019",
+    "EPF Act 1952",
+    "Maternity Benefit Amendment Act 2017",
+    "Juvenile Justice Act 2015",
+    "Geographical Indications Act 1999",
+    "Aadhaar Act 2016",
+    "Central Vigilance Commission Act 2003",
+    "FSSAI Food Safety Act 2006",
+    "FCRA 2010",
+    "LARR Land Acquisition Act 2013",
+    "Information Technology Act 2000",
+    "IBC 2016 Pre-Packaged Insolvency",
+    "Biological Diversity Amendment Act 2023",
+    "Consumer Act 1986 vs 2019",
+    "FCA 1980 vs IFA 1927",
+    "RERA vs IBC Real Estate Recourse",
+    "EPF vs PPF Investment Structure",
+    "TRAI vs TDSAT Regulatory Scope"
+  ]
+}

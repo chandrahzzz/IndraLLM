@@ -1,0 +1,93 @@
+{
+  "interaction_terms": {
+    "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]:C(language, Treatment(reference='bn'))[T.hi]": {
+      "beta": 1.3204,
+      "se": 0.5522,
+      "p": 0.0168
+    },
+    "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]:C(language, Treatment(reference='bn'))[T.hi]": {
+      "beta": 0.902,
+      "se": 0.7116,
+      "p": 0.205
+    },
+    "C(condition, Treatment(reference='A_EN'))[T.D_CS]:C(language, Treatment(reference='bn'))[T.hi]": {
+      "beta": -0.4142,
+      "se": 0.4817,
+      "p": 0.3898
+    },
+    "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]:C(language, Treatment(reference='bn'))[T.hi]": {
+      "beta": -0.9808,
+      "se": 0.4605,
+      "p": 0.0332
+    },
+    "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]:C(language, Treatment(reference='bn'))[T.kn]": {
+      "beta": 0.6737,
+      "se": 0.8114,
+      "p": 0.4063
+    },
+    "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]:C(language, Treatment(reference='bn'))[T.kn]": {
+      "beta": 0.902,
+      "se": 0.9171,
+      "p": 0.3254
+    },
+    "C(condition, Treatment(reference='A_EN'))[T.D_CS]:C(language, Treatment(reference='bn'))[T.kn]": {
+      "beta": -0.8326,
+      "se": 0.5757,
+      "p": 0.1481
+    },
+    "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]:C(language, Treatment(reference='bn'))[T.kn]": {
+      "beta": -0.9808,
+      "se": 0.5911,
+      "p": 0.097
+    },
+    "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]:C(language, Treatment(reference='bn'))[T.ta]": {
+      "beta": 0.4224,
+      "se": 0.928,
+      "p": 0.649
+    },
+    "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]:C(language, Treatment(reference='bn'))[T.ta]": {
+      "beta": 0.6737,
+      "se": 0.8181,
+      "p": 0.4102
+    },
+    "C(condition, Treatment(reference='A_EN'))[T.D_CS]:C(language, Treatment(reference='bn'))[T.ta]": {
+      "beta": -0.619,
+      "se": 0.4502,
+      "p": 0.1692
+    },
+    "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]:C(language, Treatment(reference='bn'))[T.ta]": {
+      "beta": -1.7918,
+      "se": 0.8544,
+      "p": 0.036
+    },
+    "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]:C(language, Treatment(reference='bn'))[T.te]": {
+      "beta": 0.4224,
+      "se": 0.8113,
+      "p": 0.6026
+    },
+    "C(condition, Treatment(reference='A_EN'))[T.C_ROMAN]:C(language, Treatment(reference='bn'))[T.te]": {
+      "beta": 1.521,
+      "se": 0.6446,
+      "p": 0.0183
+    },
+    "C(condition, Treatment(reference='A_EN'))[T.D_CS]:C(language, Treatment(reference='bn'))[T.te]": {
+      "beta": -0.4142,
+      "se": 0.5748,
+      "p": 0.4711
+    },
+    "C(condition, Treatment(reference='A_EN'))[T.E_MIXED_SCRIPT]:C(language, Treatment(reference='bn'))[T.te]": {
+      "beta": -0.2136,
+      "se": 0.4865,
+      "p": 0.6607
+    }
+  },
+  "min_interaction_p": [
+    "C(condition, Treatment(reference='A_EN'))[T.B_NATIVE]:C(language, Treatment(reference='bn'))[T.hi]",
+    {
+      "beta": 1.3204,
+      "se": 0.5522,
+      "p": 0.0168
+    }
+  ],
+  "n_terms": 16
+}
