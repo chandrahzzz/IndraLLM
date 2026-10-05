@@ -1,0 +1,364 @@
+{
+  "date_executed": "2026-10-05T10:07:26.864460",
+  "n_total_observations": 600,
+  "conditions_evaluated": [
+    "A_EN",
+    "A_EN_MATCHED",
+    "B_NATIVE",
+    "C_ROMAN",
+    "D_CS",
+    "E_MIXED_SCRIPT"
+  ],
+  "condition_statistics": {
+    "A_EN": {
+      "k": 64,
+      "n": 100,
+      "accuracy": 64.0,
+      "wilson_ci_95": [
+        54.2,
+        72.7
+      ],
+      "mean_script_transitions": 0.0,
+      "mean_chars_per_token": 5.822,
+      "mean_prompt_tokens": 18.5
+    },
+    "A_EN_MATCHED": {
+      "k": 60,
+      "n": 100,
+      "accuracy": 60.0,
+      "wilson_ci_95": [
+        50.2,
+        69.1
+      ],
+      "mean_script_transitions": 0.0,
+      "mean_chars_per_token": 4.638,
+      "mean_prompt_tokens": 17.5
+    },
+    "B_NATIVE": {
+      "k": 28,
+      "n": 100,
+      "accuracy": 28.0,
+      "wilson_ci_95": [
+        20.1,
+        37.5
+      ],
+      "mean_script_transitions": 1.0,
+      "mean_chars_per_token": 1.237,
+      "mean_prompt_tokens": 66.0
+    },
+    "C_ROMAN": {
+      "k": 33,
+      "n": 100,
+      "accuracy": 33.0,
+      "wilson_ci_95": [
+        24.6,
+        42.7
+      ],
+      "mean_script_transitions": 0.0,
+      "mean_chars_per_token": 2.903,
+      "mean_prompt_tokens": 30.6
+    },
+    "D_CS": {
+      "k": 43,
+      "n": 100,
+      "accuracy": 43.0,
+      "wilson_ci_95": [
+        33.7,
+        52.8
+      ],
+      "mean_script_transitions": 0.0,
+      "mean_chars_per_token": 4.021,
+      "mean_prompt_tokens": 18.8
+    },
+    "E_MIXED_SCRIPT": {
+      "k": 24,
+      "n": 100,
+      "accuracy": 24.0,
+      "wilson_ci_95": [
+        16.7,
+        33.2
+      ],
+      "mean_script_transitions": 5.0,
+      "mean_chars_per_token": 2.492,
+      "mean_prompt_tokens": 31.6
+    }
+  },
+  "paired_mcnemar_contrasts": [
+    {
+      "contrast": "A_EN_MATCHED_vs_B_NATIVE",
+      "ref_condition": "A_EN_MATCHED",
+      "comp_condition": "B_NATIVE",
+      "accuracy_diff_pp": -32.0,
+      "b_c1_correct_c2_incorrect": 39,
+      "c_c1_incorrect_c2_correct": 7,
+      "n_discordant": 46,
+      "mcnemar_chi2_continuity_corrected": 20.8913,
+      "mcnemar_chi2_p": 4.86096e-06,
+      "mcnemar_exact_binomial_p": 1.83154e-06,
+      "mcnemar_exact_holm_adjusted_p": 1.09893e-05
+    },
+    {
+      "contrast": "A_EN_MATCHED_vs_C_ROMAN",
+      "ref_condition": "A_EN_MATCHED",
+      "comp_condition": "C_ROMAN",
+      "accuracy_diff_pp": -27.0,
+      "b_c1_correct_c2_incorrect": 37,
+      "c_c1_incorrect_c2_correct": 10,
+      "n_discordant": 47,
+      "mcnemar_chi2_continuity_corrected": 14.383,
+      "mcnemar_chi2_p": 0.000149144,
+      "mcnemar_exact_binomial_p": 9.84888e-05,
+      "mcnemar_exact_holm_adjusted_p": 0.000393955
+    },
+    {
+      "contrast": "A_EN_MATCHED_vs_D_CS",
+      "ref_condition": "A_EN_MATCHED",
+      "comp_condition": "D_CS",
+      "accuracy_diff_pp": -17.0,
+      "b_c1_correct_c2_incorrect": 30,
+      "c_c1_incorrect_c2_correct": 13,
+      "n_discordant": 43,
+      "mcnemar_chi2_continuity_corrected": 5.9535,
+      "mcnemar_chi2_p": 0.0146882,
+      "mcnemar_exact_binomial_p": 0.0137182,
+      "mcnemar_exact_holm_adjusted_p": 0.0274364
+    },
+    {
+      "contrast": "A_EN_MATCHED_vs_E_MIXED_SCRIPT",
+      "ref_condition": "A_EN_MATCHED",
+      "comp_condition": "E_MIXED_SCRIPT",
+      "accuracy_diff_pp": -36.0,
+      "b_c1_correct_c2_incorrect": 47,
+      "c_c1_incorrect_c2_correct": 11,
+      "n_discordant": 58,
+      "mcnemar_chi2_continuity_corrected": 21.1207,
+      "mcnemar_chi2_p": 4.31247e-06,
+      "mcnemar_exact_binomial_p": 2.03159e-06,
+      "mcnemar_exact_holm_adjusted_p": 1.09893e-05
+    },
+    {
+      "contrast": "D_CS_vs_E_MIXED_SCRIPT",
+      "ref_condition": "D_CS",
+      "comp_condition": "E_MIXED_SCRIPT",
+      "accuracy_diff_pp": -19.0,
+      "b_c1_correct_c2_incorrect": 29,
+      "c_c1_incorrect_c2_correct": 10,
+      "n_discordant": 39,
+      "mcnemar_chi2_continuity_corrected": 8.3077,
+      "mcnemar_chi2_p": 0.00394775,
+      "mcnemar_exact_binomial_p": 0.00337785,
+      "mcnemar_exact_holm_adjusted_p": 0.0101335
+    },
+    {
+      "contrast": "A_EN_vs_A_EN_MATCHED",
+      "ref_condition": "A_EN",
+      "comp_condition": "A_EN_MATCHED",
+      "accuracy_diff_pp": -4.0,
+      "b_c1_correct_c2_incorrect": 16,
+      "c_c1_incorrect_c2_correct": 12,
+      "n_discordant": 28,
+      "mcnemar_chi2_continuity_corrected": 0.3214,
+      "mcnemar_chi2_p": 0.57075,
+      "mcnemar_exact_binomial_p": 0.571588,
+      "mcnemar_exact_holm_adjusted_p": 0.571588
+    }
+  ],
+  "clustered_gee_models": {
+    "level_1_prompt_unclustered": {
+      "n_obs": 500,
+      "beta_D_CS": -0.6873,
+      "se_D_CS": 0.2872,
+      "p_D_CS": 0.0166923,
+      "beta_E_MIXED": -1.5581,
+      "p_E_MIXED": 5.27383e-07
+    },
+    "level_2_semantic_id_clustered": {
+      "n_clusters": 100,
+      "beta_D_CS": -0.6873,
+      "se_D_CS": 0.2635,
+      "p_D_CS": 0.00909613,
+      "beta_E_MIXED": -1.5581,
+      "p_E_MIXED": 1.48017e-06
+    },
+    "level_3_topic_clustered": {
+      "n_clusters": 20,
+      "m_per_cluster": 25,
+      "icc_topic": 0.204,
+      "deff_topic": 5.8949,
+      "n_eff": 84.8,
+      "beta_D_CS": -0.6873,
+      "se_D_CS": 0.4844,
+      "p_D_CS": 0.155886,
+      "beta_E_MIXED": -1.5581,
+      "se_E_MIXED": 0.6165,
+      "p_E_MIXED": 0.0114869
+    }
+  },
+  "topic_correct_counts_by_condition": {
+    "PMFBY vs WBCIS": {
+      "A_EN_original": 0,
+      "A_EN_MATCHED": 5
+    },
+    "NEFT vs RTGS": {
+      "A_EN_original": 5,
+      "A_EN_MATCHED": 0
+    },
+    "Covaxin vs Covishield": {
+      "A_EN_original": 5,
+      "A_EN_MATCHED": 5
+    },
+    "Kharif vs Rabi Rice": {
+      "A_EN_original": 5,
+      "A_EN_MATCHED": 5
+    },
+    "ISRO PSLV vs GSLV Mk III": {
+      "A_EN_original": 3,
+      "A_EN_MATCHED": 5
+    },
+    "Lok Sabha vs Rajya Sabha Money Bill": {
+      "A_EN_original": 5,
+      "A_EN_MATCHED": 5
+    },
+    "National Park vs Wildlife Sanctuary": {
+      "A_EN_original": 5,
+      "A_EN_MATCHED": 5
+    },
+    "Classical Tamil vs Sanskrit Grammar": {
+      "A_EN_original": 1,
+      "A_EN_MATCHED": 0
+    },
+    "PM-KISAN vs Rythu Bandhu": {
+      "A_EN_original": 0,
+      "A_EN_MATCHED": 0
+    },
+    "Supreme Court vs High Court Writ Jurisdiction": {
+      "A_EN_original": 0,
+      "A_EN_MATCHED": 0
+    },
+    "Patents Act Compulsory License": {
+      "A_EN_original": 5,
+      "A_EN_MATCHED": 5
+    },
+    "RTI Third Party Information": {
+      "A_EN_original": 5,
+      "A_EN_MATCHED": 0
+    },
+    "GST Registration Exemption": {
+      "A_EN_original": 5,
+      "A_EN_MATCHED": 5
+    },
+    "Companies Act CSR Mandate": {
+      "A_EN_original": 5,
+      "A_EN_MATCHED": 5
+    },
+    "Arbitration Act Time Limit": {
+      "A_EN_original": 0,
+      "A_EN_MATCHED": 5
+    },
+    "IBC Section 7 Default Threshold": {
+      "A_EN_original": 0,
+      "A_EN_MATCHED": 0
+    },
+    "Environment Clearance Public Hearing": {
+      "A_EN_original": 0,
+      "A_EN_MATCHED": 0
+    },
+    "Medical Termination of Pregnancy Act": {
+      "A_EN_original": 5,
+      "A_EN_MATCHED": 0
+    },
+    "SEBI Insider Trading Pre-Clearance": {
+      "A_EN_original": 5,
+      "A_EN_MATCHED": 5
+    },
+    "Citizenship Amendment Act Cut-off": {
+      "A_EN_original": 5,
+      "A_EN_MATCHED": 5
+    }
+  },
+  "language_interaction_wald_p": 0.6797601598753855,
+  "rogan_gladen_grid": [
+    {
+      "TPR": 0.8,
+      "FPR_04": 22.37,
+      "FPR_08": 23.61,
+      "FPR_12": 25.0,
+      "FPR_16": 26.56
+    },
+    {
+      "TPR": 0.84,
+      "FPR_04": 21.25,
+      "FPR_08": 22.37,
+      "FPR_12": 23.61,
+      "FPR_16": 25.0
+    },
+    {
+      "TPR": 0.88,
+      "FPR_04": 20.24,
+      "FPR_08": 21.25,
+      "FPR_12": 22.37,
+      "FPR_16": 23.61
+    },
+    {
+      "TPR": 0.92,
+      "FPR_04": 19.32,
+      "FPR_08": 20.24,
+      "FPR_12": 21.25,
+      "FPR_16": 22.37
+    },
+    {
+      "TPR": 0.96,
+      "FPR_04": 18.48,
+      "FPR_08": 19.32,
+      "FPR_12": 20.24,
+      "FPR_16": 21.25
+    }
+  ],
+  "mediation_analysis": {
+    "path_a_beta": -1.5289,
+    "path_a_se": 0.0905,
+    "path_a_p": 2.90881e-40,
+    "path_b_beta": -0.2479,
+    "path_b_se": 0.2436,
+    "path_b_p": 0.308697,
+    "path_c_total_beta": -0.8708,
+    "path_c_total_p": 0.004861,
+    "path_c_prime_direct_beta": -1.2547,
+    "path_c_prime_direct_p": 0.0107206,
+    "sobel_z": 1.0161,
+    "sobel_p": 0.309573,
+    "mediation_verdict": "STRICTLY NULL (Token fertility does not linearly mediate performance drop)"
+  },
+  "automated_truncation_analysis": {
+    "A_EN": {
+      "count": 3,
+      "total": 100,
+      "rate_pct": 3.0
+    },
+    "A_EN_MATCHED": {
+      "count": 0,
+      "total": 100,
+      "rate_pct": 0.0
+    },
+    "B_NATIVE": {
+      "count": 42,
+      "total": 100,
+      "rate_pct": 42.0
+    },
+    "C_ROMAN": {
+      "count": 24,
+      "total": 100,
+      "rate_pct": 24.0
+    },
+    "D_CS": {
+      "count": 15,
+      "total": 100,
+      "rate_pct": 15.0
+    },
+    "E_MIXED_SCRIPT": {
+      "count": 41,
+      "total": 100,
+      "rate_pct": 41.0
+    }
+  }
+}

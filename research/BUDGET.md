@@ -1,10 +1,10 @@
 # IndraLLM — Experiment Budget & API Spend Ledger
 
-**Last Updated:** 2026-09-30T16:31:35.209117+00:00
+**Last Updated:** 2026-10-05T04:38:44.252180+00:00
 **Hard Budget Ceiling:** $10.00 USD
 **Target Spend Ceiling:** $5.00 USD
-**Current Cumulative Spend:** **$0.2061 USD**
-**Remaining Usable Budget:** **$9.7939 USD**
+**Current Cumulative Spend:** **$0.2144 USD**
+**Remaining Usable Budget:** **$9.7856 USD**
 
 ---
 
@@ -29,6 +29,7 @@
 | 2026-09-29T08:29:06 | EXP-002 | groq | multi-model | 400 | 40991 | 40991 | $0.0066 | EXP-002 val_sample stage inference and evaluation |
 | 2026-09-29T08:43:04 | EXP-002 | groq | multi-model | 6000 | 552744 | 552744 | $0.0884 | EXP-002 full stage inference and evaluation |
 | 2026-09-29T08:44:07 | EXP-002 | groq | multi-model | 6000 | 36080 | 36080 | $0.0058 | EXP-002 full stage inference and evaluation |
+| 2026-10-05T04:34:24 | EXP-003 | groq | qwen/qwen3.8-27b | 400 | 73765 | 30925 | $0.0084 | EXP-003 Matched English inference and judge evaluation |
 
 ---
 
