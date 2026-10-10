@@ -19,8 +19,10 @@ As reported by the author (Chandrahas Reddy), 2026-10-10:
 | Tamil | Kapilan (friend of the author) | Proper |
 | Bengali | Shamik Mukherjee (friend of the author) | Proper |
 
-Scope and form: reviewers checked the templates as used in the evaluated prompts and
-reported them proper. The review was a yes/no judgement; no per-item 1–5 ratings,
+Scope and form: reviewers checked the **prompt templates** (the questions sent to the
+model) as used in the evaluated prompts and reported them proper. They did **not** review
+the model's outputs, and the review does not validate the LLM judges or establish full
+semantic equivalence across conditions. The review was a yes/no judgement; no per-item 1–5 ratings,
 written corrections or agreement statistic were recorded. Report it in the paper as
 an informal fluent-speaker check, not as a measured naturalness score.
 

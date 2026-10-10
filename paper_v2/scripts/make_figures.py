@@ -126,28 +126,36 @@ def fig4(q):
 def fig5(q):
     R = N["response"]
     T = N["tokenizer_check"]["Qwen3.8-27B"]["cpt_by_condition"]
-    G = E["gen512_descriptives"]
-    fig, (a, b, c) = plt.subplots(1, 3, figsize=(6.6, 2.6), gridspec_kw={"width_ratios": [1.25, 1, 1]})
-    x = np.arange(6)
-    a.bar(x - 0.2, [R[k]["mean_chars"] for k in LAB], width=0.4, color=[COL[k] for k in LAB], label="128 tokens")
-    for i, k in enumerate(LAB):
-        a.text(i - 0.2, R[k]["mean_chars"] + 25, f"{R[k]['brahmic_majority_pct']:.0f}", ha="center", fontsize=5.5)
-        if k in G:
-            a.bar(i + 0.2, G[k]["mean_chars"], width=0.4, color=COL[k], alpha=0.45, hatch="////", lw=0)
-    a.set_xticks(x, LAB, rotation=45, ha="right")
+    BB = json.loads((OUT / "numbers_budgets.json").read_text(encoding="utf-8"))
+    budgets = ["128", "512", "1024"]
+    three = ["EN-MATCH", "CS-LAT", "MIXED"]
+    fig, (a, b, c) = plt.subplots(1, 3, figsize=(6.6, 2.6), gridspec_kw={"width_ratios": [1.15, 1, 1]})
+    x = np.arange(3)
+    for bi, (bud, alpha, hatch) in enumerate(zip(budgets, [1.0, 0.6, 0.35], ["", "////", "...."])):
+        vals = [BB["generation"][bud][k]["mean_chars"] for k in three]
+        a.bar(x + (bi - 1) * 0.27, vals, width=0.27, color=[COL[k] for k in three], alpha=alpha, hatch=hatch,
+              lw=0, label=f"{bud} tokens")
+        for i, k in enumerate(three):
+            capped = 100 - BB["generation"][bud][k]["stopped_before_cap"]
+            a.text(i + (bi - 1) * 0.27, vals[i] + 40, f"{capped}", ha="center", fontsize=5)
+    a.set_xticks(x, three)
     a.set_ylabel("Mean response length (chars)")
-    a.set_title("(a) Response length: solid 128, hatched 512\ntokens; labels = % mostly Brahmic", fontsize=7)
-    for k in ["EN-MATCH", "CS-LAT", "MIXED"]:
+    leg = a.legend(fontsize=5.5, frameon=False, loc="upper left")
+    for h in leg.legend_handles:
+        h.set_facecolor("#777777")
+    a.set_title("(a) Length at 128/512/1,024 tokens;\nlabels = % of responses that hit the cap", fontsize=7)
+    xs = [0, 1, 2]
+    for k in three:
         for jn, ls, mk in [("J-QWEN", "-", "o"), ("J-OSS", "--", "s")]:
-            acc = E["budget"][jn]["accuracy"][k]
-            b.plot([0, 1], [acc["128"], acc["512"]], ls=ls, marker=mk, ms=3.5, color=COL[k], lw=1)
-        b.text(1.04, E["budget"]["J-QWEN"]["accuracy"][k]["512"], k, fontsize=5.8, va="center", color=COL[k])
-    b.set_xticks([0, 1], ["128", "512"])
-    b.set_xlim(-0.15, 1.45)
-    b.set_ylim(0, 90)
+            b.plot(xs, [BB["accuracy"][jn][bud][k]["pct"] for bud in budgets], ls=ls, marker=mk, ms=3.2,
+                   color=COL[k], lw=1)
+        b.text(2.08, BB["accuracy"]["J-QWEN"]["1024"][k]["pct"], k, fontsize=5.6, va="center", color=COL[k])
+    b.set_xticks(xs, ["128", "512", "1,024"])
+    b.set_xlim(-0.2, 2.9)
+    b.set_ylim(0, 95)
     b.set_xlabel("Output budget (tokens)")
     b.set_ylabel("Judge-assessed accuracy (%)")
-    b.set_title("(b) Same prompts, larger budget\n(solid: J-QWEN; dashed: J-OSS)", fontsize=7)
+    b.set_title("(b) Same prompts, three budgets\n(solid: J-QWEN; dashed: J-OSS)", fontsize=7)
     for k in LAB:
         c.scatter(T[k], 100 * R[k]["acc"], color=COL[k], s=14)
         c.annotate(k, (T[k], 100 * R[k]["acc"]), xytext=(3, 2), textcoords="offset points", fontsize=5.6)

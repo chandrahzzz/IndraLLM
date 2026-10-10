@@ -56,6 +56,6 @@ arrow(ax, 0.74, 0.45, 0.77, 0.45)
 box(ax, 0.01, 0.015, 0.98, 0.265, "Key contrasts and follow-up", [
     "EN-MATCH vs. CS-LAT: code-switching (shared English template)",
     "CS-LAT vs. MIXED: script of the Indic words (word-identical in hi, bn, ta)",
-    "Follow-up: EN-MATCH, CS-LAT, MIXED re-answered with max 512 tokens; both budgets graded by J-QWEN and J-OSS"])
+    "Follow-up: EN-MATCH, CS-LAT, MIXED re-answered with max 512 and 1,024 tokens; every budget graded by J-QWEN and J-OSS"])
 fig.savefig(OUT, dpi=300)
 print("wrote", OUT)

@@ -1,5 +1,11 @@
 # IndraLLM — Manuscript Build Guide (10-page IEEE version)
 
+> **Superseded in part (2026-10-10).** This guide was written before the 1,024-token experiment
+> (EXP-005). Its 128- and 512-token numbers remain correct, but the sentence "the English–CS-LAT gap is
+> not significant at the topic level in any analysis" is no longer true: under J-QWEN at 1,024 tokens it
+> is −24 points, topic p = 0.018. For the final text, the three-budget tables and the judge-agreement
+> results, use `paper_v2/FULL_REVISION_REPORT.md` (Part G) and `paper_v2/scripts/build_paper.py`.
+
 This file contains everything you need to build the revised manuscript yourself:
 the page plan, final text for every section, every table with its exact values,
 every figure (file + caption), a registry of every number with its source file,
