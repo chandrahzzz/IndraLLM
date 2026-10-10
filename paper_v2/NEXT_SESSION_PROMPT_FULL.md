@@ -870,7 +870,9 @@ Author verification record (all rows): confirmed by author 2026-10-10 (ledger re
 | `paper_v2/FULL_REVISION_REPORT.md` | 133.3 |
 | `paper_v2/MANUSCRIPT_BUILD_GUIDE.md` | 75.3 |
 | `paper_v2/NEXT_SESSION_PROMPT.md` | 21.8 |
+| `paper_v2/NEXT_SESSION_PROMPT_FULL.md` | 124.6 |
 | `paper_v2/guide_header.md` | 6.9 |
+| `paper_v2/handoff_extra.md` | 19.5 |
 | `paper_v2/output/fig1.png` | 230.1 |
 | `paper_v2/output/fig2.png` | 224.6 |
 | `paper_v2/output/fig3.png` | 96.0 |
@@ -898,6 +900,7 @@ Author verification record (all rows): confirmed by author 2026-10-10 (ledger re
 | `paper_v2/scripts/make_fig1.py` | 3.3 |
 | `paper_v2/scripts/make_figures.py` | 8.2 |
 | `paper_v2/scripts/make_guide.py` | 0.5 |
+| `paper_v2/scripts/make_handoff_full.py` | 3.2 |
 | `paper_v2/scripts/stats_lib.py` | 4.8 |
 | `paper_v2/source/IndraLLM_IEEE_FINAL.docx` | 2840.3 |
 | `paper_v2/source/IndraLLM_IEEE_FINAL.pdf` | 1279.7 |
@@ -922,9 +925,10 @@ Author verification record (all rows): confirmed by author 2026-10-10 (ledger re
 
 ## C4. All results tables and the final manuscript text (from report_generated.md)
 
-## G1. Three-budget results (EXP-004 + EXP-005), both judges
 
-### G1.1 Accuracy (%, n = 100 per cell) with Wilson 95% CI
+### G1. Three-budget results (EXP-004 + EXP-005), both judges
+
+#### G1.1 Accuracy (%, n = 100 per cell) with Wilson 95% CI
 
 | Judge | Budget | EN-MATCH | CS-LAT | MIXED |
 | --- | --- | --- | --- | --- |
@@ -935,7 +939,7 @@ Author verification record (all rows): confirmed by author 2026-10-10 (ledger re
 | J-OSS | 512 | 58 [48.2, 67.2] | 54 [44.3, 63.4] | 48 [38.5, 57.7] |
 | J-OSS | 1024 | 63 [53.2, 71.8] | 56 [46.2, 65.3] | 51 [41.3, 60.6] |
 
-### G1.2 Paired contrasts at each budget (comparison vs reference)
+#### G1.2 Paired contrasts at each budget (comparison vs reference)
 
 b = reference correct & comparison wrong; c = the reverse. Topic p = exact sign-flip over 2^20 patterns; topic CI = percentile bootstrap over 20 topics (10,000 resamples).
 
@@ -960,7 +964,7 @@ b = reference correct & comparison wrong; c = the reverse. Topic p = exact sign-
 | J-OSS | 1024 | MIXED vs CS-LAT | 56 | 51 | −5 | 14 | 9 | 0.40 | 0.52 | [-17, 7] |
 | J-OSS | 1024 | MIXED vs EN-MATCH | 63 | 51 | −12 | 21 | 9 | 0.043 | 0.22 | [-28, 5] |
 
-### G1.3 Within-condition change between budgets (same judge)
+#### G1.3 Within-condition change between budgets (same judge)
 
 | Judge | Change | Condition | Acc before | Acc after | Lost (b) | Gained (c) | Exact p | Topic p | Topic 95% CI |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -983,7 +987,7 @@ b = reference correct & comparison wrong; c = the reverse. Topic p = exact sign-
 | J-OSS | 128->1024 | CS-LAT | 25 | 56 | 2 | 33 | <0.001 | <0.001 | [18, 45] |
 | J-OSS | 128->1024 | MIXED | 17 | 51 | 3 | 37 | <0.001 | <0.001 | [23, 45] |
 
-### G1.4 Change in each gap between budgets (per-topic difference-in-differences)
+#### G1.4 Change in each gap between budgets (per-topic difference-in-differences)
 
 | Judge | Change | Gap | Gap before | Gap after | Change | Topic 95% CI | Topic p |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -1006,7 +1010,7 @@ b = reference correct & comparison wrong; c = the reverse. Topic p = exact sign-
 | J-OSS | 128->1024 | MIXED-CS-LAT | -8 | -5 | +3 | [-7, 13] | 0.71 |
 | J-OSS | 128->1024 | MIXED-EN-MATCH | -20 | -12 | +8 | [-9, 24] | 0.43 |
 
-### G1.5 MIXED vs CS-LAT on the 60 word-identical propositions (hi, ta, bn)
+#### G1.5 MIXED vs CS-LAT on the 60 word-identical propositions (hi, ta, bn)
 
 | Judge | Budget | CS-LAT % | MIXED % | b | c | Exact p | Topic p |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -1017,7 +1021,7 @@ b = reference correct & comparison wrong; c = the reverse. Topic p = exact sign-
 | J-OSS | 512 | 55.0 | 48.3 | 11 | 7 | 0.48 | 0.53 |
 | J-OSS | 1024 | 56.7 | 53.3 | 9 | 7 | 0.80 | 0.84 |
 
-### G1.6 Generation descriptives by budget
+#### G1.6 Generation descriptives by budget
 
 | Budget | Condition | Stopped before cap (of 100) | Hit cap | Mean completion tokens | Mean chars | Mostly Brahmic % |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -1052,7 +1056,7 @@ Prefix consistency (longer response begins with the shorter one, of 100): 512 st
 
 Agreement at 128 tokens across all six conditions (from EXP-004): 75.7% (146 both correct, 308 both wrong, 128 Q-correct/O-wrong, 18 Q-wrong/O-correct).
 
-### G2.1 Per condition, all six conditions at 128 tokens (EXP-004)
+#### G2.1 Per condition, all six conditions at 128 tokens (EXP-004)
 
 | Condition | Stored vs J-QWEN | J-QWEN vs J-OSS | κ |
 | --- | --- | --- | --- |
@@ -1104,7 +1108,7 @@ Agreement at 128 tokens across all six conditions (from EXP-004): 75.7% (146 bot
 | NATIVE | 32 | [23.7, 41.7] | [18, 46] | 28 | 21 | 0 | 8 |
 | MIXED | 26 | [18.4, 35.4] | [12, 41] | 24 | 17 | 0 | 11 |
 
-### G5.1 All 11 pairwise contrasts (J-QWEN)
+#### G5.1 All 11 pairwise contrasts (J-QWEN)
 
 | Contrast | Δ | b | c | Exact p | Holm (primary) | Topic p | Holm topic | Topic CI | Topics differing |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -1120,7 +1124,7 @@ Agreement at 128 tokens across all six conditions (from EXP-004): 75.7% (146 bot
 | NATIVE vs CS-LAT | −17 | 27 | 10 | 0.008 | – | 0.033 | – | [-30, -4] | 13 |
 | NATIVE vs ROMAN | −5 | 16 | 11 | 0.44 | – | 0.37 | – | [-13, 3] | 10 |
 
-### G5.2 Same, stored labels (original PDF numbers)
+#### G5.2 Same, stored labels (original PDF numbers)
 
 | Contrast | Δ | b | c | Exact p | Holm (primary) | Topic p | Holm topic | Topic CI |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -1136,7 +1140,7 @@ Agreement at 128 tokens across all six conditions (from EXP-004): 75.7% (146 bot
 | NATIVE vs CS-LAT | −15 | 30 | 15 | 0.036 | – | 0.10 | – | [-30, 0] |
 | NATIVE vs ROMAN | −5 | 18 | 13 | 0.47 | – | 0.37 | – | [-13, 3] |
 
-### G5.3 J-OSS primary contrasts at 128 tokens
+#### G5.3 J-OSS primary contrasts at 128 tokens
 
 | Contrast | Δ | b | c | Exact p | Holm | Topic p | Holm topic |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -1146,7 +1150,7 @@ Agreement at 128 tokens across all six conditions (from EXP-004): 75.7% (146 bot
 | MIXED vs EN-MATCH | −20 | 29 | 9 | 0.002 | 0.008 | 0.067 | 0.27 |
 | MIXED vs CS-LAT | −8 | 18 | 10 | 0.18 | 0.18 | 0.24 | 0.45 |
 
-### G5.4 GEE (J-QWEN), log-odds vs EN-MATCH or CS-LAT
+#### G5.4 GEE (J-QWEN), log-odds vs EN-MATCH or CS-LAT
 
 | Contrast | Unit | β | Robust SE | p |
 | --- | --- | --- | --- | --- |
@@ -1166,7 +1170,7 @@ Agreement at 128 tokens across all six conditions (from EXP-004): 75.7% (146 bot
 | MIXED_vs_CS-LAT | proposition | -1.006 | 0.257 | <0.001 |
 | MIXED_vs_CS-LAT | topic | -1.006 | 0.293 | <0.001 |
 
-### G5.5 Per-language accuracy (J-QWEN, %)
+#### G5.5 Per-language accuracy (J-QWEN, %)
 
 | Language | EN-ORIG | EN-MATCH | CS-LAT | ROMAN | NATIVE | MIXED |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -1176,7 +1180,7 @@ Agreement at 128 tokens across all six conditions (from EXP-004): 75.7% (146 bot
 | Telugu | 70 | 60 | 40 | 50 | 30 | 35 |
 | Kannada | 70 | 60 | 50 | 40 | 35 | 15 |
 
-### G5.6 Per-topic correct languages (of 5), J-QWEN, with provision and gold status
+#### G5.6 Per-topic correct languages (of 5), J-QWEN, with provision and gold status
 
 | Topic | Provision verified | Gold | EN-ORIG | EN-MATCH | CS-LAT | ROMAN | NATIVE | MIXED |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -1201,7 +1205,7 @@ Agreement at 128 tokens across all six conditions (from EXP-004): 75.7% (146 bot
 | PM-KISAN vs Rythu Bandhu | PM-KISAN guidelines; Telangana G.O.s | dated | 0 | 0 | 3 | 2 | 1 | 0 |
 | Supreme Court vs High Court Writ Jurisdiction | Constitution, Arts. 32, 226 | ok | 0 | 0 | 5 | 3 | 3 | 4 |
 
-### G5.7 Response-side descriptors at 128 tokens (J-QWEN for errors/incompleteness)
+#### G5.7 Response-side descriptors at 128 tokens (J-QWEN for errors/incompleteness)
 
 | Condition | Script transitions | Prompt chars/tok Qwen3.8 | Prompt chars/tok Qwen2.5 (old) | Resp. chars | Mostly Brahmic % | Any Brahmic % | Ends mid-sentence | Hit 128 | Errors | Incomplete rule |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -1212,7 +1216,7 @@ Agreement at 128 tokens across all six conditions (from EXP-004): 75.7% (146 bot
 | NATIVE | 1.0 | 2.43 | 1.24 | 279 | 98 | 100 | 95 | 100 | 68 | 36 |
 | MIXED | 5.0 | 3.70 | 2.49 | 303 | 88 | 98 | 92 | 100 | 74 | 38 |
 
-### G5.8 Tipping points (J-QWEN)
+#### G5.8 Tipping points (J-QWEN)
 
 | FPR | CS-LAT vs EN-MATCH | MIXED vs EN-MATCH | MIXED vs CS-LAT |
 | --- | --- | --- | --- |
@@ -1224,7 +1228,7 @@ Agreement at 128 tokens across all six conditions (from EXP-004): 75.7% (146 bot
 
 ### G5b. Post-review audit (audit_budget_truncation.py)
 
-### Truncation by budget (finish reasons logged at 512 and 1,024; at 128 'hit cap' = 128 completion tokens)
+#### Truncation by budget (finish reasons logged at 512 and 1,024; at 128 'hit cap' = 128 completion tokens)
 
 | Budget | Condition | Finish reasons | Hit cap | Stopped before cap | Ends mid-sentence | Hit cap & mid-sentence | Stopped but mid-sentence | Mean tokens | Max tokens |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -1238,7 +1242,7 @@ Agreement at 128 tokens across all six conditions (from EXP-004): 75.7% (146 bot
 | 1024 | CS-LAT | stop: 61, length: 39 | 39 | 61 | 39 | 35 | 4 | 812 | 1024 |
 | 1024 | MIXED | length: 64, stop: 36 | 64 | 36 | 63 | 61 | 2 | 936 | 1024 |
 
-### Complete-answers sensitivity (exploratory; selecting on completion can bias)
+#### Complete-answers sensitivity (exploratory; selecting on completion can bias)
 
 | Budget | Judge | Contrast | Pairs with both complete | Ref % | Cmp % | b | c | Exact p |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -1264,7 +1268,7 @@ Unpaired accuracy among complete responses only:
 | 1024 | J-QWEN | 95, 84 | 61, 59 | 36, 58 |
 | 1024 | J-OSS | 95, 66 | 61, 57 | 36, 56 |
 
-### Multiplicity across the follow-up (18 tests = 3 budgets × 2 judges × 3 contrasts)
+#### Multiplicity across the follow-up (18 tests = 3 budgets × 2 judges × 3 contrasts)
 
 Holm-3 = within the three contrasts of one budget–judge cell; Holm-18 = across all 18 follow-up tests. The 1,024-token run was added after the 512-token results were seen, so its tests are exploratory.
 
@@ -1289,7 +1293,7 @@ Holm-3 = within the three contrasts of one budget–judge cell; Holm-18 = across
 | J-OSS | 1024 | MIXED vs CS-LAT | −5 | 0.40 | 0.42 | 1.00 | 0.52 | 1.00 | 1.00 | [-17, 7] |
 | J-OSS | 1024 | MIXED vs EN-MATCH | −12 | 0.043 | 0.13 | 0.47 | 0.22 | 0.66 | 1.00 | [-28, 5] |
 
-### Independent check (independent_check.py)
+#### Independent check (independent_check.py)
 
 **118 checks, 118 passed, 0 failed.** Full table: `paper_v2/output/independent_check.md` (statsmodels exact McNemar and Wilson, scikit-learn κ, Monte Carlo sign-flip, bootstrap with a different seed).
 

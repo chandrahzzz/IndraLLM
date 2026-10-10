@@ -54,7 +54,7 @@ parts.append("\n".join(inv))
 
 gen = (ROOT / "paper_v2/output/report_generated.md").read_text(encoding="utf-8")
 parts.append("\n## C4. All results tables and the final manuscript text (from report_generated.md)\n\n"
-             + gen.replace("\n## G", "\n### G").replace("\n### G", "\n#### G", 0))
+             + ("\n" + gen).replace("\n### ", "\n#### ").replace("\n## G", "\n### G"))
 
 out = ROOT / "paper_v2/NEXT_SESSION_PROMPT_FULL.md"
 text = "\n\n".join(parts) + "\n"
