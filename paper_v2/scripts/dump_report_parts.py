@@ -190,6 +190,48 @@ with redirect_stdout(out):
     for f in ["0.00", "0.04", "0.08", "0.12", "0.16"]:
         row(f, *[f"{NJ['tipping'][k][f]:.2f}" for k in ["CS-LAT_vs_EN-MATCH", "MIXED_vs_EN-MATCH", "MIXED_vs_CS-LAT"]])
 
+    NA = json.loads((ROOT / "paper_v2/output/numbers_audit.json").read_text(encoding="utf-8"))
+    print("\n## G5b. Post-review audit (audit_budget_truncation.py)\n")
+    print("### Truncation by budget (finish reasons logged at 512 and 1,024; at 128 'hit cap' = 128 completion tokens)\n")
+    row("Budget", "Condition", "Finish reasons", "Hit cap", "Stopped before cap", "Ends mid-sentence",
+        "Hit cap & mid-sentence", "Stopped but mid-sentence", "Mean tokens", "Max tokens")
+    sep(10)
+    for b, v in NA["truncation"].items():
+        for c, x in v.items():
+            row(b, c, ", ".join(f"{k}: {n}" for k, n in x["finish_reasons"].items()), x["hit_cap"],
+                x["stopped_before_cap"], x["ends_mid_sentence"], x["hit_cap_and_mid_sentence"],
+                x["stopped_but_mid_sentence"], f"{x['mean_completion_tokens']:.0f}", x["max_completion_tokens"])
+    print("\n### Complete-answers sensitivity (exploratory; selecting on completion can bias)\n")
+    row("Budget", "Judge", "Contrast", "Pairs with both complete", "Ref %", "Cmp %", "b", "c", "Exact p")
+    sep(9)
+    for b, v in NA["complete_sensitivity"].items():
+        for j, x in v.items():
+            for pr in x["paired_both_complete"]:
+                row(b, j, f"{pr['cmp']} vs {pr['ref']}", pr["n_pairs"],
+                    "–" if pr["acc_ref"] is None else f"{pr['acc_ref']:.0f}",
+                    "–" if pr["acc_cmp"] is None else f"{pr['acc_cmp']:.0f}", pr["b"], pr["c"], p(pr["p_exact"]))
+    print("\nUnpaired accuracy among complete responses only:\n")
+    row("Budget", "Judge", "EN-MATCH (n, %)", "CS-LAT (n, %)", "MIXED (n, %)")
+    sep(5)
+    for b, v in NA["complete_sensitivity"].items():
+        for j, x in v.items():
+            u = x["unpaired_accuracy_complete_only"]
+            row(b, j, *[f"{u[c]['n']}, {u[c]['acc']:.0f}" if u[c]["acc"] is not None else f"{u[c]['n']}, –" for c in G3])
+    print("\n### Multiplicity across the follow-up (18 tests = 3 budgets × 2 judges × 3 contrasts)\n")
+    print("Holm-3 = within the three contrasts of one budget–judge cell; Holm-18 = across all 18 follow-up tests. "
+          "The 1,024-token run was added after the 512-token results were seen, so its tests are exploratory.\n")
+    row("Judge", "Budget", "Contrast", "Δ", "Exact p", "Holm-3", "Holm-18", "Topic p", "Topic Holm-3", "Topic Holm-18",
+        "Topic 95% CI")
+    sep(11)
+    for t in NA["multiplicity"]:
+        lo, hi = t["topic_ci"]
+        row(t["judge"], t["budget"], t["contrast"], sgn(t["delta_pp"]), p(t["p_exact"]), p(t["holm3_exact"]),
+            p(t["holm18_exact"]), p(t["topic_p"]), p(t["holm3_topic"]), p(t["holm18_topic"]), f"[{lo:.0f}, {hi:.0f}]")
+    ic = (ROOT / "paper_v2/output/independent_check.md").read_text(encoding="utf-8").splitlines()
+    print("\n### Independent check (independent_check.py)\n")
+    print(ic[-1] + " Full table: `paper_v2/output/independent_check.md` (statsmodels exact McNemar and Wilson, "
+          "scikit-learn κ, Monte Carlo sign-flip, bootstrap with a different seed).\n")
+
     print("\n## G6. Final manuscript text exactly as built into the DOCX (build_paper.py)\n")
     T_ = bp.TEXT
     order = [("Title", "title"), ("Abstract", "abstract"), ("Index Terms", "index"),

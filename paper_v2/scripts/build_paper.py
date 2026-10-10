@@ -44,15 +44,16 @@ TEXT["abstract"] = (
     "With Qwen3.8-27B and a 128-token cap, judge-assessed accuracy is 60% for a template-matched English "
     "prompt and 49%, 37%, 32% and 26% for CS-LAT, Romanized, native-script and MIXED prompts, and MIXED is "
     "23 points below CS-LAT (p < 0.001; topic-level p = 0.004). Almost every response hit that cap, and "
-    "Brahmic-script answers fit half as many characters into it. Re-answering the key conditions with 512 "
-    "and 1,024 tokens removes the MIXED–CS-LAT gap under both a self-judge (+4 and −3 points; p ≥ 0.57) and "
-    "a judge from another model family (−6 and −5; p ≥ 0.34). The English–CS-LAT gap behaves differently: under the self-judge it "
-    "grows with the budget, to 24 points at 1,024 tokens (topic-level p = 0.018), while under the second "
-    "judge it is 4–12 points and never significant. The two judges agree on 75–81% of outputs "
-    "(κ = 0.47–0.61), and no human validation of either was performed. Measured representation effects are "
-    "therefore sensitive to the output budget and to the evaluator, and should not be read as effects of "
-    "representation without checking both. Prompts, outputs, judgements, a gold-answer ledger and code are "
-    "released.")
+    "Brahmic-script answers fit half as many characters into it. When the key conditions are re-answered "
+    "with 512 and 1,024 tokens, no MIXED–CS-LAT gap is detected under either a self-judge (+4 and −3 points) "
+    "or a judge from another model family (−6 and −5); the intervals exclude the 128-token gap, although no "
+    "equivalence test was pre-specified and 64% of MIXED answers still reach the 1,024-token cap. The "
+    "English–CS-LAT gap behaves differently: under the self-judge it grows to 24 points at 1,024 tokens "
+    "(topic-level p = 0.018; 0.29 after correction across all follow-up tests), while under the second judge "
+    "it is 4–12 points and never significant. The judges agree on 75–81% of outputs (κ = 0.47–0.61), and no "
+    "human validation of either was performed. Measured representation effects are therefore sensitive to "
+    "the output budget and to the evaluator, and should not be read as effects of representation without "
+    "checking both. Prompts, outputs, judgements, a gold-answer ledger and code are released.")
 
 TEXT["index"] = ("multilingual evaluation, code-switching, script, Indic languages, output budget, "
                  "LLM-as-a-judge, judge agreement, paired evaluation")
@@ -78,8 +79,8 @@ TEXT[13] = (
 TEXT[14] = (
     "**Contributions.** (1) A paired six-condition design for Indic factual QA, with a matched-English "
     "control that removes a template confound we found in our first run. (2) A controlled three-budget "
-    "rerun showing that the 23-point mixed-script penalty measured at 128 tokens disappears at 512 and 1,024 "
-    "tokens under two judges, while the English–code-switching gap moves in the opposite direction under one "
+    "rerun in which the 23-point mixed-script penalty measured at 128 tokens is not detectable at 512 or "
+    "1,024 tokens under either of two judges, while the English–code-switching gap moves in the opposite direction under one "
     "judge only. (3) Judge disagreement as a result: harmonising the judge configuration shrinks the "
     "English–code-switching gap at 128 tokens from 17 to 11 points, the two judges agree on 75–81% of outputs, "
     "and whether the English advantage is significant depends on which judge is used. (4) Inference that "
@@ -91,9 +92,10 @@ TEXT[15] = (
     "output-token budget and to the choice of evaluator, and observed differences should not automatically be "
     "interpreted as representation effects. At 128 tokens, accuracy falls from English to the Indic "
     "representations and mixed script is lowest. Almost every response hits that cap and Brahmic-script "
-    "answers are about half as long in characters; with 512 or 1,024 tokens, MIXED and CS-LAT do not differ "
-    "under either judge. The English advantage over Latin-script code-switching is significant at the topic "
-    "level only under the self-judge at 1,024 tokens; under the cross-family judge it is small at every "
+    "answers are about half as long in characters; with 512 or 1,024 tokens, no MIXED–CS-LAT difference is "
+    "detected under either judge, though we do not claim equivalence. The English advantage over "
+    "Latin-script code-switching is significant at the topic level only under the self-judge at 1,024 tokens, "
+    "and not after correction across all follow-up tests; under the cross-family judge it is small at every "
     "budget. Neither judge has been validated against human labels, so we report this as judge sensitivity, "
     "not as evidence that either judge is right.")
 
@@ -160,7 +162,11 @@ TEXT[40] = base.TEXT[40].replace(
     "512 tokens.",
     "The follow-up (Section VI-B) has the same three contrasts at every budget, fixed in the analysis scripts "
     "before its outputs were graded: CS-LAT vs. EN-MATCH, MIXED vs. CS-LAT and MIXED vs. EN-MATCH, plus the "
-    "change in each gap between budgets, each under both judges.")
+    "change in each gap between budgets, each under both judges. The 512-token run was planned to test the "
+    "budget confound; the 1,024-token run was added after its results were seen, so 1,024-token results are "
+    "exploratory. For the follow-up we report Holm adjustment within each budget–judge cell and across all 18 "
+    "follow-up tests (3 budgets × 2 judges × 3 contrasts). A non-significant difference is not evidence of "
+    "equivalence; no equivalence margin was pre-specified, so we report intervals.")
 
 TEXT[43] = base.TEXT[43].replace("(Table IX).", "(Table VIII).")
 TEXT["tab2"] = base.TEXT["tab2"].replace("text and Table IX", "text and Table VIII")
@@ -179,15 +185,21 @@ TEXT[76] = (
     "To separate script from budget we re-ran EN-MATCH, CS-LAT and MIXED (300 prompts) twice, with 512 and "
     "with 1,024-token limits, changing nothing else: same model identifier, system prompt, decoding settings "
     "and prompts. Every budget was graded by J-QWEN and by J-OSS, so each comparison across budgets uses one "
-    "judge (Table III, Fig. 5b). At 1,024 tokens the cap no longer binds for English (95 of 100 responses "
-    "stop on their own) and binds less for code-switched answers (61 CS-LAT and 36 MIXED responses stop). "
-    "The MIXED–CS-LAT gap, −23 points at 128 tokens under J-QWEN, is +4 at 512 and −3 at 1,024 "
-    "(p = 0.57 and 0.70); under J-OSS it is −8, −6 and −5, never significant. Between 128 and 1,024 tokens it "
-    "narrows by 20 points under J-QWEN (topic-bootstrap CI [5, 34], permutation p = 0.023). On the 60 "
-    "word-identical propositions the picture is the same (J-QWEN at 1,024 tokens: 65% vs. 60%, p = 0.58). "
-    "The English–CS-LAT gap moves the other way under J-QWEN, from −11 at 128 to −21 at 512 and −24 at 1,024 "
-    "tokens (exact p < 0.001; topic-level p = 0.018, Holm-adjusted 0.036 within the three follow-up "
-    "contrasts), whereas under J-OSS it is −12, −4 and −7 and not significant at any budget (p ≥ 0.050).")
+    "judge (Table III, Fig. 5b). Even 1,024 tokens is not an unconstrained condition: according to the "
+    "provider's finish reasons, 5 EN-MATCH, 39 CS-LAT and 64 MIXED responses still hit the limit (15, 39 and "
+    "63 end mid-sentence). The MIXED–CS-LAT gap, −23 points at 128 tokens under J-QWEN, is +4 at 512 and −3 "
+    "at 1,024 (p = 0.57 and 0.70; topic-bootstrap 95% CIs [−8, 15] and [−14, 8]); under J-OSS it is −8, −6 "
+    "and −5, never significant (CIs at 512 and 1,024 [−18, 6] and [−17, 7]). These intervals exclude the "
+    "23-point gap seen at 128 tokens, but they do not establish equivalence. Between 128 and 1,024 tokens the "
+    "gap narrows by 20 points under J-QWEN (CI [5, 34], permutation p = 0.023). The pattern holds on the 60 "
+    "word-identical propositions (J-QWEN at 1,024 tokens: 65% vs. 60%, p = 0.58) and, as an exploratory check "
+    "that may be biased by selecting on completion, on the 29 propositions where both responses finished "
+    "before the 1,024-token limit (J-QWEN 48% vs. 55%, p = 0.75; J-OSS 55% vs. 52%, p = 1.0). The "
+    "English–CS-LAT gap moves the other way under J-QWEN, from −11 at 128 to −21 at 512 and −24 at 1,024 "
+    "tokens (exact p < 0.001; topic-level p = 0.018, Holm-adjusted 0.036 within the three contrasts of that "
+    "budget and 0.29 across all 18 follow-up tests), whereas under J-OSS it is −12, −4 and −7 and not "
+    "significant at any budget (p ≥ 0.050). Restricted to the 57 propositions where both responses finished, "
+    "the same split appears (J-QWEN 79% vs. 61%, p = 0.013; J-OSS 65% vs. 60%, p = 0.55).")
 
 TEXT["tab3"] = (
     "Output-budget follow-up: the same 300 prompts answered with 128, 512 and 1,024 tokens, each budget "
@@ -196,16 +208,19 @@ TEXT["tab3"] = (
 
 TEXT[77] = (
     "Three conclusions follow. First, the 128-token MIXED penalty is not evidence that script alternation "
-    "harms recall: once the budget allows longer answers, mixed-script and Latin-script code-switched prompts "
-    "yield similar accuracy under both judges. Its most likely source is that Brahmic-script answers reach "
+    "harms recall: once the budget allows longer answers, no difference between mixed-script and "
+    "Latin-script code-switched prompts is detected under either judge, and the intervals exclude a gap of "
+    "the 128-token size. Its most likely source is that Brahmic-script answers reach "
     "the cap before reaching the fact, and answers a human would call incomplete are then graded as wrong; "
     "the EN-MATCH answer on the MTP Act, for instance, correctly states the one-practitioner rule for the "
     "first 20 weeks, is cut off before the 20–24-week rule, and is graded HALLUCINATED. Second, NATIVE and "
     "MIXED behave alike at 128 tokens (32% and 26%, p = 0.29) although MIXED has five script boundaries per "
     "prompt and NATIVE one, which also argues against a boundary-density account. Third, the English "
-    "advantage is unstable: it grows with the budget under one judge and stays small under the other. We "
+    "advantage is unstable: it grows with the budget under one judge and stays small under the other, and "
+    "its topic-level significance under the first does not survive correction across the follow-up. We "
     "cannot tell from these data which judge is closer to a careful human reader, so the instability itself "
-    "is the finding.")
+    "is the finding. Because most MIXED and many CS-LAT answers still reach the 1,024-token limit, the "
+    "output budget remains a possible confound for any residual difference.")
 
 TEXT[79] = (
     "The judge matters in three ways. *Configuration.* Our first run graded the Indic conditions at "
@@ -239,8 +254,8 @@ TEXT[83] = (
     "suggested. Evaluating multilingual LLMs across representation conditions is sensitive to the "
     "output-token budget and to the choice of evaluator, and observed differences should not automatically "
     "be interpreted as representation effects. For this model and these 20 topics, the clearest "
-    "representation effect at a 128-token budget, the mixed-script penalty, disappears when answers can be "
-    "longer, under both judges; the English advantage over code-switching appears or disappears with the "
+    "representation effect at a 128-token budget, the mixed-script penalty, is no longer detected when "
+    "answers can be longer, under either judge; the English advantage over code-switching appears or disappears with the "
     "judge. We do not claim that native script or code-switching damages factual recall, and we make no "
     "claim about other models.")
 
@@ -258,8 +273,11 @@ TEXT[84] = (
 TEXT[87] = (
     "**Topics.** Twenty topics with heavy within-topic concentration bound what any statistic can show "
     "(effective n ≈ 67 of 500). A 25-proposition expansion has been written but not evaluated. **Output "
-    "budget.** At 1,024 tokens, 39 CS-LAT and 64 MIXED responses still hit the cap; we re-ran three of the six "
-    "conditions and did not test an instruction fixing the answer language. **Judges.** Two LLM judges that "
+    "budget.** At 1,024 tokens, 39 CS-LAT and 64 MIXED responses still hit the cap, so the budget is not "
+    "fully removed as a confound; the 1,024-token run was added after the 512-token results were seen and is "
+    "exploratory; we re-ran three of the six conditions and did not test an instruction fixing the answer "
+    "language. **Equivalence.** No equivalence margin was pre-specified, so non-significant gaps are reported "
+    "with intervals, not as equivalence. **Judges.** Two LLM judges that "
     "disagree on a fifth to a quarter of items, and no human labels on any output; a stratified, blinded "
     "sample of 210 outputs and an annotation protocol are released but not annotated. **Questions and gold "
     "answers.** One generic template that under-specifies the target for several topics; volunteer gold "
@@ -329,7 +347,9 @@ NEW_REFS += [
 for key, must in [(28, "templates, not the model"), (34, "October 2026"), (37, "78–91%"),
                   (38, "both follow-up runs"), (39, "more accurate one"), (40, "same three contrasts"),
                   (40, "Appendix B;"), (43, "(Table VIII)"), ("tab2", "Table VIII"), (59, "Table IX show"),
-                  (65, "in Fig. 3."), (80, "Table V turns"), (94, "Table VII lists"), (110, "2,700")]:
+                  (65, "in Fig. 3."), (80, "Table V turns"), (94, "Table VII lists"), (110, "2,700"),
+                  (40, "18 follow-up tests"), (40, "not evidence of"), (76, "not an unconstrained"),
+                  (77, "remains a possible confound"), (83, "no longer detected"), (87, "**Equivalence.**")]:
     assert must in TEXT[key], f"text replacement failed for {key}: {must}"
 
 
@@ -441,9 +461,9 @@ def main():
     set_caption(P[85], "TABLE VI", TEXT["tab6"])
     fill_table(T[4], [
         ["Script alternation (CS-LAT → MIXED) lowers recall",
-         "Not supported: only at 128 tokens; +4 (512), −3 (1,024), n.s. under both judges"],
+         "Not supported: only at 128 tokens; +4 (512), −3 (1,024), n.s. under both judges (not an equivalence test)"],
         ["English advantage over CS-LAT",
-         "Judge-dependent: topic p = 0.018 at 1,024 tokens (J-QWEN); n.s. at every budget (J-OSS)"],
+         "Judge-dependent: topic p = 0.018 at 1,024 tokens under J-QWEN (0.29 after Holm over 18 tests); n.s. at every budget under J-OSS"],
         ["Prompt token fertility mediates CS-LAT → MIXED", "Not detected (p = 0.08, wrong sign; exploratory)"],
         ["Language dependence of the profile", "Not detected (p = 0.17), low power"],
         ["Rank agreement with ALLaM-2-7B", "Uninformative (floor; ρ = 0.67, p = 0.22)"],

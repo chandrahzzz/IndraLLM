@@ -298,6 +298,78 @@ Agreement at 128 tokens across all six conditions (from EXP-004): 75.7% (146 bot
 | 0.12 | 0.74 | 0.35 | 0.41 |
 | 0.16 | 0.71 | 0.33 | 0.36 |
 
+## G5b. Post-review audit (audit_budget_truncation.py)
+
+### Truncation by budget (finish reasons logged at 512 and 1,024; at 128 'hit cap' = 128 completion tokens)
+
+| Budget | Condition | Finish reasons | Hit cap | Stopped before cap | Ends mid-sentence | Hit cap & mid-sentence | Stopped but mid-sentence | Mean tokens | Max tokens |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 128 | EN-MATCH | None: 100 | 100 | 0 | 87 | 87 | 0 | 128 | 128 |
+| 128 | CS-LAT | None: 100 | 99 | 1 | 90 | 90 | 0 | 128 | 128 |
+| 128 | MIXED | None: 100 | 100 | 0 | 92 | 92 | 0 | 128 | 128 |
+| 512 | EN-MATCH | stop: 58, length: 42 | 42 | 58 | 42 | 42 | 0 | 438 | 512 |
+| 512 | CS-LAT | length: 85, stop: 15 | 85 | 15 | 78 | 75 | 3 | 484 | 512 |
+| 512 | MIXED | length: 95, stop: 5 | 95 | 5 | 88 | 88 | 0 | 508 | 512 |
+| 1024 | EN-MATCH | stop: 95, length: 5 | 5 | 95 | 15 | 5 | 10 | 510 | 1024 |
+| 1024 | CS-LAT | stop: 61, length: 39 | 39 | 61 | 39 | 35 | 4 | 812 | 1024 |
+| 1024 | MIXED | length: 64, stop: 36 | 64 | 36 | 63 | 61 | 2 | 936 | 1024 |
+
+### Complete-answers sensitivity (exploratory; selecting on completion can bias)
+
+| Budget | Judge | Contrast | Pairs with both complete | Ref % | Cmp % | b | c | Exact p |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 512 | J-QWEN | CS-LAT vs EN-MATCH | 15 | 80 | 33 | 7 | 0 | 0.016 |
+| 512 | J-QWEN | MIXED vs CS-LAT | 3 | 0 | 67 | 0 | 2 | 0.50 |
+| 512 | J-QWEN | MIXED vs EN-MATCH | 5 | 100 | 60 | 2 | 0 | 0.50 |
+| 512 | J-OSS | CS-LAT vs EN-MATCH | 15 | 67 | 20 | 7 | 0 | 0.016 |
+| 512 | J-OSS | MIXED vs CS-LAT | 3 | 33 | 67 | 0 | 1 | 1.00 |
+| 512 | J-OSS | MIXED vs EN-MATCH | 5 | 100 | 60 | 2 | 0 | 0.50 |
+| 1024 | J-QWEN | CS-LAT vs EN-MATCH | 57 | 79 | 61 | 12 | 2 | 0.013 |
+| 1024 | J-QWEN | MIXED vs CS-LAT | 29 | 48 | 55 | 4 | 6 | 0.75 |
+| 1024 | J-QWEN | MIXED vs EN-MATCH | 34 | 76 | 59 | 8 | 2 | 0.11 |
+| 1024 | J-OSS | CS-LAT vs EN-MATCH | 57 | 65 | 60 | 7 | 4 | 0.55 |
+| 1024 | J-OSS | MIXED vs CS-LAT | 29 | 55 | 52 | 3 | 2 | 1.00 |
+| 1024 | J-OSS | MIXED vs EN-MATCH | 34 | 65 | 59 | 6 | 4 | 0.75 |
+
+Unpaired accuracy among complete responses only:
+
+| Budget | Judge | EN-MATCH (n, %) | CS-LAT (n, %) | MIXED (n, %) |
+| --- | --- | --- | --- | --- |
+| 512 | J-QWEN | 58, 86 | 15, 33 | 5, 60 |
+| 512 | J-OSS | 58, 74 | 15, 20 | 5, 60 |
+| 1024 | J-QWEN | 95, 84 | 61, 59 | 36, 58 |
+| 1024 | J-OSS | 95, 66 | 61, 57 | 36, 56 |
+
+### Multiplicity across the follow-up (18 tests = 3 budgets × 2 judges × 3 contrasts)
+
+Holm-3 = within the three contrasts of one budget–judge cell; Holm-18 = across all 18 follow-up tests. The 1,024-token run was added after the 512-token results were seen, so its tests are exploratory.
+
+| Judge | Budget | Contrast | Δ | Exact p | Holm-3 | Holm-18 | Topic p | Topic Holm-3 | Topic Holm-18 | Topic 95% CI |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| J-QWEN | 128 | CS-LAT vs EN-MATCH | −11 | 0.13 | 0.13 | 1.00 | 0.42 | 0.42 | 1.00 | [-34, 13] |
+| J-QWEN | 128 | MIXED vs CS-LAT | −23 | <0.001 | <0.001 | 0.003 | 0.004 | 0.011 | 0.062 | [-35, -11] |
+| J-QWEN | 128 | MIXED vs EN-MATCH | −34 | <0.001 | <0.001 | <0.001 | 0.030 | 0.061 | 0.46 | [-59, -7] |
+| J-QWEN | 512 | CS-LAT vs EN-MATCH | −21 | <0.001 | 0.002 | 0.007 | 0.082 | 0.24 | 1.00 | [-41, -1] |
+| J-QWEN | 512 | MIXED vs CS-LAT | +4 | 0.57 | 0.57 | 1.00 | 0.65 | 0.65 | 1.00 | [-8, 15] |
+| J-QWEN | 512 | MIXED vs EN-MATCH | −17 | 0.003 | 0.007 | 0.040 | 0.13 | 0.26 | 1.00 | [-35, 3] |
+| J-QWEN | 1024 | CS-LAT vs EN-MATCH | −24 | <0.001 | <0.001 | <0.001 | 0.018 | 0.036 | 0.29 | [-42, -8] |
+| J-QWEN | 1024 | MIXED vs CS-LAT | −3 | 0.70 | 0.70 | 1.00 | 0.72 | 0.72 | 1.00 | [-14, 8] |
+| J-QWEN | 1024 | MIXED vs EN-MATCH | −27 | <0.001 | <0.001 | <0.001 | 0.003 | 0.010 | 0.062 | [-42, -13] |
+| J-OSS | 128 | CS-LAT vs EN-MATCH | −12 | 0.050 | 0.10 | 0.50 | 0.22 | 0.45 | 1.00 | [-29, 4] |
+| J-OSS | 128 | MIXED vs CS-LAT | −8 | 0.18 | 0.18 | 1.00 | 0.24 | 0.45 | 1.00 | [-19, 2] |
+| J-OSS | 128 | MIXED vs EN-MATCH | −20 | 0.002 | 0.005 | 0.022 | 0.067 | 0.20 | 0.94 | [-39, -2] |
+| J-OSS | 512 | CS-LAT vs EN-MATCH | −4 | 0.57 | 0.69 | 1.00 | 0.76 | 0.93 | 1.00 | [-22, 15] |
+| J-OSS | 512 | MIXED vs CS-LAT | −6 | 0.34 | 0.69 | 1.00 | 0.44 | 0.93 | 1.00 | [-18, 6] |
+| J-OSS | 512 | MIXED vs EN-MATCH | −10 | 0.087 | 0.26 | 0.78 | 0.31 | 0.93 | 1.00 | [-26, 6] |
+| J-OSS | 1024 | CS-LAT vs EN-MATCH | −7 | 0.21 | 0.42 | 1.00 | 0.52 | 1.00 | 1.00 | [-24, 10] |
+| J-OSS | 1024 | MIXED vs CS-LAT | −5 | 0.40 | 0.42 | 1.00 | 0.52 | 1.00 | 1.00 | [-17, 7] |
+| J-OSS | 1024 | MIXED vs EN-MATCH | −12 | 0.043 | 0.13 | 0.47 | 0.22 | 0.66 | 1.00 | [-28, 5] |
+
+### Independent check (independent_check.py)
+
+**118 checks, 118 passed, 0 failed.** Full table: `paper_v2/output/independent_check.md` (statsmodels exact McNemar and Wilson, scikit-learn κ, Monte Carlo sign-flip, bootstrap with a different seed).
+
+
 ## G6. Final manuscript text exactly as built into the DOCX (build_paper.py)
 
 **Title**
@@ -306,7 +378,7 @@ Agreement at 128 tokens across all six conditions (from EXP-004): 75.7% (146 bot
 
 **Abstract**
 
-> Comparisons of LLM factual accuracy across languages and scripts usually change the question along with its representation. We hold 100 propositions on 20 Indian public-policy topics fixed and render each in English, native script, Romanized text, Latin-script code-switching (CS-LAT) and mixed-script code-switching (MIXED) in five Indic languages (Hindi, Bengali, Tamil, Telugu, Kannada), and ask how much the measured differences depend on two evaluation choices: the output-token budget and the judge. With Qwen3.8-27B and a 128-token cap, judge-assessed accuracy is 60% for a template-matched English prompt and 49%, 37%, 32% and 26% for CS-LAT, Romanized, native-script and MIXED prompts, and MIXED is 23 points below CS-LAT (p < 0.001; topic-level p = 0.004). Almost every response hit that cap, and Brahmic-script answers fit half as many characters into it. Re-answering the key conditions with 512 and 1,024 tokens removes the MIXED–CS-LAT gap under both a self-judge (+4 and −3 points; p ≥ 0.57) and a judge from another model family (−6 and −5; p ≥ 0.34). The English–CS-LAT gap behaves differently: under the self-judge it grows with the budget, to 24 points at 1,024 tokens (topic-level p = 0.018), while under the second judge it is 4–12 points and never significant. The two judges agree on 75–81% of outputs (κ = 0.47–0.61), and no human validation of either was performed. Measured representation effects are therefore sensitive to the output budget and to the evaluator, and should not be read as effects of representation without checking both. Prompts, outputs, judgements, a gold-answer ledger and code are released.
+> Comparisons of LLM factual accuracy across languages and scripts usually change the question along with its representation. We hold 100 propositions on 20 Indian public-policy topics fixed and render each in English, native script, Romanized text, Latin-script code-switching (CS-LAT) and mixed-script code-switching (MIXED) in five Indic languages (Hindi, Bengali, Tamil, Telugu, Kannada), and ask how much the measured differences depend on two evaluation choices: the output-token budget and the judge. With Qwen3.8-27B and a 128-token cap, judge-assessed accuracy is 60% for a template-matched English prompt and 49%, 37%, 32% and 26% for CS-LAT, Romanized, native-script and MIXED prompts, and MIXED is 23 points below CS-LAT (p < 0.001; topic-level p = 0.004). Almost every response hit that cap, and Brahmic-script answers fit half as many characters into it. When the key conditions are re-answered with 512 and 1,024 tokens, no MIXED–CS-LAT gap is detected under either a self-judge (+4 and −3 points) or a judge from another model family (−6 and −5); the intervals exclude the 128-token gap, although no equivalence test was pre-specified and 64% of MIXED answers still reach the 1,024-token cap. The English–CS-LAT gap behaves differently: under the self-judge it grows to 24 points at 1,024 tokens (topic-level p = 0.018; 0.29 after correction across all follow-up tests), while under the second judge it is 4–12 points and never significant. The judges agree on 75–81% of outputs (κ = 0.47–0.61), and no human validation of either was performed. Measured representation effects are therefore sensitive to the output budget and to the evaluator, and should not be read as effects of representation without checking both. Prompts, outputs, judgements, a gold-answer ledger and code are released.
 
 **Index Terms**
 
@@ -322,11 +394,11 @@ Agreement at 128 tokens across all six conditions (from EXP-004): 75.7% (146 bot
 
 **I Contributions**
 
-> **Contributions.** (1) A paired six-condition design for Indic factual QA, with a matched-English control that removes a template confound we found in our first run. (2) A controlled three-budget rerun showing that the 23-point mixed-script penalty measured at 128 tokens disappears at 512 and 1,024 tokens under two judges, while the English–code-switching gap moves in the opposite direction under one judge only. (3) Judge disagreement as a result: harmonising the judge configuration shrinks the English–code-switching gap at 128 tokens from 17 to 11 points, the two judges agree on 75–81% of outputs, and whether the English advantage is significant depends on which judge is used. (4) Inference that treats the 20 topics as the unit of independent evidence, and a release of prompts, outputs, both judges' labels, a gold-answer ledger and evaluation scripts.
+> **Contributions.** (1) A paired six-condition design for Indic factual QA, with a matched-English control that removes a template confound we found in our first run. (2) A controlled three-budget rerun in which the 23-point mixed-script penalty measured at 128 tokens is not detectable at 512 or 1,024 tokens under either of two judges, while the English–code-switching gap moves in the opposite direction under one judge only. (3) Judge disagreement as a result: harmonising the judge configuration shrinks the English–code-switching gap at 128 tokens from 17 to 11 points, the two judges agree on 75–81% of outputs, and whether the English advantage is significant depends on which judge is used. (4) Inference that treats the 20 topics as the unit of independent evidence, and a release of prompts, outputs, both judges' labels, a gold-answer ledger and evaluation scripts.
 
 **I Findings in brief**
 
-> **Findings in brief.** Evaluating multilingual LLMs across representation conditions is sensitive to the output-token budget and to the choice of evaluator, and observed differences should not automatically be interpreted as representation effects. At 128 tokens, accuracy falls from English to the Indic representations and mixed script is lowest. Almost every response hits that cap and Brahmic-script answers are about half as long in characters; with 512 or 1,024 tokens, MIXED and CS-LAT do not differ under either judge. The English advantage over Latin-script code-switching is significant at the topic level only under the self-judge at 1,024 tokens; under the cross-family judge it is small at every budget. Neither judge has been validated against human labels, so we report this as judge sensitivity, not as evidence that either judge is right.
+> **Findings in brief.** Evaluating multilingual LLMs across representation conditions is sensitive to the output-token budget and to the choice of evaluator, and observed differences should not automatically be interpreted as representation effects. At 128 tokens, accuracy falls from English to the Indic representations and mixed script is lowest. Almost every response hits that cap and Brahmic-script answers are about half as long in characters; with 512 or 1,024 tokens, no MIXED–CS-LAT difference is detected under either judge, though we do not claim equivalence. The English advantage over Latin-script code-switching is significant at the topic level only under the self-judge at 1,024 tokens, and not after correction across all follow-up tests; under the cross-family judge it is small at every budget. Neither judge has been validated against human labels, so we report this as judge sensitivity, not as evidence that either judge is right.
 
 **II Multilingual evaluation**
 
@@ -378,7 +450,7 @@ Agreement at 128 tokens across all six conditions (from EXP-004): 75.7% (146 bot
 
 **IV Statistics**
 
-> **Statistics.** Observations are nested. A *prompt* is one string sent to the model. A *proposition* is a fact in one language group, rendered as six paired prompts. A *topic* (e.g. NEFT vs. RTGS) contains five propositions, one per language, with the same gold answer; across the five matched-template conditions it contributes 25 prompts. A proposition-level test asks whether the model, given these 100 facts, does better in one representation than in another. A topic-level test asks whether the difference should be expected to recur on new topics; with 20 topics it has much less power, but it matches the generalisation most readers want, so we report both. At the proposition level we use exact McNemar tests [15] with Holm correction [16] within a pre-specified family of five contrasts: each of NATIVE, ROMAN, CS-LAT and MIXED against EN-MATCH, and MIXED against CS-LAT. At the topic level we use an exact sign-flip permutation test over all 2²⁰ sign patterns of the 20 per-topic accuracy differences and a percentile bootstrap over topics (10,000 resamples, fixed seed), with Holm correction within the same family. Logistic GEE with independence working correlation and robust covariance clustered at prompt, proposition and topic level [18] is reported in Appendix B; with 20 clusters robust standard errors are anti-conservative [19], [20], so topic-level conclusions do not rest on it. Wilson intervals [17] are given for single proportions; the design effect is 1 + (*m* − 1)ρ with ρ from the one-way ANOVA estimator [21]. The follow-up (Section VI-B) has the same three contrasts at every budget, fixed in the analysis scripts before its outputs were graded: CS-LAT vs. EN-MATCH, MIXED vs. CS-LAT and MIXED vs. EN-MATCH, plus the change in each gap between budgets, each under both judges. Everything else is exploratory. All numbers are recomputed from the raw files by the scripts in Appendix E.
+> **Statistics.** Observations are nested. A *prompt* is one string sent to the model. A *proposition* is a fact in one language group, rendered as six paired prompts. A *topic* (e.g. NEFT vs. RTGS) contains five propositions, one per language, with the same gold answer; across the five matched-template conditions it contributes 25 prompts. A proposition-level test asks whether the model, given these 100 facts, does better in one representation than in another. A topic-level test asks whether the difference should be expected to recur on new topics; with 20 topics it has much less power, but it matches the generalisation most readers want, so we report both. At the proposition level we use exact McNemar tests [15] with Holm correction [16] within a pre-specified family of five contrasts: each of NATIVE, ROMAN, CS-LAT and MIXED against EN-MATCH, and MIXED against CS-LAT. At the topic level we use an exact sign-flip permutation test over all 2²⁰ sign patterns of the 20 per-topic accuracy differences and a percentile bootstrap over topics (10,000 resamples, fixed seed), with Holm correction within the same family. Logistic GEE with independence working correlation and robust covariance clustered at prompt, proposition and topic level [18] is reported in Appendix B; with 20 clusters robust standard errors are anti-conservative [19], [20], so topic-level conclusions do not rest on it. Wilson intervals [17] are given for single proportions; the design effect is 1 + (*m* − 1)ρ with ρ from the one-way ANOVA estimator [21]. The follow-up (Section VI-B) has the same three contrasts at every budget, fixed in the analysis scripts before its outputs were graded: CS-LAT vs. EN-MATCH, MIXED vs. CS-LAT and MIXED vs. EN-MATCH, plus the change in each gap between budgets, each under both judges. The 512-token run was planned to test the budget confound; the 1,024-token run was added after its results were seen, so 1,024-token results are exploratory. For the follow-up we report Holm adjustment within each budget–judge cell and across all 18 follow-up tests (3 budgets × 2 judges × 3 contrasts). A non-significant difference is not evidence of equivalence; no equivalence margin was pre-specified, so we report intervals. Everything else is exploratory. All numbers are recomputed from the raw files by the scripts in Appendix E.
 
 **V heading**
 
@@ -458,7 +530,7 @@ Agreement at 128 tokens across all six conditions (from EXP-004): 75.7% (146 bot
 
 **VI-B budget reruns**
 
-> To separate script from budget we re-ran EN-MATCH, CS-LAT and MIXED (300 prompts) twice, with 512 and with 1,024-token limits, changing nothing else: same model identifier, system prompt, decoding settings and prompts. Every budget was graded by J-QWEN and by J-OSS, so each comparison across budgets uses one judge (Table III, Fig. 5b). At 1,024 tokens the cap no longer binds for English (95 of 100 responses stop on their own) and binds less for code-switched answers (61 CS-LAT and 36 MIXED responses stop). The MIXED–CS-LAT gap, −23 points at 128 tokens under J-QWEN, is +4 at 512 and −3 at 1,024 (p = 0.57 and 0.70); under J-OSS it is −8, −6 and −5, never significant. Between 128 and 1,024 tokens it narrows by 20 points under J-QWEN (topic-bootstrap CI [5, 34], permutation p = 0.023). On the 60 word-identical propositions the picture is the same (J-QWEN at 1,024 tokens: 65% vs. 60%, p = 0.58). The English–CS-LAT gap moves the other way under J-QWEN, from −11 at 128 to −21 at 512 and −24 at 1,024 tokens (exact p < 0.001; topic-level p = 0.018, Holm-adjusted 0.036 within the three follow-up contrasts), whereas under J-OSS it is −12, −4 and −7 and not significant at any budget (p ≥ 0.050).
+> To separate script from budget we re-ran EN-MATCH, CS-LAT and MIXED (300 prompts) twice, with 512 and with 1,024-token limits, changing nothing else: same model identifier, system prompt, decoding settings and prompts. Every budget was graded by J-QWEN and by J-OSS, so each comparison across budgets uses one judge (Table III, Fig. 5b). Even 1,024 tokens is not an unconstrained condition: according to the provider's finish reasons, 5 EN-MATCH, 39 CS-LAT and 64 MIXED responses still hit the limit (15, 39 and 63 end mid-sentence). The MIXED–CS-LAT gap, −23 points at 128 tokens under J-QWEN, is +4 at 512 and −3 at 1,024 (p = 0.57 and 0.70; topic-bootstrap 95% CIs [−8, 15] and [−14, 8]); under J-OSS it is −8, −6 and −5, never significant (CIs at 512 and 1,024 [−18, 6] and [−17, 7]). These intervals exclude the 23-point gap seen at 128 tokens, but they do not establish equivalence. Between 128 and 1,024 tokens the gap narrows by 20 points under J-QWEN (CI [5, 34], permutation p = 0.023). The pattern holds on the 60 word-identical propositions (J-QWEN at 1,024 tokens: 65% vs. 60%, p = 0.58) and, as an exploratory check that may be biased by selecting on completion, on the 29 propositions where both responses finished before the 1,024-token limit (J-QWEN 48% vs. 55%, p = 0.75; J-OSS 55% vs. 52%, p = 1.0). The English–CS-LAT gap moves the other way under J-QWEN, from −11 at 128 to −21 at 512 and −24 at 1,024 tokens (exact p < 0.001; topic-level p = 0.018, Holm-adjusted 0.036 within the three contrasts of that budget and 0.29 across all 18 follow-up tests), whereas under J-OSS it is −12, −4 and −7 and not significant at any budget (p ≥ 0.050). Restricted to the 57 propositions where both responses finished, the same split appears (J-QWEN 79% vs. 61%, p = 0.013; J-OSS 65% vs. 60%, p = 0.55).
 
 **Table III caption**
 
@@ -466,7 +538,7 @@ Agreement at 128 tokens across all six conditions (from EXP-004): 75.7% (146 bot
 
 **VI-B conclusions**
 
-> Three conclusions follow. First, the 128-token MIXED penalty is not evidence that script alternation harms recall: once the budget allows longer answers, mixed-script and Latin-script code-switched prompts yield similar accuracy under both judges. Its most likely source is that Brahmic-script answers reach the cap before reaching the fact, and answers a human would call incomplete are then graded as wrong; the EN-MATCH answer on the MTP Act, for instance, correctly states the one-practitioner rule for the first 20 weeks, is cut off before the 20–24-week rule, and is graded HALLUCINATED. Second, NATIVE and MIXED behave alike at 128 tokens (32% and 26%, p = 0.29) although MIXED has five script boundaries per prompt and NATIVE one, which also argues against a boundary-density account. Third, the English advantage is unstable: it grows with the budget under one judge and stays small under the other. We cannot tell from these data which judge is closer to a careful human reader, so the instability itself is the finding.
+> Three conclusions follow. First, the 128-token MIXED penalty is not evidence that script alternation harms recall: once the budget allows longer answers, no difference between mixed-script and Latin-script code-switched prompts is detected under either judge, and the intervals exclude a gap of the 128-token size. Its most likely source is that Brahmic-script answers reach the cap before reaching the fact, and answers a human would call incomplete are then graded as wrong; the EN-MATCH answer on the MTP Act, for instance, correctly states the one-practitioner rule for the first 20 weeks, is cut off before the 20–24-week rule, and is graded HALLUCINATED. Second, NATIVE and MIXED behave alike at 128 tokens (32% and 26%, p = 0.29) although MIXED has five script boundaries per prompt and NATIVE one, which also argues against a boundary-density account. Third, the English advantage is unstable: it grows with the budget under one judge and stays small under the other, and its topic-level significance under the first does not survive correction across the follow-up. We cannot tell from these data which judge is closer to a careful human reader, so the instability itself is the finding. Because most MIXED and many CS-LAT answers still reach the 1,024-token limit, the output budget remains a possible confound for any residual difference.
 
 **VII heading**
 
@@ -490,7 +562,7 @@ Agreement at 128 tokens across all six conditions (from EXP-004): 75.7% (146 bot
 
 **VIII Discussion 1**
 
-> What the data support is narrower than the design promised, and different from what our first run suggested. Evaluating multilingual LLMs across representation conditions is sensitive to the output-token budget and to the choice of evaluator, and observed differences should not automatically be interpreted as representation effects. For this model and these 20 topics, the clearest representation effect at a 128-token budget, the mixed-script penalty, disappears when answers can be longer, under both judges; the English advantage over code-switching appears or disappears with the judge. We do not claim that native script or code-switching damages factual recall, and we make no claim about other models.
+> What the data support is narrower than the design promised, and different from what our first run suggested. Evaluating multilingual LLMs across representation conditions is sensitive to the output-token budget and to the choice of evaluator, and observed differences should not automatically be interpreted as representation effects. For this model and these 20 topics, the clearest representation effect at a 128-token budget, the mixed-script penalty, is no longer detected when answers can be longer, under either judge; the English advantage over code-switching appears or disappears with the judge. We do not claim that native script or code-switching damages factual recall, and we make no claim about other models.
 
 **VIII Discussion 2**
 
@@ -502,7 +574,7 @@ Agreement at 128 tokens across all six conditions (from EXP-004): 75.7% (146 bot
 
 **IX Limitations**
 
-> **Topics.** Twenty topics with heavy within-topic concentration bound what any statistic can show (effective n ≈ 67 of 500). A 25-proposition expansion has been written but not evaluated. **Output budget.** At 1,024 tokens, 39 CS-LAT and 64 MIXED responses still hit the cap; we re-ran three of the six conditions and did not test an instruction fixing the answer language. **Judges.** Two LLM judges that disagree on a fifth to a quarter of items, and no human labels on any output; a stratified, blinded sample of 210 outputs and an annotation protocol are released but not annotated. **Questions and gold answers.** One generic template that under-specifies the target for several topics; volunteer gold checks without an item-level record; one superseded scheme. **Prompts.** The fluent-speaker review was an informal yes/no check of the templates; CS-LAT and MIXED differ by one word in Telugu and Kannada, and Hindi ROMAN is not a transliteration of Hindi NATIVE. **Models and languages.** One informative model, served under an API identifier whose underlying weights we cannot independently verify, and five languages. **Single run.** No repeated sampling; hosted greedy decoding was not fully deterministic, and API behaviour can change over time.
+> **Topics.** Twenty topics with heavy within-topic concentration bound what any statistic can show (effective n ≈ 67 of 500). A 25-proposition expansion has been written but not evaluated. **Output budget.** At 1,024 tokens, 39 CS-LAT and 64 MIXED responses still hit the cap, so the budget is not fully removed as a confound; the 1,024-token run was added after the 512-token results were seen and is exploratory; we re-ran three of the six conditions and did not test an instruction fixing the answer language. **Equivalence.** No equivalence margin was pre-specified, so non-significant gaps are reported with intervals, not as equivalence. **Judges.** Two LLM judges that disagree on a fifth to a quarter of items, and no human labels on any output; a stratified, blinded sample of 210 outputs and an annotation protocol are released but not annotated. **Questions and gold answers.** One generic template that under-specifies the target for several topics; volunteer gold checks without an item-level record; one superseded scheme. **Prompts.** The fluent-speaker review was an informal yes/no check of the templates; CS-LAT and MIXED differ by one word in Telugu and Kannada, and Hindi ROMAN is not a transliteration of Hindi NATIVE. **Models and languages.** One informative model, served under an API identifier whose underlying weights we cannot independently verify, and five languages. **Single run.** No repeated sampling; hosted greedy decoding was not fully deterministic, and API behaviour can change over time.
 
 **X Ethics**
 

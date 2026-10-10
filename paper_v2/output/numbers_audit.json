@@ -1,0 +1,621 @@
+{
+  "truncation": {
+    "128": {
+      "EN-MATCH": {
+        "n": 100,
+        "finish_reasons": {
+          "None": 100
+        },
+        "hit_cap": 100,
+        "stopped_before_cap": 0,
+        "ends_mid_sentence": 87,
+        "hit_cap_and_mid_sentence": 87,
+        "stopped_but_mid_sentence": 0,
+        "mean_completion_tokens": 128.0,
+        "max_completion_tokens": 128
+      },
+      "CS-LAT": {
+        "n": 100,
+        "finish_reasons": {
+          "None": 100
+        },
+        "hit_cap": 99,
+        "stopped_before_cap": 1,
+        "ends_mid_sentence": 90,
+        "hit_cap_and_mid_sentence": 90,
+        "stopped_but_mid_sentence": 0,
+        "mean_completion_tokens": 127.66,
+        "max_completion_tokens": 128
+      },
+      "MIXED": {
+        "n": 100,
+        "finish_reasons": {
+          "None": 100
+        },
+        "hit_cap": 100,
+        "stopped_before_cap": 0,
+        "ends_mid_sentence": 92,
+        "hit_cap_and_mid_sentence": 92,
+        "stopped_but_mid_sentence": 0,
+        "mean_completion_tokens": 128.0,
+        "max_completion_tokens": 128
+      }
+    },
+    "512": {
+      "EN-MATCH": {
+        "n": 100,
+        "finish_reasons": {
+          "stop": 58,
+          "length": 42
+        },
+        "hit_cap": 42,
+        "stopped_before_cap": 58,
+        "ends_mid_sentence": 42,
+        "hit_cap_and_mid_sentence": 42,
+        "stopped_but_mid_sentence": 0,
+        "mean_completion_tokens": 438.34,
+        "max_completion_tokens": 512
+      },
+      "CS-LAT": {
+        "n": 100,
+        "finish_reasons": {
+          "length": 85,
+          "stop": 15
+        },
+        "hit_cap": 85,
+        "stopped_before_cap": 15,
+        "ends_mid_sentence": 78,
+        "hit_cap_and_mid_sentence": 75,
+        "stopped_but_mid_sentence": 3,
+        "mean_completion_tokens": 484.09,
+        "max_completion_tokens": 512
+      },
+      "MIXED": {
+        "n": 100,
+        "finish_reasons": {
+          "length": 95,
+          "stop": 5
+        },
+        "hit_cap": 95,
+        "stopped_before_cap": 5,
+        "ends_mid_sentence": 88,
+        "hit_cap_and_mid_sentence": 88,
+        "stopped_but_mid_sentence": 0,
+        "mean_completion_tokens": 508.0,
+        "max_completion_tokens": 512
+      }
+    },
+    "1024": {
+      "EN-MATCH": {
+        "n": 100,
+        "finish_reasons": {
+          "stop": 95,
+          "length": 5
+        },
+        "hit_cap": 5,
+        "stopped_before_cap": 95,
+        "ends_mid_sentence": 15,
+        "hit_cap_and_mid_sentence": 5,
+        "stopped_but_mid_sentence": 10,
+        "mean_completion_tokens": 509.58,
+        "max_completion_tokens": 1024
+      },
+      "CS-LAT": {
+        "n": 100,
+        "finish_reasons": {
+          "stop": 61,
+          "length": 39
+        },
+        "hit_cap": 39,
+        "stopped_before_cap": 61,
+        "ends_mid_sentence": 39,
+        "hit_cap_and_mid_sentence": 35,
+        "stopped_but_mid_sentence": 4,
+        "mean_completion_tokens": 812.05,
+        "max_completion_tokens": 1024
+      },
+      "MIXED": {
+        "n": 100,
+        "finish_reasons": {
+          "length": 64,
+          "stop": 36
+        },
+        "hit_cap": 64,
+        "stopped_before_cap": 36,
+        "ends_mid_sentence": 63,
+        "hit_cap_and_mid_sentence": 61,
+        "stopped_but_mid_sentence": 2,
+        "mean_completion_tokens": 936.3,
+        "max_completion_tokens": 1024
+      }
+    }
+  },
+  "complete_sensitivity": {
+    "512": {
+      "J-QWEN": {
+        "unpaired_accuracy_complete_only": {
+          "EN-MATCH": {
+            "n": 58,
+            "acc": 86.20689655172413
+          },
+          "CS-LAT": {
+            "n": 15,
+            "acc": 33.33333333333333
+          },
+          "MIXED": {
+            "n": 5,
+            "acc": 60.0
+          }
+        },
+        "paired_both_complete": [
+          {
+            "ref": "EN-MATCH",
+            "cmp": "CS-LAT",
+            "n_pairs": 15,
+            "acc_ref": 80.0,
+            "acc_cmp": 33.33333333333333,
+            "b": 7,
+            "c": 0,
+            "p_exact": 0.015625
+          },
+          {
+            "ref": "CS-LAT",
+            "cmp": "MIXED",
+            "n_pairs": 3,
+            "acc_ref": 0.0,
+            "acc_cmp": 66.66666666666666,
+            "b": 0,
+            "c": 2,
+            "p_exact": 0.5
+          },
+          {
+            "ref": "EN-MATCH",
+            "cmp": "MIXED",
+            "n_pairs": 5,
+            "acc_ref": 100.0,
+            "acc_cmp": 60.0,
+            "b": 2,
+            "c": 0,
+            "p_exact": 0.5
+          }
+        ]
+      },
+      "J-OSS": {
+        "unpaired_accuracy_complete_only": {
+          "EN-MATCH": {
+            "n": 58,
+            "acc": 74.13793103448276
+          },
+          "CS-LAT": {
+            "n": 15,
+            "acc": 20.0
+          },
+          "MIXED": {
+            "n": 5,
+            "acc": 60.0
+          }
+        },
+        "paired_both_complete": [
+          {
+            "ref": "EN-MATCH",
+            "cmp": "CS-LAT",
+            "n_pairs": 15,
+            "acc_ref": 66.66666666666666,
+            "acc_cmp": 20.0,
+            "b": 7,
+            "c": 0,
+            "p_exact": 0.015625
+          },
+          {
+            "ref": "CS-LAT",
+            "cmp": "MIXED",
+            "n_pairs": 3,
+            "acc_ref": 33.33333333333333,
+            "acc_cmp": 66.66666666666666,
+            "b": 0,
+            "c": 1,
+            "p_exact": 1.0
+          },
+          {
+            "ref": "EN-MATCH",
+            "cmp": "MIXED",
+            "n_pairs": 5,
+            "acc_ref": 100.0,
+            "acc_cmp": 60.0,
+            "b": 2,
+            "c": 0,
+            "p_exact": 0.5
+          }
+        ]
+      }
+    },
+    "1024": {
+      "J-QWEN": {
+        "unpaired_accuracy_complete_only": {
+          "EN-MATCH": {
+            "n": 95,
+            "acc": 84.21052631578947
+          },
+          "CS-LAT": {
+            "n": 61,
+            "acc": 59.01639344262295
+          },
+          "MIXED": {
+            "n": 36,
+            "acc": 58.333333333333336
+          }
+        },
+        "paired_both_complete": [
+          {
+            "ref": "EN-MATCH",
+            "cmp": "CS-LAT",
+            "n_pairs": 57,
+            "acc_ref": 78.94736842105263,
+            "acc_cmp": 61.40350877192983,
+            "b": 12,
+            "c": 2,
+            "p_exact": 0.012939453125
+          },
+          {
+            "ref": "CS-LAT",
+            "cmp": "MIXED",
+            "n_pairs": 29,
+            "acc_ref": 48.275862068965516,
+            "acc_cmp": 55.172413793103445,
+            "b": 4,
+            "c": 6,
+            "p_exact": 0.75390625
+          },
+          {
+            "ref": "EN-MATCH",
+            "cmp": "MIXED",
+            "n_pairs": 34,
+            "acc_ref": 76.47058823529412,
+            "acc_cmp": 58.82352941176471,
+            "b": 8,
+            "c": 2,
+            "p_exact": 0.109375
+          }
+        ]
+      },
+      "J-OSS": {
+        "unpaired_accuracy_complete_only": {
+          "EN-MATCH": {
+            "n": 95,
+            "acc": 66.3157894736842
+          },
+          "CS-LAT": {
+            "n": 61,
+            "acc": 57.377049180327866
+          },
+          "MIXED": {
+            "n": 36,
+            "acc": 55.55555555555556
+          }
+        },
+        "paired_both_complete": [
+          {
+            "ref": "EN-MATCH",
+            "cmp": "CS-LAT",
+            "n_pairs": 57,
+            "acc_ref": 64.91228070175438,
+            "acc_cmp": 59.64912280701754,
+            "b": 7,
+            "c": 4,
+            "p_exact": 0.548828125
+          },
+          {
+            "ref": "CS-LAT",
+            "cmp": "MIXED",
+            "n_pairs": 29,
+            "acc_ref": 55.172413793103445,
+            "acc_cmp": 51.724137931034484,
+            "b": 3,
+            "c": 2,
+            "p_exact": 1.0
+          },
+          {
+            "ref": "EN-MATCH",
+            "cmp": "MIXED",
+            "n_pairs": 34,
+            "acc_ref": 64.70588235294117,
+            "acc_cmp": 58.82352941176471,
+            "b": 6,
+            "c": 4,
+            "p_exact": 0.75390625
+          }
+        ]
+      }
+    }
+  },
+  "multiplicity": [
+    {
+      "judge": "J-QWEN",
+      "budget": "128",
+      "contrast": "CS-LAT vs EN-MATCH",
+      "delta_pp": -11.0,
+      "p_exact": 0.12628947438543037,
+      "topic_p": 0.4224853515625,
+      "topic_ci": [
+        -34.0,
+        13.0
+      ],
+      "holm18_exact": 1.0,
+      "holm18_topic": 1.0,
+      "holm3_exact": 0.12628947438543037,
+      "holm3_topic": 0.4224853515625
+    },
+    {
+      "judge": "J-QWEN",
+      "budget": "128",
+      "contrast": "MIXED vs CS-LAT",
+      "delta_pp": -23.0,
+      "p_exact": 0.00019107642583549023,
+      "topic_p": 0.003662109375,
+      "topic_ci": [
+        -35.0,
+        -11.0
+      ],
+      "holm18_exact": 0.0028661463875323534,
+      "holm18_topic": 0.062255859375,
+      "holm3_exact": 0.00038215285167098045,
+      "holm3_topic": 0.010986328125
+    },
+    {
+      "judge": "J-QWEN",
+      "budget": "128",
+      "contrast": "MIXED vs EN-MATCH",
+      "delta_pp": -34.0,
+      "p_exact": 5.37831811014966e-06,
+      "topic_p": 0.03033447265625,
+      "topic_ci": [
+        -59.0,
+        -7.0
+      ],
+      "holm18_exact": 9.143140787254422e-05,
+      "holm18_topic": 0.45501708984375,
+      "holm3_exact": 1.613495433044898e-05,
+      "holm3_topic": 0.0606689453125
+    },
+    {
+      "judge": "J-QWEN",
+      "budget": "512",
+      "contrast": "CS-LAT vs EN-MATCH",
+      "delta_pp": -21.0,
+      "p_exact": 0.0005082604475319386,
+      "topic_p": 0.08154296875,
+      "topic_ci": [
+        -41.0,
+        -1.0
+      ],
+      "holm18_exact": 0.00711564626544714,
+      "holm18_topic": 1.0,
+      "holm3_exact": 0.0015247813425958157,
+      "holm3_topic": 0.24462890625
+    },
+    {
+      "judge": "J-QWEN",
+      "budget": "512",
+      "contrast": "MIXED vs CS-LAT",
+      "delta_pp": 4.0,
+      "p_exact": 0.5715881884098053,
+      "topic_p": 0.64794921875,
+      "topic_ci": [
+        -8.0,
+        15.0
+      ],
+      "holm18_exact": 1.0,
+      "holm18_topic": 1.0,
+      "holm3_exact": 0.5715881884098053,
+      "holm3_topic": 0.64794921875
+    },
+    {
+      "judge": "J-QWEN",
+      "budget": "512",
+      "contrast": "MIXED vs EN-MATCH",
+      "delta_pp": -17.0,
+      "p_exact": 0.003326892852783203,
+      "topic_p": 0.12890625,
+      "topic_ci": [
+        -35.02499999999998,
+        3.0
+      ],
+      "holm18_exact": 0.03992271423339844,
+      "holm18_topic": 1.0,
+      "holm3_exact": 0.006653785705566406,
+      "holm3_topic": 0.2578125
+    },
+    {
+      "judge": "J-QWEN",
+      "budget": "1024",
+      "contrast": "CS-LAT vs EN-MATCH",
+      "delta_pp": -24.0,
+      "p_exact": 8.430331945419312e-06,
+      "topic_p": 0.01806640625,
+      "topic_ci": [
+        -42.0,
+        -8.0
+      ],
+      "holm18_exact": 0.00013488531112670898,
+      "holm18_topic": 0.2890625,
+      "holm3_exact": 1.6860663890838623e-05,
+      "holm3_topic": 0.0361328125
+    },
+    {
+      "judge": "J-QWEN",
+      "budget": "1024",
+      "contrast": "MIXED vs CS-LAT",
+      "delta_pp": -3.0,
+      "p_exact": 0.7011080384254456,
+      "topic_p": 0.720703125,
+      "topic_ci": [
+        -14.0,
+        8.0
+      ],
+      "holm18_exact": 1.0,
+      "holm18_topic": 1.0,
+      "holm3_exact": 0.7011080384254456,
+      "holm3_topic": 0.720703125
+    },
+    {
+      "judge": "J-QWEN",
+      "budget": "1024",
+      "contrast": "MIXED vs EN-MATCH",
+      "delta_pp": -27.0,
+      "p_exact": 4.628673195838928e-07,
+      "topic_p": 0.00341796875,
+      "topic_ci": [
+        -42.0,
+        -13.0
+      ],
+      "holm18_exact": 8.33161175251007e-06,
+      "holm18_topic": 0.0615234375,
+      "holm3_exact": 1.3886019587516785e-06,
+      "holm3_topic": 0.01025390625
+    },
+    {
+      "judge": "J-OSS",
+      "budget": "128",
+      "contrast": "CS-LAT vs EN-MATCH",
+      "delta_pp": -12.0,
+      "p_exact": 0.050102459732443094,
+      "topic_p": 0.2236328125,
+      "topic_ci": [
+        -29.0,
+        4.0
+      ],
+      "holm18_exact": 0.5010245973244309,
+      "holm18_topic": 1.0,
+      "holm3_exact": 0.10020491946488619,
+      "holm3_topic": 0.447265625
+    },
+    {
+      "judge": "J-OSS",
+      "budget": "128",
+      "contrast": "MIXED vs CS-LAT",
+      "delta_pp": -8.0,
+      "p_exact": 0.1849333420395851,
+      "topic_p": 0.240234375,
+      "topic_ci": [
+        -19.0,
+        2.024999999999636
+      ],
+      "holm18_exact": 1.0,
+      "holm18_topic": 1.0,
+      "holm3_exact": 0.1849333420395851,
+      "holm3_topic": 0.447265625
+    },
+    {
+      "judge": "J-OSS",
+      "budget": "128",
+      "contrast": "MIXED vs EN-MATCH",
+      "delta_pp": -20.0,
+      "p_exact": 0.0016580525261815637,
+      "topic_p": 0.06689453125,
+      "topic_ci": [
+        -39.0,
+        -2.0
+      ],
+      "holm18_exact": 0.02155468284036033,
+      "holm18_topic": 0.9365234375,
+      "holm3_exact": 0.004974157578544691,
+      "holm3_topic": 0.20068359375
+    },
+    {
+      "judge": "J-OSS",
+      "budget": "512",
+      "contrast": "CS-LAT vs EN-MATCH",
+      "delta_pp": -4.0,
+      "p_exact": 0.5715881884098053,
+      "topic_p": 0.7607421875,
+      "topic_ci": [
+        -22.0,
+        15.0
+      ],
+      "holm18_exact": 1.0,
+      "holm18_topic": 1.0,
+      "holm3_exact": 0.6898569017648697,
+      "holm3_topic": 0.92578125
+    },
+    {
+      "judge": "J-OSS",
+      "budget": "512",
+      "contrast": "MIXED vs CS-LAT",
+      "delta_pp": -6.0,
+      "p_exact": 0.34492845088243484,
+      "topic_p": 0.44189453125,
+      "topic_ci": [
+        -18.0,
+        6.0
+      ],
+      "holm18_exact": 1.0,
+      "holm18_topic": 1.0,
+      "holm3_exact": 0.6898569017648697,
+      "holm3_topic": 0.92578125
+    },
+    {
+      "judge": "J-OSS",
+      "budget": "512",
+      "contrast": "MIXED vs EN-MATCH",
+      "delta_pp": -10.0,
+      "p_exact": 0.08715855330228806,
+      "topic_p": 0.30859375,
+      "topic_ci": [
+        -26.0,
+        6.0
+      ],
+      "holm18_exact": 0.7844269797205925,
+      "holm18_topic": 1.0,
+      "holm3_exact": 0.26147565990686417,
+      "holm3_topic": 0.92578125
+    },
+    {
+      "judge": "J-OSS",
+      "budget": "1024",
+      "contrast": "CS-LAT vs EN-MATCH",
+      "delta_pp": -7.000000000000001,
+      "p_exact": 0.21003961563110352,
+      "topic_p": 0.51953125,
+      "topic_ci": [
+        -24.0,
+        10.0
+      ],
+      "holm18_exact": 1.0,
+      "holm18_topic": 1.0,
+      "holm3_exact": 0.42007923126220703,
+      "holm3_topic": 1.0
+    },
+    {
+      "judge": "J-OSS",
+      "budget": "1024",
+      "contrast": "MIXED vs CS-LAT",
+      "delta_pp": -5.0,
+      "p_exact": 0.4048728942871094,
+      "topic_p": 0.521240234375,
+      "topic_ci": [
+        -17.0,
+        7.0
+      ],
+      "holm18_exact": 1.0,
+      "holm18_topic": 1.0,
+      "holm3_exact": 0.42007923126220703,
+      "holm3_topic": 1.0
+    },
+    {
+      "judge": "J-OSS",
+      "budget": "1024",
+      "contrast": "MIXED vs EN-MATCH",
+      "delta_pp": -12.0,
+      "p_exact": 0.042773945257067694,
+      "topic_p": 0.22021484375,
+      "topic_ci": [
+        -28.0,
+        5.0
+      ],
+      "holm18_exact": 0.47051339782774465,
+      "holm18_topic": 1.0,
+      "holm3_exact": 0.1283218357712031,
+      "holm3_topic": 0.66064453125
+    }
+  ]
+}
