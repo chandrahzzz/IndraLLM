@@ -1,0 +1,151 @@
+﻿item_id,prompt_id,semantic_id,condition,language,target_entity,subset,sampling_fraction,judge_label,judge_reason,J-QWEN,J-OSS
+H001,S001445_E_MIXED_SCRIPT_kn,S001445,E_MIXED_SCRIPT,kn,PM-KISAN vs Rythu Bandhu,main,0.13157894736842105,1,"Incomplete answer, missing specific per-acre vs per-family distinction.",1,0
+H002,S001453_C_ROMAN_te,S001453,C_ROMAN,te,Patents Act Compulsory License,main,0.30303030303030304,0,Correctly identifies Section 84 as the primary provision.,0,1
+H003,S001459_C_ROMAN_bn,S001459,C_ROMAN,bn,RTI Third Party Information,main,0.14925373134328357,1,"Incomplete answer, fails to state the 5-day deadline.",1,1
+H004,S001448_B_NATIVE_te,S001448,B_NATIVE,te,Supreme Court vs High Court Writ Jurisdiction,judge_disagreement,,0,Correctly identifies Article 32 for Supreme Court writ jurisdiction.,0,1
+H005,S001427_E_MIXED_SCRIPT_ta,S001427,E_MIXED_SCRIPT,ta,Lok Sabha vs Rajya Sabha Money Bill,main,0.4166666666666667,0,"Correctly states Lok Sabha initiation rule, aligns with gold.",0,1
+H006,S001482_D_CS_ta,S001482,D_CS,ta,Environment Clearance Public Hearing,main,0.17543859649122806,1,"Fails to answer specific exemption rule, provides generic info.",1,1
+H007,S001481_E_MIXED_SCRIPT_hi,S001481,E_MIXED_SCRIPT,hi,Environment Clearance Public Hearing,main,0.13157894736842105,1,Fails to mention the specific exemption rule from gold.,1,1
+H008,S001483_A_EN_MATCHED_te,S001483,A_EN_MATCHED,te,Environment Clearance Public Hearing,main,0.25,1,Misses specific exemption rule for industrial estates/defense projects.,1,1
+H009,S001468_C_ROMAN_te,S001468,C_ROMAN,te,Companies Act CSR Mandate,main,0.14925373134328357,1,"Answer is incomplete, missing specific criteria values.",1,1
+H010,S001415_D_CS_kn,S001415,D_CS,kn,Covaxin vs Covishield,main,0.23255813953488372,0,Correctly identifies inactivated virus technology for Covaxin.,0,0
+H011,S001490_E_MIXED_SCRIPT_kn,S001490,E_MIXED_SCRIPT,kn,Medical Termination of Pregnancy Act,main,0.13157894736842105,1,"Answer is truncated and incomplete, missing key details.",1,1
+H012,S001493_A_EN_MATCHED_te,S001493,A_EN_MATCHED,te,SEBI Insider Trading Pre-Clearance,judge_disagreement,,0,Correctly identifies mandatory pre-clearance for designated persons.,0,1
+H013,S001428_A_EN_MATCHED_te,S001428,A_EN_MATCHED,te,Lok Sabha vs Rajya Sabha Money Bill,main,0.16666666666666666,0,Correctly states Rajya Sabha cannot amend or reject Money Bills.,0,1
+H014,S001409_A_EN_MATCHED_bn,S001409,A_EN_MATCHED,bn,NEFT vs RTGS,main,0.25,1,Incorrect RTGS minimum limit (₹20L vs ₹2L).,1,1
+H015,S001407_D_CS_ta,S001407,D_CS,ta,NEFT vs RTGS,main,0.17543859649122806,1,Omits settlement mechanism (batch vs real-time),0,0
+H016,S001452_C_ROMAN_ta,S001452,C_ROMAN,ta,Patents Act Compulsory License,main,0.14925373134328357,1,Fails to state the 3-year expiration rule.,1,1
+H017,S001481_D_CS_hi,S001481,D_CS,hi,Environment Clearance Public Hearing,main,0.17543859649122806,1,Fails to mention exempted industrial estates or defense projects.,1,1
+H018,S001485_A_EN_kn,S001485,A_EN,kn,Environment Clearance Public Hearing,main,0.2777777777777778,1,"Model discusses EIA report submission, not the gold answer's exemption condition.",1,1
+H019,S001486_A_EN_MATCHED_hi,S001486,A_EN_MATCHED,hi,Medical Termination of Pregnancy Act,main,0.25,1,Incorrectly states one practitioner opinion for 20 weeks.,1,1
+H020,S001487_A_EN_ta,S001487,A_EN,ta,Medical Termination of Pregnancy Act,judge_disagreement,,0,Correctly states the two-practitioner condition for 20-24 weeks.,0,1
+H021,S001421_B_NATIVE_hi,S001421,B_NATIVE,hi,ISRO PSLV vs GSLV Mk III,main,0.35714285714285715,0,"Accurately identifies PSLV's SSO purpose, matching gold answer.",0,1
+H022,S001467_A_EN_ta,S001467,A_EN,ta,Companies Act CSR Mandate,main,0.15625,0,Correctly states the net worth threshold from the Companies Act.,0,1
+H023,S001406_A_EN_hi,S001406,A_EN,hi,NEFT vs RTGS,main,0.15625,0,"Correctly identifies settlement method difference, though incomplete.",0,0
+H024,S001408_B_NATIVE_te,S001408,B_NATIVE,te,NEFT vs RTGS,main,0.35714285714285715,0,Correctly states RTGS minimum limit and timing difference.,0,1
+H025,S001438_A_EN_te,S001438,A_EN,te,Classical Tamil vs Sanskrit Grammar,main,0.15625,0,"Correctly identifies Tolkappiyam and Panini, addresses the question accurately.",0,1
+H026,S001499_A_EN_MATCHED_bn,S001499,A_EN_MATCHED,bn,Citizenship Amendment Act Cut-off,main,0.16666666666666666,0,"Correctly identifies the December 31, 2014 cut-off date.",0,0
+H027,S001470_C_ROMAN_kn,S001470,C_ROMAN,kn,Companies Act CSR Mandate,judge_disagreement,,0,Correctly states the ₹500 Cr net worth threshold.,0,1
+H028,S001478_B_NATIVE_te,S001478,B_NATIVE,te,IBC Section 7 Default Threshold,main,0.1388888888888889,1,Answer is incomplete and missing the specific threshold value.,1,1
+H029,S001450_D_CS_kn,S001450,D_CS,kn,Supreme Court vs High Court Writ Jurisdiction,main,0.23255813953488372,0,Correctly identifies Article 226 and its broader jurisdiction.,0,1
+H030,S001406_B_NATIVE_hi,S001406,B_NATIVE,hi,NEFT vs RTGS,main,0.35714285714285715,0,Correctly states RTGS minimum limit and processing nature.,0,1
+H031,S001452_D_CS_ta,S001452,D_CS,ta,Patents Act Compulsory License,main,0.23255813953488372,0,Correctly identifies Section 84 and the 3-year parameter.,0,0
+H032,S001443_C_ROMAN_te,S001443,C_ROMAN,te,PM-KISAN vs Rythu Bandhu,main,0.14925373134328357,1,Misses core difference (per family vs per acre).,0,1
+H033,S001431_B_NATIVE_hi,S001431,B_NATIVE,hi,National Park vs Wildlife Sanctuary,main,0.1388888888888889,1,"Incomplete answer, cuts off mid-sentence.",1,0
+H034,S001463_B_NATIVE_te,S001463,B_NATIVE,te,GST Registration Exemption,main,0.35714285714285715,0,Correctly states the ₹40 Lakh threshold for goods.,0,0
+H035,S001410_A_EN_MATCHED_kn,S001410,A_EN_MATCHED,kn,NEFT vs RTGS,judge_disagreement,,1,Incorrect RTGS minimum limit (₹20L vs ₹2L).,1,0
+H036,S001418_D_CS_te,S001418,D_CS,te,Kharif vs Rabi Rice,main,0.23255813953488372,0,Accurately defines Kharif as monsoon rice with correct dates.,0,1
+H037,S001424_A_EN_bn,S001424,A_EN,bn,ISRO PSLV vs GSLV Mk III,main,0.2777777777777778,1,"Incomplete answer, cuts off mid-sentence, missing key details.",0,1
+H038,S001403_E_MIXED_SCRIPT_te,S001403,E_MIXED_SCRIPT,te,PMFBY vs WBCIS,main,0.13157894736842105,1,Incorrectly defines WBCIS as West Bengal scheme.,1,1
+H039,S001437_A_EN_ta,S001437,A_EN,ta,Classical Tamil vs Sanskrit Grammar,judge_disagreement,,1,Fails to name Tolkappiyam and Ashtadhyayi explicitly.,0,1
+H040,S001455_A_EN_kn,S001455,A_EN,kn,Patents Act Compulsory License,main,0.15625,0,Correctly states the 3-year timeline prerequisite.,0,0
+H041,S001485_C_ROMAN_kn,S001485,C_ROMAN,kn,Environment Clearance Public Hearing,main,0.14925373134328357,1,"Gold answer specifies exemptions, model lists general EIA timelines.",1,1
+H042,S001455_E_MIXED_SCRIPT_kn,S001455,E_MIXED_SCRIPT,kn,Patents Act Compulsory License,main,0.4166666666666667,0,Correctly identifies Section 84 as the main rule.,1,1
+H043,S001411_A_EN_MATCHED_hi,S001411,A_EN_MATCHED,hi,Covaxin vs Covishield,main,0.16666666666666666,0,Correctly identifies inactivated vs viral vector technology.,0,0
+H044,S001435_B_NATIVE_kn,S001435,B_NATIVE,kn,National Park vs Wildlife Sanctuary,main,0.35714285714285715,0,"Correctly identifies the Wildlife Protection Act, 1972.",0,1
+H045,S001429_A_EN_bn,S001429,A_EN,bn,Lok Sabha vs Rajya Sabha Money Bill,main,0.15625,0,Correctly states Rajya Sabha cannot amend Money Bills.,0,0
+H046,S001462_A_EN_ta,S001462,A_EN,ta,GST Registration Exemption,main,0.15625,0,Correctly identifies the ₹40 lakh turnover threshold for goods.,0,0
+H047,S001423_E_MIXED_SCRIPT_te,S001423,E_MIXED_SCRIPT,te,ISRO PSLV vs GSLV Mk III,main,0.13157894736842105,1,"Incomplete answer, missing specific payload values and dates.",1,1
+H048,S001475_A_EN_MATCHED_kn,S001475,A_EN_MATCHED,kn,Arbitration Act Time Limit,main,0.16666666666666666,0,Correctly identifies the 12-month time limit.,0,1
+H049,S001434_D_CS_bn,S001434,D_CS,bn,National Park vs Wildlife Sanctuary,main,0.23255813953488372,0,Correctly states grazing prohibition in National Parks.,0,0
+H050,S001430_A_EN_kn,S001430,A_EN,kn,Lok Sabha vs Rajya Sabha Money Bill,main,0.15625,0,Correctly states Rajya Sabha cannot amend or reject Money Bills.,0,0
+H051,S001420_D_CS_kn,S001420,D_CS,kn,Kharif vs Rabi Rice,main,0.17543859649122806,1,"Incomplete answer, fails to state key Kharif/Rabi differences.",0,1
+H052,S001500_C_ROMAN_kn,S001500,C_ROMAN,kn,Citizenship Amendment Act Cut-off,main,0.30303030303030304,0,Matches gold answer with correct cut-off date.,0,0
+H053,S001447_C_ROMAN_ta,S001447,C_ROMAN,ta,Supreme Court vs High Court Writ Jurisdiction,main,0.30303030303030304,0,Correctly identifies Article 226's wider jurisdiction over statutory rights.,0,0
+H054,S001495_B_NATIVE_kn,S001495,B_NATIVE,kn,SEBI Insider Trading Pre-Clearance,main,0.1388888888888889,1,Incorrectly cites specific rules instead of compliance officer requirement.,1,1
+H055,S001469_A_EN_MATCHED_bn,S001469,A_EN_MATCHED,bn,Companies Act CSR Mandate,judge_disagreement,,0,Correctly identifies Section 135 and 2% spending rule.,0,1
+H056,S001417_E_MIXED_SCRIPT_ta,S001417,E_MIXED_SCRIPT,ta,Kharif vs Rabi Rice,main,0.4166666666666667,0,"Correctly identifies Kharif as monsoon rice, matching gold answer.",0,1
+H057,S001472_B_NATIVE_ta,S001472,B_NATIVE,ta,Arbitration Act Time Limit,main,0.1388888888888889,1,"Incomplete answer, missing the specific 12-month limit.",1,1
+H058,S001459_D_CS_bn,S001459,D_CS,bn,RTI Third Party Information,main,0.17543859649122806,1,Incorrectly claims no specific date or parameter exists.,1,1
+H059,S001457_E_MIXED_SCRIPT_ta,S001457,E_MIXED_SCRIPT,ta,RTI Third Party Information,main,0.13157894736842105,1,Fails to provide the required 5-day timeframe.,1,1
+H060,S001449_A_EN_MATCHED_bn,S001449,A_EN_MATCHED,bn,Supreme Court vs High Court Writ Jurisdiction,main,0.25,1,Fails to state Article 226's wider jurisdiction over statutory rights.,1,1
+H061,S001407_B_NATIVE_ta,S001407,B_NATIVE,ta,NEFT vs RTGS,main,0.35714285714285715,0,Correctly states RTGS minimum limit of ₹2 Lakh.,0,0
+H062,S001449_C_ROMAN_bn,S001449,C_ROMAN,bn,Supreme Court vs High Court Writ Jurisdiction,judge_disagreement,,1,"Incomplete answer, missing key distinction and history details.",0,1
+H063,S001488_D_CS_te,S001488,D_CS,te,Medical Termination of Pregnancy Act,main,0.17543859649122806,1,Fails to mention two registered medical practitioners.,1,1
+H064,S001456_D_CS_hi,S001456,D_CS,hi,RTI Third Party Information,judge_disagreement,,0,Correctly identifies Section 11 and the process for third-party information.,0,1
+H065,S001488_C_ROMAN_te,S001488,C_ROMAN,te,Medical Termination of Pregnancy Act,judge_disagreement,,0,Accurately states 2 doctors required for 12-24 weeks.,0,1
+H066,S001423_A_EN_te,S001423,A_EN,te,ISRO PSLV vs GSLV Mk III,judge_disagreement,,1,"Incomplete answer, missing specific payload and GTO details.",0,1
+H067,S001453_B_NATIVE_te,S001453,B_NATIVE,te,Patents Act Compulsory License,judge_disagreement,,0,Section 84 is the correct provision for compulsory licenses.,0,1
+H068,S001498_A_EN_MATCHED_te,S001498,A_EN_MATCHED,te,Citizenship Amendment Act Cut-off,main,0.16666666666666666,0,"Correctly identifies the December 31, 2014 cut-off date.",0,0
+H069,S001463_C_ROMAN_te,S001463,C_ROMAN,te,GST Registration Exemption,main,0.30303030303030304,0,Correctly identifies Section 22 and ₹40 lakh threshold.,0,0
+H070,S001430_D_CS_kn,S001430,D_CS,kn,Lok Sabha vs Rajya Sabha Money Bill,judge_disagreement,,0,Correctly states Lok Sabha authority and 14-day limit.,0,1
+H071,S001435_C_ROMAN_kn,S001435,C_ROMAN,kn,National Park vs Wildlife Sanctuary,main,0.30303030303030304,0,Correctly identifies National Parks have stricter rules than Sanctuaries.,0,1
+H072,S001432_B_NATIVE_ta,S001432,B_NATIVE,ta,National Park vs Wildlife Sanctuary,judge_disagreement,,1,"Incomplete answer, missing specific rule about private rights.",0,1
+H073,S001446_A_EN_hi,S001446,A_EN,hi,Supreme Court vs High Court Writ Jurisdiction,main,0.2777777777777778,1,Incorrectly cites territorial jurisdiction instead of Article 226 scope.,1,1
+H074,S001444_C_ROMAN_bn,S001444,C_ROMAN,bn,PM-KISAN vs Rythu Bandhu,judge_disagreement,,1,"Incomplete answer, cuts off mid-sentence",1,0
+H075,S001404_A_EN_bn,S001404,A_EN,bn,PMFBY vs WBCIS,judge_disagreement,,1,"PMFBY is yield-based, not actual loss based.",1,0
+H076,S001401_C_ROMAN_hi,S001401,C_ROMAN,hi,PMFBY vs WBCIS,main,0.14925373134328357,1,"WBCIS is weather-based, not a West Bengal scheme.",1,1
+H077,S001451_C_ROMAN_hi,S001451,C_ROMAN,hi,Patents Act Compulsory License,main,0.30303030303030304,0,Correctly states the 3-year rule from patent grant.,0,0
+H078,S001494_E_MIXED_SCRIPT_bn,S001494,E_MIXED_SCRIPT,bn,SEBI Insider Trading Pre-Clearance,main,0.13157894736842105,1,"Incomplete answer, fails to state the main rule clearly.",0,1
+H079,S001450_C_ROMAN_kn,S001450,C_ROMAN,kn,Supreme Court vs High Court Writ Jurisdiction,main,0.14925373134328357,1,Answer is incomplete and does not state the main rule.,1,1
+H080,S001491_A_EN_MATCHED_hi,S001491,A_EN_MATCHED,hi,SEBI Insider Trading Pre-Clearance,judge_disagreement,,0,Correctly identifies mandatory pre-clearance for designated persons.,0,1
+H081,S001407_A_EN_MATCHED_ta,S001407,A_EN_MATCHED,ta,NEFT vs RTGS,main,0.25,1,Incorrect RTGS minimum limit (₹20L vs ₹2L).,1,1
+H082,S001470_B_NATIVE_kn,S001470,B_NATIVE,kn,Companies Act CSR Mandate,main,0.1388888888888889,1,"Incomplete answer, missing specific CSR thresholds.",1,1
+H083,S001486_B_NATIVE_hi,S001486,B_NATIVE,hi,Medical Termination of Pregnancy Act,main,0.1388888888888889,1,"Incomplete answer, missing specific two-doctor criterion.",1,1
+H084,S001477_A_EN_MATCHED_ta,S001477,A_EN_MATCHED,ta,IBC Section 7 Default Threshold,main,0.25,1,"Incorrect threshold; gold says ₹1 Crore, model says ₹1 Lakh.",1,1
+H085,S001490_A_EN_MATCHED_kn,S001490,A_EN_MATCHED,kn,Medical Termination of Pregnancy Act,main,0.25,1,Incorrectly states one practitioner opinion for 20 weeks.,1,1
+H086,S001404_C_ROMAN_bn,S001404,C_ROMAN,bn,PMFBY vs WBCIS,main,0.14925373134328357,1,"WBCIS is weather-based, not a West Bengal specific scheme.",1,1
+H087,S001407_C_ROMAN_ta,S001407,C_ROMAN,ta,NEFT vs RTGS,main,0.30303030303030304,0,Accurately states RTGS minimum and NEFT no minimum limit.,0,0
+H088,S001445_D_CS_kn,S001445,D_CS,kn,PM-KISAN vs Rythu Bandhu,judge_disagreement,,0,Correctly identifies eligibility and scheme nature differences.,0,1
+H089,S001461_E_MIXED_SCRIPT_hi,S001461,E_MIXED_SCRIPT,hi,GST Registration Exemption,main,0.13157894736842105,1,"Incomplete answer, missing specific turnover limit.",1,1
+H090,S001479_E_MIXED_SCRIPT_bn,S001479,E_MIXED_SCRIPT,bn,IBC Section 7 Default Threshold,main,0.13157894736842105,1,Incorrect threshold; Section 7 has no minimum default amount.,1,1
+H091,S001445_A_EN_kn,S001445,A_EN,kn,PM-KISAN vs Rythu Bandhu,main,0.2777777777777778,1,Misses key per-acre vs per-family distinction.,1,1
+H092,S001498_D_CS_te,S001498,D_CS,te,Citizenship Amendment Act Cut-off,main,0.23255813953488372,0,Correctly identifies the 31 December 2014 cut-off date.,0,0
+H093,S001492_A_EN_MATCHED_ta,S001492,A_EN_MATCHED,ta,SEBI Insider Trading Pre-Clearance,main,0.16666666666666666,0,Correctly identifies mandatory pre-clearance for designated persons.,0,1
+H094,S001426_A_EN_MATCHED_hi,S001426,A_EN_MATCHED,hi,Lok Sabha vs Rajya Sabha Money Bill,main,0.16666666666666666,0,Correctly states Rajya Sabha cannot amend or reject Money Bills.,0,0
+H095,S001444_D_CS_bn,S001444,D_CS,bn,PM-KISAN vs Rythu Bandhu,judge_disagreement,,1,Fails to state per-family vs per-acre distinction.,0,1
+H096,S001466_E_MIXED_SCRIPT_hi,S001466,E_MIXED_SCRIPT,hi,Companies Act CSR Mandate,judge_disagreement,,1,Answer is incomplete and missing the specific financial thresholds.,1,0
+H097,S001411_D_CS_hi,S001411,D_CS,hi,Covaxin vs Covishield,main,0.23255813953488372,0,Correctly identifies Covaxin as inactivated whole-virus vaccine.,0,0
+H098,S001402_A_EN_ta,S001402,A_EN,ta,PMFBY vs WBCIS,main,0.2777777777777778,1,"Incorrectly claims PMFBY uses actual crop loss, not yield-based.",1,0
+H099,S001433_A_EN_MATCHED_te,S001433,A_EN_MATCHED,te,National Park vs Wildlife Sanctuary,judge_disagreement,,0,Correctly identifies legal sections and protection levels.,0,1
+H100,S001462_E_MIXED_SCRIPT_ta,S001462,E_MIXED_SCRIPT,ta,GST Registration Exemption,main,0.13157894736842105,1,"Incomplete answer, missing specific turnover limit.",1,1
+H101,S001424_B_NATIVE_bn,S001424,B_NATIVE,bn,ISRO PSLV vs GSLV Mk III,main,0.1388888888888889,1,Answer is incomplete and lacks specific payload metrics.,1,1
+H102,S001425_A_EN_MATCHED_kn,S001425,A_EN_MATCHED,kn,ISRO PSLV vs GSLV Mk III,main,0.16666666666666666,0,"Correctly identifies SSO as PSLV's primary orbit, matching gold.",0,1
+H103,S001406_D_CS_hi,S001406,D_CS,hi,NEFT vs RTGS,judge_disagreement,,0,Correctly states RTGS minimum limit and settlement differences.,0,1
+H104,S001428_E_MIXED_SCRIPT_te,S001428,E_MIXED_SCRIPT,te,Lok Sabha vs Rajya Sabha Money Bill,main,0.4166666666666667,0,Correctly states Lok Sabha's exclusive power to introduce Money Bills.,0,1
+H105,S001500_B_NATIVE_kn,S001500,B_NATIVE,kn,Citizenship Amendment Act Cut-off,main,0.35714285714285715,0,Correctly identifies the 31 December 2014 cut-off date.,0,0
+H106,S001471_A_EN_hi,S001471,A_EN,hi,Arbitration Act Time Limit,main,0.2777777777777778,1,Contradicts gold answer regarding the 12-month statutory time limit.,1,1
+H107,S001419_D_CS_bn,S001419,D_CS,bn,Kharif vs Rabi Rice,judge_disagreement,,0,Correctly identifies monsoon rainfed nature and dates.,0,1
+H108,S001460_A_EN_MATCHED_kn,S001460,A_EN_MATCHED,kn,RTI Third Party Information,main,0.25,1,Fails to state the specific 5-day time limit.,1,1
+H109,S001403_A_EN_te,S001403,A_EN,te,PMFBY vs WBCIS,main,0.2777777777777778,1,"PMFBY is yield-based, not actual loss based.",1,1
+H110,S001411_C_ROMAN_hi,S001411,C_ROMAN,hi,Covaxin vs Covishield,main,0.30303030303030304,0,"Correctly identifies Covaxin as inactivated, matching gold.",0,0
+H111,S001470_D_CS_kn,S001470,D_CS,kn,Companies Act CSR Mandate,main,0.17543859649122806,1,"Answer is incomplete, missing specific financial thresholds.",1,1
+H112,S001482_A_EN_ta,S001482,A_EN,ta,Environment Clearance Public Hearing,main,0.2777777777777778,1,Fails to mention exempted industrial estates or defense projects.,1,1
+H113,S001412_E_MIXED_SCRIPT_ta,S001412,E_MIXED_SCRIPT,ta,Covaxin vs Covishield,judge_disagreement,,1,Missing core technical parameters (inactivated vs vector),0,1
+H114,S001449_D_CS_bn,S001449,D_CS,bn,Supreme Court vs High Court Writ Jurisdiction,main,0.23255813953488372,0,Correctly identifies Article 226's wider scope and lack of date parameter.,0,0
+H115,S001404_D_CS_bn,S001404,D_CS,bn,PMFBY vs WBCIS,main,0.17543859649122806,1,"WBCIS is weather index, not West Bengal scheme.",1,1
+H116,S001433_A_EN_te,S001433,A_EN,te,National Park vs Wildlife Sanctuary,main,0.15625,0,Correctly identifies higher protection and restricted human activity in National Parks.,0,0
+H117,S001442_B_NATIVE_ta,S001442,B_NATIVE,ta,PM-KISAN vs Rythu Bandhu,main,0.1388888888888889,1,"Incomplete answer, missing specific key difference.",1,1
+H118,S001443_A_EN_MATCHED_te,S001443,A_EN_MATCHED,te,PM-KISAN vs Rythu Bandhu,main,0.25,1,Misses core distinction: flat per family vs per acre.,1,1
+H119,S001467_A_EN_MATCHED_ta,S001467,A_EN_MATCHED,ta,Companies Act CSR Mandate,judge_disagreement,,0,Correctly identifies Section 135 and 2% spending rule.,0,1
+H120,S001451_D_CS_hi,S001451,D_CS,hi,Patents Act Compulsory License,main,0.23255813953488372,0,Correctly states the 3-year rule for compulsory licensing.,0,0
+H121,S001454_A_EN_bn,S001454,A_EN,bn,Patents Act Compulsory License,main,0.15625,0,Correctly states the 3-year timeline prerequisite.,0,0
+H122,S001423_B_NATIVE_te,S001423,B_NATIVE,te,ISRO PSLV vs GSLV Mk III,main,0.1388888888888889,1,"Incomplete answer, missing specific payload parameters.",1,1
+H123,S001463_D_CS_te,S001463,D_CS,te,GST Registration Exemption,main,0.17543859649122806,1,"Incomplete answer, missing specific ₹40 Lakh threshold.",1,1
+H124,S001494_A_EN_MATCHED_bn,S001494,A_EN_MATCHED,bn,SEBI Insider Trading Pre-Clearance,main,0.16666666666666666,0,Correctly identifies mandatory pre-clearance for designated persons.,0,1
+H125,S001446_E_MIXED_SCRIPT_hi,S001446,E_MIXED_SCRIPT,hi,Supreme Court vs High Court Writ Jurisdiction,main,0.4166666666666667,0,Correctly identifies Articles 32 and 226 as the basis.,0,1
+H126,S001441_C_ROMAN_hi,S001441,C_ROMAN,hi,PM-KISAN vs Rythu Bandhu,main,0.14925373134328357,1,"Incomplete answer, fails to state key acreage vs family distinction.",1,1
+H127,S001416_E_MIXED_SCRIPT_hi,S001416,E_MIXED_SCRIPT,hi,Kharif vs Rabi Rice,main,0.4166666666666667,0,"Correctly identifies monsoon for Kharif, consistent with gold.",0,1
+H128,S001473_A_EN_te,S001473,A_EN,te,Arbitration Act Time Limit,main,0.2777777777777778,1,Incorrectly claims no statutory time limit exists.,1,1
+H129,S001484_A_EN_bn,S001484,A_EN,bn,Environment Clearance Public Hearing,main,0.2777777777777778,1,Misses gold answer's specific exemption condition.,1,1
+H130,S001406_A_EN_MATCHED_hi,S001406,A_EN_MATCHED,hi,NEFT vs RTGS,main,0.25,1,Incorrect RTGS minimum limit (₹20L vs ₹2L).,1,1
+H131,S001412_C_ROMAN_ta,S001412,C_ROMAN,ta,Covaxin vs Covishield,judge_disagreement,,1,Fails to state the specific mechanism asked in question.,0,1
+H132,S001449_E_MIXED_SCRIPT_bn,S001449,E_MIXED_SCRIPT,bn,Supreme Court vs High Court Writ Jurisdiction,main,0.4166666666666667,0,Correctly identifies Articles 32 and 226 as the main parameters.,0,0
+H133,S001439_E_MIXED_SCRIPT_bn,S001439,E_MIXED_SCRIPT,bn,Classical Tamil vs Sanskrit Grammar,main,0.4166666666666667,0,Correctly identifies Tolkappiyam and Panini as the main grammars.,0,1
+H134,S001419_B_NATIVE_bn,S001419,B_NATIVE,bn,Kharif vs Rabi Rice,main,0.35714285714285715,0,"Correctly identifies Kharif as monsoon season, matching gold answer.",0,0
+H135,S001411_A_EN_hi,S001411,A_EN,hi,Covaxin vs Covishield,main,0.15625,0,Correctly identifies Covaxin as inactivated virus.,0,1
+H136,S001434_E_MIXED_SCRIPT_bn,S001434,E_MIXED_SCRIPT,bn,National Park vs Wildlife Sanctuary,judge_disagreement,,1,"Incomplete answer, missing specific main rule details.",1,0
+H137,S001432_C_ROMAN_ta,S001432,C_ROMAN,ta,National Park vs Wildlife Sanctuary,main,0.14925373134328357,1,"Incomplete answer, fails to address the specific legal question.",1,1
+H138,S001499_B_NATIVE_bn,S001499,B_NATIVE,bn,Citizenship Amendment Act Cut-off,main,0.35714285714285715,0,Correctly states the 31 December 2014 cut-off date.,0,0
+H139,S001417_D_CS_ta,S001417,D_CS,ta,Kharif vs Rabi Rice,main,0.23255813953488372,0,Accurately identifies monsoon sowing for Kharif rice.,0,1
+H140,S001431_E_MIXED_SCRIPT_hi,S001431,E_MIXED_SCRIPT,hi,National Park vs Wildlife Sanctuary,judge_disagreement,,1,"Incomplete answer, missing specific rule about private rights.",1,0
+H141,S001495_A_EN_MATCHED_kn,S001495,A_EN_MATCHED,kn,SEBI Insider Trading Pre-Clearance,judge_disagreement,,0,Correctly identifies mandatory pre-clearance for designated persons.,0,1
+H142,S001458_A_EN_te,S001458,A_EN,te,RTI Third Party Information,judge_disagreement,,0,Correctly identifies Section 11 and the 5-day timeline for third-party notice.,0,1
+H143,S001412_A_EN_MATCHED_ta,S001412,A_EN_MATCHED,ta,Covaxin vs Covishield,main,0.16666666666666666,0,Correctly identifies inactivated vs viral vector technology.,0,0
+H144,S001429_C_ROMAN_bn,S001429,C_ROMAN,bn,Lok Sabha vs Rajya Sabha Money Bill,main,0.30303030303030304,0,Correctly states Lok Sabha exclusive power for Money Bills.,0,1
+H145,S001409_B_NATIVE_bn,S001409,B_NATIVE,bn,NEFT vs RTGS,main,0.1388888888888889,1,"Incomplete answer, missing key limits and batch details.",1,1
+H146,S001412_B_NATIVE_ta,S001412,B_NATIVE,ta,Covaxin vs Covishield,main,0.35714285714285715,0,Correctly identifies inactivated virus technology for Covaxin.,0,0
+H147,S001409_C_ROMAN_bn,S001409,C_ROMAN,bn,NEFT vs RTGS,main,0.30303030303030304,0,Correctly states NEFT has no minimum limit.,0,0
+H148,S001476_D_CS_hi,S001476,D_CS,hi,IBC Section 7 Default Threshold,main,0.17543859649122806,1,"Threshold is ₹1 Crore, not ₹1 Lakh.",1,1
+H149,S001448_E_MIXED_SCRIPT_te,S001448,E_MIXED_SCRIPT,te,Supreme Court vs High Court Writ Jurisdiction,main,0.4166666666666667,0,Correctly identifies Article 226 as the main rule for High Court writ jurisdiction.,0,0
+H150,S001420_E_MIXED_SCRIPT_kn,S001420,E_MIXED_SCRIPT,kn,Kharif vs Rabi Rice,main,0.4166666666666667,0,Correctly identifies season and sowing period as the main parameter.,0,0

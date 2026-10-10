@@ -1,0 +1,1232 @@
+﻿item_id,question,gold_answer,model_answer,reviewer,label,answer_language_matches_question,gold_seems_wrong_or_outdated,note
+W001,"What is the main rule, date or parameter regarding Kharif vs Rabi Rice?",Kharif is monsoon rainfed; Rabi is winter irrigated.,"The main parameter distinguishing **Kharif** and **Rabi** rice is the **sowing and harvesting season** (which is determined by the monsoon cycle and temperature).
+
+Here is the breakdown:
+
+### 1. **Kharif Rice (Monsoon Rice)**
+*   **Sowing:** **June–July** (after the onset of monsoon rains).
+*   **Harvesting:** **October–November**.
+*   **Key Parameter:** Grown during the **monsoon season**. It relies heavily on **rainfall** (rain-fed) or irrigation from monsoon-fed sources.
+*   **Area:** Accounts for **~90–95%** of India’s total rice production.
+*   **Regions:** Predominantly grown in **West Bengal, Punjab, Haryana, Uttar Pradesh, Bihar, Odisha, Andhra Pradesh, and Tamil Nadu**.
+
+### 2. **Rabi Rice (Winter Rice)**
+*   **Sowing:** **October–November** (after the monsoon ends).
+*   **Harvesting:** **February–March** (next year).
+*   **Key Parameter:** Grown during the **winter season**. It requires **irrigation** (canal, tube well, or reservoir water) since there is no monsoon rain.
+*   **Area:** Accounts for **~5–10%** of India’s total rice production.
+*   **Regions:** Mainly grown in **Punjab, Haryana, Uttar Pradesh, and parts of Bihar and West Bengal**.
+
+### **Main Rule/Parameter Summary:**
+| Parameter | Kharif Rice | Rabi Rice |
+|-----------|-------------|-----------|
+| **Season** | Monsoon (Summer-Autumn) | Winter |
+| **Sowing Month** | June–July | October–November |
+| **Harvest Month** | October–November | February–March |
+| **Water Source** | Primarily Rain-fed | Primarily Irrigation-fed |
+| **Share in Production** | ~90–95% | ~5–10% |
+
+### **Why the Distinction Matters:**
+*   **Water Management:** Kharif rice is vulnerable to **floods** (excess rain), while Rabi rice is vulnerable to **drought** (lack of irrigation water).
+*   **Government Policy:** The **Minimum Support Price (MSP",,,,,
+W002,"What is the main rule, date or parameter regarding NEFT vs RTGS?",NEFT has no minimum limit and settles in batches; RTGS has ₹2 Lakh minimum and settles real-time.,"The main parameter distinguishing **NEFT** (National Electronic Funds Transfer) from **RTGS** (Real Time Gross Settlement) is the **minimum transaction amount** and the **settlement mechanism**.
+
+### 1. Minimum Transaction Amount (Key Rule)
+*   **RTGS**: Mandatory for transactions **above ₹20 lakhs** (₹2,00,000).
+*   **NEFT**: Can be used for **any amount**, including below ₹20 lakhs. (Note: Banks may have their own lower limits, but there is no RBI-mandated minimum for NEFT).
+
+### 2. Settlement Mechanism
+*   **RTGS**: **Real-time, gross settlement**. Each transaction is settled individually and immediately (24x7). It is the highest priority for large-value transfers.
+*   **NEFT**: **Batch processing**. Transactions are processed in batches (typically every 30 minutes, 24x7). It is not real-time but is highly reliable for smaller to medium-value transfers.
+
+### Summary Table
+
+| Parameter | RTGS | NEFT |
+| :--- | :--- | :--- |
+| **Min. Amount** | **Above ₹20 lakhs** | **Any amount** (No minimum) |
+| **Settlement** | Real-time, individual | Batch-wise (every 30 mins) |
+| **Speed** | Immediate (24x7) | Within 30 mins to 1 hour (24x7) |
+| **Use Case** | Large corporate/government payments | Salary, rent, small business, personal transfers |
+
+### Important Note:
+*   **24x7 Availability**: Both NEFT and RTGS are now available **24 hours a day, 7 days a week**, including weekends and holidays (as per RBI guidelines effective from 2023).
+*   **Mandatory Use**: If you are transferring **more than ₹20 lakhs**, you **must** use RTGS. You cannot use NEFT for amounts above this threshold.
+
+**In short:**
+*   **> ₹20 lakhs?** → Use **RTGS**.
+*   **≤ ₹20 lakhs?** → Use **NEFT** (or UPI for smaller amounts).",,,,,
+W003,"SEBI Insider Trading Pre-Clearance er regarding main rule, date ba parameter ki?",Pre-clearance required from compliance officer.,"SEBI ke Insider Trading Regulations (2015) ke under, **Pre-Clearance** ka main rule aur date/parameter yeh hai:
+
+### 📌 Main Rule:
+Koi bhi **Designated Person** (jaise Director, Key Managerial Personnel, ya unke family members) jo company ke **Price Sensitive Information (PSI)** ke access mein hain, unhe apne aap ya unke family members ke liye securities (shares, bonds, etc.) kharidne ya bechne se pehle **Pre-Clearance** lena **zaroori** hai.
+
+### 📅 Date/Parameter:
+1. **Timing:**  
+   - Transaction se **kam se kam 24 ghante pehle** (ya company ki internal policy mein specified time frame ke hisaab se) pre-clearance application deni hoti hai.  
+   - Zyadatar companies apni internal policy mein **24-48 ghante** ka time frame rakhti hain.
+
+2. **Process:**  
+   - Application **Compliance Officer** ya **Pre-Clearance Committee** ko di jati hai.  
+   - Committee check karti hai ki kya koi **PSI** available hai jo share price ko affect kar sakta hai.  
+   - Agar koi PSI hai, toh transaction **block** ho sakta hai ya **delay** ho sakta hai jab tak market mein information disclose na ho jaye.
+
+3. **Mandatory Disclosure:**  
+   - Agar transaction approved ho jata hai, toh uski details **SEBI** ko report karni hoti hai (agar applicable ho).  
+   - Company ko bhi apne **Board of Directors** ko regular basis par pre-clearance reports deni hoti hain.
+
+### ⚠️ Important Points:
+- **No Pre-Clearance = No Trade:** Agar koi designated person bina pre-clearance ke trade karta hai, toh wo **insider trading** ka violation maana jayega.
+- **Family Members Included:** Spouse, children, parents, etc. bhi designated persons ki tarah hi pre-clearance lete hain.
+- **Blackout Period:** Agar company ke paas koi major announcement (jaise earnings, merger) pending hai, toh us period mein trades **poori tarah block** ho sakte h",,,,,
+W004,"RTI Third Party Information గురించి main rule, date లేదా parameter ఏమిటి?",Within 5 days from receipt of request.,"RTI (Right to Information) Act, 2005 ప్రకారం **Third Party Information** (మూడవ పక్షుల సమాచారం) గురించి ప్రధాన నియమం, తేదీ మరియు పరామితులు (parameters) క్రింద ఇవ్వబడ్డాయి:
+
+### 1. ప్రధాన నియమం (Main Rule)
+*   **Section 11** మరియు **Section 12(5)** ప్రకారం, ప్రభుత్వ అధికారి (PIO) మూడవ పక్షుల సమాచారాన్ని విడుదల చేయాలనుకుంటే, ఆ మూడవ పక్షులకు **7 రోజుల** లోగా నోటీసు పంపాలి.
+*   మూడవ పక్షులు ఆ సమాచారం విడుదల చేయకూడదని **7 రోజుల** లోగా వాదన (objection) సమర్పించాలి.
+*   తర్వాత, ప్రభుత్వ అధికారి **10 రోజుల** లోగా తుది నిర్ణయం తీసుకోవాలి.
+*   మొత్తం ప్రక్రియలో **21 రోజులు** (7+7+7) లేదా కొన్ని సందర్భాల్లో **30 రోజులు** వరకు సమయం పట్టవచ్చు.
+
+### 2. ముఖ్య తేదీలు/కాల పరిమితులు (Time Limits)
+| దశ | కాల పరిమితి | వివరణ |
+| :--- | :--- | :--- |
+| **1. నోటీసు పంపడం** | **7 రోజులు** | PIO మూడవ పక్షులకు సమాచారం విడుదల చేయబోతున్నట్లు తెలియజేయాలి. |
+| **2. వాదన సమర్పణ** | **7 రోజులు** | మూడవ పక్షులు వ్యతిరేకించాలంటే ఈ",,,,,
+W005,"What is the main rule, date or parameter regarding Lok Sabha vs Rajya Sabha Money Bill?",Rajya Sabha cannot reject or amend Money Bills and has only 14 days to return.,"The main rule regarding Money Bills in the context of the Lok Sabha and Rajya Sabha is defined under **Article 110** of the Constitution of India.
+
+The key parameters are:
+
+1.  **Certification by the Speaker:** A Bill is deemed a Money Bill only if it is certified as such by the **Speaker of the Lok Sabha**. The Speaker’s decision is final and cannot be challenged in court.
+2.  **Rajya Sabha’s Limited Role:** Once certified as a Money Bill, the Rajya Sabha **cannot amend or reject** it. It can only:
+    *   **Recommend** changes to the Lok Sabha.
+    *   **Return** the Bill with recommendations within **14 days**.
+3.  **Lok Sabha’s Final Authority:** The Lok Sabha may **accept or reject** the recommendations of the Rajya Sabha. If the Lok Sabha accepts them, the Bill is deemed passed by both Houses. If it rejects them, the Bill is still deemed passed by both Houses as originally passed by the Lok Sabha.
+4.  **Presidential Assent:** The Bill is then sent to the President for assent, as with any other Bill.
+
+**In essence:** The Lok Sabha has **exclusive power** to introduce, amend, and pass Money Bills. The Rajya Sabha has only a **deliberative and advisory role** with a strict 14-day time limit and no power to block the Bill.",,,,,
+W006,"What is the main rule, date or parameter regarding Covaxin vs Covishield?",Covaxin is inactivated virus; Covishield is chimpanzee adenovirus vector.,"There is no single ""main rule"" that distinguishes Covaxin from Covishield, as both are approved vaccines in India. However, the most significant **parameter** that differentiates them is their **technology platform** and **storage requirements**:
+
+1. **Technology**:
+   - **Covishield** (developed by Serum Institute of India in collaboration with Oxford/AstraZeneca) is a **viral vector** vaccine.
+   - **Covaxin** (developed by Bharat Biotech) is an **inactivated whole-virus** vaccine.
+
+2. **Storage & Handling**:
+   - **Covishield** requires **2–8°C** refrigeration (standard cold chain).
+   - **Covaxin** also requires **2–8°C** refrigeration, but it is more sensitive to temperature fluctuations and has a shorter shelf life after reconstitution.
+
+3. **Dosing Schedule**:
+   - Both require **two doses**.
+   - **Covishield**: 4–12 weeks between doses.
+   - **Covaxin**: 3–6 weeks between doses.
+
+4. **Approval & Use**:
+   - Both received **emergency use authorization (EUA)** from India’s Drug Controller General of India (DCGI).
+   - **Covishield** was the first vaccine approved in India (January 2021).
+   - **Covaxin** was approved shortly after (January 2021).
+
+**Key Date**:
+- **Covishield** received EUA on **January 3, 2021**.
+- **Covaxin** received EUA on **January 28, 2021**.
+
+In summary, the main distinguishing parameters are **vaccine technology** (viral vector vs. inactivated) and **dosing interval**, not a single rule. Both were used interchangeably in India’s vaccination drive based on availability.",,,,,
+W007,"What is the main rule, date or parameter regarding Classical Tamil vs Sanskrit Grammar?",Tolkappiyam for Tamil; Ashtadhyayi (Panini) for Sanskrit.,"There is no single ""main rule"" that defines Classical Tamil versus Sanskrit grammar, as they belong to two completely different language families and operate on distinct logical structures. However, the most fundamental **parameter** that distinguishes them is their **Morphological Typology**:
+
+### 1. **Sanskrit: Highly Inflected (Agglutinative/Inflectional)**
+- Sanskrit is an **Indo-Aryan** language.
+- It relies heavily on **case endings** (vibhakti) and **verb conjugations** to indicate grammatical relationships.
+- Word order is relatively flexible because meaning is carried by the endings.
+- Example: The same word can change its form to indicate subject, object, location, etc.
+
+### 2. **Classical Tamil: Agglutinative (with minimal inflection)**
+- Tamil is a **Dravidian** language.
+- It uses **suffixes** attached to root words to create complex meanings.
+- It has a **fixed word order** (typically Subject-Object-Verb, SOV).
+- It does **not** have grammatical gender in the same way Sanskrit does (Tamil has animate/inanimate or masculine/feminine distinctions, but no neuter gender like Sanskrit).
+- It lacks the complex case system of Sanskrit; instead, it uses postpositions and suffixes.
+
+### Key Differences in Parameters:
+
+| Parameter | Sanskrit | Classical Tamil |
+|-----------|----------|-----------------|
+| **Language Family** | Indo-Aryan | Dravidian |
+| **Morphology** | Inflectional (changes in word form) | Agglutinative (adds suffixes) |
+| **Word Order** | Flexible (due to case endings) | Fixed (SOV) |
+| **Gender** | 3 genders (Masculine, Feminine, Neuter) | 2 main categories (Animate/Inanimate, or Masc/Fem) |
+| **Case System** | 8 cases (Nominative, Accusative, etc.) | No true case endings; uses postpositions/suffixes |
+| **Verb Conjugation** | Complex (tense, mood, voice, person) | Simpler; relies on auxiliary verbs and suffixes |
+
+### Historical Context:
+- **Sanskrit** was standardized by **Pāṇini** in his *Aṣ",,,,,
+W008,"Companies Act CSR Mandate bagge main rule, date athava parameter yenu?","Net worth ≥ ₹500 Cr, Turnover ≥ ₹1000 Cr, or Net Profit ≥ ₹5 Cr.","India ke Companies Act, 2013 ke under CSR (Corporate Social Responsibility) mandate ke liye main rule **Section 135** hai.
+
+Yeh rule **2014** mein implement hua tha, lekin uske baad **2019** mein significant changes aaye the jo aaj bhi applicable hain.
+
+### Main Parameters (Eligibility Criteria):
+Ek company ko CSR fund allocate karna tabhi mandatory hota hai agar woh in teeno conditions mein se **kisi ek** ko satisfy karti hai:
+
+1.  **Net Worth:** ₹500 Crore ya usse zyada.
+2.  **Turnover:** ₹1,000 Crore ya usse zyada.
+3.  **Net Profit:** ₹5 Crore ya usse zyada.
+
+### CSR Expenditure Mandate:
+Agar upar diye gaye kisi bhi ek parameter ko company satisfy karti hai, toh usse apne **Net Profit (last 3 financial years ke average)** ka **2%** CSR activities par kharch karna hoga.
+
+### Important Points:
+- Agar company 2% kharch nahi karti, toh usse Board of Directors ki meeting mein reason explain karna hoga.
+- CSR fund ko sirf Companies Act ke **Schedule VII** mein list ki gayi activities par hi kharch kiya ja sakta hai (jaise education, healthcare, environment, etc.).
+- CSR fund ko company ke profit mein add nahi kiya ja sakta; yeh ek separate liability hai.
+
+Agar aap kisi specific company ya sector ke baare mein jaanna chahte hain, toh please batayein.",,,,,
+W009,"National Park vs Wildlife Sanctuary గురించి main rule, date లేదా parameter ఏమిటి?",No private rights or grazing permitted in National Parks; limited rights allowed in Sanctuaries.,"National Park మరియు Wildlife Sanctuary మధ్య ప్రధాన తేడా **man-made activities (మనుషుల చేసే పనులు)** మరియు **legal status (చట్టపరమైన స్థితి)** ఆధారంగా ఉంటుంది.
+
+ఇక్కడ ప్రధాన పారామీటర్లు (Main Parameters) మరియు రూల్స్:
+
+### 1. ప్రధాన తేడా (Main Difference)
+
+| పారామీటర్ | National Park (జాతీయ ఉద్యానవనం) | Wildlife Sanctuary (వన్యప్రాణి అభయారణ్యం) |
+| :--- | :--- | :--- |
+| **మనుషుల పనులు** | **పూర్తిగా నిషేధం.** వ్యవసాయం, నిర్మాణం, చెట్లు నాటడం వంటి పనులు అనుమతించబడవు. | **పరిమితంగా అనుమతి.** కొన్ని ప్రాంతాల్లో (Buffer Zone) వ్యవసాయం, గ్రామీణ జీవనం కొనసాగవచ్చు. |
+| **చట్టపరమైన స్థితి** | చట్టపరంగా ఇది **సంరక్షించబడిన ప్రాంతం**. ఇక్కడ వన్యప్రాణులను వేటాడటం, వాటిని వేటాడటానికి సాధనాలు ఉపయోగించడం పూర్తిగా నిషేధం. | ఇది కూడా సంరక్షించబడిన ప్రాంతం, కానీ కొన్ని నియమాలతో. |
+| **పర్యాటక సౌకర్యాలు** | పర్యాటకుల కోసం ప్రత్యేకంగా ఏర్పాటు చేయబడిన సౌకర్యాలు ఉంటాయి. | పర్యాటక సౌకర్యాలు ఉండవచ్చు, కానీ అవి పర్యాటక ప్రాంతాలకు పరిమితం. |
+| **పరిపాలన** | కేంద్ర ప్రభుత్వం మరియు రాష్ట్ర",,,,,
+W010,"What is the main rule, date or parameter regarding Classical Tamil vs Sanskrit Grammar?",Tolkappiyam for Tamil; Ashtadhyayi (Panini) for Sanskrit.,"There is no single ""main rule"" that defines Classical Tamil versus Sanskrit grammar, as they belong to two completely different language families and operate on distinct logical structures. However, the most fundamental **parameter** that distinguishes them is their **Morphological Typology**:
+
+### 1. **Sanskrit: Highly Inflected (Agglutinative/Inflectional)**
+- Sanskrit is an **Indo-Aryan** language.
+- It relies heavily on **case endings** (vibhakti) and **verb conjugations** to indicate grammatical relationships.
+- Word order is relatively flexible because meaning is carried by the endings.
+- Example: The same word can change its form to indicate subject, object, location, etc.
+
+### 2. **Classical Tamil: Agglutinative (with minimal inflection)**
+- Tamil is a **Dravidian** language.
+- It uses **suffixes** attached to root words to create complex meanings.
+- It has a **fixed word order** (typically Subject-Object-Verb, SOV).
+- It does **not** have grammatical gender in the same way Sanskrit does (Tamil has animate/inanimate or masculine/feminine distinctions, but no neuter gender like Sanskrit).
+- It lacks the complex case system of Sanskrit; instead, it uses postpositions and suffixes.
+
+### Key Differences in Parameters:
+
+| Parameter | Sanskrit | Classical Tamil |
+|-----------|----------|-----------------|
+| **Language Family** | Indo-Aryan | Dravidian |
+| **Morphology** | Inflectional (changes in word form) | Agglutinative (adds suffixes) |
+| **Word Order** | Flexible (due to case endings) | Fixed (SOV) |
+| **Gender** | 3 genders (Masculine, Feminine, Neuter) | 2 main categories (Animate/Inanimate, or Masc/Fem) |
+| **Case System** | 8 cases (Nominative, Accusative, etc.) | No true case endings; uses postpositions/suffixes |
+| **Verb Conjugation** | Complex (tense, mood, voice, person) | Simpler; relies on auxiliary verbs and suffixes |
+
+### Historical Context:
+- **Sanskrit** was standardized by **Pāṇini** in his *Aṣ",,,,,
+W011,"What is the main rule, date or parameter regarding Arbitration Act Time Limit?",12 months (extendable by 6 months).,"Under the **Arbitration and Conciliation Act, 1996** (as amended in 2015 and 2019), the main rule regarding the time limit is:
+
+### **The Arbitral Tribunal must make its award within 12 months from the date of its constitution.**
+
+#### Key Details:
+1. **Section 31(6)** of the Act states:
+   > *""The arbitral tribunal shall make its award within a period of twelve months from the date of its constitution. However, such period may be extended by the parties by mutual consent.""*
+
+2. **Extension**:
+   - The 12-month period can be extended **only by mutual consent** of the parties.
+   - There is **no automatic extension** by the court or tribunal unless the parties agree.
+
+3. **Consequences of Delay**:
+   - If the award is not made within the stipulated time (including any agreed extension), the **arbitral tribunal ceases to exist** (Section 31(6) read with Section 14).
+   - The parties may then approach the court for appointment of a new tribunal or seek other remedies.
+
+4. **Commencement of Time**:
+   - The 12-month clock starts from the **date of constitution** of the arbitral tribunal (i.e., when the arbitrator(s) are appointed and accept the appointment).
+
+### Important Note:
+- This 12-month limit applies to **domestic arbitrations**.
+- For **international commercial arbitrations**, the same 12-month rule applies unless the parties have agreed otherwise in their arbitration agreement.
+
+### Recent Judicial Interpretation:
+- The Supreme Court of India in **Sundaram Finance Ltd. v. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s. M/s",,,,,
+W012,"Lok Sabha vs Rajya Sabha Money Bill bagge main rule, date athava parameter yenu?",Rajya Sabha cannot reject or amend Money Bills and has only 14 days to return.,"Lok Sabha aur Rajya Sabha ke beech Money Bill (Paisa Bill) par sabse bada aur fundamental rule **Article 110** ke anusaar hai.
+
+Yahan main rules, dates, aur parameters hain:
+
+### 1. Sabse Bada Rule: Lok Sabha ki Aakhri Kothri (Final Authority)
+*   **Rule:** Money Bill sirf **Lok Sabha** mein introduce kiya ja sakta hai.
+*   **Rajya Sabha ka Karyakshetra:** Rajya Sabha ko sirf **14 din** ke andar Money Bill par suggestions (suggestions) bhejne ka adhikar hai.
+*   **Final Decision:** Agar Rajya Sabha suggestions karta hai, toh Lok Sabha unhe **accept kar sakta hai ya reject kar sakta hai**. Lok Sabha ka decision final hai. Rajya Sabha Money Bill ko **reject nahi kar sakta** aur na hi ise **amend (badal) kar wapas bhej sakta hai** jisse uska matlab badal jaye.
+
+### 2. Time Limit (Date/Parameter)
+*   **14 Din ka Samay:** Jab Lok Sabha Money Bill pass karke Rajya Sabha ko bhejta hai, toh Rajya Sabha ko usse **14 din** ke andar wapas bhejna padta hai (ya suggestions ke saath).
+*   **Agar 14 Din Bharo:** Agar Rajya Sabha 14 din ke andar koi action nahi leta, toh maana jayega ki Money Bill **pass ho chuka hai**.
+
+### 3. Kya Bill ""Money Bill"" Hai? (Identification Parameter)
+*   **Speaker ka Role:** Yeh kisi bhi bill ko ""Money Bill"" kyun declare kiya jata hai, iska final faisla **Lok Sabha ke Speaker** leta hai.
+*   **Supreme Court:** Supreme Court ne (K. S. Puttaswamy case aur pehle ke cases mein) kaha hai ki Speaker ka yeh faisla **judicial review** (court ke samne challenge) ke liye **nahi hai**. Matlab, court nahi dekh sakti ki kya yeh sach mein Money Bill tha ya nahi.
+
+### 4. Money Bill Kya Hai? (Definition - Article 110",,,,,
+W013,"What is the main rule, date or parameter regarding Classical Tamil vs Sanskrit Grammar?",Tolkappiyam for Tamil; Ashtadhyayi (Panini) for Sanskrit.,"There is no single ""main rule"" that defines Classical Tamil versus Sanskrit grammar, as they belong to two completely different language families and operate on distinct logical structures. However, the most fundamental **parameter** that distinguishes them is their **Morphological Typology**:
+
+### 1. **Sanskrit: Highly Inflected (Agglutinative/Inflectional)**
+- Sanskrit is an **Indo-Aryan** language.
+- It relies heavily on **case endings** (vibhakti) and **verb conjugations** to indicate grammatical relationships.
+- Word order is relatively flexible because meaning is carried by the endings.
+- Example: The same word can change its form to indicate subject, object, location, etc.
+
+### 2. **Classical Tamil: Agglutinative (with minimal inflection)**
+- Tamil is a **Dravidian** language.
+- It uses **suffixes** attached to root words to create complex meanings.
+- It has a **fixed word order** (typically Subject-Object-Verb, SOV).
+- It does **not** have grammatical gender in the same way Sanskrit does (Tamil has animate/inanimate or masculine/feminine distinctions, but no neuter gender like Sanskrit).
+- It lacks the complex case system of Sanskrit; instead, it uses postpositions and suffixes.
+
+### Key Differences in Parameters:
+
+| Parameter | Sanskrit | Classical Tamil |
+|-----------|----------|-----------------|
+| **Language Family** | Indo-Aryan | Dravidian |
+| **Morphology** | Inflectional (changes in word form) | Agglutinative (adds suffixes) |
+| **Word Order** | Flexible (due to case endings) | Fixed (SOV) |
+| **Gender** | 3 genders (Masculine, Feminine, Neuter) | 2 main categories (Animate/Inanimate, or Masc/Fem) |
+| **Case System** | 8 cases (Nominative, Accusative, etc.) | No true case endings; uses postpositions/suffixes |
+| **Verb Conjugation** | Complex (tense, mood, voice, person) | Simpler; relies on auxiliary verbs and suffixes |
+
+### Historical Context:
+- **Sanskrit** was standardized by **Pāṇini** in his *Aṣ",,,,,
+W014,"What is the main rule, date or parameter regarding NEFT vs RTGS?",NEFT has no minimum limit and settles in batches; RTGS has ₹2 Lakh minimum and settles real-time.,"The main parameter distinguishing **NEFT** (National Electronic Funds Transfer) from **RTGS** (Real Time Gross Settlement) is the **minimum transaction amount** and the **settlement mechanism**.
+
+### 1. Minimum Transaction Amount (Key Rule)
+*   **RTGS**: Mandatory for transactions **above ₹20 lakhs** (₹2,00,000).
+*   **NEFT**: Can be used for **any amount**, including those above ₹20 lakhs (though banks may encourage RTGS for larger amounts due to speed).
+
+> **Note**: As per RBI guidelines, **RTGS is compulsory** for inter-bank transfers exceeding ₹20 lakhs. For amounts below ₹20 lakhs, customers can choose either NEFT or RTGS (if the bank offers RTGS for smaller amounts, though most banks restrict RTGS to >₹20L).
+
+### 2. Settlement Mechanism
+*   **RTGS**: **Real-time, gross settlement**. Each transaction is settled individually and immediately (during banking hours). It is the fastest method for high-value transfers.
+*   **NEFT**: **Batch processing**. Transactions are processed in batches (typically every 30 minutes or hourly, depending on the bank and RBI schedule). It is not real-time.
+
+### 3. Operating Hours
+*   **RTGS**: Available only during **banking hours** (typically 9:00 AM to 4:30 PM, Monday to Saturday).
+*   **NEFT**: Available **24x7x365** (since 2020, RBI enabled 24x7 NEFT). However, settlement may take slightly longer on weekends/holidays.
+
+### Summary Table
+
+| Parameter | NEFT | RTGS |
+|-----------|------|------|
+| **Min. Amount** | No minimum (any amount) | **Above ₹20 lakhs** (mandatory) |
+| **Settlement** | Batch-wise (delayed) | Real-time (immediate) |
+| **Speed** | Slower (minutes to hours) | Fastest (near-instant) |
+| **Availability** | 24x7 | Banking hours only |
+| **Cost** | Lower or free (depends on bank) | Higher (fixed fee, e.g., ₹50–₹100) |
+
+### Conclusion
+- Use **",,,,,
+W015,"Companies Act CSR Mandate ke regarding main rule, date ya parameter kya hai?","Net worth ≥ ₹500 Cr, Turnover ≥ ₹1000 Cr, or Net Profit ≥ ₹5 Cr.","Companies Act, 2013 ke Section 135 ke under CSR (Corporate Social Responsibility) mandate ke liye sabse important rule aur parameter yeh hai:
+
+**Main Rule/Parameter:**
+Ek company tabhi CSR kharch karne ke liye **mandatory** hoti hai agar uske pichle financial year mein inmein se **koi bhi ek** condition poori ho:
+
+1.  **Net Worth (Shudh Patra):** ₹500 Crore ya usse zyada.
+2.  **Turnover (Karya-kala):** ₹1,000 Crore ya usse zyada.
+3.  **Net Profit (Shudh Labh):** ₹5 Crore ya usse zyada.
+
+**CSR Kharch (CSR Expenditure) Kitna Hona Chahiye?**
+Agar upar di gayi kisi bhi ek condition poori hoti hai, toh company ko apne **pichle financial year ke net profit ke 2%** ka kharch CSR par karna hoga.
+
+**Important Dates & Updates:**
+*   **Original Date:** Yeh provision pehle 1 April 2014 se applicable tha, lekin government ne ise baar-baar postpone kiya.
+*   **Final Implementation:** CSR mandate officially **1 April 2014** se applicable hai, lekin practical implementation aur compliance ke liye companies ko **FY 2014-15** (i.e., 1 April 2014 se 31 March 2015) ke accounts mein yeh kharch dikhana shuru karna pada.
+*   **Recent Amendment (2021):** Government ne 2021 mein amendment kiya tha jismein kaha gaya ki agar company ne 2% ka poora kharch nahi kiya, toh usse **unspent CSR amount** ko agle 3 financial years mein kharch karna hoga. Agar 3 saal mein bhi nahi kharch kiya, toh usse **Fund for Promoting CSR Activities** mein transfer karna hoga.
+
+**Note:**
+*   CSR kharch sirf **Schedule VII** mein di gayi activities par hi kiya ja sakta hai (jaise education, healthcare, environment, rural development, etc.).
+*   CSR",,,,,
+W016,"ISRO PSLV vs GSLV Mk III के regarding main rule, date या parameter क्या है?","PSLV carries 1,750 kg to SSO; GSLV Mk III carries 4,000 kg to GTO using cryogenic stage.","ISRO के PSLV (Polar Satellite Launch Vehicle) और GSLV Mk III (जिसे LVM3 भी कहा जाता है) के बीच मुख्य अंतर उनकी **उद्देश्य (Purpose)**, **क्षमता (Payload Capacity)** और **डिजाइन** में है।
+
+यहाँ मुख्य पैरामीटर्स का तुलनात्मक विश्लेषण दिया गया है:
+
+### 1. मुख्य उद्देश्य (Main Purpose)
+*   **PSLV:** यह मुख्य रूप से **ध्रुवीय कक्षा (Polar Orbit)** में उपग्रहों को ले जाने के लिए डिज़ाइन किया गया है। यह छोटे से मध्यम आकार के उपग्रहों को धरती के ध्रुवों के ऊपर से गुजरने वाली कक्षा में डालता है।
+*   **GSLV Mk III:** यह एक **भारी उड़ान वाहन (Heavy Lift Launch Vehicle)** है। इसका मुख्य उद्देश्य भारी उपग्रहों को **जियोसिंक्रोनस ट्रांसफर ऑर्बिट (GTO)** या ध्रुवीय कक्षा में ले जाना है। यह भारत के सबसे शक्तिशाली रॉकेट है।
+
+### 2. क्षमता (Payload Capacity)
+*   **PSLV:**
+    *   ध्रुवीय कक्षा (LEO) में: लगभग **1,500 - 1,600 किलोग्राम** तक का भारी उपग्रह ले जा सकता है।
+    *   GTO में: लगभग **2,250 किलोग्राम** तक।
+*   **GSLV Mk III:**
+    *   GTO में: लगभग **4,000 - 4,500 किलोग्राम** तक का भारी उपग्रह ले जा सकता है।
+    *   ध्रुवीय कक्षा (LEO) में: लगभग **5,000 - 6,000 किलोग्राम** तक।
+    *   *नोट:* GSLV Mk III, PSLV की तुलना में लगभग 2-3 गुना अधिक भारी उपग्रह ले जा सकता है।
+
+### 3. डिजाइन और",,,,,
+W017,"What is the main rule, date or parameter regarding National Park vs Wildlife Sanctuary?",No private rights or grazing permitted in National Parks; limited rights allowed in Sanctuaries.,"The main rule and parameter distinguishing a **National Park** from a **Wildlife Sanctuary** in India is the **level of protection and the rights of local inhabitants**, governed by the **Wildlife (Protection) Act, 1972**.
+
+### Key Differences:
+
+| Parameter | National Park | Wildlife Sanctuary |
+| :--- | :--- | :--- |
+| **Legal Status** | Established under **Section 35** of the Wildlife (Protection) Act, 1972. | Established under **Section 29** of the Wildlife (Protection) Act, 1972. |
+| **Protection Level** | **Highest level** of protection. No human activity is allowed except for scientific research, management, and limited eco-tourism. | **Moderate protection.** Some human activities (like grazing, collecting fuelwood, or traditional rights) may be permitted if they do not harm wildlife. |
+| **Local Rights** | **No traditional rights** of local inhabitants are allowed. All existing rights are extinguished upon declaration. | **Traditional rights** of local inhabitants may be **retained** or regulated, provided they do not interfere with wildlife conservation. |
+| **Boundary** | Boundaries are **fixed and inviolable**. No changes are allowed without strict legal process. | Boundaries can be **modified** by the Central Government if necessary for conservation or administrative reasons. |
+| **Purpose** | To protect **specific species** and their habitats with **absolute priority** to wildlife. | To protect **wildlife and their habitats**, but with **greater flexibility** for coexistence with human activities. |
+
+### Main Rule/Parameter:
+> **In a National Park, wildlife conservation takes absolute precedence over all human activities, and no traditional rights of local people are recognized. In a Wildlife Sanctuary, some traditional human activities may be permitted if they do not harm wildlife.**
+
+### Important Note:
+- **Tiger Reserves** are a special category that often include both National Parks and Wildlife Sanctuaries within their core and buffer zones, with even stricter regulations in the core area.
+- The **Central Government** has the authority to declare both National Parks and Wildlife Sanctuaries.",,,,,
+W018,"What is the main rule, date or parameter regarding Environment Clearance Public Hearing?",Exempted inside notified industrial estates or defense projects.,"The main rule governing Environment Clearance (EC) Public Hearings in India is the **Environmental Impact Assessment (EIA) Notification, 2006** (issued by the Ministry of Environment, Forest and Climate Change, MoEFCC).
+
+### Key Parameters & Rules:
+
+1. **Legal Basis**:  
+   - The EIA Notification, 2006, under the **Environment (Protection) Act, 1986**, mandates public hearings for projects listed in **Schedule II** (Category A and B projects).
+   - It is implemented through the **EIA Regulations, 2006** (specifically **Regulation 10**).
+
+2. **When is a Public Hearing Required?**  
+   - For **Category A** projects (requiring Central Government EC) and **Category B** projects (requiring State Government EC), a public hearing is mandatory **before** the Expert Appraisal Committee (EAC) or State Expert Appraisal Committee (SEAC) evaluates the Environmental Impact Assessment (EIA) report.
+
+3. **Key Parameters of the Public Hearing**:
+   - **Notice Period**: A public notice must be published in **two newspapers** (one in English and one in the local language) and displayed in **three prominent places** in the project area **at least 30 days** before the hearing.
+   - **Duration**: The hearing must be conducted for a **minimum of 2 hours**.
+   - **Participation**: Any person can participate and submit written or oral comments.
+   - **Record**: A detailed record of the hearing, including all comments and objections, must be maintained and submitted to the EAC/SEAC along with the EIA report.
+   - **Location**: The hearing is held in the **project area** or nearby, ensuring accessibility to affected communities.
+
+4. **Purpose**:  
+   To ensure **transparency**, **public participation**, and **accountability** in environmental decision-making by allowing local communities and stakeholders to voice concerns about potential environmental and social impacts.
+
+### Important Note:
+- **Category C** projects (notified by the State Government) may also require public hearings, depending on State-specific rules.
+- The **2006 EIA Notification** was amended in **2019** and **2020**, but the core requirement for public hearings for Category A and B projects remains unchanged.
+
+For the most current procedural details, always refer",,,,,
+W019,"Classical Tamil vs Sanskrit Grammar के regarding main rule, date या parameter क्या है?",Tolkappiyam for Tamil; Ashtadhyayi (Panini) for Sanskrit.,"Classical Tamil (Tolkappiyam) और Sanskrit (Panini) व्याकरण के बीच मुख्य अंतर, तिथियों और नियमों के आधार पर इस प्रकार है:
+
+### 1. तिथि (Date/Chronology)
+*   **Sanskrit (Panini):** पणिनि का व्याकरण लगभग **500 BCE** (ईसा से पहले) के आसपास रचा गया माना जाता है। यह भारतीय उपमहाद्वीप का सबसे पुराना और प्रणालीबद्ध व्याकरण माना जाता है।
+*   **Classical Tamil (Tolkappiyam):** तोलकपियम (Tolkappiyam) लगभग **300 BCE** से **200 BCE** के बीच रचा गया माना जाता है। हालांकि, कुछ विद्वान इसे पणिनि के बाद का मानते हैं, जबकि अन्य इसे समकालीन या थोड़ा बाद का मानते हैं।
+
+> **नोट:** दोनों ही प्राचीन काल के हैं, लेकिन पणिनि का व्याकरण सामान्यतः थोड़ा पुराना माना जाता है।
+
+### 2. मुख्य नियम और पैरामीटर (Main Rules & Parameters)
+
+| पैरामीटर | Sanskrit (Panini) | Classical Tamil (Tolkappiyam) |
+|----------|-------------------|-------------------------------|
+| **व्याकरण का दृष्टिकोण** | **उत्पत्तिवादी (Generative):** पणिनि का व्याकरण शब्दों के निर्माण (word formation) पर केंद्रित है। यह बताता है कि मूल शब्द (root) से कैसे नए शब्द बनते हैं। | **वर्णिक और संरचनात्मक:** तोलकपियम वर्णों (phonetics), शब्दों (morphology) और वाक्य संरचना (syntax) पर समान रूप से ध्यान देता है। यह अधिक व्यावहारिक और वर्ण-आधारित है। |
+| **मूल इकाई (Basic Unit)** | **धातु (Root/Verbal Root):** पणिनि का व्याकरण धातुओं (जैसे √gam, √bhū) से शुरू होता है। |",,,,,
+W020,"What is the main rule, date or parameter regarding IBC Section 7 Default Threshold?",Minimum default of ₹1 Crore.,"Under the Insolvency and Bankruptcy Code (IBC), 2016, the main parameter regarding the default threshold for **Section 7** (Application by Financial Creditor) is as follows:
+
+### **Minimum Financial Debt Threshold**
+- **₹1 Lakh (One Lakh Rupees)**
+
+### **Key Details:**
+1. **Section 7(1)** states that a financial creditor may file an application with the National Company Law Tribunal (NCLT) if the **financial debt** owed by the corporate debtor is **not less than ₹1 Lakh**.
+2. This threshold was introduced to prevent the NCLT from being burdened with trivial or small-value disputes.
+3. The amount is calculated based on the **outstanding financial debt** (principal + interest) as on the date of the application.
+
+### **Important Note:**
+- This ₹1 Lakh threshold applies specifically to **Section 7** (Financial Creditors).
+- For **Section 9** (Operational Creditors), the threshold is **₹1 Lakh** as well (as per Section 9(1)).
+- For **Section 8** (Operational Debtors filing against Operational Creditors), there is **no minimum threshold** specified in the IBC itself, but practical and judicial interpretations often consider materiality.
+
+### **Legal Reference:**
+- **Section 7(1) of the IBC, 2016**:  
+  > *""Where a financial debt owed by a corporate debtor to a financial creditor is not less than such minimum amount as may be prescribed, the financial creditor may file an application with the Tribunal...""*
+
+- **Prescribed Amount**: The **Insolvency and Bankruptcy (Application to Adjudicating Authority) Rules, 2016** (Rule 4) prescribe the minimum amount as **₹1 Lakh**.
+
+### **Conclusion:**
+The **main rule/parameter** is that the **financial debt must be at least ₹1 Lakh** for a financial creditor to invoke Section 7 of the IBC.",,,,,
+W021,"PM-KISAN vs Rythu Bandhu பத்தி main rule, date இல்ல parameter என்ன?",PM-KISAN is flat per family; Rythu Bandhu is per acre acreage-linked.,"PM-KISAN மற்றும் Rythu Bandhu இரண்டும் விவசாயிகளுக்கு நிதி உதவி அளிக்கின்றன, ஆனால் அவற்றின் **முதன்மை விதிகள் (Main Rules)**, **தேர்வு அடிப்படைகள் (Parameters)** மற்றும் **நிதி வழங்கும் முறை** ஆகியவற்றில் முக்கிய வேறுபாடுகள் உள்ளன.
+
+இங்கே அவற்றின் ஒப்பீடு:
+
+### 1. PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)
+*   **நிர்வாகம்:** மத்திய அரசு (Central Government).
+*   **நோக்கம்:** விவசாயிகளுக்கு வருடாந்திர நிதி உதவி (Income Support).
+*   **நிதி அளவு:** **₹6,000** per year (₹2,000 x 3 installments).
+*   **தேர்வு அடிப்படை (Parameter):**
+    *   **Land Holding:** 5 ஏக்கர் அல்லது அதற்குக் குறைவான நிலம் வைத்திருக்கும் விவசாயிகள்.
+    *   **Exclusions:** அரசு ஊழியர்கள், வரி செலுத்தும் குடும்பங்கள், முன்னாள்/தற்போதைய மந்திரிகள், எம்பி/எம்எல்ஏக்கள், உயர் அமைப்புகளின் (IIT, IIM, AIIMS போன்றவை) முன்னாள்/தற்போதைய ஊழியர்கள் தகுதியில்லை.
+*   **நிதி வழங்கும் முறை:**
+    *   நேரடியாக விவசாயிகளின் **Bank Account**-க்கு (Direct Benefit Transfer - DBT) அனுப்பப்படுகிறது.
+    *   ஆண்டுக்கு 3 தவணைகளாக (Installments) வழங்கப்படுகிறது.
+*   **தேவைப்படும் ஆவணங்கள்:** Aadhaar Card, Bank Passbook, Land Records (7/12 extract).
+
+### 2. Rythu Bandhu (Telangana State Scheme)
+*   **நிர்வாகம்:** தெலங்கானா மாநில அரசு (State Government of Telangana).
+*",,,,,
+W022,"NEFT vs RTGS gurinchi main rule, date leda parameter enti?",NEFT has no minimum limit and settles in batches; RTGS has ₹2 Lakh minimum and settles real-time.,"NEFT (National Electronic Funds Transfer) and RTGS (Real Time Gross Settlement) are both electronic fund transfer systems in India, but they differ significantly in terms of transaction limits, speed, and cost. Here is a clear comparison based on the main rules, dates, and parameters:
+
+### 1. **Transaction Limit (Amount)**
+*   **NEFT:** No upper limit for sending money. However, for **receiving** money, there is no limit either. But practically, banks may have internal limits.
+    *   *Note:* For **sending**, NEFT is suitable for amounts **below ₹20 Lakhs**.
+*   **RTGS:** Minimum transaction amount is **₹2 Lakhs**. There is **no upper limit**.
+    *   *Note:* RTGS is mandatory for transactions **above ₹20 Lakhs** (as per RBI guidelines).
+
+### 2. **Speed & Settlement**
+*   **NEFT:**
+    *   Operates in **batches** (every 30 minutes).
+    *   Not real-time. Money is transferred in cycles.
+    *   If initiated during banking hours, it usually takes **1–2 hours** to reflect in the beneficiary’s account.
+    *   If initiated after banking hours or on holidays, it is processed on the **next working day**.
+*   **RTGS:**
+    *   **Real-time** and **gross settlement** (each transaction is settled individually and immediately).
+    *   Money is transferred **instantly** (within minutes) during operating hours.
+    *   If initiated after operating hours, it is processed on the **next working day**.
+
+### 3. **Operating Hours**
+*   **NEFT:**
+    *   Available **24x7x365** (all days, including weekends and holidays).
+    *   However, settlement happens in batches during banking hours. Outside banking hours, it queues up for the next batch.
+*   **RTGS:**
+    *   Available **24x7x365** (since 2020, RBI made RTGS available 24/7).
+    *   However, **real-time settlement** happens only during **banking hours** (typically 9:00 AM to 6:00 PM, Monday to Saturday).
+    *   Transactions initiated outside banking hours are processed on the **next working",,,,,
+W023,"PMFBY vs WBCIS ಬಗ್ಗೆ main rule, date ಅಥವಾ parameter ಯಾವುದು?",PMFBY is crop yield-based; WBCIS is weather index-based.,"PMFBY (Pradhan Mantri Fasal Bima Yojana) ಮತ್ತು WBCIS (West Bengal Crop Insurance Scheme) ನಡುವಿನ ಮುಖ್ಯ ವ್ಯತ್ಯಾಸವು **ಸರ್ಕಾರದ ಪ್ರಕಾರ** ಮತ್ತು **ಪ್ರೀಮಿಯ ಹಂಚಿಕೆ** ಆಧಾರದ ಮೇಲೆ ಇರುತ್ತದೆ.
+
+ಇಲ್ಲಿ ಮುಖ್ಯ ನಿಯಮಗಳು ಮತ್ತು ಪ್ಯಾರಾಮೀಟರ್‌ಗಳನ್ನು ನೀಡಲಾಗಿದೆ:
+
+### 1. ಮುಖ್ಯ ನಿಯಮ (Main Rule/Parameter): ಸರ್ಕಾರದ ಪ್ರಕಾರ
+*   **PMFBY:** ಇದು **ಕೇಂದ್ರ ಸರ್ಕಾರದ** ಯೋಜನೆ. ಇದು ಭಾರತದ ಎಲ್ಲಾ ರಾಜ್ಯಗಳಲ್ಲಿ ಅನ್ವಯಿಸುತ್ತದೆ.
+*   **WBCIS:** ಇದು **ಪಶ್ಚಿಮ ಬಂಗಾಳ ರಾಜ್ಯ ಸರ್ಕಾರದ** ವಿಶಿಷ್ಟ ಯೋಜನೆ. ಇದು ಕೇವಲ ಪಶ್ಚಿಮ ಬಂಗಾಳ ರಾಜ್ಯದ ಒಳಗೆ ಮಾತ್ರ ಅನ್ವಯಿಸುತ್ತದೆ.
+
+### 2. ಪ್ರೀಮಿಯ ಹಂಚಿಕೆ (Premium Subsidy)
+*   **PMFBY:**
+    *   ರೈತರು ಕನಿಷ್ಠ ಪ್ರೀಮಿಯನ್ನು ಪಾವತಿಸಬೇಕು (ಉದಾಹರಣೆಗೆ: ಬೆಳೆಗಳಿಗೆ 1.5% - 2%, ಹವಾಮಾನಕ್ಕೆ 2%).
+    *   ಉಳಿದ ಪ್ರೀಮಿಯನ್ನು ಕೇಂದ್ರ ಮತ್ತು ರಾಜ್ಯ ಸರ್ಕಾರಗಳು ಹಂಚಿಕೊಳ್ಳುತ್ತವೆ.
+*   **WBCIS:**
+    *   ಪಶ್ಚಿಮ ಬಂಗಾಳ ಸರ್ಕಾರವು ರೈತರಿಗೆ **100% ಪ್ರೀಮಿ ಸಬ್ಸಿಡಿ** ನೀಡುತ್ತದೆ (ಅಥವಾ ಅತ್ಯಂತ ಕಡಿಮೆ ಪ್ರೀಮಿ).
+    *   ಅಂದರೆ, ರೈತರು ಕಡಿಮೆ ಅಥವಾ ಶೂನ್ಯ ಪ್ರೀಮಿ ಪಾವತಿಸಿ ವಿಮೆ ಪಡೆಯಬಹುದು.
+
+### 3. ಅನ್ವಯಿಸುವ ದಿನ",,,,,
+W024,"Covaxin vs Covishield பத்தி main rule, date இல்ல parameter என்ன?",Covaxin is inactivated virus; Covishield is chimpanzee adenovirus vector.,"Covaxin மற்றும் Covishield இரண்டும் இந்தியாவில் பயன்படுத்தப்பட்ட முக்கிய கொரோனா தடுப்பூசிகள் ஆகும். அவற்றின் முக்கிய வித்தியாசங்கள் (Parameters) கீழே கொடுக்கப்பட்டுள்ளன:
+
+**1. உருவாக்கிய நிறுவனம் (Manufacturer):**
+*   **Covaxin:** Bharat Biotech (இந்திய நிறுவனம்).
+*   **Covishield:** Serum Institute of India (SII) மற்றும் Oxford University (UK) இணைந்து உருவாக்கியது.
+
+**2. தொழில்நுட்பம் (Technology):**
+*   **Covaxin:** **Inactivated Virus** (மரணமடைந்த வைரஸ்) தொழில்நுட்பம்.
+*   **Covishield:** **Viral Vector** (Adenovirus Vector) தொழில்நுட்பம்.
+
+**3. தடுப்பூசி அளவு (Dose Schedule):**
+*   **Covaxin:** 2 டோஸ் (0 மற்றும் 28-ம் நாள்).
+*   **Covishield:** 2 டோஸ் (0 மற்றும் 56-ம் நாள்).
+
+**4. சேமிப்பு (Storage):**
+*   **Covaxin:** 2°C முதல் 8°C வரை (பொதுவான குளிரூட்டி).
+*   **Covishield:** 2°C முதல் 8°C வரை (பொதுவான குளிரூட்டி).
+*(குறிப்பு: இரண்டும் குளிர்சாதன பெட்டியில் சேமிக்கப்படலாம், ஆனால் Covishield-ஐ நீண்ட காலம் சேமிக்க 20°C வரை சாத்தியம் உள்ளது).*
+
+**5. வயது வரம்பு (Age Group - அப்போதைய விதிமுறைகள்):**
+*   **Covaxin:** 18 வயதுக்கு மேல்.
+*   **Covishield:** 18 வயதுக்கு மேல்.
+*(பின்னர் 15-17 வயதுக்கு Covishield அனுமதிக்கப்பட்டது).*
+
+**",,,,,
+W025,"What is the main rule, date or parameter regarding PMFBY vs WBCIS?",PMFBY is crop yield-based; WBCIS is weather index-based.,"The main rule and parameter distinguishing the **Pradhan Mantri Fasal Bima Yojana (PMFBY)** from the **Weather Based Crop Insurance Scheme (WBCIS)** is the **basis of claim settlement** and the **type of risk covered**.
+
+### Key Differences:
+
+| Parameter | **PMFBY** | **WBCIS** |
+|-----------|-----------|-----------|
+| **Basis of Claim** | **Actual Crop Loss** (Yield-based). Claims are settled based on the difference between the expected yield and the actual yield due to notified risks. | **Weather Parameters** (Index-based). Claims are triggered when specific weather parameters (e.g., rainfall, temperature, humidity) cross predefined thresholds, **regardless of actual crop loss**. |
+| **Risk Covered** | Covers **notified risks** such as drought, flood, cyclone, hailstorm, unseasonal rain, fire, etc., that cause **actual crop damage**. | Covers **weather-related risks** only, based on meteorological data. It does **not** cover non-weather risks like pest/disease, fire, or man-made disasters. |
+| **Assessment** | Requires **post-harvest assessment** of crop loss by survey teams. | **No field survey** needed. Claims are automatically triggered based on weather station data. |
+| **Premium** | Subsidized by government (central + state). | Also subsidized, but typically lower due to simpler structure. |
+| **Complexity** | More complex; involves yield estimation and loss verification. | Simpler; based on objective weather data. |
+
+### Main Rule/Parameter:
+- **PMFBY**: **Yield-based** – Compensation depends on **actual crop loss** due to notified perils.
+- **WBCIS**: **Index-based** – Compensation depends on **weather data** (e.g., rainfall deficit), not on actual crop damage.
+
+### Important Note:
+- **PMFBY** is the **primary crop insurance scheme** in India, covering both kharif and rabi seasons.
+- **WBCIS** is a **supplementary scheme** that can be offered alongside PMFBY in certain regions where weather data is reliable and crop loss is primarily weather-driven. It is **not a replacement** for PMFBY but an add-on for specific weather risks.
+
+In summary, the **main parameter** is:
+> **PMFBY = Actual",,,,,
+W026,"RTI Third Party Information bagge main rule, date athava parameter yenu?",Within 5 days from receipt of request.,"RTI Act 2005 madhe **Third Party Information** (Tisra Paksache Mahiti) bagge **Section 11** (Section 11) hi mukhya rule ahe.
+
+**Mukhya Tatha (Date/Parameters):**
+
+1.  **Rule:** Section 11.
+2.  **Process:**
+    *   Public Authority (Sarkari Sanstha) third party la notice detya.
+    *   Third party la **10 din** (10 days) cha samay dilya jaata, jya madhe te apni objection (virodh) kade shakto.
+    *   Jey third party ne 10 din madhe objection kade na, teva mahiti disclose keli ja shakto.
+    *   Jey objection aala, teva Public Authority ne **40 din** (40 days) madhe final decision ghyala.
+3.  **Exception:** Jey mahiti ""Public Interest"" (Sampadkari Nyaya) madhe disclose kelya lagne, teva Public Authority ne third party cha objection accept karun mahiti disclose keli shakto.
+
+**Summary:**
+*   **Section:** 11
+*   **Time for Objection:** 10 Days
+*   **Time for Decision:** 40 Days",,,,,
+W027,"Patents Act Compulsory License er regarding main rule, date ba parameter ki?",After expiration of 3 years from patent grant date.,"India ke **Patents Act, 1970** ke under Compulsory License (Section 84) ke liye sabse important rule ya parameter hai ki patent grant hone ke baad **3 saal** (3 years) ka time pass ho jana chahiye.
+
+Iske alawa, do aur key conditions hain jo saath-saath apply hoti hain:
+
+1.  **3 Saal ka Time Gap:** Patent grant hone ke 3 saal baad hi koi bhi person compulsory license ke liye application kar sakta hai.
+2.  **Public Interest / Reasonable Requirements:** Applicant ko prove karna hoga ki patent holder ne:
+    *   India mein product ko **reasonable terms** par nahi becha, ya
+    *   India mein product ko **manufacture** nahi kiya, ya
+    *   India mein product ko **import** nahi kiya,
+    *   Jisse public ki **reasonable requirements** puri nahi ho rahi hain.
+
+**Note:** Agar patent holder ne 3 saal ke andar koi action nahi liya, toh 3 saal ke baad koi bhi interested person (jo patent holder nahi hai) compulsory license ke liye apply kar sakta hai.
+
+**Recent Example:**
+- **Nexium (Esomeprazole)** case (2012): Indian court ne Bayer ko compulsory license di thi kyunki wo 3 saal ke baad bhi India mein medicine ko affordable price par nahi bech raha tha.
+- **Gilead Sciences** case (2017): Court ne Gilead ko compulsory license di thi HIV medicine ke liye, kyunki wo India mein medicine ko reasonable price par nahi bech raha tha.
+
+Toh, **main parameter** hai: **Patent grant hone ke 3 saal baad** + **Public ki reasonable requirements puri na hona**.",,,,,
+W028,"What is the main rule, date or parameter regarding PMFBY vs WBCIS?",PMFBY is crop yield-based; WBCIS is weather index-based.,"The main rule and parameter distinguishing the **Pradhan Mantri Fasal Bima Yojana (PMFBY)** from the **Weather Based Crop Insurance Scheme (WBCIS)** is the **basis of claim settlement** and the **type of risk covered**.
+
+### Key Differences:
+
+| Parameter | **PMFBY** | **WBCIS** |
+|-----------|-----------|-----------|
+| **Basis of Claim** | **Actual Crop Loss** (Yield-based). Claims are settled based on the difference between the expected yield and the actual yield due to notified risks. | **Weather Parameters** (Index-based). Claims are triggered when specific weather parameters (e.g., rainfall, temperature, humidity) cross predefined thresholds, **regardless of actual crop loss**. |
+| **Risk Covered** | Covers **notified risks** such as drought, flood, cyclone, hailstorm, unseasonal rain, fire, etc., that cause **actual crop damage**. | Covers **weather-related risks** only, based on meteorological data. It does **not** cover non-weather risks like pest/disease, fire, or man-made disasters. |
+| **Assessment** | Requires **post-harvest assessment** of crop loss by survey teams. | **No field survey** needed. Claims are automatically triggered based on weather station data. |
+| **Premium** | Subsidized by government (central + state). | Also subsidized, but typically lower due to simpler structure. |
+| **Complexity** | More complex; involves yield estimation and loss verification. | Simpler; based on objective weather data. |
+
+### Main Rule/Parameter:
+- **PMFBY**: **Yield-based** – Compensation depends on **actual crop loss** due to notified perils.
+- **WBCIS**: **Index-based** – Compensation depends on **weather data** (e.g., rainfall deficit), not on actual crop damage.
+
+### Important Note:
+- **PMFBY** is the **primary crop insurance scheme** in India, covering both kharif and rabi seasons.
+- **WBCIS** is a **supplementary scheme** that can be offered alongside PMFBY in certain regions where weather data is reliable and crop loss is primarily weather-driven. It is **not a replacement** for PMFBY but an add-on for specific weather risks.
+
+In summary, the **main parameter** is:
+> **PMFBY = Actual",,,,,
+W029,"What is the main rule, date or parameter regarding Medical Termination of Pregnancy Act?",Opinion of two registered medical practitioners.,"The **Medical Termination of Pregnancy (MTP) Act, 1971** is the primary legislation in India governing legal abortion. The most significant recent update was the **MTP (Amendment) Act, 2021**, which came into force on **September 23, 2022**.
+
+### Key Rules and Parameters (as per the 2021 Amendment):
+
+1. **Gestational Age Limits:**
+   - **Up to 20 weeks:** Abortion can be performed with the opinion of **one registered medical practitioner**.
+   - **20 to 24 weeks:** Abortion can be performed with the opinion of **two registered medical practitioners**.
+   - **Beyond 24 weeks:** Permitted only in cases of **substantial fetal abnormalities** (as certified by a Medical Board) or to save the life of the pregnant woman.
+
+2. **Who Can Access the Service:**
+   - The law now explicitly includes **married women, unmarried women, and adolescent girls**.
+   - It also covers **survivors of sexual assault** (including rape, incest, and other forms of sexual violence).
+
+3. **Confidentiality:**
+   - The identity of the pregnant woman must be kept confidential.
+   - No person shall disclose the identity of the woman or the fact that she underwent an abortion, except to authorized persons for legal or medical purposes.
+
+4. **Medical Board:**
+   - Each state/UT must constitute a **Medical Board** to certify substantial fetal abnormalities or to authorize abortions beyond 24 weeks in exceptional cases.
+
+5. **Safe Abortion Services:**
+   - The government is required to provide safe and accessible abortion services, including training for medical practitioners and awareness campaigns.
+
+### Important Notes:
+- **No upper limit** is specified for abortions in cases of **substantial fetal abnormalities** or to **save the life of the mother**.
+- The law emphasizes **informed consent** and **ethical practice**.
+- **Illegal abortion** remains a criminal offense under the Indian Penal Code (IPC) / Bharatiya Nyaya Sanhita (BNS), but the MTP Act provides legal protection for abortions performed in accordance with its provisions.
+
+### Summary Table:
+
+| Gestational Age | Requirement |
+|-----------------|-------------|
+| Up to 20 weeks  | Opinion of 1 doctor |
+| 20–24 weeks",,,,,
+W030,"What is the main rule, date or parameter regarding ISRO PSLV vs GSLV Mk III?","PSLV carries 1,750 kg to SSO; GSLV Mk III carries 4,000 kg to GTO using cryogenic stage.","The main parameter that distinguishes the **PSLV (Polar Satellite Launch Vehicle)** from the **GSLV Mk III (Geosynchronous Satellite Launch Vehicle Mark III)** is their **primary mission profile and orbital capability**, specifically regarding the type of orbit they are designed to place satellites into.
+
+Here’s the key distinction:
+
+### 1. **Primary Orbital Capability**
+*   **PSLV**: Primarily designed for **Sun-Synchronous Orbits (SSO)** and **Low Earth Orbits (LEO)**. It is India’s workhorse for launching Earth observation satellites, small commercial satellites, and missions to the Moon (like Chandrayaan-1) or Mars (Mangalyaan). It is **not** optimized for Geostationary Transfer Orbits (GTO).
+*   **GSLV Mk III**: Specifically designed to launch heavy satellites into **Geostationary Transfer Orbit (GTO)**. This is the critical orbit for communication satellites (like GSAT series) that need to reach geostationary orbit (36,000 km altitude). It has a significantly higher payload capacity to GTO compared to PSLV.
+
+### 2. **Payload Capacity**
+*   **PSLV**: Can carry up to **~1,500–1,600 kg** to LEO/SSO. Its GTO capacity is very limited (not its primary role).
+*   **GSLV Mk III**: Can carry up to **~4,000 kg** to GTO and **~5,000–6,000 kg** to LEO. This makes it India’s heaviest launch vehicle.
+
+### 3. **Propulsion System**
+*   **PSLV**: Uses **solid-fuel** rocket stages (except the upper stage, which uses liquid propellant). This makes it simpler, cheaper, and highly reliable for routine launches.
+*   **GSLV Mk III**: Uses a combination of **solid-fuel** boosters and **liquid-fuel** core stages (with cryogenic upper stage). The cryogenic engine (developed by ISRO) is essential for achieving the high thrust needed for GTO missions.
+
+### 4. **Launch Frequency & Role**
+*   **PSLV**: Launched frequently (over 50 times) as a reliable, cost-effective workhorse for small to medium satellites.
+*   **GSLV Mk",,,,,
+W031,"What is the main rule, date or parameter regarding IBC Section 7 Default Threshold?",Minimum default of ₹1 Crore.,"Under the Insolvency and Bankruptcy Code (IBC), 2016, the main parameter regarding the default threshold for **Section 7** (Application by Financial Creditor) is as follows:
+
+### **Minimum Financial Debt Threshold**
+- **₹1 Lakh (One Lakh Rupees)**
+
+### **Key Details:**
+1. **Section 7(1)** states that a financial creditor may file an application with the National Company Law Tribunal (NCLT) if the **financial debt** owed by the corporate debtor is **not less than ₹1 Lakh**.
+2. This threshold was introduced to prevent the NCLT from being burdened with trivial or small-value disputes.
+3. The amount is calculated based on the **outstanding financial debt** (principal + interest) as on the date of the application.
+
+### **Important Note:**
+- This ₹1 Lakh threshold applies specifically to **Section 7** (Financial Creditors).
+- For **Section 9** (Operational Creditors), the threshold is **₹1 Lakh** as well (as per Section 9(1)).
+- For **Section 8** (Operational Debtors filing against Operational Creditors), there is **no minimum threshold** specified in the IBC itself, but practical and judicial interpretations often consider materiality.
+
+### **Legal Reference:**
+- **Section 7(1) of the IBC, 2016**:  
+  > *""Where a financial debt owed by a corporate debtor to a financial creditor is not less than such minimum amount as may be prescribed, the financial creditor may file an application with the Tribunal...""*
+
+- **Prescribed Amount**: The **Insolvency and Bankruptcy (Application to Adjudicating Authority) Rules, 2016** (Rule 4) prescribe the minimum amount as **₹1 Lakh**.
+
+### **Conclusion:**
+The **main rule/parameter** is that the **financial debt must be at least ₹1 Lakh** for a financial creditor to invoke Section 7 of the IBC.",,,,,
+W032,"What is the main rule, date or parameter regarding Environment Clearance Public Hearing?",Exempted inside notified industrial estates or defense projects.,"The main rule governing Environment Clearance (EC) Public Hearings in India is the **Environmental Impact Assessment (EIA) Notification, 2006** (issued by the Ministry of Environment, Forest and Climate Change, MoEFCC).
+
+### Key Parameters & Rules:
+
+1. **Legal Basis**:  
+   - The EIA Notification, 2006, under the **Environment (Protection) Act, 1986**, mandates public hearings for projects listed in **Schedule II** (Category A and B projects).
+   - It is implemented through the **EIA Regulations, 2006** (specifically **Regulation 10**).
+
+2. **When is a Public Hearing Required?**  
+   - For **Category A** projects (requiring Central Government EC) and **Category B** projects (requiring State Government EC), a public hearing is mandatory **before** the Expert Appraisal Committee (EAC) or State Expert Appraisal Committee (SEAC) evaluates the Environmental Impact Assessment (EIA) report.
+
+3. **Key Parameters of the Public Hearing**:
+   - **Notice Period**: A public notice must be published in **two newspapers** (one in English and one in the local language) and displayed in **three prominent places** in the project area **at least 30 days** before the hearing.
+   - **Duration**: The hearing must be conducted for a **minimum of 2 hours**.
+   - **Participation**: Any person can participate and submit written or oral comments.
+   - **Record**: A detailed record of the hearing, including all comments and objections, must be maintained and submitted to the EAC/SEAC along with the EIA report.
+   - **Location**: The hearing is held in the **project area** or nearby, ensuring accessibility to affected communities.
+
+4. **Purpose**:  
+   To ensure **transparency**, **public participation**, and **accountability** in environmental decision-making by allowing local communities and stakeholders to voice concerns about potential environmental and social impacts.
+
+### Important Note:
+- **Category C** projects (notified by the State Government) may or may not require a public hearing, depending on State-specific rules.
+- The **2006 EIA Notification** was amended in **2019** and **2020**, but the core requirement for public hearings for Category A and B projects remains unchanged.
+
+For the most current procedural details",,,,,
+W033,"NEFT vs RTGS ke regarding main rule, date ya parameter kya hai?",NEFT has no minimum limit and settles in batches; RTGS has ₹2 Lakh minimum and settles real-time.,"NEFT aur RTGS mein sabse bada aur main difference **Transaction Amount (Rashi)** aur **Settlement Time (Jama hone ka waqt)** hai.
+
+Yahan main rules aur parameters diye gaye hain:
+
+### 1. Transaction Amount (Rashi ka Limit)
+*   **RTGS:** Yeh **₹2 Lakh se zyada** ki transactions ke liye hai. (Note: ₹2 Lakh se kam ki rashi bhi RTGS se bheji ja sakti hai, lekin yeh mandatory nahi hai; ₹2 Lakh se upar ki rashi ke liye sirf RTGS hi use hota hai.)
+*   **NEFT:** Yeh **₹2 Lakh se kam** ki transactions ke liye hai. (Koi minimum limit nahi hai, lekin ₹2 Lakh se upar ki rashi ke liye NEFT use nahi kiya ja sakta.)
+
+### 2. Settlement Time (Paisa kab jama hoga?)
+*   **RTGS:** **Real-Time Gross Settlement** hota hai. Iska matlab hai ki paisa **turant (immediately)** transfer ho jata hai. Jaise hi aap transaction karte hain, paisa seedha beneficiary ke account mein chala jata hai.
+*   **NEFT:** **Batch Processing** hota hai. Paisa har **30 minute** ke interval mein ek batch mein process hota hai. Isliye, paisa 30 minute se 1 ghante tak mein jama ho sakta hai (kabhi-kabhi thoda zyada bhi lag sakta hai).
+
+### 3. Working Hours (Kab use kar sakte hain?)
+*   **RTGS:** Sirf **banking hours** mein chalta hai (Aam taur par 9:00 AM se 4:00 PM tak, bank ke hisaab se alag ho sakta hai). Weekend ya public holiday par RTGS nahi chalta.
+*   **NEFT:** Ab **24x7** available hai (RBI ne 2023 mein NEFT ko 24x7 service banaya hai). Lekin, weekend ya holiday par kiye gaye transactions agle working day par process hote hain.
+
+### 4. Cost (Charge)
+*   **RT",,,,,
+W034,"PM-KISAN vs Rythu Bandhu ಬಗ್ಗೆ main rule, date ಅಥವಾ parameter ಯಾವುದು?",PM-KISAN is flat per family; Rythu Bandhu is per acre acreage-linked.,"PM-KISAN ಮತ್ತು Rythu Bandhu ಸ್ಕೀಮೆಗಳ ನಡುವಿನ ಪ್ರಮುಖ ವ್ಯತ್ಯಾಸಗಳು, ಅವುಗಳ ನಿಯಮಗಳು ಮತ್ತು ಪ್ಯಾರಾಮೀಟರ್‌ಗಳು ಈ ಕೆಳಗಿನಂತಿವೆ:
+
+### 1. ಪ್ರಮುಖ ನಿಯಮಗಳು ಮತ್ತು ಪ್ಯಾರಾಮೀಟರ್‌ಗಳು (Main Rules & Parameters)
+
+| ವಿಷಯ | PM-KISAN (ಪ್ರಧಾನ ಮಂತ್ರಿ ಕಿಸಾನ್ ಸಮ್ಮಾನ್ ನಿಧಿ) | Rythu Bandhu (ರೈತು ಬಂಧು) |
+| :--- | :--- | :--- |
+| **ಸ್ಕೀಮೆಯ ಪ್ರಕಾರ** | **ಕೇಂದ್ರ ಸರ್ಕಾರದ** ಯೋಜನೆ (Central Government Scheme). | **ಆಂಧ್ರ ಪ್ರದೇಶ ಸರ್ಕಾರದ** ಯೋಜನೆ (State Government Scheme). |
+| **ಹಣದ ಪ್ರಮಾಣ** | ವರ್ಷಕ್ಕೆ **₹6,000** (3 ಕಂತುಗಳಲ್ಲಿ, ಪ್ರತಿ ಕಂತು ₹2,000). | ವರ್ಷಕ್ಕೆ **₹10,000** (2 ಕಂತುಗಳಲ್ಲಿ, ಪ್ರತಿ ಕಂತು ₹5,000). |
+| **ಭೂಮಿಯ ಮಿತಿ** | **ಯಾವುದೇ ಮಿತಿ ಇಲ್ಲ.** ಎಲ್ಲಾ ರೀತಿಯ ಕೃಷಿ ಭೂಮಿ (ಸಣ್ಣ, ಮಧ್ಯಮ, ದೊಡ್ಡ) ಹೊಂದಿರುವ ರೈತರಿಗೆ ಅನ್ವಯಿಸುತ್ತದೆ. | **ಮಿತಿ ಇದೆ.** ಸಾಮಾನ್ಯವಾಗಿ **2 ಎಕರೆ** ವರೆಗಿನ ಕೃಷಿ ಭೂಮಿ ಹೊಂದಿರುವ ರೈತರಿಗೆ ಮಾತ್ರ ಪೂರ್ಣ ಪ್ರಯೋಜನ. 2 ಎಕರೆಗಿಂತ ಹೆಚ್ಚಿರುವವರಿಗೆ ಪ್ರತಿ ಎಕರೆಗೆ ₹5,000 (ಒಟ್ಟು ₹10,000 ಮಿತಿ). |
+| **ಅರ್ಹತೆ (Eligibility)** | ಭಾರತದ ಯಾವುದೇ ರಾಜ್ಯದ ಕೃಷಿಕರು. | **ಆಂಧ್ರ ಪ್ರದೇಶ ರಾಜ್ಯ",,,,,
+W035,"Arbitration Act Time Limit er regarding main rule, date ba parameter ki?",12 months (extendable by 6 months).,"The **Arbitration and Conciliation Act, 1996** (as amended in 2015 and 2019) does **not** have a single, fixed ""time limit"" for the entire arbitration process (like a statute of limitations for filing a case). Instead, it has specific **time limits for specific stages** and a **general principle of expeditiousness**.
+
+Here are the key time limits and parameters:
+
+### 1. **Time Limit for Filing Arbitration Application (Section 21)**
+- **No fixed time limit** for initiating arbitration, **unless** the arbitration agreement itself specifies a time limit.
+- If the agreement says ""claims must be filed within 1 year,"" then that applies.
+- If no time is specified, the general **Limitation Act, 1963** applies (usually **3 years** for civil claims).
+
+### 2. **Time Limit for Appointing Arbitrator (Section 11)**
+- If the parties fail to appoint an arbitrator, the court must appoint one **within 30 days** of the application.
+- The court may extend this period for a further **30 days** if necessary.
+
+### 3. **Time Limit for Arbitral Proceedings (Section 31)**
+- **No fixed statutory time limit** for the arbitrator to pass the award.
+- However, the arbitrator is required to proceed **expeditiously** and avoid unnecessary delay.
+- The **arbitration agreement** may specify a time limit (e.g., ""award to be passed within 6 months""). If not specified, the arbitrator has discretion, but courts can intervene if there is **unreasonable delay**.
+
+### 4. **Time Limit for Challenging the Award (Section 34)**
+- A party can file an application to set aside the award **within 3 months** from the date of the award.
+- This period can be extended by **30 days** if the court is satisfied with sufficient cause.
+
+### 5. **Time Limit for Enforcement of Award (Section 36)**
+- The award is enforceable as a **decreed of the court**.
+- The **Limitation Act, 1963** applies for enforcement (usually **3 years** from the date of the award).
+
+### 6. **Time Limit for Interim Measures (Section",,,,,
+W036,"Environment Clearance Public Hearing ke regarding main rule, date ya parameter kya hai?",Exempted inside notified industrial estates or defense projects.,"India mein **Environment Clearance (EC)** ke liye Public Hearing (Janshik Sunwai) ke baare mein main rules, dates aur parameters neeche diye gaye hain. Yeh process **Environmental Impact Assessment (EIA) Notification, 2006** (jaise ki 2016 mein amended) ke under aata hai.
+
+### 1. **Kis Project ke liye Public Hearing Zaroori Hai?**
+Public Hearing sirf un projects ke liye zaroori hai jo **Category A** mein aate hain (jo MoEFCC - Ministry of Environment, Forest and Climate Change ki taraf se clear kiye jaate hain).
+- **Category B** projects (State Level) ke liye bhi public hearing hoti hai, lekin uska process State Pollution Control Board (SPCB) ya State Environment Impact Assessment Authority (SEIAA) ke rules ke mutabik hota hai.
+- **Category C** projects ke liye public hearing ki zaroorat nahi hoti.
+
+### 2. **Public Hearing Kab Hoti Hai? (Process & Timeline)**
+Public Hearing **EIA Study ke dauran** hoti hai, jab project proponent (company) ne EIA report submit ki ho.
+
+#### **Step-by-Step Process:**
+1. **EIA Report ki Drafting:** Project proponent EIA report taiyar karta hai.
+2. **Public Notice:** EIA report ki ek **summary** (Hindi aur English dono mein) local newspapers mein publish hoti hai.
+   - **Timing:** Public Hearing se **kam se kam 30 din pehle** notice dena zaroori hai.
+3. **Public Hearing Meeting:**
+   - Meeting project site ke paas ya district headquarters mein hoti hai.
+   - Isme local residents, NGOs, experts, aur government officials shamil hote hain.
+   - Project ke environmental impacts, mitigation measures, aur alternatives par discussion hota hai.
+4. **Public Comments ka Submission:**
+   - Public hearing ke baad, log apne comments likh kar submit kar sakte hain.
+   - **Deadline:** Public hearing ke din se **30 din ke andar** comments submit kiye ja sakte hain.
+5. **Final EIA Report:**
+   - Project proponent public comments ka jawab deta hai aur final EIA",,,,,
+W037,"PMFBY vs WBCIS এর regarding main rule, date বা parameter কী?",PMFBY is crop yield-based; WBCIS is weather index-based.,"PMFBY (Pradhan Mantri Fasal Bima Yojana) এবং WBCIS (West Bengal Crop Insurance Scheme) মূলত দুটি ভিন্ন ধরনের কৃষি বীমা প্রোগ্রাম। নিচে এদের মূল পার্থক্য, নিয়ম এবং প্যারামিটারগুলো তুলনা করা হলো:
+
+### ১. মূল পার্থক্য (Main Difference)
+*   **PMFBY:** এটি একটি **কেন্দ্রীয় সরকারের** (Central Government) প্রকল্প। এটি ভারতের সব রাজ্যে প্রযোজ্য।
+*   **WBCIS:** এটি **পশ্চিমবঙ্গ রাজ্য সরকারের** একটি আলাদা প্রকল্প। এটি শুধুমাত্র পশ্চিমবঙ্গের কৃষকদের জন্য।
+
+### ২. মূল নিয়ম ও প্যারামিটার (Key Rules & Parameters)
+
+| বিষয় (Parameter) | PMFBY | WBCIS |
+| :--- | :--- | :--- |
+| **প্রধান লক্ষ্য** | জাতীয় পর্যায়ে কৃষকদের আর্থিক সুরক্ষা দেওয়া। | পশ্চিমবঙ্গের কৃষকদের জন্য বিশেষ সুবিধা ও সহজ প্রক্রিয়া। |
+| **প্রিমিয়াম (Premium)** | কৃষকরা খুব কম প্রিমিয়াম দেন (যেমন: রবি ফসলে ২%, খরিপ ফসলে ১.৫%)। বাকি অংশ কেন্দ্র ও রাজ্য সরকার ভাগ করে দেয়। | প্রিমিয়াম সাধারণত PMFBY-এর চেয়ে **কম** বা **শূন্য** হতে পারে (রাজ্য সরকার প্রিমিয়ামের বেশিরভাগ অংশ বা পুরোটা বহন করে)। |
+| **ফসলের আওতা (Covered Crops)** | সব ধরনের ফসল (খরিপ, রবি, বাগান ফসল)। | মূলত **খরিপ** এবং **রবি** ফসল। কিছু বিশেষ ফসলের জন্য আলাদা শর্ত থাকতে পারে। |
+| **ক্ষতি মূল্য",,,,,
+W038,"RTI Third Party Information pathi main rule, date illa parameter enna?",Within 5 days from receipt of request.,"RTI Act, 2005-oda **Section 2(j)**-la ""Third Party Information"" pathi main rule irukku.
+
+**Rule:**
+""Third Party Information"" enna solluvathu, **information** (vaazhvu) oru **person** (individual or organization) ku related-a irundhu, ah person-oda **consent** (anumithi) illama, ah person-oda **right** (adhikaram) ku related-a irundhu, ah person-oda **privacy** (nirvanga) ku related-a irundhu, ah person-oda **commercial interest** (vazhvu) ku related-a irundhu, ah person-oda **confidentiality** (rahasyam) ku related-a irundhu, ah person-oda **legal privilege** (nizhama adhikaram) ku related-a irundhu, ah person-oda **trade secret** (vazhvu) ku related-a irundhu, ah person-oda **intellectual property** (manusha mudi) ku related-a irundhu, ah person-oda **copyright** (copyright) ku related-a irundhu, ah person-oda **patent** (patent) ku related-a irundhu, ah person-oda **trademark** (trademark) ku related-a irundhu, ah person-oda **design** (design) ku related-a irundhu, ah person-oda **industrial design** (industrial design) ku related-a irundhu, ah person-oda **layout design** (layout design) ku related-a irundhu, ah person-oda **geographical indication** (geographical indication) ku related-a irundhu, ah person-oda **appellation of origin** (appellation of origin) ku related-a irundhu, ah person-oda **plant variety** (plant variety) ku related-a irundhu, ah person-oda **microorganism** (microorganism) ku related-a irundhu, ah person-oda **integrated circuit** (integrated circuit) ku related-a irundhu, ah person-oda **topography** (topography) ku related-a irundhu, ah person-oda **database** (database) ku related-a irundhu, ah person-oda **software** (software) ku related-a irundhu, ah",,,,,
+W039,"Companies Act CSR Mandate के regarding main rule, date या parameter क्या है?","Net worth ≥ ₹500 Cr, Turnover ≥ ₹1000 Cr, or Net Profit ≥ ₹5 Cr.","भारतीय कंपनी अधिनियम (Companies Act, 2013) के तहत CSR (Corporate Social Responsibility) के लिए मुख्य नियम, तारीख और पैरामीटर निम्नलिखित हैं:
+
+### 1. **मुख्य नियम (Section 135)**
+*   **अनुच्छेद 135** के तहत, निम्नलिखित शर्तों में से **किसी एक** को पूरा करने वाली प्रत्येक कंपनी को CSR खर्च करना अनिवार्य है:
+    *   **Net Worth (शुद्ध मूल्य):** ₹500 करोड़ या अधिक
+    *   **Turnover (विक्रय):** ₹1,000 करोड़ या अधिक
+    *   **Net Profit (शुद्ध लाभ):** ₹5 करोड़ या अधिक
+
+### 2. **CSR खर्च का प्रतिशत (Parameter)**
+*   ऐसी कंपनियों को अपने **पिछले वित्तीय वर्ष के शुद्ध लाभ (Net Profit) के 2%** का खर्च CSR गतिविधियों पर करना अनिवार्य है।
+*   यदि कंपनी इस राशि का खर्च नहीं करती है, तो उसे बोर्ड की बैठक में इसका कारण स्पष्ट करना होगा।
+
+### 3. **तारीख (Effective Date)**
+*   **मूल नियम:** 1 अप्रैल 2014 से लागू हुआ।
+*   **अद्यतन नियम (2021 संशोधन):** 22 मार्च 2021 को संशोधित नियम लागू हुए, जिनमें:
+    *   CSR खर्च की गणना के लिए ""Net Profit"" की परिभाषा स्पष्ट की गई (जो कि कंपनी अधिनियम के अनुच्छेद 198 के अनुसार निर्धारित है)।
+    *   CSR खर्च को **अनुसूची VII** में उल्लिखित गतिविधियों पर ही खर्च किया जा सकता है।
+    *   **Unspent CSR Amount:** यदि कोई राशि खर्च नहीं हो पाती है, तो उसे अगले 3 वित्तीय वर्षों में खर्च किया जा सकता है। यदि 3",,,,,
+W040,"NEFT vs RTGS के regarding main rule, date या parameter क्या है?",NEFT has no minimum limit and settles in batches; RTGS has ₹2 Lakh minimum and settles real-time.,"NEFT और RTGS के बीच का सबसे बड़ा और मुख्य अंतर **ट्रांज़ैक्शन लिमिट (Transaction Limit)** यानी कि पैसे की राशि है।
+
+यहाँ मुख्य नियम और पैरामीटर्स दिए गए हैं:
+
+### 1. ट्रांज़ैक्शन लिमिट (सबसे महत्वपूर्ण नियम)
+*   **RTGS (Real Time Gross Settlement):**
+    *   **न्यूनतम राशि:** ₹2 लाख (₹2,00,000) से अधिक।
+    *   **अधिकतम राशि:** कोई अधिकतम सीमा नहीं है (Unlimited)।
+    *   *नोट:* यह बड़ी राशियों के लिए है।
+*   **NEFT (National Electronic Funds Transfer):**
+    *   **न्यूनतम राशि:** कोई न्यूनतम सीमा नहीं है (आप ₹1 से भी भेज सकते हैं)।
+    *   **अधिकतम राशि:** ₹10 लाख (₹10,00,000) तक।
+    *   *नोट:* ₹10 लाख से अधिक की राशि भेजने के लिए आपको RTGS का उपयोग करना होगा।
+
+### 2. टाइमिंग (कब चलता है?)
+*   **RTGS:**
+    *   यह **Real Time** (तुरंत) होता है।
+    *   बैंकिंग घंटों में (सामान्यतः सुबह 9:00 से शाम 4:00/5:00 बजे तक, बैंक के अनुसार) उपलब्ध है।
+    *   यह 24x7 उपलब्ध **नहीं** है (हालांकि RBI ने हाल ही में कुछ बदलाव किए हैं, लेकिन मुख्य रूप से यह बैंकिंग घंटों में चलता है)।
+*   **NEFT:**
+    *   यह **Batch** (बैच) में होता है।
+    *   यह **24x7** उपलब्ध है (सभी 7 दिन, 24 घंटे)।
+    *   पैसे अगले बैच में ट्रांसफर होते हैं (आमतौर पर हर 30 मिनट या",,,,,
+W041,"PMFBY vs WBCIS గురించి main rule, date లేదా parameter ఏమిటి?",PMFBY is crop yield-based; WBCIS is weather index-based.,"PMFBY (Pradhan Mantri Fasal Bima Yojana) మరియు WBCIS (West Bengal Crop Insurance Scheme) మధ్య ప్రధాన తేడా **ప్రభుత్వం రూపొందించిన పథకం (Central Scheme) vs రాష్ట్ర ప్రభుత్వం రూపొందించిన పథకం (State Scheme)** అనేది.
+
+ఇక్కడ ప్రధాన పారామితులు (Parameters) మరియు తేడాలు:
+
+### 1. ప్రధాన నియమం / స్వభావం (Main Rule/Nature)
+*   **PMFBY:** ఇది **కేంద్ర ప్రభుత్వ పథకం**. దీనిని కేంద్ర వ్యవసాయ శాఖ (Ministry of Agriculture & Farmers Welfare) అమలు చేస్తుంది. ఇది దేశవ్యాప్తంగా (India-wide) అమలులో ఉంది.
+*   **WBCIS:** ఇది **పశ్చిమ బెంగాల్ రాష్ట్ర ప్రభుత్వం** రూపొందించిన పథకం. ఇది కేవలం పశ్చిమ బెంగాల్ రాష్ట్రంలోని రైతులకు మాత్రమే అనుసంధానం.
+
+### 2. ప్రీమియం భాగస్వామ్యం (Premium Subsidy)
+*   **PMFBY:**
+    *   రైతులు తక్కువ ప్రీమియం చెల్లించాలి (సాధారణంగా 1.5% నుండి 2% వరకు, పంటలపై ఆధారపడి).
+    *   మిగిలిన ప్రీమియం భాగం కేంద్ర ప్రభుత్వం మరియు రాష్ట్ర ప్రభుత్వం పంచుకుంటాయి.
+*   **WBCIS:**
+    *   పశ్చిమ బెంగాల్ ప్రభుత్వం రైతులకు **100% ప్రీమియం సబ్సిడీ** ఇస్తుంది (కొన్ని సందర్భాల్లో). అంటే, రాష్",,,,,
+W042,"What is the main rule, date or parameter regarding Companies Act CSR Mandate?","Net worth ≥ ₹500 Cr, Turnover ≥ ₹1000 Cr, or Net Profit ≥ ₹5 Cr.","The main rule regarding the Corporate Social Responsibility (CSR) mandate under the **Companies Act, 2013** is found in **Section 135**.
+
+### Key Parameter:
+A company is required to constitute a CSR Committee and spend **at least 2% of its average net profits** made during the three immediately preceding financial years, on CSR activities.
+
+### Conditions for Applicability (as per Section 135(1)):
+The mandate applies to every company (including foreign companies) that meets **any one** of the following criteria during the immediately preceding financial year:
+
+1. **Net Worth** of ₹500 crore or more; **OR**
+2. **Turnover** of ₹1,000 crore or more; **OR**
+3. **Net Profit** of ₹5 crore or more.
+
+### Important Dates:
+- **Original Effective Date:** The CSR provisions came into force on **1 April 2014**.
+- **First Compliance Year:** Companies had to start spending from the financial year beginning on or after **1 April 2014** (i.e., FY 2014-15).
+- **Amendments:** The Companies (Amendment) Act, 2017, and subsequent rules (Companies (Corporate Social Responsibility Policy) Rules, 2014, as amended) refined the definitions and reporting requirements.
+
+### Key Points:
+- Unspent CSR amount must be transferred to a special account called the **Unspent CSR Account** within 30 days of the end of the financial year.
+- The unspent amount must be utilized within **three financial years** from the date it was set aside.
+- Companies must disclose CSR activities in their Board’s Report and Annual Report.
+
+This mandate aims to ensure that large Indian companies contribute to social and environmental causes as part of their corporate governance.",,,,,
+W043,"Lok Sabha vs Rajya Sabha Money Bill pathi main rule, date illa parameter enna?",Rajya Sabha cannot reject or amend Money Bills and has only 14 days to return.,"Lok Sabha and Rajya Sabha-oda Money Bill (Kashu Bill) pathi main rules, dates, and parameters-oda clear explanation thiruvathu:
+
+### 1. **Money Bill-oda Definition (Article 110)**
+Money Bill-oda definition **Article 110** la irukku. Aana, ekka bill Money Bill-na irukku-na, **Lok Sabha Speaker** (Speaker of the House) maathrum decide pannuvathu. Rajya Sabha-ku illa Supreme Court-ku-um challenge panna vishayam illa.
+
+### 2. **Money Bill-oda Main Rules (Parameters)**
+Ekka bill Money Bill-na irukku-na, ethavathu **Article 110(1)** la mention pannirukku:
+*   Taxation (taxes) introduce panna, change panna, illa cancel panna.
+*   Government-oda debt (loans) raise panna.
+*   Consolidated Fund of India-ku money spend panna.
+*   Government-oda financial obligations (liabilities) create panna.
+*   Audit of accounts of the Union.
+
+**Note:** Ekka bill-oda main purpose-um content-um financial nature-la irukku-na, Speaker Money Bill-na declare pannuvathu.
+
+### 3. **Rajya Sabha-oda Role in Money Bill (Article 109)**
+Money Bill-ku Rajya Sabha-ku **veto power illa**. Aana, Rajya Sabha-ku **delay power** irukku.
+
+*   **Lok Sabha** Money Bill pass pannirathu.
+*   **Rajya Sabha** ku send pannirathu.
+*   Rajya Sabha-ku **14 days** (2 weeks) time irukku.
+*   **14 days la:**
+    *   Rajya Sabha **amendments** suggest panna vishayam irukku.
+    *   Aana, Lok Sabha-ku **accept panna vishayam illa**. Lok Sabha-ku amendments-oda accept panna illa reject panna full power irukku.
+    *   Rajya Sabha **reject panna vishayam illa**.
+    *   Rajya Sabha **14 days la action vechilla** (no",,,,,
+W044,"What is the main rule, date or parameter regarding NEFT vs RTGS?",NEFT has no minimum limit and settles in batches; RTGS has ₹2 Lakh minimum and settles real-time.,"The main parameter distinguishing **NEFT** (National Electronic Funds Transfer) from **RTGS** (Real Time Gross Settlement) is the **minimum transaction amount** and the **settlement mechanism**.
+
+### 1. Minimum Transaction Amount (Key Rule)
+*   **RTGS**: Mandatory for transactions **above ₹20 lakhs** (₹2,00,000).
+*   **NEFT**: Can be used for **any amount**, including below ₹20 lakhs. (Note: Banks may have their own lower limits, but there is no RBI-mandated minimum for NEFT).
+
+### 2. Settlement Mechanism
+*   **RTGS**: **Real-time, gross settlement**. Each transaction is settled individually and immediately (24x7). It is the highest priority for large-value transfers.
+*   **NEFT**: **Batch processing**. Transactions are processed in batches (typically every 30 minutes, 24x7). It is not real-time but is highly reliable for smaller to medium-value transfers.
+
+### Summary Table
+
+| Parameter | RTGS | NEFT |
+| :--- | :--- | :--- |
+| **Min. Amount** | **Above ₹20 lakhs** | **Any amount** (No minimum) |
+| **Settlement** | Real-time, individual | Batch-wise (every 30 mins) |
+| **Speed** | Immediate (24x7) | Within 30 mins to 1 hour (24x7) |
+| **Use Case** | Large corporate/government payments | Salary, rent, small business, personal transfers |
+
+### Important Note:
+*   **24x7 Availability**: Both NEFT and RTGS are now available **24 hours a day, 7 days a week**, including weekends and holidays (as per RBI guidelines effective from 2023).
+*   **Mandatory Use**: If you are transferring **more than ₹20 lakhs**, you **must** use RTGS. You cannot use NEFT for amounts above this threshold.
+
+**In short:**
+*   **> ₹20 lakhs?** → Use **RTGS**.
+*   **≤ ₹20 lakhs?** → Use **NEFT** (or UPI for smaller amounts).",,,,,
+W045,"NEFT vs RTGS பத்தி main rule, date இல்ல parameter என்ன?",NEFT has no minimum limit and settles in batches; RTGS has ₹2 Lakh minimum and settles real-time.,"NEFT மற்றும் RTGS-க்கு இடையேயான முக்கிய விதிகள், தேதிகள் மற்றும் அளவுகோல்கள் (parameters) கீழே கொடுக்கப்பட்டுள்ளன:
+
+**1. பணம் பரிமாற்றத்தின் அளவு (Transaction Limit):**
+*   **RTGS:** குறைந்தபட்சம் **₹2 லட்சம்** முதல் அதிகபட்சம் **₹20 லட்சம்** வரை (அல்லது அதற்கு மேல்) பணம் பரிமாற்றம் செய்யலாம்.
+*   **NEFT:** **₹1 லட்சம்** வரை (அல்லது அதற்கு மேல்) எந்த அளவு பணம் வேண்டுமானாலும் பரிமாற்றம் செய்யலாம். (குறிப்பு: சில வங்கிகள் NEFT-க்கு குறைந்தபட்ச அளவு வரம்புகளை வைத்திருக்கலாம், ஆனால் பொதுவாக எந்த அளவுக்கும் NEFT பயன்படுத்தலாம்).
+
+**2. செயல்பாட்டு நேரம் (Operating Hours):**
+*   **RTGS:** வாரம் 6 நாட்கள் (திங்கள் முதல் சனி வரை) காலை 9:00 மணி முதல் மாலை 4:00 மணி வரை மட்டுமே செயல்படும். (சில வங்கிகள் இப்போது 24x7 RTGS-ஐ அறிமுகப்படுத்தியுள்ளன, ஆனால் அதிகாரப்பூர்வமாக இன்னும் முழுமையாக அமல்படுத்தப்படவில்லை).
+*   **NEFT:** **24 மணி நேரமும், வாரம் 7 நாட்களும்** (24x7) செயல்படும். (2020-ஆம் ஆண்டு முதல் NEFT 24x7 அடிப்படையில் செயல்படுகிறது).
+
+**3. பணம் பரிமாற்ற முறை (Settlement Method):**
+*   **RTGS:** **Real-Time Gross Settlement** (நிகழ்நேரத்தில் தனித்தனியாக). அதாவது, நீங்கள் பணத்தை அனுப்பும்போது, அது உடனடியாக (real-time) பெறு",,,,,
+W046,"GST Registration Exemption ke regarding main rule, date ya parameter kya hai?",Turnover does not exceed ₹40 Lakh (for goods).,"GST Registration ke liye exemption (mufti) ka main rule **turnover (vikriti) limit** par depend karta hai. Isse ""Threshold Limit"" kehte hain.
+
+Yahan main parameters aur dates hain:
+
+### 1. Main Rule (Threshold Limit)
+Agar aapka annual turnover (vikriti) in limits se kam hai, toh aapko GST register karne ki zaroorat nahi hai (except kuch specific cases mein):
+
+*   **Goods (Samagri) bechne wale:** ₹40 Lakh per annum
+*   **Services (Seva) dene wale:** ₹20 Lakh per annum
+
+> **Note:** Agar aap **Special Category States** (Jammu & Kashmir, Himachal Pradesh, Uttarakhand, Northeastern states, etc.) mein hain, toh limit thodi kam hai:
+> *   Goods: ₹20 Lakh
+> *   Services: ₹10 Lakh
+
+### 2. Kya date matter karti hai?
+*   **Registration Date:** GST registration ki koi fixed ""exemption date"" nahi hai. Yeh rule **2017 se shuru** hua tha aur abhi bhi valid hai.
+*   **Turnover Calculation Date:** Turnover ko **financial year** (April se March) ke hisaab se calculate kiya jata hai. Agar aapka turnover us financial year mein limit se zyada ho gaya, toh aapko **15 din ke andar** GST register karna hoga.
+
+### 3. Kya hoga agar limit se zyada turnover ho?
+Agar aapka turnover ₹40 Lakh (goods) ya ₹20 Lakh (services) se zyada ho jata hai, toh aapko **compulsory GST registration** karna hoga.
+
+### 4. Kuch Exceptions (Jahan limit se kam turnover ho bhi, registration zaroori hai):
+Chhote turnover ke bawajood, in cases mein GST registration **zaroori** hai:
+*   Agar aap **inter-state supply** (do alag states mein) kar rahe hain.
+*   Agar aap **e-commerce platform** (jaise Amazon, Flipkart) ke through bech rahe hain.
+*   Agar a",,,,,
+W047,"PMFBY vs WBCIS pathi main rule, date illa parameter enna?",PMFBY is crop yield-based; WBCIS is weather index-based.,"PMFBY (Pradhan Mantri Fasal Bima Yojana) and WBCIS (West Bengal Crop Insurance Scheme) are two different crop insurance schemes. Here is a comparison based on the main rules, dates, and parameters:
+
+### 1. **Governing Authority & Scope**
+*   **PMFBY:**
+    *   **Central Government Scheme:** Launched by the Government of India in 2016.
+    *   **Applicable in:** All states and Union Territories of India.
+    *   **Managed by:** Ministry of Agriculture & Farmers Welfare, Govt. of India.
+*   **WBCIS:**
+    *   **State Government Scheme:** Launched by the Government of West Bengal.
+    *   **Applicable in:** Only within the state of West Bengal.
+    *   **Managed by:** Department of Agriculture & Farmers’ Welfare, Govt. of West Bengal.
+
+### 2. **Premium Rate (Main Parameter)**
+*   **PMFBY:**
+    *   **Kharif Crops:** 2% of sum insured.
+    *   **Rabi Crops:** 1.5% of sum insured.
+    *   **Commercial/Industrial/Horticultural Crops:** 5% of sum insured.
+    *   *Note:* The central government provides a subsidy to bring the effective premium down to 1-2% for farmers.
+*   **WBCIS:**
+    *   **Premium:** Typically **1.5% to 2%** of the sum insured (varies by crop and season).
+    *   *Note:* The West Bengal government often provides a higher subsidy or full premium support for certain vulnerable sections (like small/marginal farmers) compared to the central scheme.
+
+### 3. **Sum Insured (Coverage Amount)**
+*   **PMFBY:**
+    *   Based on the **Fair and Remunerative Price (FRP)** or **Minimum Support Price (MSP)** notified by the government for that crop.
+    *   Farmers can choose to insure up to the MSP/FRP value.
+*   **WBCIS:**
+    *   Also based on **MSP/FRP** or **Market Price** (whichever is higher in some cases).
+    *   The state government may set specific sum insured limits for certain crops (e.g., paddy, jute",,,,,
+W048,"ISRO PSLV vs GSLV Mk III bagge main rule, date athava parameter yenu?","PSLV carries 1,750 kg to SSO; GSLV Mk III carries 4,000 kg to GTO using cryogenic stage.","ISRO chi **PSLV (Polar Satellite Launch Vehicle)** ani **GSLV Mk III (Geosynchronous Satellite Launch Vehicle Mark III)** madhe mukhya farak (differences) hea don launch vehicles chi **capacity (bhaari uddvhan korpachi shakti)**, **orbit (gati path)**, ani **design** hancher adharit asa.
+
+Hea don madhe mukhya farak sokoil dil'lea pramane asa:
+
+### 1. Capacity (Payload Capacity)
+*   **PSLV:** He ek ""workhorse"" (karmkari) launch vehicle asa. He **LEO (Low Earth Orbit)** madhe **3,000 kg** purai bhaari uddvhan korta. Taka **GTO (Geostationary Transfer Orbit)** madhe **1,500 kg** purai bhaari uddvhan korpachi shakti asa.
+*   **GSLV Mk III:** He ISRO chi **saktiman** launch vehicle asa. He **LEO** madhe **4,000 kg** purai bhaari uddvhan korta. Taka **GTO** madhe **4,000 kg** purai bhaari uddvhan korpachi shakti asa.
+    *   *Nishkarsh:* GSLV Mk III, PSLV peksha **2 gune** chodd bhaari uddvhan korta.
+
+### 2. Orbit (Gati Path)
+*   **PSLV:** He mukhep **Polar Orbit** ani **Sun-Synchronous Orbit** madhe satelait uddvhan korpak design kelela asa. He **GTO** madhe satelait uddvhan korpak ksham asa, punn tachi shakti sorkhali (limited) asa.
+*   **GSLV Mk III:** He mukhep **GTO (Geostationary Transfer Orbit)** madhe **bhari satelait** (jho **GSAT** series) uddvhan korpak design kelela asa. He **LEO** madhe satelait uddvhan korpak ksham asa.
+
+### 3. Design ani Stages
+*   **PSLV:** He **4",,,,,
+W049,"ISRO PSLV vs GSLV Mk III గురించి main rule, date లేదా parameter ఏమిటి?","PSLV carries 1,750 kg to SSO; GSLV Mk III carries 4,000 kg to GTO using cryogenic stage.","ISRO యొక్క PSLV (Polar Satellite Launch Vehicle) మరియు GSLV Mk III (LVM3) మధ్య ప్రధాన తేడా **పేలోడ్ కెపాసిటీ (Payload Capacity)** మరియు **ఉద్దేశ్యం** (Purpose) లో ఉంది.
+
+ఇక్కడ ప్రధాన పరామితులు (Key Parameters) మరియు తేడాలు:
+
+### 1. ప్రధాన పరామితులు (Key Parameters)
+
+| పరామితు (Parameter) | PSLV (Polar Satellite Launch Vehicle) | GSLV Mk III (LVM3) |
+| :--- | :--- | :--- |
+| **పేలోడ్ కెపాసిటీ (GTO)** | ~1,500 - 2,000 కిలోగ్రాములు | ~4,000 - 4,500 కిలోగ్రాములు |
+| **పేలోడ్ కెపాసిటీ (LEO)** | ~3,000 - 4,000 కిలోగ్రాములు | ~8,000 - 10,000 కిలోగ్రాములు |
+| **ఉద్దేశ్యం** | ప్రధానంగా **పొలార్ కక్ష్యలు** (Polar Orbits) మరియు LEOకి ఉపగ్రహాలను పంపడానికి. | **GEO** (Geostationary Orbit) మరియు భారీ ఉపగ్రహాలను, చంద్రుని/గ్రహాలకు పంపడానికి. |
+| **స్థాయిలు (Stages)** | 4 స్థాయిలు (3 ఘన ఇంజిన్లు + 1 ద్రవ ఇంజిన్) | 3 స్థాయిలు (2 ఘన బూస్టర్లు + 1 ద్రవ స్టేజ్ + 1 ద్రవ అప్-స్టేజ్) |
+| **ఇంధనం** | ఘన ఇంధనం (Solid Propellant) ప్రధానంగా. | ద్రవ ఇంధనం (Liquid Propellant - LOX/LH2) ప్రధానంగా. |",,,,,
+W050,"Supreme Court vs High Court Writ Jurisdiction pathi main rule, date illa parameter enna?",Article 226 has wider jurisdiction covering fundamental and other statutory legal rights.,"Supreme Court (SC) and High Court (HC) writ jurisdiction pathi main rules, dates, and parameters enna nu solrathu:
+
+### 1. **Constitutional Provisions (Rules)**
+*   **High Court Writ Jurisdiction:**
+    *   **Article 226:** High Courts have the power to issue writs for the enforcement of fundamental rights **and** for any other purpose (i.e., for legal rights too).
+    *   **Article 226(2):** This power is wider than Article 32.
+*   **Supreme Court Writ Jurisdiction:**
+    *   **Article 32:** Supreme Court has the power to issue writs **only** for the enforcement of **Fundamental Rights** (Part III of the Constitution).
+    *   **Article 136:** Supreme Court can grant special leave petition (SLP) in any case, but this is not a ""writ"" under Article 32.
+
+### 2. **Key Differences (Parameters)**
+
+| Parameter | High Court (Art 226) | Supreme Court (Art 32) |
+| :--- | :--- | :--- |
+| **Scope** | **Wider**: Can issue writs for Fundamental Rights **and** other legal/statutory rights. | **Narrower**: Can issue writs **only** for Fundamental Rights. |
+| **Jurisdiction** | **Territorial**: HC can issue writs only within its territorial jurisdiction. | **National**: SC can issue writs anywhere in India. |
+| **Remedy** | Can be approached directly for any violation of law/rights. | Can be approached only if Fundamental Rights are violated. |
+| **Preference** | Generally, people prefer HC because it is faster and covers more grounds. | People approach SC only if HC fails or if the matter is of national importance. |
+
+### 3. **Important Dates & Landmark Cases**
+*   **1950:** Constitution came into force. Articles 32 and 226 became effective.
+*   **1970 – *Keshavananda Bharati v. State of Kerala*:** Established that Fundamental Rights are basic structure.
+*   **1978 – *Maneka Gandhi v. Union of India*:** Expanded the scope of Article 21 (Right to Life) and made writ",,,,,
+W051,"Companies Act CSR Mandate gurinchi main rule, date leda parameter enti?","Net worth ≥ ₹500 Cr, Turnover ≥ ₹1000 Cr, or Net Profit ≥ ₹5 Cr.","India lo Companies Act, 2013 Section 135 anukulu lo CSR (Corporate Social Responsibility) mandate enti cheppali. Idi 2014 lo introduce ayyindi, kani practical implementation 2014 March 1 lo start ayyindi.
+
+**Main Rule (Eligibility Criteria):**
+Ekka company ki CSR spend cheyali ane rule idi:
+Company ki **average net worth** (average net worth) **₹500 Crores** vachina, **average income** (average income) **₹1000 Crores** vachina, leda **average turnover** (average turnover) **₹1000 Crores** vachina – inka **ekka** condition satisfy ayyina, aa company ki CSR spend cheyali.
+
+**CSR Spend Amount (Parameter):**
+Eligible companies ki, aa financial year lo **average net profits** (average net profits) lo **2%** vachina amount spend cheyali.
+
+**Important Points:**
+1. **Net Profits Calculation:** Net profits ki calculation Companies Act Section 198 anukulu lo cheyali.
+2. **CSR Committee:** Eligible companies ki Board of Directors lo **CSR Committee** constitute cheyali. Idi minimum 3 directors tho unte cheyali, inka ekka director independent director undali.
+3. **CSR Policy:** Company ki ekka CSR Policy approve cheyali.
+4. **Reporting:** CSR activities ki details annual report lo disclose cheyali.
+5. **Unspent Amount:** Ekka financial year lo spend avvakapovada CSR amount ki, next 3 financial years lo spend cheyali.
+
+**Date:**
+- **Act Passed:** 2013 August 29
+- **CSR Rules Notified:** 2014 February 1
+- **Effective Date:** 2014 March 1
+
+**Note:** 2022 lo government ki new guidelines release ayyindi. Inka, CSR spending ki **CSR Register** (CSR-1) lo report cheyali.
+
+Inka specific questions unte, ask cheyandi!",,,,,
+W052,"Citizenship Amendment Act Cut-off ಬಗ್ಗೆ main rule, date ಅಥವಾ parameter ಯಾವುದು?",On or before 31 December 2014.,"Citizenship Amendment Act (CAA) 2019 ಅನುಸಾರ, ಭಾರತೀಯ ನಾಗರಿಕತ್ವ ಪಡೆಯಲು ನಿರ್ದಿಷ್ಟವಾದ ""Cut-off"" ದಿನಾಂಕವು **ಜನವರಿ 6, 2015** ಆಗಿದೆ.
+
+**ಮುಖ್ಯ ನಿಯಮಗಳು ಮತ್ತು ಪ್ಯಾರಾಮೀಟರ್‌ಗಳು:**
+
+1.  **ದಿನಾಂಕ (Date):** ಜನವರಿ 6, 2015 ರ **ಮೊದಲು** ಭಾರತಕ್ಕೆ ವಲಸೆ ಬಂದಿರಬೇಕು.
+2.  **ಧರ್ಮ (Religion):** ಈ ಕೆಳಗಿನ ಧರ್ಮಗಳಿಗೆ ಸೇರಿದವರಾಗಿದ್ದರೆ ಮಾತ್ರ ಅರ್ಹರು:
+    *   ಹಿಂದೂ
+    *   ಸಿಖ್
+    *   ಜೈನ
+    *   ಬೌದ್ಧ
+    *   ಪಾರ್ಸಿ
+    *   ಕ್ರೈಸ್ತ
+3.  **ಪ್ರಮುಖ ಷರತ್ತು:** ಆ ವ್ಯಕ್ತಿ **ಮುಸ್ಲಿಂ, ಇಸ್ಲಾಮ್, ಬಹೈ ಧರ್ಮ ಅಥವಾ ಕಮ್ಯೂನಿಸ್ಟ್** ಧರ್ಮಕ್ಕೆ ಸೇರಿದವರಾಗಿದ್ದರೆ, ಅವರು ಈ ಕಾಯ್ದೆಯಡಿ ಅರ್ಹರಲ್ಲರು.
+4.  **ವಾಸ (Residence):** ಆ ವ್ಯಕ್ತಿ ಭಾರತದಲ್ಲಿ ಕನಿಷ್ಠ **5 ವರ್ಷ** ನಿರಂತರವಾಗಿ ವಾಸವಿದ್ದಿರಬೇಕು (ಸಾಮಾನ್ಯ ನಾಗರಿಕತ್ವ ನಿಯಮದಂತೆ).
+
+**ಸಂಕ್ಷಿಪ್ತವಾಗಿ:**
+ಜನವರಿ 6, 2015 ರ ಮೊದಲು ಭಾರತಕ್ಕೆ ಬಂದಿರುವ ಮತ್ತು ಮೇಲೆ ಉಲ್ಲೇಖಿಸಿದ 6 ಧರ್ಮಗಳಿಗೆ ಸೇರಿದವರು CAA ಅಡಿಯಲ್ಲಿ ನಾಗರಿಕತ್ವಕ್ಕೆ ಅರ್ಜಿ ಸಲ್ಲಿಸಬಹುದು.",,,,,
+W053,"NEFT vs RTGS এর regarding main rule, date বা parameter কী?",NEFT has no minimum limit and settles in batches; RTGS has ₹2 Lakh minimum and settles real-time.,"NEFT এবং RTGS-এর মধ্যে প্রধান পার্থক্যটি মূলত **ট্রান্সফারের পরিমাণ (Transaction Amount)** এবং **সময় (Timing)** নিয়ে। নিচে সহজভাবে ব্যাখ্যা করা হলো:
+
+### ১. ট্রান্সফারের পরিমাণ (Amount Limit)
+*   **RTGS:** এটি **বড় টাকার লেনদেনের** জন্য ব্যবহৃত হয়।
+    *   **সর্বনিম্ন পরিমাণ:** ₹২,০০,০০০ (২ লাখ টাকা)।
+    *   **সর্বোচ্চ পরিমাণ:** কোনো সর্বোচ্চ সীমা নেই (Unlimited)।
+*   **NEFT:** এটি **ছোট থেকে মাঝারি টাকার লেনদেনের** জন্য ব্যবহৃত হয়।
+    *   **সর্বনিম্ন পরিমাণ:** ₹১ (কোনো সর্বনিম্ন সীমা নেই)।
+    *   **সর্বোচ্চ পরিমাণ:** ₹১০,০০,০০০ (১০ লাখ টাকা) পর্যন্ত।
+
+### ২. ট্রান্সফারের সময় (Timing)
+*   **RTGS:**
+    *   এটি **Real-Time Gross Settlement** (রিয়েল-টাইম গ্রস সেটেলমেন্ট)।
+    *   টাকা **তাৎক্ষণিকভাবে** (Instantly) এক ব্যাংক থেকে অন্য ব্যাংকে চলে যায়।
+    *   **সময়সীমা:** সাধারণত সপ্তাহে ৫ দিন (সোমবার-শুক্রবার), সকাল ১১:০০ থেকে বিকেল ৪:০০ পর্যন্ত (ব্যাংকভেদে সময় পরিবর্তন হতে পারে)।
+*   **NEFT:**
+    *   এটি **Batch Processing** (ব্যাচ প্রসেসিং)।
+    *   টাকা **৩০ মিনিট পরপর** এক ব্যাচ হিসেবে প্রসেস হয়।
+    *   **সময়সীমা:** **",,,,,
+W054,"Classical Tamil vs Sanskrit Grammar பத்தி main rule, date இல்ல parameter என்ன?",Tolkappiyam for Tamil; Ashtadhyayi (Panini) for Sanskrit.,"Classical Tamil (Sangam/Early Medieval) மற்றும் Sanskrit (Vedic/Classical) grammar-க்கு இடையே உள்ள முக்கிய வேறுபாடுகள், காலம் (Date) மற்றும் அடிப்படை விதிகள் (Main Rules/Parameters) பற்றிய விவரங்கள் கீழே கொடுக்கப்பட்டுள்ளன:
+
+### 1. காலம் (Date / Timeline)
+
+| அம்சம் | Classical Tamil (Sangam/Early Medieval) | Sanskrit (Vedic/Classical) |
+| :--- | :--- | :--- |
+| **தோற்றம்** | **சங்க காலம்:** கி.மு. 300 – கி.பி. 300 (Sangam Period).<br>**மத்திய காலம்:** கி.பி. 700 – 1200 (கபிலர், திருக்குறள் காலம்). | **வேத சமஸ்கிருதம்:** கி.மு. 1500 – கி.மு. 500 (Rig Veda முதல்).<br>**கிளாசிக்கல் சமஸ்கிருதம்:** கி.பி. 500 – 1200 (பாணி பட்டாச்சாரியர் காலம்). |
+| **முதல் நூல்** | **தொல்காப்பியம்** (Tolkappiyam) – கி.மு. 300 – கி.பி. 300 காலத்தைச் சேர்ந்தது. | **பாணி பட்டாச்சாரியர்** (Panini) – *Ashtadhyayi* – கி.மு. 500 – கி.மு. 400 காலத்தைச் சேர்ந்தது. |
+
+> **குறிப்பு:** தோல்காப்பியம் மற்றும் பாணி பட்டாச்சாரியர் இரண்டும் தங்கள் மொழிகளின் ""கிராப்பர்"" (Grammarian) ஆகியோர். ஆனால், பாணி பட்டாச்சாரியர் காலம் தோல்காப்பியத்தை விட சற்று முந்தையது அல்லது ஒரே காலப்பகு",,,,,
+W055,"Medical Termination of Pregnancy Act gurinchi main rule, date leda parameter enti?",Opinion of two registered medical practitioners.,"India lo **Medical Termination of Pregnancy (MTP) Act** gurinchi main rules, dates, parameters mari emi cheppali ante, 2021 lo unna amendments (changes) basis lo emi cheppali.
+
+**1. Act Name & Date:**
+*   **Act Name:** Medical Termination of Pregnancy (MTP) Act, 1971.
+*   **Last Amendment Date:** **2021** (Medical Termination of Pregnancy (Amendment) Act, 2021).
+*   **Effective Date:** 2021 lo hi implement ayyindi.
+
+**2. Main Rules & Parameters (2021 Amendment Basis):**
+
+*   **Gestation Period (Pregnancy Duration):**
+    *   **Up to 20 weeks:** Ek doctor (one registered medical practitioner) consent tho abortion possible.
+    *   **20 weeks to 24 weeks:** **Two doctors** (two registered medical practitioners) consent tho abortion possible.
+    *   *Note:* 2021 amendment muddalo 20 weeks limit undi, ikkada 24 weeks ki undi.
+
+*   **Who can get MTP? (Eligibility):**
+    *   **All women:** Age limit ledu. Minor (under 18) women ki, married/unmarried women ki, widows ki, pregnant women ki MTP right undi.
+    *   **Consent:** Woman consent mandatory. Minor (under 18) ante, parent or guardian consent ki required.
+
+*   **Special Cases (Beyond 24 weeks):**
+    *   **Substantial fetal abnormalities:** Fetus lo serious abnormalities (like anencephaly, severe neural tube defects) undi ante, **24 weeks ki oopulu** ki MTP possible.
+    *   **Risk to woman's life:** Woman life ki risk undi ante, any gestation period lo MTP possible.
+    *   **Rape victims:** Rape victims ki, gestation period limit ledu (any stage lo MTP possible).
+    *   **Mental illness:** Woman mental illness undi ante, her guardian or close relative consent tho MTP possible.
+
+*   **Where to get MTP? (Authorized Centers):**
+    *   **Up to 20 weeks:** Any registered medical practitioner (doctor) or authorized",,,,,
+W056,"Classical Tamil vs Sanskrit Grammar ಬಗ್ಗೆ main rule, date ಅಥವಾ parameter ಯಾವುದು?",Tolkappiyam for Tamil; Ashtadhyayi (Panini) for Sanskrit.,"Classical Tamil (Sangam/Early Medieval period) ಮತ್ತು Sanskrit grammar ನಡುವಿನ ಮುಖ್ಯ ವ್ಯತ್ಯಾಸಗಳು, ಅವುಗಳ ಉಗಮ ಕಾಲ (dates) ಮತ್ತು ಮೂಲ ನಿಯಮಗಳನ್ನು (parameters) ಈ ಕೆಳಗಿನಂತೆ ವಿವರಿಸಬಹುದು:
+
+### 1. ಉಗಮ ಕಾಲ ಮತ್ತು ಮೂಲ ಗ್ರಂಥಗಳು (Dates & Source Texts)
+
+| ವಿಷಯ | Classical Tamil (Sangam/Early Medieval) | Sanskrit |
+| :--- | :--- | :--- |
+| **ಮುಖ್ಯ ಗ್ರಂಥ** | **Tolkappiyam** (ತೊಲಕಪ್ಪಿಯಂ) | **Panini's Ashtadhyayi** (ಪಾಣಿನಿಯ ಅಷ್ಟಾಧ್ಯಾಯಿ) |
+| **ಅಂದಾಜು ಕಾಲ** | **ಕ್ರಿ.ಪೂ. 3ನೇ ಶತಮಾನ - ಕ್ರಿ.ಶ. 3ನೇ ಶತಮಾನ** (Sangam period). Tolkappiyam ಅನ್ನು ಕ್ರಿ.ಪೂ. 3ನೇ ಶತಮಾನದ್ದೆಂದು ಅನೇಕ ವಿದ್ವಾಂಸರು ನಂಬುತ್ತಾರೆ. | **ಕ್ರಿ.ಪೂ. 4ನೇ ಶತಮಾನ** (ಸುಮಾರು ಕ್ರಿ.ಪೂ. 500-400). ಪಾಣಿನಿಯು ಸಂಸ್ಕೃತದ ""ಮಾತೃಕ"" (Mother) ಎಂದು ಪರಿಗಣಿಸಲ್ಪಡುತ್ತಾರೆ. |
+| **ಭಾಷಾ ವರ್ಗ** | **Dravidian** (ದ್ರಾವಿಡ) | **Indo-Aryan** (ಇಂಡೋ-ಆರ್ಯನ್) |
+
+> **ಗಮನಿಸಿ:** Sanskrit grammar (Panini) Tamil grammar (Tolkappiyam) ಗಿಂತ ಹಿಂದಿನದು. ಆದರೆ, Tamil grammar ಅತ್ಯಂತ ಪ್ರಾಚೀನವಾದ ದ್ರಾವಿಡ ಭಾಷಾ ವ್ಯವಸ್ಥೆಯನ್ನು ದಾಖಲಿಸುತ್ತದೆ.
+
+---
+
+### 2. ಮುಖ್ಯ ನಿಯಮಗಳು ಮತ್ತು ಪ್ಯಾರಾಮೀಟರ್‌ಗಳು (Main Rules & Parameters)
+
+#### A. ಶಬ್ದ ರ",,,,,
+W057,"IBC Section 7 Default Threshold gurinchi main rule, date leda parameter enti?",Minimum default of ₹1 Crore.,"IBC (Insolvency and Bankruptcy Code) Section 7 lo **Default Threshold** (i.e., minimum amount of debt for which a Financial Creditor can file an application) gurinchi main rule, date, and parameters emi ante:
+
+### 1. **Main Rule (Threshold Amount)**
+- **₹1 Lakh (One Lakh Rupees)** minimum debt amount undali.
+- Financial Creditor (FC) insolvency petition file cheyadaniki, debtor (company) ante debt **₹1 Lakh kante vachina** undali.
+- E threshold **Section 4(1)** lo define chesaru, kani Section 7 application lo e rule apply avutundi.
+
+### 2. **Date / Effective Date**
+- I threshold **₹1 Lakh** ante **2016 lo IBC enact ayyaka poyina** (i.e., from the beginning of IBC implementation on **1 December 2016**).
+- **2019 lo amendment** vachina:  
+  - **Insolvency and Bankruptcy (Amendment) Act, 2019** (effective **11 June 2019**) lo, threshold amount **₹1 Lakh** lo **unchanged** undi.  
+  - Kani, **smaller debts** (₹1 Lakh kante vachina) ante, **Section 7 lo direct application allow avvakadu**.  
+  - E debts ki, **Section 13** (Operational Debt) lo process undali, kani Section 7 (Financial Debt) lo ₹1 Lakh minimum.
+
+### 3. **Parameters / Conditions**
+- **Debt Type**: E threshold **Financial Debt** ki matrame apply avutundi.  
+  - Financial Debt = Loan, advance, guarantee, etc. (interest-bearing or not).  
+  - Operational Debt (goods/services) ki Section 7 apply avvakadu.
+- **Default**: Debt **due and payable** undali, and debtor **default** chesina (i.e., payment vachina).
+- **Notice**: Financial Creditor, debtor ki **written notice** (Section 8) send cheyali, and debtor **10 days** lo payment cheyali. Payment vachina, then Section 7 application file cheyochu.
+- **Jurisdiction",,,,,
+W058,"PM-KISAN vs Rythu Bandhu এর regarding main rule, date বা parameter কী?",PM-KISAN is flat per family; Rythu Bandhu is per acre acreage-linked.,"PM-KISAN এবং Rythu Bandhu দুটি ভিন্ন রাজ্যের কৃষক সহায়তা প্রোগ্রাম। এদের মূল পার্থক্য নিচে দেওয়া হলো:
+
+### ১. **PM-KISAN (প্রধানমন্ত্রী কৃষি সম্মান নীতি)**
+*   **কারী:** কেন্দ্রীয় সরকার (Central Government)।
+*   **প্রযোজ্যতা:** ভারতের **সব রাজ্যের** যোগ্য কৃষকদের জন্য।
+*   **মূল নিয়ম/প্যারামিটার:**
+    *   প্রতি বছর **৬,০০০ টাকা** (৩ কিস্তিতে, প্রতি কিস্তি ২,০০০ টাকা)।
+    *   **ভূমি সীমা:** যে কৃষকের মোট কৃষি জমির পরিমাণ **৫ একর বা তার কম**।
+    *   **বর্জন:** করদাতা, সরকারি কর্মচারী, এবং উচ্চ আয়ের পরিবার (যাদের আয় নির্দিষ্ট সীমার বেশি) এই সুবিধা পান না।
+*   **তারিখ:** ২০১৯ সালের ২২ ডিসেম্বর চালু হয়।
+
+### ২. **Rythu Bandhu (রুথু বন্ধু)**
+*   **কারী:** **আন্দ্রা প্রদেশ** রাজ্য সরকার।
+*   **প্রযোজ্যতা:** শুধুমাত্র **আন্দ্রা প্রদেশের** কৃষকদের জন্য।
+*   **মূল নিয়ম/প্যারামিটার:**
+    *   প্রতি বছর **১০,০০০ টাকা** (২ কিস্তিতে, প্রতি কিস্তি ৫,০০০ টাকা)।
+    *   **ভূমি সীমা:** **কোনো ভূমি সীমা নেই**। যেকোনো পরিমাণ জমির মালিক কৃষক এই সুবিধা পেতে পারেন (১ একর থেকে শুরু করে বহু একর পর্যন্ত)।",,,,,
+W059,"IBC Section 7 Default Threshold er regarding main rule, date ba parameter ki?",Minimum default of ₹1 Crore.,"IBC (Insolvency and Bankruptcy Code) Section 7 ke under ""Default Threshold"" (yaani ki kitne amount ki default hone par application file ki ja sakti hai) kisi **fixed date** ya **time parameter** par based nahi hai.
+
+Iski main rule **Amount (Rupaye)** par based hai.
+
+### Main Rule:
+- **Default Amount:** Financial creditor (jaise bank, NBFC, etc.) ko **₹1 Lakh (1,00,000)** ya usse zyada ki default honi chahiye.
+- Agar default ₹1 Lakh se kam hai, toh Section 7 ke under application file nahi ki ja sakti.
+
+### Important Points:
+1. **No Time Limit for Filing:** IBC Section 7 mein koi specific ""time limit"" (jaise 30 din ya 60 din) nahi hai ki default hone ke kitne din baad application file karni hai. Jaise hi default ₹1 Lakh ya usse zyada ho jata hai, financial creditor application file kar sakta hai.
+2. **Statutory Bar (Section 3(1)):** Halanki, agar default **1 saal se zyada purana** hai, toh court application reject kar sakti hai, lekin ye general rule nahi hai. Zyadatar cases mein, agar default ₹1 Lakh+ hai, toh application accepted ho jati hai.
+3. **No Prescribed Date:** Koi bhi fixed date (jaise 1st January) ya parameter (jaise 30 din) nahi hai. Sirf **amount threshold** hai.
+
+### Summary:
+- **Parameter:** **Amount (₹1 Lakh ya zyada)**
+- **Date/Time:** Koi fixed date nahi hai.
+
+Agar aap kisi specific case ya scenario ke baare mein pooch rahe hain, toh thoda aur detail de sakte hain.",,,,,
+W060,"Patents Act Compulsory License এর regarding main rule, date বা parameter কী?",After expiration of 3 years from patent grant date.,"ভারতের **পেটেন্টস অ্যাক্ট, ১৯৭০ (The Patents Act, 1970)**-এর অধীনে **কম্পালসরি লাইসেন্স (Compulsory License)** বা বাধ্যতামূলক লাইসেন্সের প্রধান নিয়ম, তারিখ এবং প্যারামিটারগুলো নিচে বিস্তারিত আলোচনা করা হলো:
+
+### ১. আইনগত ভিত্তি (Legal Basis)
+কম্পালসরি লাইসেন্সের ক্ষমতা পেটেন্টস অ্যাক্টের **ধারা ৮৪ (Section 84)**-এ উল্লেখ করা হয়েছে। এই ধারা অনুযায়ী, যদি কোনো পেটেন্টের অধিকারী তার পেটেন্টের ব্যবহার না করে বা জনসাধারণের চাহিদা পূরণ না করে, তবে সরকার বা পেটেন্ট অফিস কোনো ব্যক্তিকে বা প্রতিষ্ঠানকে সেই পেটেন্ট ব্যবহার করার লাইসেন্স দিতে পারে।
+
+### ২. প্রধান প্যারামিটার বা শর্তাবলী (Key Parameters)
+কম্পালসরি লাইসেন্স পেতে হলে নিচের শর্তগুলো পূরণ হতে হবে:
+
+#### ক. সময়সীমা (Time Parameter)
+*   **৩ বছর:** পেটেন্ট নিবন্ধনের (Grant of Patent) তারিখ থেকে **৩ বছর** পূর্ণ হতে হবে।
+*   **৫ বছর:** পেটেন্ট আবেদন জমা দেওয়ার (Filing Date) তারিখ থেকে **৫ বছর** পূর্ণ হতে হবে।
+*   **দ্রষ্টব্য:** কম্পালসরি লাইসেন্সের আবেদন করা যাবে শুধুমাত্র তখনই যখন উপরের দুটি শর্তের মধ্যে **যেটি আগে পূর্ণ হয়** (whichever is earlier)।
+
+#### খ. জনসাধারণের চাহিদা পূরণ না হওয়া (Failure to Meet Public Demand)
+*   পেটেন্টের পণ্যটি ভারতের বাজারে **জনসাধারণের চাহিদা পূরণের মতো যথেষ",,,,,
