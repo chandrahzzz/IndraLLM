@@ -93,11 +93,15 @@ TEXT[15] = (
     "interpreted as representation effects. At 128 tokens, accuracy falls from English to the Indic "
     "representations and mixed script is lowest. Almost every response hits that cap and Brahmic-script "
     "answers are about half as long in characters; with 512 or 1,024 tokens, no MIXED–CS-LAT difference is "
-    "detected under either judge, though we do not claim equivalence. The English advantage over "
+    "detected under either judge, though we do not claim equivalence. Because 64% of MIXED answers still reach the 1,024-token limit, "
+    "this is a sensitivity finding, not a clean estimate of the effect of script. The English advantage over "
     "Latin-script code-switching is significant at the topic level only under the self-judge at 1,024 tokens, "
     "and not after correction across all follow-up tests; under the cross-family judge it is small at every "
     "budget. Neither judge has been validated against human labels, so we report this as judge sensitivity, "
     "not as evidence that either judge is right.")
+
+TEXT[19] = base.TEXT[19].replace("which is the mechanism our budget experiment isolates",
+                                 "which is the mechanism our budget experiment probes")
 
 TEXT[20] = (
     "**Factuality evaluation and LLM judges.** We use closed-book questions with a gold answer, closer in "
@@ -210,8 +214,8 @@ TEXT[77] = (
     "Three conclusions follow. First, the 128-token MIXED penalty is not evidence that script alternation "
     "harms recall: once the budget allows longer answers, no difference between mixed-script and "
     "Latin-script code-switched prompts is detected under either judge, and the intervals exclude a gap of "
-    "the 128-token size. Its most likely source is that Brahmic-script answers reach "
-    "the cap before reaching the fact, and answers a human would call incomplete are then graded as wrong; "
+    "the 128-token size. The pattern is consistent with Brahmic-script answers reaching "
+    "the cap before reaching the fact, so that answers a human would call incomplete are graded as wrong; "
     "the EN-MATCH answer on the MTP Act, for instance, correctly states the one-practitioner rule for the "
     "first 20 weeks, is cut off before the 20–24-week rule, and is graded HALLUCINATED. Second, NATIVE and "
     "MIXED behave alike at 128 tokens (32% and 26%, p = 0.29) although MIXED has five script boundaries per "
@@ -255,7 +259,9 @@ TEXT[83] = (
     "output-token budget and to the choice of evaluator, and observed differences should not automatically "
     "be interpreted as representation effects. For this model and these 20 topics, the clearest "
     "representation effect at a 128-token budget, the mixed-script penalty, is no longer detected when "
-    "answers can be longer, under either judge; the English advantage over code-switching appears or disappears with the "
+    "answers can be longer, under either judge. Since many answers still reach even the largest "
+    "budget we tested, this shows that the 128-token estimate is sensitive to the budget; it does not "
+    "provide a clean estimate of the script effect itself; the English advantage over code-switching appears or disappears with the "
     "judge. We do not claim that native script or code-switching damages factual recall, and we make no "
     "claim about other models.")
 
@@ -275,7 +281,8 @@ TEXT[87] = (
     "(effective n ≈ 67 of 500). A 25-proposition expansion has been written but not evaluated. **Output "
     "budget.** At 1,024 tokens, 39 CS-LAT and 64 MIXED responses still hit the cap, so the budget is not "
     "fully removed as a confound; the 1,024-token run was added after the 512-token results were seen and is "
-    "exploratory; we re-ran three of the six conditions and did not test an instruction fixing the answer "
+    "exploratory, and the budget comparison is a sensitivity analysis rather than a clean estimate of the "
+    "script effect; we re-ran three of the six conditions and did not test an instruction fixing the answer "
     "language. **Equivalence.** No equivalence margin was pre-specified, so non-significant gaps are reported "
     "with intervals, not as equivalence. **Judges.** Two LLM judges that "
     "disagree on a fifth to a quarter of items, and no human labels on any output; a stratified, blinded "
@@ -349,7 +356,8 @@ for key, must in [(28, "templates, not the model"), (34, "October 2026"), (37, "
                   (40, "Appendix B;"), (43, "(Table VIII)"), ("tab2", "Table VIII"), (59, "Table IX show"),
                   (65, "in Fig. 3."), (80, "Table V turns"), (94, "Table VII lists"), (110, "2,700"),
                   (40, "18 follow-up tests"), (40, "not evidence of"), (76, "not an unconstrained"),
-                  (77, "remains a possible confound"), (83, "no longer detected"), (87, "**Equivalence.**")]:
+                  (77, "remains a possible confound"), (77, "consistent with"), (15, "sensitivity finding"),
+                  (19, "experiment probes"), (83, "clean estimate"), (87, "sensitivity analysis"), (83, "no longer detected"), (87, "**Equivalence.**")]:
     assert must in TEXT[key], f"text replacement failed for {key}: {must}"
 
 
