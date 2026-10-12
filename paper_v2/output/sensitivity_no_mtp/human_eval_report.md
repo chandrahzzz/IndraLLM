@@ -15,61 +15,61 @@
 Double-labelled items: 189
 Six-way agreement 0.90; binary agreement 0.93; Cohen's κ (primary) 0.85; κ (secondary) 0.90.
 
-Binary disagreements: 14; adjudicated: 0 (file `C:\Users\Chandrahas Reddy\MYallPROJECTS\IndraLLM\results\human_eval_v2\adjudication.xlsx`).
-Resolved items: 187; unresolved: 14.
+Binary disagreements: 14; adjudicated: 14 (file `C:\Users\Chandrahas Reddy\MYallPROJECTS\IndraLLM\results\human_eval_v2\adjudication.xlsx`).
+Resolved items: 201; unresolved: 0.
 
 ## Judge validation (primary collapse; weighted to all 900 outputs)
 
 | Judge | Sensitivity | Specificity | Agreement | κ (sample) |
 |---|---|---|---|---|
-| J-QWEN | 0.88 | 0.78 | 0.84 | 0.52 |
+| J-QWEN | 0.88 | 0.71 | 0.80 | 0.43 |
 | J-OSS | 0.86 | 0.91 | 0.88 | 0.63 |
 
 | Budget × condition | Human accuracy % [95% CI] |
 |---|---|
-| 128|CS-LAT | 19 [8, 32] |
-| 128|EN-MATCH | 43 [26, 62] |
-| 128|MIXED | 13 [0, 33] |
-| 512|CS-LAT | 66 [61, 75] |
-| 512|EN-MATCH | 64 [58, 74] |
-| 512|MIXED | 65 [63, 66] |
+| 128|CS-LAT | 17 [7, 28] |
+| 128|EN-MATCH | 40 [26, 55] |
+| 128|MIXED | 14 [1, 35] |
+| 512|CS-LAT | 58 [54, 67] |
+| 512|EN-MATCH | 62 [58, 69] |
+| 512|MIXED | 56 [46, 66] |
 | 1024|CS-LAT | 72 [67, 81] |
-| 1024|EN-MATCH | 85 [85, 85] |
-| 1024|MIXED | 62 [51, 75] |
+| 1024|EN-MATCH | 74 [63, 85] |
+| 1024|MIXED | 62 [51, 76] |
 
 | Gap | Human estimate (pp) [95% CI] |
 |---|---|
-| 128|MIXED-CS-LAT | -6 [-26, 17] |
-| 128|CS-LAT-EN-MATCH | -24 [-46, -3] |
-| 512|MIXED-CS-LAT | -1 [-11, 5] |
-| 512|CS-LAT-EN-MATCH | +2 [-9, 17] |
+| 128|MIXED-CS-LAT | -3 [-22, 19] |
+| 128|CS-LAT-EN-MATCH | -23 [-42, -5] |
+| 512|MIXED-CS-LAT | -2 [-17, 12] |
+| 512|CS-LAT-EN-MATCH | -3 [-15, 9] |
 | 1024|MIXED-CS-LAT | -10 [-25, 5] |
-| 1024|CS-LAT-EN-MATCH | -13 [-18, -4] |
+| 1024|CS-LAT-EN-MATCH | -2 [-13, 13] |
 
 ## Judge validation (secondary collapse; weighted to all 900 outputs)
 
 | Judge | Sensitivity | Specificity | Agreement | κ (sample) |
 |---|---|---|---|---|
-| J-QWEN | 0.87 | 0.81 | 0.85 | 0.56 |
-| J-OSS | 0.84 | 0.94 | 0.88 | 0.65 |
+| J-QWEN | 0.88 | 0.79 | 0.84 | 0.55 |
+| J-OSS | 0.81 | 0.94 | 0.86 | 0.61 |
 
 | Budget × condition | Human accuracy % [95% CI] |
 |---|---|
-| 128|CS-LAT | 37 [22, 55] |
-| 128|EN-MATCH | 48 [35, 66] |
-| 128|MIXED | 15 [2, 36] |
-| 512|CS-LAT | 66 [61, 75] |
-| 512|EN-MATCH | 64 [58, 74] |
+| 128|CS-LAT | 40 [25, 57] |
+| 128|EN-MATCH | 53 [39, 68] |
+| 128|MIXED | 17 [4, 37] |
+| 512|CS-LAT | 58 [54, 67] |
+| 512|EN-MATCH | 65 [58, 73] |
 | 512|MIXED | 65 [63, 66] |
 | 1024|CS-LAT | 72 [67, 81] |
-| 1024|EN-MATCH | 85 [85, 85] |
-| 1024|MIXED | 62 [51, 75] |
+| 1024|EN-MATCH | 80 [68, 85] |
+| 1024|MIXED | 62 [51, 76] |
 
 | Gap | Human estimate (pp) [95% CI] |
 |---|---|
-| 128|MIXED-CS-LAT | -22 [-46, 3] |
-| 128|CS-LAT-EN-MATCH | -10 [-32, 12] |
-| 512|MIXED-CS-LAT | -1 [-11, 5] |
-| 512|CS-LAT-EN-MATCH | +2 [-9, 17] |
+| 128|MIXED-CS-LAT | -24 [-46, 2] |
+| 128|CS-LAT-EN-MATCH | -13 [-34, 9] |
+| 512|MIXED-CS-LAT | +7 [-3, 12] |
+| 512|CS-LAT-EN-MATCH | -7 [-19, 5] |
 | 1024|MIXED-CS-LAT | -10 [-25, 5] |
-| 1024|CS-LAT-EN-MATCH | -13 [-18, -4] |
+| 1024|CS-LAT-EN-MATCH | -8 [-18, 6] |

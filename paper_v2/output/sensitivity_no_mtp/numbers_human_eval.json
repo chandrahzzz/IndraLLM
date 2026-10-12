@@ -224,75 +224,75 @@
   },
   "adjudication": {
     "binary_disagreements": 14,
-    "adjudicated": 0,
+    "adjudicated": 14,
     "file": "C:\\Users\\Chandrahas Reddy\\MYallPROJECTS\\IndraLLM\\results\\human_eval_v2\\adjudication.xlsx"
   },
   "excluded_topics": [
     "Medical Termination of Pregnancy Act"
   ],
   "final_labels": {
-    "resolved": 187,
-    "unresolved": 14,
+    "resolved": 201,
+    "unresolved": 0,
     "not_labelled": 15,
     "label_counts": {
-      "CORRECT": 91,
+      "CORRECT": 93,
       "INCOMPLETE_NO_ERROR": 49,
-      "INCORRECT": 41,
-      "PARTIAL": 6
+      "INCORRECT": 45,
+      "PARTIAL": 14
     }
   },
   "judge_validation": {
     "primary": {
       "J-QWEN": {
         "overall": {
-          "n_items": 187,
-          "sensitivity": 0.8805944258124205,
-          "specificity": 0.7812643151626202,
-          "agreement": 0.8352033660589059,
-          "kappa_unweighted": 0.518234384839984
+          "n_items": 201,
+          "sensitivity": 0.8789464604060038,
+          "specificity": 0.7125246548323471,
+          "agreement": 0.7986195817094575,
+          "kappa_unweighted": 0.43346684468179797
         },
         "by_cell": {
           "128|CS-LAT": {
-            "n_items": 22,
+            "n_items": 24,
             "sensitivity": 0.9405940594059405,
-            "specificity": 0.6582556226001097,
-            "agreement": 0.7094746295464751,
-            "kappa_unweighted": 0.3015873015873015
+            "specificity": 0.6012024048096193,
+            "agreement": 0.6583333333333333,
+            "kappa_unweighted": 0.23076923076923073
           },
           "128|EN-MATCH": {
-            "n_items": 20,
+            "n_items": 23,
             "sensitivity": 0.8798735511064278,
-            "specificity": 0.6041055718475073,
-            "agreement": 0.736815415821501,
-            "kappa_unweighted": 0.5098039215686274
+            "specificity": 0.5474943904263275,
+            "agreement": 0.6854768153980753,
+            "kappa_unweighted": 0.4187725631768954
           },
           "128|MIXED": {
-            "n_items": 21,
-            "sensitivity": 0.24444444444444444,
-            "specificity": 0.7354838709677419,
-            "agreement": 0.6732394366197183,
-            "kappa_unweighted": 0.19672131147540972
+            "n_items": 23,
+            "sensitivity": 0.32673267326732675,
+            "specificity": 0.722662440570523,
+            "agreement": 0.6680327868852459,
+            "kappa_unweighted": 0.23966942148760317
           },
           "512|CS-LAT": {
-            "n_items": 21,
-            "sensitivity": 0.8366013071895425,
-            "specificity": 1.0,
-            "agreement": 0.8934659090909091,
-            "kappa_unweighted": 0.47058823529411764
+            "n_items": 23,
+            "sensitivity": 0.8222698072805139,
+            "specificity": 0.8477508650519031,
+            "agreement": 0.832010582010582,
+            "kappa_unweighted": 0.34751773049645385
           },
           "512|EN-MATCH": {
-            "n_items": 20,
+            "n_items": 22,
             "sensitivity": 1.0,
-            "specificity": 0.7079646017699115,
-            "agreement": 0.9073033707865169,
-            "kappa_unweighted": 0.7058823529411764
+            "specificity": 0.5925925925925926,
+            "agreement": 0.8544973544973545,
+            "kappa_unweighted": 0.5669291338582678
           },
           "512|MIXED": {
-            "n_items": 20,
+            "n_items": 21,
             "sensitivity": 0.9604743083003953,
-            "specificity": 1.0,
-            "agreement": 0.9766355140186916,
-            "kappa_unweighted": 0.801980198019802
+            "specificity": 0.9067357512953368,
+            "agreement": 0.937219730941704,
+            "kappa_unweighted": 0.7149321266968326
           },
           "1024|CS-LAT": {
             "n_items": 22,
@@ -302,11 +302,11 @@
             "kappa_unweighted": 0.4122137404580153
           },
           "1024|EN-MATCH": {
-            "n_items": 18,
+            "n_items": 20,
             "sensitivity": 1.0,
-            "specificity": 1.0,
-            "agreement": 1.0,
-            "kappa_unweighted": 1.0
+            "specificity": 0.7317073170731707,
+            "agreement": 0.9382022471910112,
+            "kappa_unweighted": 0.8
           },
           "1024|MIXED": {
             "n_items": 23,
@@ -319,54 +319,54 @@
       },
       "J-OSS": {
         "overall": {
-          "n_items": 187,
-          "sensitivity": 0.8578119579044755,
-          "specificity": 0.913421896472744,
-          "agreement": 0.8832241317954406,
-          "kappa_unweighted": 0.6261495401839264
+          "n_items": 201,
+          "sensitivity": 0.8585887630110989,
+          "specificity": 0.9118589743589742,
+          "agreement": 0.8843007169845001,
+          "kappa_unweighted": 0.6322504079513425
         },
         "by_cell": {
           "128|CS-LAT": {
-            "n_items": 22,
+            "n_items": 24,
             "sensitivity": 0.7425742574257427,
-            "specificity": 0.8732857926494789,
-            "agreement": 0.8495734171531206,
-            "kappa_unweighted": 0.5045045045045046
+            "specificity": 0.8496993987975952,
+            "agreement": 0.8316666666666666,
+            "kappa_unweighted": 0.4545454545454546
           },
           "128|EN-MATCH": {
-            "n_items": 20,
+            "n_items": 23,
             "sensitivity": 0.77449947312961,
-            "specificity": 0.8504398826979472,
-            "agreement": 0.813894523326572,
-            "kappa_unweighted": 0.5
+            "specificity": 0.8855646970830217,
+            "agreement": 0.8394575678040246,
+            "kappa_unweighted": 0.5525291828793775
           },
           "128|MIXED": {
-            "n_items": 21,
-            "sensitivity": 0.24444444444444444,
-            "specificity": 0.8516129032258064,
-            "agreement": 0.7746478873239436,
-            "kappa_unweighted": 0.049382716049382824
+            "n_items": 23,
+            "sensitivity": 0.32673267326732675,
+            "specificity": 0.8367670364500792,
+            "agreement": 0.7663934426229508,
+            "kappa_unweighted": 0.08609271523178808
           },
           "512|CS-LAT": {
-            "n_items": 21,
-            "sensitivity": 0.9237472766884531,
+            "n_items": 23,
+            "sensitivity": 0.9250535331905781,
             "specificity": 1.0,
-            "agreement": 0.9502840909090909,
-            "kappa_unweighted": 0.896551724137931
+            "agreement": 0.9537037037037037,
+            "kappa_unweighted": 0.9068825910931174
           },
           "512|EN-MATCH": {
-            "n_items": 20,
+            "n_items": 22,
             "sensitivity": 0.9547325102880658,
             "specificity": 1.0,
-            "agreement": 0.9691011235955056,
-            "kappa_unweighted": 0.8979591836734694
+            "agreement": 0.9708994708994709,
+            "kappa_unweighted": 0.9043478260869565
           },
           "512|MIXED": {
-            "n_items": 20,
+            "n_items": 21,
             "sensitivity": 0.9288537549407114,
-            "specificity": 0.9714285714285714,
-            "agreement": 0.9462616822429907,
-            "kappa_unweighted": 0.797979797979798
+            "specificity": 0.9740932642487047,
+            "agreement": 0.9484304932735425,
+            "kappa_unweighted": 0.8090909090909091
           },
           "1024|CS-LAT": {
             "n_items": 22,
@@ -376,11 +376,11 @@
             "kappa_unweighted": 0.7924528301886793
           },
           "1024|EN-MATCH": {
-            "n_items": 18,
+            "n_items": 20,
             "sensitivity": 0.9197080291970803,
             "specificity": 1.0,
-            "agreement": 0.9341317365269461,
-            "kappa_unweighted": 0.7804878048780488
+            "agreement": 0.9382022471910112,
+            "kappa_unweighted": 0.8
           },
           "1024|MIXED": {
             "n_items": 23,
@@ -395,54 +395,54 @@
     "secondary": {
       "J-QWEN": {
         "overall": {
-          "n_items": 187,
-          "sensitivity": 0.8728836876570611,
-          "specificity": 0.8135283363802559,
-          "agreement": 0.847396956312407,
-          "kappa_unweighted": 0.5621109143868868
+          "n_items": 201,
+          "sensitivity": 0.8782887922104828,
+          "specificity": 0.7909821740650123,
+          "agreement": 0.8411328950108587,
+          "kappa_unweighted": 0.5518061543035528
         },
         "by_cell": {
           "128|CS-LAT": {
-            "n_items": 22,
-            "sensitivity": 0.7843631778058008,
+            "n_items": 24,
+            "sensitivity": 0.8229813664596274,
             "specificity": 0.7343096234309623,
-            "agreement": 0.752132914234396,
-            "kappa_unweighted": 0.459016393442623
+            "agreement": 0.77,
+            "kappa_unweighted": 0.5
           },
           "128|EN-MATCH": {
-            "n_items": 20,
-            "sensitivity": 0.8918406072106262,
-            "specificity": 0.673202614379085,
-            "agreement": 0.7900608519269777,
-            "kappa_unweighted": 0.6
+            "n_items": 23,
+            "sensitivity": 0.9090909090909091,
+            "specificity": 0.7093023255813954,
+            "agreement": 0.8188976377952756,
+            "kappa_unweighted": 0.6488549618320612
           },
           "128|MIXED": {
-            "n_items": 21,
-            "sensitivity": 0.32673267326732675,
+            "n_items": 23,
+            "sensitivity": 0.44715447154471544,
             "specificity": 0.7487684729064039,
-            "agreement": 0.6887323943661972,
-            "kappa_unweighted": 0.32978723404255317
+            "agreement": 0.6980874316939891,
+            "kappa_unweighted": 0.44354838709677424
           },
           "512|CS-LAT": {
-            "n_items": 21,
-            "sensitivity": 0.8366013071895425,
-            "specificity": 1.0,
-            "agreement": 0.8934659090909091,
-            "kappa_unweighted": 0.47058823529411764
+            "n_items": 23,
+            "sensitivity": 0.8222698072805139,
+            "specificity": 0.8477508650519031,
+            "agreement": 0.832010582010582,
+            "kappa_unweighted": 0.34751773049645385
           },
           "512|EN-MATCH": {
-            "n_items": 20,
+            "n_items": 22,
             "sensitivity": 1.0,
-            "specificity": 0.7079646017699115,
-            "agreement": 0.9073033707865169,
-            "kappa_unweighted": 0.7058823529411764
+            "specificity": 0.6451612903225806,
+            "agreement": 0.8835978835978836,
+            "kappa_unweighted": 0.6451612903225807
           },
           "512|MIXED": {
-            "n_items": 20,
-            "sensitivity": 0.9604743083003953,
+            "n_items": 21,
+            "sensitivity": 0.96309963099631,
             "specificity": 1.0,
-            "agreement": 0.9766355140186916,
-            "kappa_unweighted": 0.801980198019802
+            "agreement": 0.9775784753363229,
+            "kappa_unweighted": 0.8108108108108107
           },
           "1024|CS-LAT": {
             "n_items": 22,
@@ -452,11 +452,11 @@
             "kappa_unweighted": 0.4122137404580153
           },
           "1024|EN-MATCH": {
-            "n_items": 18,
+            "n_items": 20,
             "sensitivity": 1.0,
-            "specificity": 1.0,
-            "agreement": 1.0,
-            "kappa_unweighted": 1.0
+            "specificity": 0.8450704225352113,
+            "agreement": 0.9691011235955056,
+            "kappa_unweighted": 0.8979591836734694
           },
           "1024|MIXED": {
             "n_items": 23,
@@ -469,54 +469,54 @@
       },
       "J-OSS": {
         "overall": {
-          "n_items": 187,
-          "sensitivity": 0.841664068088853,
-          "specificity": 0.9414990859232175,
-          "agreement": 0.8845324569299365,
-          "kappa_unweighted": 0.6464218185985218
+          "n_items": 201,
+          "sensitivity": 0.8058835715765486,
+          "specificity": 0.9440754980775953,
+          "agreement": 0.8646952072114955,
+          "kappa_unweighted": 0.6115653337297458
         },
         "by_cell": {
           "128|CS-LAT": {
-            "n_items": 22,
-            "sensitivity": 0.5523329129886507,
+            "n_items": 24,
+            "sensitivity": 0.5248447204968945,
             "specificity": 0.9351464435146444,
-            "agreement": 0.7988325101032778,
-            "kappa_unweighted": 0.5378151260504203
+            "agreement": 0.77,
+            "kappa_unweighted": 0.5
           },
           "128|EN-MATCH": {
-            "n_items": 20,
-            "sensitivity": 0.7969639468690701,
-            "specificity": 0.9477124183006536,
-            "agreement": 0.8671399594320486,
-            "kappa_unweighted": 0.6
+            "n_items": 23,
+            "sensitivity": 0.6698564593301436,
+            "specificity": 0.9534883720930233,
+            "agreement": 0.7979002624671916,
+            "kappa_unweighted": 0.48120300751879697
           },
           "128|MIXED": {
-            "n_items": 21,
-            "sensitivity": 0.32673267326732675,
+            "n_items": 23,
+            "sensitivity": 0.44715447154471544,
             "specificity": 0.8669950738916257,
-            "agreement": 0.7901408450704225,
-            "kappa_unweighted": 0.12499999999999989
+            "agreement": 0.796448087431694,
+            "kappa_unweighted": 0.21232876712328763
           },
           "512|CS-LAT": {
-            "n_items": 21,
-            "sensitivity": 0.9237472766884531,
+            "n_items": 23,
+            "sensitivity": 0.9250535331905781,
             "specificity": 1.0,
-            "agreement": 0.9502840909090909,
-            "kappa_unweighted": 0.896551724137931
+            "agreement": 0.9537037037037037,
+            "kappa_unweighted": 0.9068825910931174
           },
           "512|EN-MATCH": {
-            "n_items": 20,
-            "sensitivity": 0.9547325102880658,
+            "n_items": 22,
+            "sensitivity": 0.9133858267716536,
             "specificity": 1.0,
-            "agreement": 0.9691011235955056,
-            "kappa_unweighted": 0.8979591836734694
+            "agreement": 0.9417989417989417,
+            "kappa_unweighted": 0.8135593220338984
           },
           "512|MIXED": {
-            "n_items": 20,
-            "sensitivity": 0.9288537549407114,
+            "n_items": 21,
+            "sensitivity": 0.8671586715867158,
             "specificity": 0.9714285714285714,
-            "agreement": 0.9462616822429907,
-            "kappa_unweighted": 0.797979797979798
+            "agreement": 0.9080717488789237,
+            "kappa_unweighted": 0.7123287671232876
           },
           "1024|CS-LAT": {
             "n_items": 22,
@@ -526,11 +526,11 @@
             "kappa_unweighted": 0.7924528301886793
           },
           "1024|EN-MATCH": {
-            "n_items": 18,
-            "sensitivity": 0.9197080291970803,
+            "n_items": 20,
+            "sensitivity": 0.8842105263157894,
             "specificity": 1.0,
-            "agreement": 0.9341317365269461,
-            "kappa_unweighted": 0.7804878048780488
+            "agreement": 0.9073033707865169,
+            "kappa_unweighted": 0.7058823529411764
           },
           "1024|MIXED": {
             "n_items": 23,
@@ -547,44 +547,44 @@
     "primary": {
       "cells": {
         "128|CS-LAT": {
-          "estimate": 19.34285714285714,
+          "estimate": 16.833333333333332,
           "ci": [
-            7.57142857142857,
-            32.114285714285714
+            6.75,
+            28.385416666666707
           ]
         },
         "128|EN-MATCH": {
-          "estimate": 43.208333333333336,
+          "estimate": 40.220238095238095,
           "ci": [
             26.25,
-            62.041666666666664
+            55.452380952380956
           ]
         },
         "128|MIXED": {
-          "estimate": 13.38095238095238,
+          "estimate": 13.839285714285712,
           "ci": [
-            0.0,
-            32.80952380952381
+            1.375,
+            34.64285714285714
           ]
         },
         "512|CS-LAT": {
-          "estimate": 65.58988764044943,
+          "estimate": 58.375,
           "ci": [
-            60.67415730337079,
-            75.42134831460675
+            54.0,
+            67.125
           ]
         },
         "512|EN-MATCH": {
-          "estimate": 63.5,
+          "estimate": 61.66666666666667,
           "ci": [
             57.99999999999999,
-            74.5
+            69.0
           ]
         },
         "512|MIXED": {
-          "estimate": 65.0,
+          "estimate": 56.00000000000001,
           "ci": [
-            63.0,
+            46.0,
             66.0
           ]
         },
@@ -596,9 +596,9 @@
           ]
         },
         "1024|EN-MATCH": {
-          "estimate": 85.0,
+          "estimate": 74.0,
           "ci": [
-            85.0,
+            63.0,
             85.0
           ]
         },
@@ -606,51 +606,51 @@
           "estimate": 61.875,
           "ci": [
             50.625,
-            74.75
+            75.75
           ]
         }
       },
       "gaps": {
         "128|MIXED-CS-LAT": {
-          "estimate": -5.961904761904763,
+          "estimate": -2.9940476190476213,
           "ci": [
-            -25.542857142857144,
-            17.21607142857143
+            -22.375,
+            19.392857142857146
           ]
         },
         "128|CS-LAT-EN-MATCH": {
-          "estimate": -23.865476190476194,
+          "estimate": -23.38690476190476,
           "ci": [
-            -45.740624999999994,
-            -2.62095238095238
+            -41.661458333333336,
+            -4.873214285714278
           ]
         },
         "512|MIXED-CS-LAT": {
-          "estimate": -0.589887640449438,
+          "estimate": -2.374999999999994,
           "ci": [
-            -11.421348314606739,
-            5.325842696629213
+            -16.749999999999993,
+            12.0
           ]
         },
         "512|CS-LAT-EN-MATCH": {
-          "estimate": 2.0898876404494393,
+          "estimate": -3.2916666666666705,
           "ci": [
-            -8.91011235955056,
-            16.83707865168539
+            -14.999999999999991,
+            9.125000000000005
           ]
         },
         "1024|MIXED-CS-LAT": {
           "estimate": -9.839285714285706,
           "ci": [
             -24.803571428571438,
-            5.035714285714288
+            5.124999999999991
           ]
         },
         "1024|CS-LAT-EN-MATCH": {
-          "estimate": -13.28571428571429,
+          "estimate": -2.285714285714291,
           "ci": [
-            -17.999999999999993,
-            -3.857142857142859
+            -13.28571428571429,
+            12.642857142857133
           ]
         }
       }
@@ -658,38 +658,38 @@
     "secondary": {
       "cells": {
         "128|CS-LAT": {
-          "estimate": 37.239285714285714,
+          "estimate": 40.25,
           "ci": [
-            21.71428571428571,
-            54.68928571428571
+            25.040624999999995,
+            56.83333333333332
           ]
         },
         "128|EN-MATCH": {
-          "estimate": 47.583333333333336,
+          "estimate": 52.92857142857144,
           "ci": [
-            35.0,
-            66.41666666666667
+            39.166666666666664,
+            67.95238095238095
           ]
         },
         "128|MIXED": {
-          "estimate": 15.214285714285714,
+          "estimate": 16.589285714285715,
           "ci": [
-            1.8333333333333333,
-            36.476190476190474
+            4.125,
+            37.39285714285714
           ]
         },
         "512|CS-LAT": {
-          "estimate": 65.58988764044943,
+          "estimate": 58.375,
           "ci": [
-            60.67415730337079,
-            75.42134831460675
+            54.0,
+            67.125
           ]
         },
         "512|EN-MATCH": {
-          "estimate": 63.5,
+          "estimate": 65.33333333333333,
           "ci": [
             57.99999999999999,
-            74.5
+            72.66666666666667
           ]
         },
         "512|MIXED": {
@@ -707,9 +707,9 @@
           ]
         },
         "1024|EN-MATCH": {
-          "estimate": 85.0,
+          "estimate": 79.5,
           "ci": [
-            85.0,
+            68.5,
             85.0
           ]
         },
@@ -717,51 +717,51 @@
           "estimate": 61.875,
           "ci": [
             50.625,
-            74.75
+            75.75
           ]
         }
       },
       "gaps": {
         "128|MIXED-CS-LAT": {
-          "estimate": -22.025,
+          "estimate": -23.66071428571429,
           "ci": [
-            -45.50622023809523,
-            2.6035714285714273
+            -45.709374999999994,
+            1.762053571428569
           ]
         },
         "128|CS-LAT-EN-MATCH": {
-          "estimate": -10.34404761904762,
+          "estimate": -12.678571428571434,
           "ci": [
-            -32.338095238095235,
-            12.430952380952377
+            -33.82782738095238,
+            8.991517857142865
           ]
         },
         "512|MIXED-CS-LAT": {
-          "estimate": -0.589887640449438,
+          "estimate": 6.6250000000000036,
           "ci": [
-            -11.421348314606739,
-            5.325842696629213
+            -3.125,
+            12.0
           ]
         },
         "512|CS-LAT-EN-MATCH": {
-          "estimate": 2.0898876404494393,
+          "estimate": -6.958333333333333,
           "ci": [
-            -8.91011235955056,
-            17.421348314606742
+            -18.666666666666664,
+            4.749999999999998
           ]
         },
         "1024|MIXED-CS-LAT": {
           "estimate": -9.839285714285706,
           "ci": [
             -24.803571428571438,
-            5.035714285714288
+            5.124999999999991
           ]
         },
         "1024|CS-LAT-EN-MATCH": {
-          "estimate": -13.28571428571429,
+          "estimate": -7.785714285714295,
           "ci": [
             -17.999999999999993,
-            -3.857142857142859
+            6.357142857142861
           ]
         }
       }
