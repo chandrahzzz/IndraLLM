@@ -11,3 +11,11 @@ gen: 598 to run (2 done)
 Daily free-tier quota reached. Re-run tomorrow; finished rows are kept.
 judge: 992 to run; prior spend $0.000; ceiling $1.2
 judge done; spend $0.328
+gen: 104 to run (496 done)
+  retry 0 S001487_A_EN_MATCHED_ta@1024: ServerError("503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usu
+  retry 1 S001487_A_EN_MATCHED_ta@1024: ServerError("503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usu
+  retry 0 S001458_A_EN_MATCHED_te@1024: ServerError("503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usu
+  retry 0 S001475_A_EN_MATCHED_kn@1024: ServerError("503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usu
+gen done
+judge: 208 to run; prior spend $0.328; ceiling $1.2
+judge done; spend $0.408

@@ -96,17 +96,21 @@ Model: gemini-3.1-flash-lite (temperature 0, thinking off); same prompts, same t
 
 Judge agreement 0.693 (κ = 0.42); J-QWEN correct / J-OSS wrong 91, reverse 1.
 
-### 1024 tokens (n = 196; hit cap: {'CS-LAT': 0, 'MIXED': 0})
+### 1024 tokens (n = 300; hit cap: {'EN-MATCH': 0, 'CS-LAT': 0, 'MIXED': 0})
 
 | Judge | EN-MATCH | CS-LAT | MIXED |
 |---|---|---|---|
-| J-QWEN | nan | 93 | 97 |
-| J-OSS | nan | 86 | 89 |
+| J-QWEN | 100 | 92 | 97 |
+| J-OSS | 90 | 84 | 89 |
 
 | Judge | Contrast | Δ pp | McNemar p | topic sign-flip p | topic bootstrap 95% CI |
 |---|---|---|---|---|---|
-| J-QWEN | MIXED − CS-LAT | +4.1 | 0.125 | 0.250 | [+0.0, +10.0] |
-| J-OSS | MIXED − CS-LAT | +5.2 | 0.125 | 0.125 | [+0.0, +10.0] |
+| J-QWEN | CS-LAT − EN-MATCH | -8.0 | 0.008 | 0.250 | [-19.0, +0.0] |
+| J-QWEN | MIXED − CS-LAT | +5.0 | 0.062 | 0.250 | [+0.0, +11.0] |
+| J-QWEN | MIXED − EN-MATCH | -3.0 | 0.250 | 1.000 | [-9.0, +0.0] |
+| J-OSS | CS-LAT − EN-MATCH | -6.0 | 0.031 | 0.031 | [-10.0, -2.0] |
+| J-OSS | MIXED − CS-LAT | +5.0 | 0.125 | 0.125 | [+0.0, +10.0] |
+| J-OSS | MIXED − EN-MATCH | -1.0 | 1.000 | 1.000 | [-3.0, +0.0] |
 
-Judge agreement 0.913 (κ = 0.48); J-QWEN correct / J-OSS wrong 16, reverse 1.
+Judge agreement 0.907 (κ = 0.38); J-QWEN correct / J-OSS wrong 27, reverse 1.
 

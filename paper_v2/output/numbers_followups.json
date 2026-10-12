@@ -265,52 +265,104 @@
         }
       },
       "1024": {
-        "n": 196,
+        "n": 300,
         "hit_cap": {
+          "EN-MATCH": 0,
           "CS-LAT": 0,
           "MIXED": 0
         },
         "n_per_condition": {
-          "CS-LAT": 97,
-          "MIXED": 99
+          "EN-MATCH": 100,
+          "CS-LAT": 100,
+          "MIXED": 100
         },
         "J-QWEN": {
           "accuracy": {
-            "CS-LAT": 92.78350515463917,
-            "MIXED": 96.96969696969697
+            "EN-MATCH": 100.0,
+            "CS-LAT": 92.0,
+            "MIXED": 97.0
           },
           "contrasts": [
             {
+              "ref": "EN-MATCH",
+              "cmp": "CS-LAT",
+              "n": 100,
+              "acc_ref": 100.0,
+              "acc_cmp": 92.0,
+              "delta_pp": -8.0,
+              "b": 8,
+              "c": 0,
+              "p_exact": 0.0078125,
+              "topic_perm_p": 0.25,
+              "topic_boot_ci": [
+                -19.0,
+                0.0
+              ]
+            },
+            {
               "ref": "CS-LAT",
               "cmp": "MIXED",
-              "n": 97,
-              "acc_ref": 92.78350515463917,
-              "acc_cmp": 96.90721649484536,
-              "delta_pp": 4.123711340206185,
+              "n": 100,
+              "acc_ref": 92.0,
+              "acc_cmp": 97.0,
+              "delta_pp": 5.0,
               "b": 0,
-              "c": 4,
-              "p_exact": 0.125,
+              "c": 5,
+              "p_exact": 0.0625,
               "topic_perm_p": 0.25,
               "topic_boot_ci": [
                 0.0,
-                10.0
+                11.0
+              ]
+            },
+            {
+              "ref": "EN-MATCH",
+              "cmp": "MIXED",
+              "n": 100,
+              "acc_ref": 100.0,
+              "acc_cmp": 97.0,
+              "delta_pp": -3.0,
+              "b": 3,
+              "c": 0,
+              "p_exact": 0.25,
+              "topic_perm_p": 1.0,
+              "topic_boot_ci": [
+                -9.0,
+                0.0
               ]
             }
           ]
         },
         "J-OSS": {
           "accuracy": {
-            "CS-LAT": 85.56701030927834,
-            "MIXED": 88.88888888888889
+            "EN-MATCH": 90.0,
+            "CS-LAT": 84.0,
+            "MIXED": 89.0
           },
           "contrasts": [
             {
+              "ref": "EN-MATCH",
+              "cmp": "CS-LAT",
+              "n": 100,
+              "acc_ref": 90.0,
+              "acc_cmp": 84.0,
+              "delta_pp": -6.0,
+              "b": 6,
+              "c": 0,
+              "p_exact": 0.03125,
+              "topic_perm_p": 0.03125,
+              "topic_boot_ci": [
+                -10.0,
+                -2.0
+              ]
+            },
+            {
               "ref": "CS-LAT",
               "cmp": "MIXED",
-              "n": 97,
-              "acc_ref": 85.56701030927834,
-              "acc_cmp": 90.72164948453609,
-              "delta_pp": 5.154639175257731,
+              "n": 100,
+              "acc_ref": 84.0,
+              "acc_cmp": 89.0,
+              "delta_pp": 5.0,
               "b": 1,
               "c": 6,
               "p_exact": 0.125,
@@ -319,13 +371,29 @@
                 0.0,
                 10.0
               ]
+            },
+            {
+              "ref": "EN-MATCH",
+              "cmp": "MIXED",
+              "n": 100,
+              "acc_ref": 90.0,
+              "acc_cmp": 89.0,
+              "delta_pp": -1.0,
+              "b": 1,
+              "c": 0,
+              "p_exact": 1.0,
+              "topic_perm_p": 1.0,
+              "topic_boot_ci": [
+                -3.0,
+                0.0
+              ]
             }
           ]
         },
         "judge_agreement": {
-          "agreement": 0.9132653061224489,
-          "kappa": 0.4761006289308171,
-          "qwen_correct_oss_wrong": 16,
+          "agreement": 0.9066666666666666,
+          "kappa": 0.3817164728396874,
+          "qwen_correct_oss_wrong": 27,
           "qwen_wrong_oss_correct": 1
         }
       }
