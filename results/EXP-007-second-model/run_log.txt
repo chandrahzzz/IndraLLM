@@ -1,0 +1,13 @@
+gen: 598 to run (2 done)
+  retry 0 S001439_D_CS_bn@128: ServerError("503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usu
+  retry 0 S001479_A_EN_MATCHED_bn@128: ServerError("503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The service is currently unavailable.', 'status': 'UNAVAILABLE'}}")
+  retry 0 S001431_E_MIXED_SCRIPT_hi@1024: ServerError("503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usu
+  retry 0 S001457_D_CS_ta@1024: ServerError("503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usu
+  retry 0 S001469_D_CS_bn@1024: ServerError("503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usu
+  retry 0 S001475_E_MIXED_SCRIPT_kn@1024: ServerError("503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usu
+  retry 1 S001475_E_MIXED_SCRIPT_kn@1024: ServerError("503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usu
+  retry 0 S001483_D_CS_te@1024: ServerError("503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usu
+  retry 0 S001488_D_CS_te@1024: ClientError("429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing
+Daily free-tier quota reached. Re-run tomorrow; finished rows are kept.
+judge: 992 to run; prior spend $0.000; ceiling $1.2
+judge done; spend $0.328

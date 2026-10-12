@@ -1,0 +1,163 @@
+item_id,label,gold_problem,note
+V077,INCORRECT,Y,"Gold outdated; 2021 amendment allows 1 practitioner up to 20 weeks"
+V211,INCORRECT,N,"States 7,10,21-30 days instead of 5 days"
+V168,CORRECT,N,"Includes compliance officer"
+V009,CORRECT,N,
+V145,CORRECT,N,"Mentions Tolkappiyam and Ashtadhyayi"
+V023,INCORRECT,Y,"Gold outdated; allows 1 practitioner up to 12 weeks"
+V115,CORRECT,N,
+V014,CORRECT,N,
+V137,INCORRECT,N,"States ₹1 Lakh instead of ₹1 Crore"
+V210,INCORRECT,N,"Wrong PSLV SSO capacity (~1,200 kg vs 1,750 kg)"
+V188,INCORRECT,Y,"Gold outdated; allows 1 practitioner up to 20 weeks"
+V194,CORRECT,N,
+V159,INCOMPLETE_NO_ERROR,N,"Doesn't reach yield vs weather index"
+V084,CORRECT,N,
+V043,CORRECT,N,
+V151,INCORRECT,N,"Gives 5 days after response, not from receipt"
+V066,INCOMPLETE_NO_ERROR,N,"Doesn't mention compliance officer"
+V003,CORRECT,N,
+V078,INCOMPLETE_NO_ERROR,N,"No mention of Tolkappiyam or Ashtadhyayi"
+V046,INCORRECT,Y,"Gold outdated; allows 1 practitioner up to 20 weeks"
+V052,CORRECT,N,
+V074,CORRECT,N,
+V158,CORRECT,N,
+V041,INCORRECT,N,"Says Rajya Sabha can amend, contradicts gold"
+V122,CORRECT,N,"Mentions both texts"
+V165,INCORRECT,N,"Denies existence of cut-off date"
+V063,CORRECT,N,
+V002,CORRECT,N,
+V017,INCORRECT,N,"Wrong PSLV capacity numbers"
+V071,INCOMPLETE_NO_ERROR,N,"No mention of exemptions"
+V141,INCOMPLETE_NO_ERROR,N,"No mention of exemptions"
+V087,CORRECT,N,
+V131,INCORRECT,Y,"Gold outdated; allows 1 practitioner up to 12 weeks"
+V208,INCOMPLETE_NO_ERROR,N,"Doesn't mention compliance officer"
+V171,INCORRECT,N,"States ₹1 Lakh instead of ₹1 Crore"
+V018,INCORRECT,N,"Gives 10 days + 5 days instead of 5 days"
+V178,INCOMPLETE_NO_ERROR,N,"Cut off before threshold number"
+V214,INCOMPLETE_NO_ERROR,N,"No mention of exemptions"
+V176,INCORRECT,Y,"Gold outdated; allows 1 practitioner up to 20 weeks"
+V026,CORRECT,N,
+V007,INCORRECT,N,"Wrong PSLV SSO capacity (~1,500-1,600 kg vs 1,750 kg)"
+V167,CORRECT,N,
+V166,INCOMPLETE_NO_ERROR,N,"Doesn't state the specific rule"
+V048,INCORRECT,Y,"Gold outdated; allows 1 practitioner up to 12 weeks"
+V033,INCORRECT,N,"Wrong PSLV SSO capacity"
+V150,CORRECT,N,
+V056,INCORRECT,N,"Gives 7,10,21-30 days instead of 5 days"
+V203,INCOMPLETE_NO_ERROR,N,"Cut off before stating specific rule"
+V040,CORRECT,N,
+V055,INCORRECT,Y,"Gold outdated; allows 1 practitioner up to 12 weeks"
+V124,PARTIAL,N,"Mentions seasons but not rainfed vs irrigated"
+V098,PARTIAL,N,"States 12 months but not 6-month extension"
+V020,CORRECT,N,
+V209,CORRECT,N,
+V035,CORRECT,N,
+V117,PARTIAL,N,"States 12 months but no 6-month extension"
+V193,INCORRECT,N,"States above ₹20 lakhs instead of ₹2 Lakh"
+V206,INCORRECT,N,"States ₹1 Lakh instead of ₹1 Crore"
+V088,INCOMPLETE_NO_ERROR,N,"Focuses on Section 34, not main time limit"
+V201,CORRECT,N,
+V005,INCORRECT,N,"Gives 10 days + 5 days instead of 5 days"
+V106,CORRECT,N,
+V132,CORRECT,N,
+V038,CORRECT,N,
+V172,INCOMPLETE_NO_ERROR,N,"Cut off early"
+V006,CORRECT,N,
+V076,CORRECT,N,
+V169,INCORRECT,N,"States above ₹20 lakhs instead of ₹2 Lakh"
+V004,INCOMPLETE_NO_ERROR,N,"No mention of Tolkappiyam or Ashtadhyayi"
+V118,INCORRECT,Y,"Gold outdated; allows 1 practitioner up to 20 weeks"
+V147,INCORRECT,Y,"Gold outdated; allows 1 practitioner up to 12 weeks"
+V030,CORRECT,N,
+V138,PARTIAL,N,"Mentions Panini but not Tolkappiyam"
+V164,INCORRECT,N,"Wrong PSLV SSO capacity"
+V177,INCOMPLETE_NO_ERROR,N,"Mentions season but not rainfed vs irrigated"
+V191,CORRECT,N,
+V181,CORRECT,N,
+V096,INCORRECT,N,"States ₹1 Lakh instead of ₹1 Crore"
+V079,INCOMPLETE_NO_ERROR,N,"No mention of Tolkappiyam or Ashtadhyayi"
+V053,CORRECT,N,
+V200,INCORRECT,N,"WBCIS described as market price-based, not weather index"
+V012,INCOMPLETE_NO_ERROR,N,"Focuses on storage, not rainfed vs irrigated"
+V213,INCOMPLETE_NO_ERROR,N,"Cut off early"
+V149,INCOMPLETE_NO_ERROR,N,"No mention of Tolkappiyam or Ashtadhyayi"
+V154,INCOMPLETE_NO_ERROR,N,"No mention of Tolkappiyam or Ashtadhyayi"
+V163,INCORRECT,N,"Wrong PSLV capacity numbers"
+V104,CORRECT,N,
+V195,CORRECT,N,
+V212,CORRECT,N,
+V101,CORRECT,N,
+V090,CORRECT,N,
+V047,CORRECT,N,
+V059,CORRECT,N,
+V022,CORRECT,N,
+V039,CORRECT,N,
+V183,CORRECT,N,
+V021,INCOMPLETE_NO_ERROR,N,"Cut off early"
+V202,CORRECT,N,
+V068,CORRECT,N,
+V205,INCOMPLETE_NO_ERROR,N,"No mention of exemptions"
+V116,CORRECT,N,
+V153,INCOMPLETE_NO_ERROR,N,"Cut off early"
+V155,CORRECT,N,
+V182,INCORRECT,N,"Gives 10 days + 5 days instead of 5 days"
+V086,INCOMPLETE_NO_ERROR,N,"Cut off before compliance officer"
+V019,CORRECT,N,
+V024,INCOMPLETE_NO_ERROR,N,"Cut off early"
+V192,INCORRECT,N,"Wrong PSLV SSO capacity"
+V057,INCOMPLETE_NO_ERROR,N,"Cut off early"
+V119,CORRECT,N,
+V015,CORRECT,N,
+V165,INCORRECT,N,"Denies existence of cut-off date"
+V103,INCOMPLETE_NO_ERROR,N,"No mention of exemptions"
+V126,INCORRECT,N,"Gives 10 days + 5 days instead of 5 days"
+V008,INCOMPLETE_NO_ERROR,N,No mention of exemptions
+V010,INCORRECT,Y,Gold outdated; allows 1 practitioner up to 12 weeks
+V011,INCORRECT,N,States above ₹20 lakhs instead of ₹2 Lakh minimum
+V013,INCORRECT,N,"Wrong PSLV SSO capacity (~1,500-1,600 kg vs 1,750 kg)"
+V016,CORRECT,N,
+V028,PARTIAL,N,States Covaxin inactivated; cut off before Covishield
+V031,INCOMPLETE_NO_ERROR,N,Doesn't mention yield vs weather index
+V032,CORRECT,N,
+V042,CORRECT,N,
+V044,INCOMPLETE_NO_ERROR,N,No mention of Tolkappiyam or Ashtadhyayi
+V045,CORRECT,N,
+V050,INCOMPLETE_NO_ERROR,N,No mention of exemptions
+V061,PARTIAL,N,States 12 months but not 6-month extension
+V067,INCOMPLETE_NO_ERROR,N,No mention of Tolkappiyam or Ashtadhyayi
+V069,PARTIAL,N,States 12 months but not 6-month extension
+V075,INCOMPLETE_NO_ERROR,N,No mention of Tolkappiyam or Ashtadhyayi
+V081,INCORRECT,N,States above ₹20 lakhs instead of ₹2 Lakh minimum
+V082,CORRECT,N,
+V092,INCORRECT,N,States ₹1 Lakh instead of ₹1 Crore
+V095,INCORRECT,Y,Gold outdated; allows 1 practitioner up to 12 weeks
+V099,PARTIAL,N,States two thresholds; cut off before third
+V100,PARTIAL,N,States Covaxin inactivated; cut off before Covishield
+V102,CORRECT,N,
+V110,INCORRECT,N,States One Rupee rule; contradicts ₹1 Crore
+V111,INCOMPLETE_NO_ERROR,N,Doesn't mention yield vs weather index
+V113,INCORRECT,Y,Gold outdated; allows 1 practitioner up to 20 weeks
+V120,CORRECT,N,
+V127,PARTIAL,N,States PMFBY yield-based; cut off before WBCIS
+V128,CORRECT,N,
+V130,INCOMPLETE_NO_ERROR,N,No mention of exemptions
+V133,PARTIAL,N,States 12 months but not 6-month extension
+V136,CORRECT,N,
+V139,INCORRECT,Y,Gold outdated; allows 1 practitioner up to 20 weeks
+V144,INCORRECT,N,States ₹1 Lakh instead of ₹1 Crore
+V148,CORRECT,N,
+V152,CORRECT,N,
+V156,CORRECT,N,
+V160,INCOMPLETE_NO_ERROR,N,Doesn't mention yield vs weather index
+V161,CORRECT,N,
+V162,CORRECT,N,
+V173,CORRECT,N,
+V184,INCOMPLETE_NO_ERROR,N,Cut off early; doesn't reach 14-day rule
+V185,CORRECT,N,
+V190,CORRECT,N,
+V204,CORRECT,N,
+V207,INCOMPLETE_NO_ERROR,N,Cut off early; doesn't list thresholds
+V215,INCORRECT,N,States above ₹20 lakhs instead of ₹2 Lakh minimum
+V216,PARTIAL,N,States RTGS ₹2 Lakh min; cut off before NEFT batch

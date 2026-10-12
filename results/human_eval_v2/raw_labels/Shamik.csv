@@ -1,0 +1,28 @@
+item_id,label,gold_problem,note
+V064,CORRECT,N,
+V129,CORRECT,N,
+V107,INCOMPLETE_NO_ERROR,N,"Cut off early"
+V134,INCOMPLETE_NO_ERROR,N,"Cut off early"
+V073,CORRECT,N,
+V198,CORRECT,N,
+V037,INCORRECT,Y,"Gold outdated; allows 1 practitioner up to 12 weeks"
+V029,INCORRECT,N,"States Dec 16, 2014 instead of Dec 31, 2014"
+V027,CORRECT,N,
+V146,INCOMPLETE_NO_ERROR,N,"Cut off early"
+V036,INCORRECT,N,"States 6 months instead of 12 months"
+V060,INCOMPLETE_NO_ERROR,N,"Cut off early"
+V142,INCORRECT,N,"Wrong PSLV payload numbers"
+V125,CORRECT,N,
+V072,INCORRECT,N,"States ₹1 Lakh instead of ₹1 Crore"
+V083,INCORRECT,N,"States ₹1 Lakh instead of ₹1 Crore"
+V108,INCOMPLETE_NO_ERROR,N,"Cut off early"
+V097,INCORRECT,N,"Says only Category A requires PH, contradicts gold"
+V025,INCOMPLETE_NO_ERROR,N,"Cut off early"
+V143,INCORRECT,N,"Wrong PSLV payload numbers"
+V112,CORRECT,N,
+V189,CORRECT,N,
+V186,CORRECT,N,
+V001,CORRECT,N,
+V196,CORRECT,N,
+V085,INCORRECT,N,"States no fixed time limit, contradicts 12 months"
+V062,CORRECT,N,

@@ -100,6 +100,8 @@ def main():
     ap.add_argument("--returned-dir", default=str(HE / "returned"))
     ap.add_argument("--out-dir", default=str(ROOT / "paper_v2" / "output"))
     ap.add_argument("--adj-path", default=str(HE / "adjudication.xlsx"))
+    ap.add_argument("--exclude-topic", action="append", default=[],
+                    help="drop items of this target_entity (sensitivity, e.g. a topic with a disputed gold answer)")
     a = ap.parse_args()
     ret, out = Path(a.returned_dir), Path(a.out_dir)
     out.mkdir(parents=True, exist_ok=True)
@@ -175,6 +177,8 @@ def main():
             unresolved.append(i)
     k = key.set_index("item_id")
     res = k.loc[list(final)].copy()
+    res = res[~res.target_entity.isin(a.exclude_topic)].copy()
+    N["excluded_topics"] = a.exclude_topic
     res["human_label"] = pd.Series(final)
     res["h_p"] = res.human_label.isin(PRIMARY).astype(int)
     res["h_s"] = res.human_label.isin(SECONDARY).astype(int)

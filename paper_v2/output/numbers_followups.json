@@ -1,4 +1,334 @@
 {
-  "exp006_complete_answers": null,
-  "exp007_second_model": null
+  "exp006_complete_answers": {
+    "n_responses": 300,
+    "still_capped_at_3072": {
+      "EN-MATCH": 0,
+      "CS-LAT": 2,
+      "MIXED": 1
+    },
+    "rerun_count": {
+      "EN-MATCH": 5,
+      "CS-LAT": 39,
+      "MIXED": 64
+    },
+    "J-QWEN": {
+      "accuracy": {
+        "EN-MATCH": 85.0,
+        "CS-LAT": 59.0,
+        "MIXED": 57.99999999999999
+      },
+      "contrasts": [
+        {
+          "ref": "EN-MATCH",
+          "cmp": "CS-LAT",
+          "n": 100,
+          "acc_ref": 85.0,
+          "acc_cmp": 59.0,
+          "delta_pp": -26.0,
+          "b": 28,
+          "c": 2,
+          "p_exact": 8.67992639541626e-07,
+          "topic_perm_p": 0.00927734375,
+          "topic_boot_ci": [
+            -43.0,
+            -10.0
+          ]
+        },
+        {
+          "ref": "CS-LAT",
+          "cmp": "MIXED",
+          "n": 100,
+          "acc_ref": 59.0,
+          "acc_cmp": 57.99999999999999,
+          "delta_pp": -1.0,
+          "b": 15,
+          "c": 14,
+          "p_exact": 1.0,
+          "topic_perm_p": 1.0,
+          "topic_boot_ci": [
+            -13.0,
+            11.0
+          ]
+        },
+        {
+          "ref": "EN-MATCH",
+          "cmp": "MIXED",
+          "n": 100,
+          "acc_ref": 85.0,
+          "acc_cmp": 57.99999999999999,
+          "delta_pp": -27.0,
+          "b": 29,
+          "c": 2,
+          "p_exact": 4.628673195838928e-07,
+          "topic_perm_p": 0.00341796875,
+          "topic_boot_ci": [
+            -42.0,
+            -13.0
+          ]
+        }
+      ]
+    },
+    "J-OSS": {
+      "accuracy": {
+        "EN-MATCH": 64.0,
+        "CS-LAT": 57.99999999999999,
+        "MIXED": 53.0
+      },
+      "contrasts": [
+        {
+          "ref": "EN-MATCH",
+          "cmp": "CS-LAT",
+          "n": 100,
+          "acc_ref": 64.0,
+          "acc_cmp": 57.99999999999999,
+          "delta_pp": -6.0,
+          "b": 16,
+          "c": 10,
+          "p_exact": 0.32693958282470703,
+          "topic_perm_p": 0.6171875,
+          "topic_boot_ci": [
+            -24.0,
+            13.0
+          ]
+        },
+        {
+          "ref": "CS-LAT",
+          "cmp": "MIXED",
+          "n": 100,
+          "acc_ref": 57.99999999999999,
+          "acc_cmp": 53.0,
+          "delta_pp": -5.0,
+          "b": 12,
+          "c": 7,
+          "p_exact": 0.359283447265625,
+          "topic_perm_p": 0.486328125,
+          "topic_boot_ci": [
+            -16.0,
+            6.0
+          ]
+        },
+        {
+          "ref": "EN-MATCH",
+          "cmp": "MIXED",
+          "n": 100,
+          "acc_ref": 64.0,
+          "acc_cmp": 53.0,
+          "delta_pp": -11.0,
+          "b": 20,
+          "c": 9,
+          "p_exact": 0.06142834573984146,
+          "topic_perm_p": 0.27734375,
+          "topic_boot_ci": [
+            -28.0,
+            6.0
+          ]
+        }
+      ]
+    }
+  },
+  "exp007_second_model": {
+    "model": [
+      "gemini-3.1-flash-lite"
+    ],
+    "budgets": {
+      "128": {
+        "n": 300,
+        "hit_cap": {
+          "EN-MATCH": 100,
+          "CS-LAT": 100,
+          "MIXED": 100
+        },
+        "n_per_condition": {
+          "EN-MATCH": 100,
+          "CS-LAT": 100,
+          "MIXED": 100
+        },
+        "J-QWEN": {
+          "accuracy": {
+            "EN-MATCH": 80.0,
+            "CS-LAT": 75.0,
+            "MIXED": 69.0
+          },
+          "contrasts": [
+            {
+              "ref": "EN-MATCH",
+              "cmp": "CS-LAT",
+              "n": 100,
+              "acc_ref": 80.0,
+              "acc_cmp": 75.0,
+              "delta_pp": -5.0,
+              "b": 9,
+              "c": 4,
+              "p_exact": 0.266845703125,
+              "topic_perm_p": 0.484375,
+              "topic_boot_ci": [
+                -15.0,
+                5.0
+              ]
+            },
+            {
+              "ref": "CS-LAT",
+              "cmp": "MIXED",
+              "n": 100,
+              "acc_ref": 75.0,
+              "acc_cmp": 69.0,
+              "delta_pp": -6.0,
+              "b": 13,
+              "c": 7,
+              "p_exact": 0.26317596435546875,
+              "topic_perm_p": 0.24609375,
+              "topic_boot_ci": [
+                -14.0,
+                2.0
+              ]
+            },
+            {
+              "ref": "EN-MATCH",
+              "cmp": "MIXED",
+              "n": 100,
+              "acc_ref": 80.0,
+              "acc_cmp": 69.0,
+              "delta_pp": -11.0,
+              "b": 12,
+              "c": 1,
+              "p_exact": 0.00341796875,
+              "topic_perm_p": 0.02734375,
+              "topic_boot_ci": [
+                -20.0,
+                -3.0
+              ]
+            }
+          ]
+        },
+        "J-OSS": {
+          "accuracy": {
+            "EN-MATCH": 47.0,
+            "CS-LAT": 45.0,
+            "MIXED": 42.0
+          },
+          "contrasts": [
+            {
+              "ref": "EN-MATCH",
+              "cmp": "CS-LAT",
+              "n": 100,
+              "acc_ref": 47.0,
+              "acc_cmp": 45.0,
+              "delta_pp": -2.0,
+              "b": 12,
+              "c": 10,
+              "p_exact": 0.8318119049072266,
+              "topic_perm_p": 0.892578125,
+              "topic_boot_ci": [
+                -17.0,
+                12.0
+              ]
+            },
+            {
+              "ref": "CS-LAT",
+              "cmp": "MIXED",
+              "n": 100,
+              "acc_ref": 45.0,
+              "acc_cmp": 42.0,
+              "delta_pp": -3.0,
+              "b": 16,
+              "c": 13,
+              "p_exact": 0.711071103811264,
+              "topic_perm_p": 0.736328125,
+              "topic_boot_ci": [
+                -14.0,
+                8.0
+              ]
+            },
+            {
+              "ref": "EN-MATCH",
+              "cmp": "MIXED",
+              "n": 100,
+              "acc_ref": 47.0,
+              "acc_cmp": 42.0,
+              "delta_pp": -5.0,
+              "b": 16,
+              "c": 11,
+              "p_exact": 0.44206833839416504,
+              "topic_perm_p": 0.6640625,
+              "topic_boot_ci": [
+                -23.0,
+                12.0
+              ]
+            }
+          ]
+        },
+        "judge_agreement": {
+          "agreement": 0.6933333333333334,
+          "kappa": 0.4173281540280359,
+          "qwen_correct_oss_wrong": 91,
+          "qwen_wrong_oss_correct": 1
+        }
+      },
+      "1024": {
+        "n": 196,
+        "hit_cap": {
+          "CS-LAT": 0,
+          "MIXED": 0
+        },
+        "n_per_condition": {
+          "CS-LAT": 97,
+          "MIXED": 99
+        },
+        "J-QWEN": {
+          "accuracy": {
+            "CS-LAT": 92.78350515463917,
+            "MIXED": 96.96969696969697
+          },
+          "contrasts": [
+            {
+              "ref": "CS-LAT",
+              "cmp": "MIXED",
+              "n": 97,
+              "acc_ref": 92.78350515463917,
+              "acc_cmp": 96.90721649484536,
+              "delta_pp": 4.123711340206185,
+              "b": 0,
+              "c": 4,
+              "p_exact": 0.125,
+              "topic_perm_p": 0.25,
+              "topic_boot_ci": [
+                0.0,
+                10.0
+              ]
+            }
+          ]
+        },
+        "J-OSS": {
+          "accuracy": {
+            "CS-LAT": 85.56701030927834,
+            "MIXED": 88.88888888888889
+          },
+          "contrasts": [
+            {
+              "ref": "CS-LAT",
+              "cmp": "MIXED",
+              "n": 97,
+              "acc_ref": 85.56701030927834,
+              "acc_cmp": 90.72164948453609,
+              "delta_pp": 5.154639175257731,
+              "b": 1,
+              "c": 6,
+              "p_exact": 0.125,
+              "topic_perm_p": 0.125,
+              "topic_boot_ci": [
+                0.0,
+                10.0
+              ]
+            }
+          ]
+        },
+        "judge_agreement": {
+          "agreement": 0.9132653061224489,
+          "kappa": 0.4761006289308171,
+          "qwen_correct_oss_wrong": 16,
+          "qwen_wrong_oss_correct": 1
+        }
+      }
+    }
+  }
 }

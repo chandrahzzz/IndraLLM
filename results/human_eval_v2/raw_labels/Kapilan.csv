@@ -1,0 +1,29 @@
+item_id,label,gold_problem,note
+V105,INCORRECT,N,"States 6 days instead of 14 days"
+V179,CORRECT,N,
+V121,INCOMPLETE_NO_ERROR,N,"Cut off before yield vs weather index"
+V187,INCORRECT,N,"States Dec 12, 2014 instead of Dec 31, 2014"
+V094,CORRECT,N,
+V080,CORRECT,N,
+V034,INCORRECT,N,"States Jan 6, 2015 instead of Dec 31, 2014"
+V199,INCORRECT,N,"Wrong PSLV payload numbers"
+V180,INCOMPLETE_NO_ERROR,N,"Cut off early"
+V135,CORRECT,N,
+V093,CORRECT,N,
+V065,CORRECT,N,
+V058,INCOMPLETE_NO_ERROR,N,"Cut off before wider jurisdiction"
+V170,INCOMPLETE_NO_ERROR,N,"No mention of exemptions"
+V140,CORRECT,N,
+V070,INCORRECT,N,"Wrong PSLV SSO capacity (~1,400 kg vs 1,750 kg)"
+V109,CORRECT,N,
+V089,INCORRECT,N,"States no fixed time limit, contradicts 12 months"
+V123,CORRECT,N,
+V091,CORRECT,N,
+V197,CORRECT,N,
+V114,CORRECT,N,
+V049,INCORRECT,N,"States ₹1 Lakh instead of ₹1 Crore"
+V054,INCOMPLETE_NO_ERROR,N,"No mention of exemptions"
+V175,CORRECT,N,
+V157,CORRECT,N,
+V051,CORRECT,N,
+V174,INCOMPLETE_NO_ERROR,N,"Cut off early"

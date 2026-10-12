@@ -1,0 +1,30 @@
+prior EXP-006 spend $0.0000; ceiling $1.8
+gen: 108 to run (0 done)
+  retry 0 qwen/qwen3.8-27b: APIConnectionError('Connection error.')
+  retry 0 qwen/qwen3.8-27b: APIConnectionError('Connection error.')
+  retry 0 qwen/qwen3.8-27b: APIConnectionError('Connection error.')
+  retry 0 qwen/qwen3.8-27b: APIConnectionError('Connection error.')
+  retry 0 qwen/qwen3.8-27b: RateLimitError("Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kwkez1yve4eac41fdyw8pgx9` servic
+  retry 0 qwen/qwen3.8-27b: RateLimitError("Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kwkez1yve4eac41fdyw8pgx9` servic
+  retry 0 qwen/qwen3.8-27b: RateLimitError("Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kwkez1yve4eac41fdyw8pgx9` servic
+  retry 1 qwen/qwen3.8-27b: RateLimitError("Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kwkez1yve4eac41fdyw8pgx9` servic
+  retry 0 qwen/qwen3.8-27b: RateLimitError("Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kwkez1yve4eac41fdyw8pgx9` servic
+  retry 0 qwen/qwen3.8-27b: RateLimitError("Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kwkez1yve4eac41fdyw8pgx9` servic
+  retry 0 qwen/qwen3.8-27b: RateLimitError("Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kwkez1yve4eac41fdyw8pgx9` servic
+  retry 1 qwen/qwen3.8-27b: RateLimitError("Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kwkez1yve4eac41fdyw8pgx9` servic
+  retry 1 qwen/qwen3.8-27b: RateLimitError("Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kwkez1yve4eac41fdyw8pgx9` servic
+  retry 0 qwen/qwen3.8-27b: RateLimitError("Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kwkez1yve4eac41fdyw8pgx9` servic
+  retry 0 qwen/qwen3.8-27b: RateLimitError("Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kwkez1yve4eac41fdyw8pgx9` servic
+  retry 0 qwen/qwen3.8-27b: RateLimitError("Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kwkez1yve4eac41fdyw8pgx9` servic
+  retry 1 qwen/qwen3.8-27b: RateLimitError("Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kwkez1yve4eac41fdyw8pgx9` servic
+  retry 1 qwen/qwen3.8-27b: RateLimitError("Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kwkez1yve4eac41fdyw8pgx9` servic
+  retry 2 qwen/qwen3.8-27b: RateLimitError("Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kwkez1yve4eac41fdyw8pgx9` servic
+  retry 0 qwen/qwen3.8-27b: RateLimitError("Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kwkez1yve4eac41fdyw8pgx9` servic
+  retry 1 qwen/qwen3.8-27b: RateLimitError("Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kwkez1yve4eac41fdyw8pgx9` servic
+  retry 3 qwen/qwen3.8-27b: RateLimitError("Error code: 429 - {'error': {'message': 'Rate limit reached for model `qwen/qwen3.8-27b` in organization `org_01kwkez1yve4eac41fdyw8pgx9` servic
+gen done; session spend $0.6099
+prior EXP-006 spend $0.6099; ceiling $1.8
+judge: 216 to run (0 done)
+  retry 0 qwen/qwen3.8-27b: APIConnectionError('Connection error.')
+  retry 0 openai/gpt-oss-120b: APIConnectionError('Connection error.')
+judge done; session spend $0.7855

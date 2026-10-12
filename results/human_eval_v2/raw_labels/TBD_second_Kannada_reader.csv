@@ -1,0 +1,33 @@
+item_id,label,gold_problem,note
+V155,CORRECT,N,
+V103,INCOMPLETE_NO_ERROR,N,"No mention of exemptions"
+V031,INCORRECT,N,"Describes WBCIS as market price-based, not weather index"
+V120,CORRECT,N,
+V178,INCOMPLETE_NO_ERROR,N,"Cut off before threshold number"
+V010,INCORRECT,Y,"Gold outdated; allows 1 practitioner up to 12 weeks"
+V088,INCOMPLETE_NO_ERROR,N,"Focuses on Section 34, not main time limit"
+V200,INCORRECT,N,"WBCIS described as market price-based, not weather index"
+V177,INCOMPLETE_NO_ERROR,N,"Mentions season but not rainfed vs irrigated"
+V048,INCORRECT,Y,"Gold outdated; allows 1 practitioner up to 12 weeks"
+V148,CORRECT,N,
+V208,INCOMPLETE_NO_ERROR,N,"Doesn't mention compliance officer"
+V053,CORRECT,N,
+V035,CORRECT,N,
+V110,INCORRECT,N,"States ₹1 Lakh instead of ₹1 Crore"
+V185,INCOMPLETE_NO_ERROR,N,"Cut off early"
+V032,CORRECT,N,
+V101,CORRECT,N,
+V212,CORRECT,N,
+V012,INCOMPLETE_NO_ERROR,N,"Focuses on storage, not rainfed vs irrigated"
+V009,INCORRECT,N,"States 6 days instead of 14 days"
+V162,CORRECT,N,
+V131,INCORRECT,Y,"Gold outdated; allows 1 practitioner up to 12 weeks"
+V158,CORRECT,N,
+V024,INCOMPLETE_NO_ERROR,N,"Cut off early"
+V152,CORRECT,N,
+V095,INCORRECT,Y,"Gold outdated; allows 1 practitioner up to 12 weeks"
+V111,INCOMPLETE_NO_ERROR,N,"Cut off early"
+V165,INCORRECT,N,"Denies existence of cut-off date"
+V173,INCOMPLETE_NO_ERROR,N,"Cut off early"
+V055,INCORRECT,Y,"Gold outdated; allows 1 practitioner up to 12 weeks"
+V216,INCOMPLETE_NO_ERROR,N,"Cut off early"

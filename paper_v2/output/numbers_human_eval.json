@@ -1,0 +1,767 @@
+{
+  "reviewers": {
+    "Akshith": {
+      "assigned": 161,
+      "rows": 161,
+      "labelled": 161,
+      "invalid": 0,
+      "blank": 0,
+      "unreadable": 0
+    },
+    "Chandrahas": {
+      "assigned": 157,
+      "rows": 157,
+      "labelled": 157,
+      "invalid": 0,
+      "blank": 0,
+      "unreadable": 0
+    },
+    "Kapilan": {
+      "assigned": 28,
+      "rows": 28,
+      "labelled": 28,
+      "invalid": 0,
+      "blank": 0,
+      "unreadable": 0
+    },
+    "Shamik": {
+      "assigned": 27,
+      "rows": 27,
+      "labelled": 27,
+      "invalid": 0,
+      "blank": 0,
+      "unreadable": 0
+    },
+    "TBD_second_Kannada_reader": {
+      "assigned": 32,
+      "rows": 32,
+      "labelled": 32,
+      "invalid": 0,
+      "blank": 0,
+      "unreadable": 0
+    }
+  },
+  "gold_problem_flags": [
+    {
+      "reviewer": "Akshith",
+      "item_id": "V077",
+      "note": "Gold outdated; 2021 amendment allows 1 practitioner up to 20 weeks"
+    },
+    {
+      "reviewer": "Akshith",
+      "item_id": "V023",
+      "note": "Gold outdated; allows 1 practitioner up to 12 weeks"
+    },
+    {
+      "reviewer": "Akshith",
+      "item_id": "V188",
+      "note": "Gold outdated; allows 1 practitioner up to 20 weeks"
+    },
+    {
+      "reviewer": "Akshith",
+      "item_id": "V046",
+      "note": "Gold outdated; allows 1 practitioner up to 20 weeks"
+    },
+    {
+      "reviewer": "Akshith",
+      "item_id": "V131",
+      "note": "Gold outdated; allows 1 practitioner up to 12 weeks"
+    },
+    {
+      "reviewer": "Akshith",
+      "item_id": "V176",
+      "note": "Gold outdated; allows 1 practitioner up to 20 weeks"
+    },
+    {
+      "reviewer": "Akshith",
+      "item_id": "V048",
+      "note": "Gold outdated; allows 1 practitioner up to 12 weeks"
+    },
+    {
+      "reviewer": "Akshith",
+      "item_id": "V055",
+      "note": "Gold outdated; allows 1 practitioner up to 12 weeks"
+    },
+    {
+      "reviewer": "Akshith",
+      "item_id": "V010",
+      "note": "Gold outdated; allows 1 practitioner up to 12 weeks"
+    },
+    {
+      "reviewer": "Akshith",
+      "item_id": "V113",
+      "note": "Gold outdated; allows 1 practitioner up to 20 weeks"
+    },
+    {
+      "reviewer": "Akshith",
+      "item_id": "V139",
+      "note": "Gold outdated; allows 1 practitioner up to 20 weeks"
+    },
+    {
+      "reviewer": "Akshith",
+      "item_id": "V095",
+      "note": "Gold outdated; allows 1 practitioner up to 12 weeks"
+    },
+    {
+      "reviewer": "Akshith",
+      "item_id": "V118",
+      "note": "Gold outdated; allows 1 practitioner up to 20 weeks"
+    },
+    {
+      "reviewer": "Akshith",
+      "item_id": "V147",
+      "note": "Gold outdated; allows 1 practitioner up to 12 weeks"
+    },
+    {
+      "reviewer": "Chandrahas",
+      "item_id": "V188",
+      "note": "Gold says \"two practitioners\", model says \"one\" up to 20 weeks (Gold is outdated; 2021 Amendment)."
+    },
+    {
+      "reviewer": "Chandrahas",
+      "item_id": "V023",
+      "note": "Gold says \"two practitioners\", model says \"one\" up to 12/20 weeks (Gold is outdated)."
+    },
+    {
+      "reviewer": "Chandrahas",
+      "item_id": "V077",
+      "note": "Gold says \"two practitioners\", model says \"one\" up to 20 weeks (Gold is outdated)."
+    },
+    {
+      "reviewer": "Chandrahas",
+      "item_id": "V176",
+      "note": "Gold says \"two practitioners\", model says \"one\" up to 20 weeks (Gold is outdated)."
+    },
+    {
+      "reviewer": "Chandrahas",
+      "item_id": "V147",
+      "note": "Gold says \"two practitioners\", model says \"one\" up to 12 weeks (Gold is outdated)."
+    },
+    {
+      "reviewer": "Chandrahas",
+      "item_id": "V118",
+      "note": "Gold says \"two practitioners\", model says \"one\" up to 20 weeks (Gold is outdated)."
+    },
+    {
+      "reviewer": "Chandrahas",
+      "item_id": "V113",
+      "note": "Gold says \"two practitioners\", model says \"one\" up to 20 weeks (Gold is outdated)."
+    },
+    {
+      "reviewer": "Chandrahas",
+      "item_id": "V139",
+      "note": "Gold says \"two practitioners\", model says \"one\" up to 20 weeks (Gold is outdated)."
+    },
+    {
+      "reviewer": "Chandrahas",
+      "item_id": "V046",
+      "note": "Gold says \"two practitioners\", model says \"one\" up to 20 weeks (Gold is outdated)."
+    },
+    {
+      "reviewer": "Shamik",
+      "item_id": "V037",
+      "note": "Gold outdated; allows 1 practitioner up to 12 weeks"
+    },
+    {
+      "reviewer": "TBD_second_Kannada_reader",
+      "item_id": "V010",
+      "note": "Gold outdated; allows 1 practitioner up to 12 weeks"
+    },
+    {
+      "reviewer": "TBD_second_Kannada_reader",
+      "item_id": "V048",
+      "note": "Gold outdated; allows 1 practitioner up to 12 weeks"
+    },
+    {
+      "reviewer": "TBD_second_Kannada_reader",
+      "item_id": "V131",
+      "note": "Gold outdated; allows 1 practitioner up to 12 weeks"
+    },
+    {
+      "reviewer": "TBD_second_Kannada_reader",
+      "item_id": "V095",
+      "note": "Gold outdated; allows 1 practitioner up to 12 weeks"
+    },
+    {
+      "reviewer": "TBD_second_Kannada_reader",
+      "item_id": "V055",
+      "note": "Gold outdated; allows 1 practitioner up to 12 weeks"
+    }
+  ],
+  "inter_annotator": {
+    "n_double_labelled": 189,
+    "six_way_agreement": 0.9047619047619048,
+    "binary_agreement": 0.9259259259259259,
+    "kappa_binary": 0.8507950828916206,
+    "kappa_binary_secondary": 0.9047645708526958,
+    "by_language": {
+      "en": {
+        "n": 72,
+        "binary_agreement": 0.9027777777777778,
+        "kappa": 0.8034321372854915
+      },
+      "hi": {
+        "n": 30,
+        "binary_agreement": 0.9333333333333333,
+        "kappa": 0.8648648648648649
+      },
+      "kn": {
+        "n": 32,
+        "binary_agreement": 0.90625,
+        "kappa": 0.8048780487804879
+      },
+      "ta": {
+        "n": 28,
+        "binary_agreement": 1.0,
+        "kappa": 1.0
+      },
+      "te": {
+        "n": 27,
+        "binary_agreement": 0.9259259259259259,
+        "kappa": 0.8524590163934427
+      }
+    }
+  },
+  "adjudication": {
+    "binary_disagreements": 14,
+    "adjudicated": 0,
+    "file": "C:\\Users\\Chandrahas Reddy\\MYallPROJECTS\\IndraLLM\\results\\human_eval_v2\\adjudication.xlsx"
+  },
+  "final_labels": {
+    "resolved": 202,
+    "unresolved": 14,
+    "not_labelled": 0,
+    "label_counts": {
+      "CORRECT": 91,
+      "INCORRECT": 56,
+      "INCOMPLETE_NO_ERROR": 49,
+      "PARTIAL": 6
+    }
+  },
+  "judge_validation": {
+    "primary": {
+      "J-QWEN": {
+        "overall": {
+          "n_items": 202,
+          "sensitivity": 0.8805944258124205,
+          "specificity": 0.7122055843057005,
+          "agreement": 0.7972697973769022,
+          "kappa_unweighted": 0.4361962589364411
+        },
+        "by_cell": {
+          "128|CS-LAT": {
+            "n_items": 22,
+            "sensitivity": 0.9405940594059405,
+            "specificity": 0.6582556226001097,
+            "agreement": 0.7094746295464751,
+            "kappa_unweighted": 0.3015873015873015
+          },
+          "128|EN-MATCH": {
+            "n_items": 21,
+            "sensitivity": 0.8798735511064278,
+            "specificity": 0.6437994722955145,
+            "agreement": 0.7511984659635667,
+            "kappa_unweighted": 0.5333333333333333
+          },
+          "128|MIXED": {
+            "n_items": 22,
+            "sensitivity": 0.24444444444444444,
+            "specificity": 0.7616279069767442,
+            "agreement": 0.7017994858611826,
+            "kappa_unweighted": 0.20618556701030932
+          },
+          "512|CS-LAT": {
+            "n_items": 22,
+            "sensitivity": 0.8366013071895425,
+            "specificity": 0.8477508650519031,
+            "agreement": 0.8409090909090909,
+            "kappa_unweighted": 0.3937007874015749
+          },
+          "512|EN-MATCH": {
+            "n_items": 22,
+            "sensitivity": 1.0,
+            "specificity": 0.5925925925925926,
+            "agreement": 0.8544973544973545,
+            "kappa_unweighted": 0.5669291338582678
+          },
+          "512|MIXED": {
+            "n_items": 23,
+            "sensitivity": 0.9604743083003953,
+            "specificity": 0.7641921397379913,
+            "agreement": 0.867219917012448,
+            "kappa_unweighted": 0.5660377358490567
+          },
+          "1024|CS-LAT": {
+            "n_items": 24,
+            "sensitivity": 0.8457142857142858,
+            "specificity": 0.84,
+            "agreement": 0.84375,
+            "kappa_unweighted": 0.368421052631579
+          },
+          "1024|EN-MATCH": {
+            "n_items": 22,
+            "sensitivity": 1.0,
+            "specificity": 0.5769230769230769,
+            "agreement": 0.8835978835978836,
+            "kappa_unweighted": 0.6451612903225807
+          },
+          "1024|MIXED": {
+            "n_items": 24,
+            "sensitivity": 0.7434343434343434,
+            "specificity": 0.6852459016393443,
+            "agreement": 0.72125,
+            "kappa_unweighted": 0.33793103448275863
+          }
+        }
+      },
+      "J-OSS": {
+        "overall": {
+          "n_items": 202,
+          "sensitivity": 0.8578119579044755,
+          "specificity": 0.9256212982822062,
+          "agreement": 0.8913663670973584,
+          "kappa_unweighted": 0.65244322092223
+        },
+        "by_cell": {
+          "128|CS-LAT": {
+            "n_items": 22,
+            "sensitivity": 0.7425742574257427,
+            "specificity": 0.8732857926494789,
+            "agreement": 0.8495734171531206,
+            "kappa_unweighted": 0.5045045045045046
+          },
+          "128|EN-MATCH": {
+            "n_items": 21,
+            "sensitivity": 0.77449947312961,
+            "specificity": 0.8654353562005277,
+            "agreement": 0.824065196548418,
+            "kappa_unweighted": 0.5205479452054795
+          },
+          "128|MIXED": {
+            "n_items": 22,
+            "sensitivity": 0.24444444444444444,
+            "specificity": 0.8662790697674418,
+            "agreement": 0.794344473007712,
+            "kappa_unweighted": 0.06201550387596899
+          },
+          "512|CS-LAT": {
+            "n_items": 22,
+            "sensitivity": 0.9237472766884531,
+            "specificity": 1.0,
+            "agreement": 0.9532085561497327,
+            "kappa_unweighted": 0.9043478260869565
+          },
+          "512|EN-MATCH": {
+            "n_items": 22,
+            "sensitivity": 0.9547325102880658,
+            "specificity": 1.0,
+            "agreement": 0.9708994708994709,
+            "kappa_unweighted": 0.9043478260869565
+          },
+          "512|MIXED": {
+            "n_items": 23,
+            "sensitivity": 0.9288537549407114,
+            "specificity": 0.9781659388646288,
+            "agreement": 0.9522821576763486,
+            "kappa_unweighted": 0.8257575757575757
+          },
+          "1024|CS-LAT": {
+            "n_items": 24,
+            "sensitivity": 0.8533333333333334,
+            "specificity": 1.0,
+            "agreement": 0.90375,
+            "kappa_unweighted": 0.8235294117647058
+          },
+          "1024|EN-MATCH": {
+            "n_items": 22,
+            "sensitivity": 0.9197080291970803,
+            "specificity": 1.0,
+            "agreement": 0.9417989417989417,
+            "kappa_unweighted": 0.8135593220338984
+          },
+          "1024|MIXED": {
+            "n_items": 24,
+            "sensitivity": 0.7757575757575758,
+            "specificity": 0.921311475409836,
+            "agreement": 0.83125,
+            "kappa_unweighted": 0.49650349650349646
+          }
+        }
+      }
+    },
+    "secondary": {
+      "J-QWEN": {
+        "overall": {
+          "n_items": 202,
+          "sensitivity": 0.8728836876570611,
+          "specificity": 0.7358983937243182,
+          "agreement": 0.80861318559341,
+          "kappa_unweighted": 0.47545320921117096
+        },
+        "by_cell": {
+          "128|CS-LAT": {
+            "n_items": 22,
+            "sensitivity": 0.7843631778058008,
+            "specificity": 0.7343096234309623,
+            "agreement": 0.752132914234396,
+            "kappa_unweighted": 0.459016393442623
+          },
+          "128|EN-MATCH": {
+            "n_items": 21,
+            "sensitivity": 0.8918406072106262,
+            "specificity": 0.7093023255813954,
+            "agreement": 0.8015340364333653,
+            "kappa_unweighted": 0.6216216216216216
+          },
+          "128|MIXED": {
+            "n_items": 22,
+            "sensitivity": 0.32673267326732675,
+            "specificity": 0.7740029542097489,
+            "agreement": 0.7159383033419023,
+            "kappa_unweighted": 0.3400000000000001
+          },
+          "512|CS-LAT": {
+            "n_items": 22,
+            "sensitivity": 0.8366013071895425,
+            "specificity": 0.8477508650519031,
+            "agreement": 0.8409090909090909,
+            "kappa_unweighted": 0.3937007874015749
+          },
+          "512|EN-MATCH": {
+            "n_items": 22,
+            "sensitivity": 1.0,
+            "specificity": 0.5925925925925926,
+            "agreement": 0.8544973544973545,
+            "kappa_unweighted": 0.5669291338582678
+          },
+          "512|MIXED": {
+            "n_items": 23,
+            "sensitivity": 0.9604743083003953,
+            "specificity": 0.7641921397379913,
+            "agreement": 0.867219917012448,
+            "kappa_unweighted": 0.5660377358490567
+          },
+          "1024|CS-LAT": {
+            "n_items": 24,
+            "sensitivity": 0.8457142857142858,
+            "specificity": 0.84,
+            "agreement": 0.84375,
+            "kappa_unweighted": 0.368421052631579
+          },
+          "1024|EN-MATCH": {
+            "n_items": 22,
+            "sensitivity": 1.0,
+            "specificity": 0.5769230769230769,
+            "agreement": 0.8835978835978836,
+            "kappa_unweighted": 0.6451612903225807
+          },
+          "1024|MIXED": {
+            "n_items": 24,
+            "sensitivity": 0.7434343434343434,
+            "specificity": 0.6852459016393443,
+            "agreement": 0.72125,
+            "kappa_unweighted": 0.33793103448275863
+          }
+        }
+      },
+      "J-OSS": {
+        "overall": {
+          "n_items": 202,
+          "sensitivity": 0.841664068088853,
+          "specificity": 0.9501930021167974,
+          "agreement": 0.892583468837327,
+          "kappa_unweighted": 0.6728825203650997
+        },
+        "by_cell": {
+          "128|CS-LAT": {
+            "n_items": 22,
+            "sensitivity": 0.5523329129886507,
+            "specificity": 0.9351464435146444,
+            "agreement": 0.7988325101032778,
+            "kappa_unweighted": 0.5378151260504203
+          },
+          "128|EN-MATCH": {
+            "n_items": 21,
+            "sensitivity": 0.7969639468690701,
+            "specificity": 0.9534883720930233,
+            "agreement": 0.8744007670182167,
+            "kappa_unweighted": 0.6181818181818182
+          },
+          "128|MIXED": {
+            "n_items": 22,
+            "sensitivity": 0.32673267326732675,
+            "specificity": 0.880354505169867,
+            "agreement": 0.8084832904884319,
+            "kappa_unweighted": 0.140625
+          },
+          "512|CS-LAT": {
+            "n_items": 22,
+            "sensitivity": 0.9237472766884531,
+            "specificity": 1.0,
+            "agreement": 0.9532085561497327,
+            "kappa_unweighted": 0.9043478260869565
+          },
+          "512|EN-MATCH": {
+            "n_items": 22,
+            "sensitivity": 0.9547325102880658,
+            "specificity": 1.0,
+            "agreement": 0.9708994708994709,
+            "kappa_unweighted": 0.9043478260869565
+          },
+          "512|MIXED": {
+            "n_items": 23,
+            "sensitivity": 0.9288537549407114,
+            "specificity": 0.9781659388646288,
+            "agreement": 0.9522821576763486,
+            "kappa_unweighted": 0.8257575757575757
+          },
+          "1024|CS-LAT": {
+            "n_items": 24,
+            "sensitivity": 0.8533333333333334,
+            "specificity": 1.0,
+            "agreement": 0.90375,
+            "kappa_unweighted": 0.8235294117647058
+          },
+          "1024|EN-MATCH": {
+            "n_items": 22,
+            "sensitivity": 0.9197080291970803,
+            "specificity": 1.0,
+            "agreement": 0.9417989417989417,
+            "kappa_unweighted": 0.8135593220338984
+          },
+          "1024|MIXED": {
+            "n_items": 24,
+            "sensitivity": 0.7757575757575758,
+            "specificity": 0.921311475409836,
+            "agreement": 0.83125,
+            "kappa_unweighted": 0.49650349650349646
+          }
+        }
+      }
+    }
+  },
+  "human_accuracy": {
+    "primary": {
+      "cells": {
+        "128|CS-LAT": {
+          "estimate": 19.34285714285714,
+          "ci": [
+            7.57142857142857,
+            32.114285714285714
+          ]
+        },
+        "128|EN-MATCH": {
+          "estimate": 42.30357142857143,
+          "ci": [
+            26.25,
+            59.17857142857144
+          ]
+        },
+        "128|MIXED": {
+          "estimate": 12.166666666666666,
+          "ci": [
+            0.0,
+            31.0
+          ]
+        },
+        "512|CS-LAT": {
+          "estimate": 58.375,
+          "ci": [
+            54.0,
+            67.125
+          ]
+        },
+        "512|EN-MATCH": {
+          "estimate": 61.66666666666667,
+          "ci": [
+            57.99999999999999,
+            69.0
+          ]
+        },
+        "512|MIXED": {
+          "estimate": 51.5,
+          "ci": [
+            46.0,
+            60.5
+          ]
+        },
+        "1024|CS-LAT": {
+          "estimate": 65.625,
+          "ci": [
+            56.00000000000001,
+            75.25
+          ]
+        },
+        "1024|EN-MATCH": {
+          "estimate": 70.33333333333333,
+          "ci": [
+            63.0,
+            77.66666666666667
+          ]
+        },
+        "1024|MIXED": {
+          "estimate": 61.875,
+          "ci": [
+            50.625,
+            75.75
+          ]
+        }
+      },
+      "gaps": {
+        "128|MIXED-CS-LAT": {
+          "estimate": -7.1761904761904765,
+          "ci": [
+            -25.700714285714284,
+            14.476547619047619
+          ]
+        },
+        "128|CS-LAT-EN-MATCH": {
+          "estimate": -22.960714285714285,
+          "ci": [
+            -43.53571428571428,
+            -2.621428571428572
+          ]
+        },
+        "512|MIXED-CS-LAT": {
+          "estimate": -6.874999999999998,
+          "ci": [
+            -19.125000000000004,
+            2.9999999999999916
+          ]
+        },
+        "512|CS-LAT-EN-MATCH": {
+          "estimate": -3.2916666666666705,
+          "ci": [
+            -11.333333333333329,
+            9.125000000000005
+          ]
+        },
+        "1024|MIXED-CS-LAT": {
+          "estimate": -3.749999999999998,
+          "ci": [
+            -21.250000000000004,
+            13.250000000000007
+          ]
+        },
+        "1024|CS-LAT-EN-MATCH": {
+          "estimate": -4.708333333333325,
+          "ci": [
+            -17.999999999999993,
+            8.583333333333321
+          ]
+        }
+      }
+    },
+    "secondary": {
+      "cells": {
+        "128|CS-LAT": {
+          "estimate": 37.239285714285714,
+          "ci": [
+            20.71428571428571,
+            54.7
+          ]
+        },
+        "128|EN-MATCH": {
+          "estimate": 46.67857142857143,
+          "ci": [
+            35.0,
+            63.78571428571429
+          ]
+        },
+        "128|MIXED": {
+          "estimate": 14.000000000000002,
+          "ci": [
+            1.8333333333333333,
+            32.833333333333336
+          ]
+        },
+        "512|CS-LAT": {
+          "estimate": 58.375,
+          "ci": [
+            54.0,
+            67.125
+          ]
+        },
+        "512|EN-MATCH": {
+          "estimate": 61.66666666666667,
+          "ci": [
+            57.99999999999999,
+            69.0
+          ]
+        },
+        "512|MIXED": {
+          "estimate": 51.5,
+          "ci": [
+            46.0,
+            60.5
+          ]
+        },
+        "1024|CS-LAT": {
+          "estimate": 65.625,
+          "ci": [
+            56.00000000000001,
+            75.25
+          ]
+        },
+        "1024|EN-MATCH": {
+          "estimate": 70.33333333333333,
+          "ci": [
+            63.0,
+            77.66666666666667
+          ]
+        },
+        "1024|MIXED": {
+          "estimate": 61.875,
+          "ci": [
+            50.625,
+            75.75
+          ]
+        }
+      },
+      "gaps": {
+        "128|MIXED-CS-LAT": {
+          "estimate": -23.239285714285714,
+          "ci": [
+            -45.725,
+            0.17315476190476925
+          ]
+        },
+        "128|CS-LAT-EN-MATCH": {
+          "estimate": -9.439285714285717,
+          "ci": [
+            -31.764642857142857,
+            12.51455357142857
+          ]
+        },
+        "512|MIXED-CS-LAT": {
+          "estimate": -6.874999999999998,
+          "ci": [
+            -19.125000000000004,
+            2.9999999999999916
+          ]
+        },
+        "512|CS-LAT-EN-MATCH": {
+          "estimate": -3.2916666666666705,
+          "ci": [
+            -11.333333333333329,
+            9.125000000000005
+          ]
+        },
+        "1024|MIXED-CS-LAT": {
+          "estimate": -3.749999999999998,
+          "ci": [
+            -19.500000000000007,
+            13.250000000000007
+          ]
+        },
+        "1024|CS-LAT-EN-MATCH": {
+          "estimate": -4.708333333333325,
+          "ci": [
+            -17.999999999999993,
+            8.583333333333321
+          ]
+        }
+      }
+    }
+  }
+}

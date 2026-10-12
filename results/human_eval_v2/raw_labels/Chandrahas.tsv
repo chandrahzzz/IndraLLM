@@ -1,0 +1,158 @@
+item_id	label	gold_problem	note
+V034	INCORRECT	N	States January 6, 2015, contradicting gold (Dec 31, 2014).
+V161	CORRECT	N	Matches gold: 3 years from patent grant.
+V067	INCOMPLETE_NO_ERROR	N	Doesn't mention Tolkappiyam or Ashtadhyayi, just general typology.
+V188	INCORRECT	Y	Gold says "two practitioners", model says "one" up to 20 weeks (Gold is outdated; 2021 Amendment).
+V018	CORRECT	N	Matches gold: within 5 days for CPIO decision.
+V015	CORRECT	N	Correctly states no grazing in National Parks, limited rights in Sanctuaries.
+V087	CORRECT	N	Correctly identifies flat vs acreage-linked benefits.
+V159	INCOMPLETE_NO_ERROR	N	Discusses scope and funding, doesn't reach yield vs weather index distinction.
+V124	PARTIAL	N	Mentions monsoon vs winter seasons, but misses rainfed vs irrigated.
+V164	INCORRECT	N	Gives wrong PSLV SSO capacity (~1,200 kg vs gold 1,750 kg).
+V070	INCORRECT	N	Gives wrong PSLV SSO capacity (~1,400 kg vs gold 1,750 kg).
+V023	INCORRECT	Y	Gold says "two practitioners", model says "one" up to 12/20 weeks (Gold is outdated).
+V179	CORRECT	N	Matches gold: pre-clearance from Compliance Officer.
+V022	CORRECT	N	Matches gold: Rajya Sabha cannot amend/reject, 14 days to return.
+V205	INCOMPLETE_NO_ERROR	N	Doesn't mention exemptions for industrial estates/defense projects.
+V133	PARTIAL	N	States 12 months, does not mention the 6-month extension.
+V076	CORRECT	N	Matches gold: cannot amend/reject, 14 days to return.
+V199	INCORRECT	N	Gives wrong PSLV payload parameter and number.
+V042	CORRECT	N	Matches gold: ₹40 Lakh threshold for goods.
+V172	INCOMPLETE_NO_ERROR	N	Cut off before reaching the "wider jurisdiction" aspect.
+V137	INCORRECT	N	States ₹1 Lakh, contradicting gold (₹1 Crore).
+V007	INCORRECT	N	Gives wrong PSLV SSO capacity (~1,500-1,600 kg vs 1,750 kg).
+V144	INCORRECT	N	States ₹1 Lakh, contradicting gold (₹1 Crore).
+V210	INCORRECT	N	Gives wrong PSLV SSO capacity (~1,200 kg vs 1,750 kg).
+V141	INCOMPLETE_NO_ERROR	N	Doesn't mention exemptions for industrial estates/defense projects.
+V197	CORRECT	N	Matches gold: ₹500 Cr, ₹1000 Cr, ₹5 Cr thresholds.
+V054	INCOMPLETE_NO_ERROR	N	Doesn't mention exemptions, just general process.
+V119	CORRECT	N	Matches gold: no private rights in NP, limited in WLS.
+V086	INCOMPLETE_NO_ERROR	N	Mentions pre-clearance but cut off before "Compliance Officer".
+V061	CORRECT	N	Matches gold: 12 months.
+V153	INCOMPLETE_NO_ERROR	N	Cut off before reaching rainfed vs irrigated.
+V058	INCOMPLETE_NO_ERROR	N	Cut off before reaching "wider jurisdiction".
+V140	CORRECT	N	Matches gold: pre-clearance from Compliance Officer.
+V013	INCORRECT	N	Gives wrong PSLV SSO capacity (~1,500-1,600 kg vs 1,750 kg).
+V077	INCORRECT	Y	Gold says "two practitioners", model says "one" up to 20 weeks (Gold is outdated).
+V004	INCOMPLETE_NO_ERROR	N	Cut off before mentioning Tolkappiyam or Ashtadhyayi.
+V047	CORRECT	N	Matches gold: RTGS ₹2L min, real-time; NEFT batch/no min.
+V065	CORRECT	N	Mentions Tolkappiyam and Panini.
+V079	INCOMPLETE_NO_ERROR	N	Doesn't mention Tolkappiyam or Ashtadhyayi.
+V089	INCORRECT	N	States "No fixed statutory time limit", contradicting gold (12 months).
+V194	CORRECT	N	Matches gold: Article 226 has wider jurisdiction.
+V011	INCORRECT	N	States "above ₹20 lakhs", contradicting gold (₹2 Lakh minimum).
+V180	INCOMPLETE_NO_ERROR	N	Cut off before fully explaining rainfed vs irrigated.
+V149	INCOMPLETE_NO_ERROR	N	Doesn't mention Tolkappiyam or Ashtadhyayi.
+V044	INCOMPLETE_NO_ERROR	N	Doesn't mention Tolkappiyam or Ashtadhyayi.
+V206	INCORRECT	N	States ₹1 Lakh, contradicting gold (₹1 Crore).
+V003	CORRECT	N	Matches gold: viral vector vs inactivated whole-virus.
+V074	CORRECT	N	Matches gold: viral vector vs inactivated whole-virus.
+V176	INCORRECT	Y	Gold says "two practitioners", model says "one" up to 20 weeks (Gold is outdated).
+V145	CORRECT	N	Mentions Panini's Ashtadhyayi and Tolkappiyam.
+V014	CORRECT	N	Matches gold: 3 years from patent grant.
+V075	INCOMPLETE_NO_ERROR	N	Doesn't mention Tolkappiyam or Ashtadhyayi.
+V005	CORRECT	N	Matches gold: 5 days for CPIO decision.
+V017	INCORRECT	N	Gives wrong PSLV capacity numbers (2,200 kg GSO vs 1,750 kg SSO).
+V184	INCOMPLETE_NO_ERROR	N	Cut off early, doesn't reach the 14-day rule.
+V138	PARTIAL	N	Mentions Panini (Sanskrit) but does not mention Tolkappiyam (Tamil).
+V128	CORRECT	N	Matches gold: rainfed vs irrigated.
+V066	INCOMPLETE_NO_ERROR	N	Cut off before "Compliance Officer".
+V160	INCOMPLETE_NO_ERROR	N	Doesn't reach yield vs weather index distinction.
+V202	CORRECT	N	Mentions Panini and Tolkappiyam.
+V175	CORRECT	N	Matches gold: rainfed vs irrigated.
+V211	INCORRECT	N	Gives wrong time limits (7, 10, 21 days vs gold 5 days).
+V170	INCOMPLETE_NO_ERROR	N	Doesn't mention specific exemptions.
+V084	CORRECT	N	Matches gold: Article 226 wider.
+V082	CORRECT	N	Matches gold: 3 years.
+V117	CORRECT	N	Matches gold: 12 months.
+V215	INCORRECT	N	States "above ₹20 lakhs", contradicting gold (₹2 Lakh minimum).
+V090	CORRECT	N	Matches gold: no human activity in NP, limited in WLS.
+V092	INCORRECT	N	States ₹1 Lakh, contradicting gold (₹1 Crore).
+V203	INCOMPLETE_NO_ERROR	N	Cut off early.
+V122	CORRECT	N	Mentions Panini's Ashtadhyayi and Tolkappiyam.
+V105	INCORRECT	N	States 6 days, contradicting gold (14 days).
+V006	CORRECT	N	Matches gold: no private rights in NP, limited in WLS.
+V106	CORRECT	N	Matches gold: no private rights in NP, limited in WLS.
+V132	CORRECT	N	Matches gold: RTGS ₹2L min, real-time; NEFT batch/no min.
+V038	CORRECT	N	Matches gold: viral vector vs inactivated.
+V002	CORRECT	N	Matches gold: Compliance Officer.
+V150	CORRECT	N	Matches gold: RTGS ₹2L min, real-time; NEFT batch/no min.
+V071	INCOMPLETE_NO_ERROR	N	Doesn't mention exemptions.
+V114	CORRECT	N	Matches gold: rainfed vs irrigated.
+V030	CORRECT	N	Matches gold: Article 226 wider.
+V163	INCORRECT	N	Gives wrong PSLV capacity numbers.
+V190	CORRECT	N	Matches gold: Article 226 wider.
+V091	CORRECT	N	Matches gold: ₹40 Lakh threshold for goods.
+V102	CORRECT	N	Matches gold: Compliance Officer.
+V059	CORRECT	N	Matches gold: 12 months.
+V033	INCORRECT	N	Gives wrong PSLV SSO capacity (~1,500-1,600 kg vs 1,750 kg).
+V096	INCORRECT	N	States ₹1 Lakh, contradicting gold (₹1 Crore).
+V098	CORRECT	N	Matches gold: 12 months.
+V157	CORRECT	N	Matches gold: viral vector vs inactivated.
+V174	INCOMPLETE_NO_ERROR	N	Cut off early.
+V147	INCORRECT	Y	Gold says "two practitioners", model says "one" up to 12 weeks (Gold is outdated).
+V099	INCOMPLETE_NO_ERROR	N	Cut off early.
+V008	INCOMPLETE_NO_ERROR	N	Doesn't mention exemptions.
+V136	CORRECT	N	Matches gold: ₹40 Lakh threshold for goods.
+V109	CORRECT	N	Matches gold: ₹500 Cr, ₹1000 Cr, ₹5 Cr thresholds.
+V028	CORRECT	N	Matches gold: inactivated virus.
+V043	CORRECT	N	Matches gold: Article 226 wider.
+V116	CORRECT	N	Matches gold: Dec 31, 2014.
+V052	CORRECT	N	Matches gold: ₹500 Cr, ₹1000 Cr, ₹5 Cr thresholds.
+V049	INCORRECT	N	States ₹1 Lakh, contradicting gold (₹1 Crore).
+V167	CORRECT	N	Matches gold: 14 days, cannot reject/amend.
+V080	CORRECT	N	Matches gold: Compliance Officer.
+V093	CORRECT	N	Matches gold: rainfed vs irrigated.
+V126	INCORRECT	N	Gives timeline as 10 days + 5 days, contradicting gold (5 days from receipt).
+V118	INCORRECT	Y	Gold says "two practitioners", model says "one" up to 20 weeks (Gold is outdated).
+V168	CORRECT	N	Matches gold: Compliance Officer.
+V187	INCORRECT	N	States Dec 12, 2014, contradicting gold (Dec 31, 2014).
+V039	CORRECT	N	Matches gold: ₹500 Cr, ₹1000 Cr, ₹5 Cr thresholds.
+V016	CORRECT	N	Matches gold: ₹40 Lakh threshold for goods.
+V183	CORRECT	N	Matches gold: ₹40 Lakh threshold for goods.
+V169	INCORRECT	N	States "above ₹20 lakhs", contradicting gold (₹2 Lakh minimum).
+V081	INCORRECT	N	States "above ₹20 lakhs", contradicting gold (₹2 Lakh minimum).
+V195	CORRECT	N	Matches gold: Dec 31, 2014.
+V019	CORRECT	N	Matches gold: flat vs acreage-linked.
+V154	INCOMPLETE_NO_ERROR	N	Doesn't mention Tolkappiyam or Ashtadhyayi.
+V100	CORRECT	N	Matches gold: inactivated whole-virus.
+V056	INCORRECT	N	Gives wrong time limits (7, 10, 21 days vs gold 5 days).
+V104	CORRECT	N	Matches gold: 14 days, cannot reject/amend.
+V166	INCOMPLETE_NO_ERROR	N	Cut off early.
+V192	INCORRECT	N	Gives wrong PSLV SSO capacity (~1,200 kg vs 1,750 kg).
+V191	CORRECT	N	Matches gold: Dec 31, 2014.
+V127	PARTIAL	N	States PMFBY is yield-based, cut off before WBCIS weather index.
+V113	INCORRECT	Y	Gold says "two practitioners", model says "one" up to 20 weeks (Gold is outdated).
+V050	INCOMPLETE_NO_ERROR	N	Doesn't mention exemptions.
+V069	CORRECT	N	Matches gold: 12 months.
+V094	CORRECT	N	Matches gold: RTGS ₹2L min, real-time; NEFT batch/no min.
+V209	CORRECT	N	Matches gold: 3 years.
+V020	CORRECT	N	Matches gold: rainfed vs irrigated.
+V051	CORRECT	N	Matches gold: 3 years.
+V151	INCOMPLETE_NO_ERROR	N	Cut off before 5-day rule.
+V207	INCOMPLETE_NO_ERROR	N	Cut off early.
+V201	CORRECT	N	Matches gold: viral vector vs inactivated.
+V130	INCOMPLETE_NO_ERROR	N	Doesn't mention exemptions.
+V139	INCORRECT	Y	Gold says "two practitioners", model says "one" up to 20 weeks (Gold is outdated).
+V068	CORRECT	N	Matches gold: 3 years.
+V181	CORRECT	N	Matches gold: ₹500 Cr, ₹1000 Cr, ₹5 Cr thresholds.
+V040	CORRECT	N	Matches gold: Article 226 wider.
+V041	CORRECT	N	Matches gold: 14 days, cannot reject/amend.
+V046	INCORRECT	Y	Gold says "two practitioners", model says "one" up to 20 weeks (Gold is outdated).
+V135	CORRECT	N	Matches gold: 3 years.
+V204	CORRECT	N	Matches gold: RTGS ₹2L min, real-time; NEFT batch/no min.
+V026	CORRECT	N	Matches gold: Article 226 wider.
+V182	CORRECT	N	Matches gold: 5 days.
+V156	CORRECT	N	Matches gold: Dec 31, 2014.
+V213	INCOMPLETE_NO_ERROR	N	Cut off early.
+V193	INCORRECT	N	States "above ₹20 lakhs", contradicting gold (₹2 Lakh minimum).
+V171	INCORRECT	N	States ₹1 Lakh, contradicting gold (₹1 Crore).
+V063	PARTIAL	N	States cannot amend/reject, cut off before 14 days.
+V057	INCOMPLETE_NO_ERROR	N	Cut off early.
+V078	INCOMPLETE_NO_ERROR	N	Doesn't mention Tolkappiyam or Ashtadhyayi.
+V214	INCOMPLETE_NO_ERROR	N	Doesn't mention exemptions.
+V021	INCOMPLETE_NO_ERROR	N	Cut off early.
+V045	CORRECT	N	Matches gold: Dec 31, 2014.
+V115	CORRECT	N	Matches gold: 3 years.
+V121	INCOMPLETE_NO_ERROR	N	Cut off before yield vs weather index
+V123	CORRECT	N	
